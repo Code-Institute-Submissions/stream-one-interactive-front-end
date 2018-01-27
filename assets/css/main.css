@@ -1,5 +1,5 @@
 html {
-  font-size: 16px; }
+  font-size: 12px; }
 
 html, body {
   border: 0;
@@ -17,8 +17,8 @@ html, body {
 
 .logo {
   position: relative;
-  top: 8rem;
-  left: 5vw;
+  top: 14rem;
+  left: 10vw;
   width: 95vw; }
 
 .logo__title {
@@ -32,12 +32,12 @@ html, body {
 .search-container {
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  width: 60vw;
+  height: 50vh;
+  width: 40vw;
   justify-content: center;
   position: relative;
-  left: 20vw;
-  top: 20vh; }
+  left: 30vw;
+  top: 30vh; }
   .search-container p {
     font-family: "Pontano Sans", sans-serif;
     font-size: 1.5rem;
@@ -109,13 +109,13 @@ html, body {
     color: #fff; }
 
 .search-bar__input {
-  width: 20rem;
-  height: 1.8rem;
+  width: 25rem;
+  height: 2.5rem;
   border-radius: 0.3rem;
   border: 1px solid #000;
   margin-bottom: 50px;
   box-shadow: 2px 4px 6px 0px #592b15;
   font-family: "Pontano Sans", sans-serif;
-  font-size: 1rem; }
+  font-size: 1.2rem; }
 
 /*# sourceMappingURL=main.css.map */
