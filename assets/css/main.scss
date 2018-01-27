@@ -1,0 +1,92 @@
+// global resets //
+
+
+html, body {
+
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// MIXINS //
+
+@mixin logo-text {
+
+    font-family: 'Lobster', cursive;
+    font-size: 8em;
+    color: #001541;
+    
+}
+
+
+// LANDING PAGE //
+.background {
+
+    background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-BRIGHTER.jpg");
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.logo {
+
+    position: relative;
+    top: 150px;
+    left: 5vw;
+    //width: 25vw;
+}
+.logo__title {
+
+    margin: 0;
+}
+
+.logo__title--font {
+
+    @include logo-text;
+
+}
+
+.search-buttons , .search-bar, .go-button{
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30vh;
+    transform: translateY(-50%);
+}
+
+.search-buttons {
+
+    margin-top: 30px;
+
+}
+
+.search-buttons__button {
+
+    margin: 20px;
+}
+.go-button {
+
+    margin-top: 100px;
+}
+
+/*.search-bar--style{
+
+    width: 250px;
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #000;
+}*/
+
+.search-bar__input {
+
+    width: 250px;
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #000;
+
+}
