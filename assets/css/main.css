@@ -100,13 +100,12 @@ html, body {
   background-color: #217219;
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .go-button__button--style p {
-    font-family: "Pontano Sans", sans-serif;
-    font-size: 1rem;
-    font-size: 2rem;
-    margin: 0px;
-    color: #fff; }
+  align-items: center;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 1rem;
+  font-size: 2rem;
+  margin: 0px;
+  color: #fff; }
 
 .search-bar__input {
   width: 25rem;
@@ -116,6 +115,7 @@ html, body {
   margin-bottom: 50px;
   box-shadow: 2px 4px 6px 0px #592b15;
   font-family: "Pontano Sans", sans-serif;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
