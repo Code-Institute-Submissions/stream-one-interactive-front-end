@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pet Stop</title>
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Carrois+Gothic|Lobster|Macondo|Pontano+Sans|Quicksand:300,400,500,700" rel="stylesheet"> 
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css"/>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pontano+Sans|Quicksand:300,400,500,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css">  
 </head>
 <body>
 
@@ -14,32 +15,65 @@
         <div class="mask">
             <div class="logo">
                 <h1 class="logo__title logo__title--font">Pet Stop.</h1>
-            </div>
-            <div class="search-bar search-bar--style">
-                <input class="search-bar__input" type="text" placeholder="   Location">
-            </div>
-            <div class="search-buttons">
-                <div class="search-buttons__button">
-                    <button>Walk</button>
+            </div>  
+            <div class="search-container search-container--color">
+                <p>Simply type your location, select your stops and GO GO GO!</p>
+                <div class="search-bar search-bar--style">
+                    <input class="search-bar__input" type="text" placeholder="   Location">
                 </div>
-                <div class="search-buttons__button">
-                    <button>Sit</button>
+                <div class="search-buttons">
+                    <div class="search-buttons__button search-buttons__button--style">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-paw search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                           <p>Walk</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons__button">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-home search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                           <p>Sit</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons__button">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-bed search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                           <p>Board</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons__button">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-stethoscope search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                           <p>Vet</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons__button">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-shopping-basket search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                           <p>Shop</p>
+                        </button>
+                    </div>
+                    <div class="search-buttons__button">
+                        <button class="search-buttons__button__element--style">
+                            <div>
+                                <i class="fa fa-tree search-buttons__icon--style" aria-hidden="true"></i>
+                            </div>
+                          <p>Park</p>
+                        </button>
+                    </div>
                 </div>
-                <div class="search-buttons__button">
-                    <button>Board</button>
+                <div class="go-button">
+                    <button class="go-button__button go-button__button--style"><p>GO!</p></button>
                 </div>
-                <div class="search-buttons__button">
-                    <button>Vet</button>
-                </div>
-                <div class="search-buttons__button">
-                    <button>Shop</button>
-                </div>
-                <div class="search-buttons__button">
-                    <button>Park</button>
-                </div>
-            </div>
-            <div class="go-button">
-                <button class="go-button__button">GO!</button>
             </div>
         </div>
 

@@ -1,6 +1,9 @@
 // global resets //
 
+html {
 
+    font-size: 16px;
+}
 html, body {
 
     border: 0;
@@ -8,21 +11,66 @@ html, body {
     padding: 0;
 }
 
+
+//------------- VARIABLES ---------------// 
+
+// FONTS //
+$logo-font: "Lobster", cursive;
+$button-font:"Pontano Sans", sans-serif;
+
+//BUTTONS//
+
+$button-shadow: 2px 4px 6px 0px rgb(89, 43, 21);
+
 // MIXINS //
 
-@mixin logo-text {
+@mixin logo-text-desktop {
 
-    font-family: 'Lobster', cursive;
-    font-size: 8em;
+    font-family: $logo-font;
+    font-size: 8rem;
     color: #001541;
     
 }
+
+@mixin button-text-desktop {
+
+    font-family: $button-font;
+    font-size: 1rem;
+}
+
+@mixin search-button-desktop {
+
+    width: 6rem;
+    height: 5rem;
+    border-radius: 0.6rem;
+    border: 1px solid #000000b2;
+    box-shadow: 2px 4px 6px 0px #592b15;
+    background-color: rgba(0, 21, 65, 0.09);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
+
+
+@mixin go-button-desktop {
+
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+    box-shadow:$button-shadow;
+    border: 2px solid rgba(255, 255, 255, 0.747);
+    background-color: #217219;
+}
+
+//-------------------------------------------------------------//
 
 
 // LANDING PAGE //
 .background {
 
-    background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-BRIGHTER.jpg");
+    background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-CONTRAST-UP.jpg");
     background-attachment: fixed;
     background-position: 50% 0%;
     background-repeat: no-repeat;
@@ -35,9 +83,10 @@ html, body {
 .logo {
 
     position: relative;
-    top: 150px;
+    top: 8rem;
     left: 5vw;
-    //width: 25vw;
+    width: 95vw;
+    
 }
 .logo__title {
 
@@ -46,32 +95,83 @@ html, body {
 
 .logo__title--font {
 
-    @include logo-text;
+    @include logo-text-desktop;
 
+}
+
+// --------------- SEARCH BUTTONS ---------------//
+
+.search-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 60vw;
+    justify-content: center;
+    position: relative;
+    left: 20vw;
+    top: 20vh;
+
+    p {
+        font-family: $button-font;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+   
+    
+}
+.search-container--color{
+
+    background-color: #ffffff4d;
+    border-radius: 50px;
+    border: 1px solid rgb(65, 65, 65);
+    box-shadow: $button-shadow;
+    
 }
 
 .search-buttons , .search-bar, .go-button{
 
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 30vh;
-    transform: translateY(-50%);
+    flex-wrap: wrap;
+    //position: relative;
+   // top: 30vh;
+    /*transform: translateY(-50%);*/
 }
 
-.search-buttons {
-
-    margin-top: 30px;
-
-}
 
 .search-buttons__button {
 
-    margin: 20px;
+    margin: 1.5rem;
+
+    p {
+
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+        @include button-text-desktop;
+        color: #010b20;
+    }
 }
+
+.search-buttons__button__element--style {
+
+    @include search-button-desktop;
+
+}
+
+.search-buttons__icon--style {
+
+    font-size: 1.6rem;
+    color: #010b20;
+}
+
+//------------ GO BUTTON ------------------//
+
 .go-button {
 
-    margin-top: 100px;
+    margin-top: 5rem;
 }
 
 /*.search-bar--style{
@@ -82,11 +182,34 @@ html, body {
     border: 1px solid #000;
 }*/
 
+.go-button__button--style {
+
+    @include go-button-desktop;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        @include button-text-desktop;
+        font-size: 2rem;
+        margin: 0px;
+        color: #fff;
+    }
+}
+
+
+// ----------------- SEARCH BAR ----------------//
+
 .search-bar__input {
 
-    width: 250px;
-    height: 25px;
-    border-radius: 6px;
+    width: 20rem;
+    height: 1.8rem;
+    border-radius: 0.3rem;
     border: 1px solid #000;
+    margin-bottom: 50px;
+    box-shadow: $button-shadow;
+    font-family: $button-font;
+    font-size: 1rem;
 
 }
+

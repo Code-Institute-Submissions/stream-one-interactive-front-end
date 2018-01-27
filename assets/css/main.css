@@ -1,10 +1,13 @@
+html {
+  font-size: 16px; }
+
 html, body {
   border: 0;
   margin: 0;
   padding: 0; }
 
 .background {
-  background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-BRIGHTER.jpg");
+  background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-CONTRAST-UP.jpg");
   background-attachment: fixed;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -14,32 +17,72 @@ html, body {
 
 .logo {
   position: relative;
-  top: 150px;
-  left: 5vw; }
+  top: 8rem;
+  left: 5vw;
+  width: 95vw; }
 
 .logo__title {
   margin: 0; }
 
 .logo__title--font {
-  font-family: 'Lobster', cursive;
-  font-size: 8em;
+  font-family: "Lobster", cursive;
+  font-size: 8rem;
   color: #001541; }
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 60vw;
+  justify-content: center;
+  position: relative;
+  left: 20vw;
+  top: 20vh; }
+  .search-container p {
+    font-family: "Pontano Sans", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 0; }
+
+.search-container--color {
+  background-color: #ffffff4d;
+  border-radius: 50px;
+  border: 1px solid #414141;
+  box-shadow: 2px 4px 6px 0px #592b15; }
 
 .search-buttons, .search-bar, .go-button {
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 30vh;
-  transform: translateY(-50%); }
-
-.search-buttons {
-  margin-top: 30px; }
+  flex-wrap: wrap;
+  /*transform: translateY(-50%);*/ }
 
 .search-buttons__button {
-  margin: 20px; }
+  margin: 1.5rem; }
+  .search-buttons__button p {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    font-family: "Pontano Sans", sans-serif;
+    font-size: 1rem;
+    color: #010b20; }
+
+.search-buttons__button__element--style {
+  width: 6rem;
+  height: 5rem;
+  border-radius: 0.6rem;
+  border: 1px solid #000000b2;
+  box-shadow: 2px 4px 6px 0px #592b15;
+  background-color: rgba(0, 21, 65, 0.09);
+  display: flex;
+  flex-direction: column;
+  align-content: center; }
+
+.search-buttons__icon--style {
+  font-size: 1.6rem;
+  color: #010b20; }
 
 .go-button {
-  margin-top: 100px; }
+  margin-top: 5rem; }
 
 /*.search-bar--style{
 
@@ -48,10 +91,31 @@ html, body {
     border-radius: 6px;
     border: 1px solid #000;
 }*/
+.go-button__button--style {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  box-shadow: 2px 4px 6px 0px #592b15;
+  border: 2px solid rgba(255, 255, 255, 0.747);
+  background-color: #217219;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .go-button__button--style p {
+    font-family: "Pontano Sans", sans-serif;
+    font-size: 1rem;
+    font-size: 2rem;
+    margin: 0px;
+    color: #fff; }
+
 .search-bar__input {
-  width: 250px;
-  height: 25px;
-  border-radius: 6px;
-  border: 1px solid #000; }
+  width: 20rem;
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid #000;
+  margin-bottom: 50px;
+  box-shadow: 2px 4px 6px 0px #592b15;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 1rem; }
 
 /*# sourceMappingURL=main.css.map */
