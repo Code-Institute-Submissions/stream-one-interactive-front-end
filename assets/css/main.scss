@@ -158,7 +158,7 @@ $xlarge-desktop-width: 1500px;
 @mixin logo-text-mobile {
 
     font-family: $logo-font;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #13182a;;
     
 }
@@ -195,6 +195,7 @@ $xlarge-desktop-width: 1500px;
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: center;
     
 }
 
@@ -209,6 +210,7 @@ $xlarge-desktop-width: 1500px;
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: center;
     
 }
 
@@ -223,7 +225,7 @@ $xlarge-desktop-width: 1500px;
     display: flex;
     flex-direction: column;
     align-content: center;
-    
+    justify-content: center;
 }
 
 
@@ -310,7 +312,7 @@ $xlarge-desktop-width: 1500px;
     @include sm-mobile {
 
         position: relative;
-        top: 19rem;
+        top: 18.5rem;
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -393,10 +395,10 @@ $xlarge-desktop-width: 1500px;
 
     @include logo-text-mobile;
 
-    @include xs-mobile {
+    //@include xs-mobile {
 
-        font-size: 3rem;
-    }
+        //font-size: 4rem;
+    //}
 
     @include xs-mobile-landscape {
 
@@ -445,7 +447,7 @@ $xlarge-desktop-width: 1500px;
 
         @include sm-mobile {
 
-            top: 28vh;
+            top: 30vh;
         }
 
         @include mobile-landscape {
@@ -570,11 +572,18 @@ $xlarge-desktop-width: 1500px;
 
 .search-buttons {
 
-    @include xs-mobile-landscape {
+        width: 90vw;
+        position: relative;
+        left: 5vw;
+
+    @include sm-mobile {
 
         width: 80vw;
-        position: relative;
         left: 10vw;
+    }
+    @include xs-mobile-landscape {
+
+    
         padding-top: 0rem;
         padding-bottom: 0rem;
 
