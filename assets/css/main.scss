@@ -29,6 +29,7 @@ $mobile-height: 375px;
 $tablet-height: 768px;
 
 $xs-mobile-width: 320px;
+$sm-mobile-width: 375px;
 $mobile-width: 500px;
 $tablet-width: 768px;
 $desktop-width: 992px;
@@ -87,6 +88,14 @@ $xlarge-desktop-width: 1500px;
 @mixin xs-mobile {
 
     @media(min-width:$xs-mobile-width) and (max-width:$mobile-width - 1px) {
+        
+        @content;
+    }
+}
+
+@mixin sm-mobile {
+
+    @media(min-width:$sm-mobile-width) and (max-width:$mobile-width - 1px) {
         
         @content;
     }
@@ -158,14 +167,28 @@ $xlarge-desktop-width: 1500px;
     font-size: 1rem;
 }
 
+@mixin search-button-mobile {
+
+    width: 5rem;
+    height: 4rem;
+    border-radius: 0.6rem;
+    border: 1px solid #d56d05c7;
+    box-shadow: 2px 4px 6px 0px #592b15;
+    background-color:#010b20e6;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
 @mixin search-button-desktop {
 
     width: 6rem;
     height: 5rem;
     border-radius: 0.6rem;
-    border: 1px solid #000000b2;
+    border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
-    background-color: rgba(0, 21, 65, 0.09);
+    background-color: #010b20e6;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -245,6 +268,17 @@ $xlarge-desktop-width: 1500px;
     @include xs-mobile {
 
         position: relative;
+        top: 14rem;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        left:0;
+   
+    }
+
+    @include sm-mobile {
+
+        position: relative;
         top: 18rem;
         width: 100vw;
         display: flex;
@@ -253,7 +287,18 @@ $xlarge-desktop-width: 1500px;
    
     }
 
-    @include xl-mobile-portrait {
+    /*@include mobile {
+
+        position: relative;
+        top: 18rem;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        left:0;
+   
+    }*/
+
+   @include xl-mobile-portrait {
 
         position: relative;
         top: 20rem;
@@ -317,6 +362,11 @@ $xlarge-desktop-width: 1500px;
 
     @include logo-text-mobile;
 
+    @include xs-mobile {
+
+        font-size: 4rem;
+    }
+
     @include xs-mobile-landscape {
 
         font-size: 4rem;
@@ -340,7 +390,11 @@ $xlarge-desktop-width: 1500px;
 
 .search-container {
 
-    @include desktop {
+        
+        position: relative;
+        top: 18vh;
+
+    /*@include desktop {
 
         display: flex;
         flex-direction: column;
@@ -357,21 +411,39 @@ $xlarge-desktop-width: 1500px;
             text-align: center;
             margin-bottom: 3rem;
             margin-top: 0;
-        }
+        }*/
 
+    }
+
+    .instructions {
+        visibility: hidden;
+        font-family: $button-font;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 0;
     }
     
 
     
    
     
-}
+
 .search-container--color{
+
+    background-color: #ffffff00;
+    border-radius: 50px;
+    border: 1px solid rgba(65, 65, 65, 0);
+     
+
+    /*@include desktop {
 
     background-color: #ffffff4d;
     border-radius: 50px;
     border: 1px solid rgb(65, 65, 65);
-    box-shadow: $button-shadow;
+    box-shadow: $button-shadow; 
+
+    }*/
     
 }
 
@@ -385,6 +457,10 @@ $xlarge-desktop-width: 1500px;
     /*transform: translateY(-50%);*/
 }
 
+.search-buttons--background {
+
+    background-color: #d5c1c199;
+}
 
 .search-buttons__button {
 
@@ -395,27 +471,38 @@ $xlarge-desktop-width: 1500px;
         margin-top: .3rem;
         margin-bottom: .3rem;
         @include button-text-desktop;
-        color: #010b20;
+        color: #d56c05;;
     }
 }
 
 .search-buttons__button__element--style {
 
-    @include search-button-desktop;
+    @include search-button-mobile;
+
+    @include desktop {
+
+        @include search-button-mobile;
+    }
 
 }
 
 .search-buttons__icon--style {
 
     font-size: 1.6rem;
-    color: #010b20;
+    color: #d56c05;;
 }
 
 //------------ GO BUTTON ------------------//
 
 .go-button {
 
-    margin-top: 5rem;
+    margin-top: 1rem;
+
+    /*@include desktop {
+
+        margin-top: 5rem;
+
+    }*/
 }
 
 /*.search-bar--style{
@@ -446,6 +533,18 @@ $xlarge-desktop-width: 1500px;
 
 .search-bar__input {
 
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid #000;
+    margin-bottom: 1.5rem;
+    box-shadow: $button-shadow;
+    font-family: $button-font;
+    font-size: 1.2rem;
+    text-align: center;
+
+    /*@include desktop {
+
     width: 25rem;
     height: 2.5rem;
     border-radius: 0.3rem;
@@ -455,5 +554,7 @@ $xlarge-desktop-width: 1500px;
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: center;
+
+    }*/
 }
 

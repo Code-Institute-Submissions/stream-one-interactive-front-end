@@ -20,7 +20,17 @@ html, body {
   top: 15rem;
   width: 100vw;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+    /*@include mobile {
+
+        position: relative;
+        top: 18rem;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        left:0;
+   
+    }*/ }
   @media (min-width: 500px) and (min-height: 320px) {
     .logo {
       position: relative;
@@ -46,6 +56,14 @@ html, body {
       justify-content: left;
       left: 10vw; } }
   @media (min-width: 320px) and (max-width: 499px) {
+    .logo {
+      position: relative;
+      top: 14rem;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      left: 0; } }
+  @media (min-width: 375px) and (max-width: 499px) {
     .logo {
       position: relative;
       top: 18rem;
@@ -100,6 +118,9 @@ html, body {
   font-family: "Lobster", cursive;
   font-size: 6rem;
   color: #001541; }
+  @media (min-width: 320px) and (max-width: 499px) {
+    .logo__title--font {
+      font-size: 4rem; } }
   @media (min-width: 500px) and (min-height: 320px) {
     .logo__title--font {
       font-size: 4rem; } }
@@ -114,34 +135,57 @@ html, body {
       font-size: 8rem;
       color: #001541; } }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .search-container {
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    width: 40vw;
-    justify-content: center;
-    position: relative;
-    left: 30vw;
-    top: 30vh; }
-    .search-container p {
-      font-family: "Pontano Sans", sans-serif;
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      margin-top: 0; } }
+.search-container {
+  position: relative;
+  top: 18vh;
+    /*@include desktop {
+
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        width: 40vw;
+        justify-content: center;
+        position: relative;
+        left: 30vw;
+        top: 30vh;
+
+        p {
+            font-family: $button-font;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 0;
+        }*/ }
+
+.instructions {
+  visibility: hidden;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 0; }
 
 .search-container--color {
-  background-color: #ffffff4d;
+  background-color: #ffffff00;
   border-radius: 50px;
-  border: 1px solid #414141;
-  box-shadow: 2px 4px 6px 0px #592b15; }
+  border: 1px solid rgba(65, 65, 65, 0);
+    /*@include desktop {
+
+    background-color: #ffffff4d;
+    border-radius: 50px;
+    border: 1px solid rgb(65, 65, 65);
+    box-shadow: $button-shadow; 
+
+    }*/ }
 
 .search-buttons, .search-bar, .go-button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   /*transform: translateY(-50%);*/ }
+
+.search-buttons--background {
+  background-color: #d5c1c199; }
 
 .search-buttons__button {
   margin: 1.5rem; }
@@ -150,25 +194,41 @@ html, body {
     margin-bottom: .3rem;
     font-family: "Pontano Sans", sans-serif;
     font-size: 1rem;
-    color: #010b20; }
+    color: #d56c05; }
 
 .search-buttons__button__element--style {
-  width: 6rem;
-  height: 5rem;
+  width: 5rem;
+  height: 4rem;
   border-radius: 0.6rem;
-  border: 1px solid #000000b2;
+  border: 1px solid #d56d05c7;
   box-shadow: 2px 4px 6px 0px #592b15;
-  background-color: rgba(0, 21, 65, 0.09);
+  background-color: #010b20e6;
   display: flex;
   flex-direction: column;
   align-content: center; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .search-buttons__button__element--style {
+      width: 5rem;
+      height: 4rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d56d05c7;
+      box-shadow: 2px 4px 6px 0px #592b15;
+      background-color: #010b20e6;
+      display: flex;
+      flex-direction: column;
+      align-content: center; } }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
-  color: #010b20; }
+  color: #d56c05; }
 
 .go-button {
-  margin-top: 5rem; }
+  margin-top: 1rem;
+    /*@include desktop {
+
+        margin-top: 5rem;
+
+    }*/ }
 
 /*.search-bar--style{
 
@@ -194,14 +254,27 @@ html, body {
   color: #fff; }
 
 .search-bar__input {
-  width: 25rem;
+  width: 20rem;
   height: 2.5rem;
   border-radius: 0.3rem;
   border: 1px solid #000;
-  margin-bottom: 50px;
+  margin-bottom: 1.5rem;
   box-shadow: 2px 4px 6px 0px #592b15;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1.2rem;
-  text-align: center; }
+  text-align: center;
+    /*@include desktop {
+
+    width: 25rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 1px solid #000;
+    margin-bottom: 50px;
+    box-shadow: $button-shadow;
+    font-family: $button-font;
+    font-size: 1.2rem;
+    text-align: center;
+
+    }*/ }
 
 /*# sourceMappingURL=main.css.map */
