@@ -7,7 +7,7 @@ html, body {
   padding: 0; }
 
 .background {
-  background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-CONTRAST-UP.jpg");
+  background-image: url("../images/bg-image-1920-1080-CONTRAST-UP.jpg");
   background-attachment: fixed;
   background-position: 50% 0%;
   background-repeat: no-repeat;
