@@ -55,6 +55,16 @@ $xlarge-desktop-width: 1500px;
 }
 
 
+@mixin xl-mobile-landscape {
+
+    @media(min-width:$tablet-width) and (min-height: $mobile-height) {
+
+        @content;
+
+    }
+
+}
+
 @mixin xl-mobile-portrait {
 
     @media(min-width:$xs-mobile-width) and (min-height: $tablet-height) {
@@ -231,16 +241,7 @@ $xlarge-desktop-width: 1500px;
         justify-content: left; 
         left: 10vw;
     }
-    /*@include xs-mobile-portrait {
-
-        position: relative;
-        top: 20rem;
-        //left: 10vw;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-
-    }*/
+  
     @include xs-mobile {
 
         position: relative;
@@ -250,6 +251,17 @@ $xlarge-desktop-width: 1500px;
         justify-content: center;
         left:0;
    
+    }
+
+    @include xl-mobile-portrait {
+
+        position: relative;
+        top: 20rem;
+        //left: 10vw;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+
     }
 
    @include tablet-portrait {
