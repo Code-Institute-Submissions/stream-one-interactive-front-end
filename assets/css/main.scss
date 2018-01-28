@@ -31,7 +31,7 @@ $tablet-height: 768px;
 $xs-mobile-width: 320px;
 $sm-mobile-width: 375px;
 $mobile-width: 500px;
-$tablet-width: 768px;
+$tablet-width: 700px;
 $desktop-width: 992px;
 $large-desktop-width: 1200px;
 $xlarge-desktop-width: 1500px;
@@ -154,6 +154,14 @@ $xlarge-desktop-width: 1500px;
     
 }
 
+@mixin logo-text-tablet {
+
+    font-family: $logo-font;
+    font-size: 7rem;
+    color: #001541;
+    
+}
+
 @mixin logo-text-desktop {
 
     font-family: $logo-font;
@@ -203,7 +211,7 @@ $xlarge-desktop-width: 1500px;
     height: 6rem;
     border-radius: 3rem;
     box-shadow:$button-shadow;
-    border: 2px solid rgba(255, 255, 255, 0.747);
+    border: 2px solid rgba(255, 255, 255, 1);
     background-color: #217219;
 }
 
@@ -268,7 +276,7 @@ $xlarge-desktop-width: 1500px;
     @include xs-mobile {
 
         position: relative;
-        top: 14rem;
+        top: 14.5rem;
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -279,7 +287,7 @@ $xlarge-desktop-width: 1500px;
     @include sm-mobile {
 
         position: relative;
-        top: 18rem;
+        top: 19rem;
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -301,7 +309,7 @@ $xlarge-desktop-width: 1500px;
    @include xl-mobile-portrait {
 
         position: relative;
-        top: 20rem;
+        top: 22rem;
         //left: 10vw;
         width: 100vw;
         display: flex;
@@ -312,7 +320,7 @@ $xlarge-desktop-width: 1500px;
    @include tablet-portrait {
 
         position: relative;
-        top: 26rem;        
+        top: 28rem;        
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -323,7 +331,7 @@ $xlarge-desktop-width: 1500px;
     @include desktop {
 
         position: relative;
-        top: 9rem;
+        top: 8rem;
         left: 5vw;
         width: 95vw;
         display: flex;
@@ -372,6 +380,11 @@ $xlarge-desktop-width: 1500px;
         font-size: 4rem;
     }
 
+    @include tablet-portrait {
+
+        @include logo-text-tablet;
+    }
+
     @include large {
 
         @include logo-text-desktop;
@@ -391,9 +404,34 @@ $xlarge-desktop-width: 1500px;
 .search-container {
 
         
-        position: relative;
-        top: 18vh;
+    position: relative;
+    top: 19vh;
 
+        @include xs-mobile-landscape {
+
+            top:3vh;
+
+        }
+
+        @include sm-mobile {
+
+            top: 25vh;
+        }
+
+        @include mobile-landscape {
+
+            top:8vh;
+        }
+
+        @include xl-mobile-landscape {
+
+            top: 11vh;
+        }
+
+        @include tablet-portrait {
+
+            top: 35vh;
+        }
     /*@include desktop {
 
         display: flex;
@@ -420,8 +458,30 @@ $xlarge-desktop-width: 1500px;
         font-family: $button-font;
         font-size: 1.5rem;
         text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 0;
+
+        @include xs-mobile-landscape {
+
+            visibility: hidden;
+            font-family: $button-font;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+
+        }
+
+        /*@include desktop {
+
+        visibility: hidden;
+        font-family: $button-font;
+        font-size: 1.5rem;
+        text-align: center;
         margin-bottom: 3rem;
         margin-top: 0;
+    
+        }*/
     }
     
 
@@ -457,16 +517,53 @@ $xlarge-desktop-width: 1500px;
     /*transform: translateY(-50%);*/
 }
 
+.search-buttons {
+
+    @include xs-mobile-landscape {
+
+        width: 80vw;
+        position: relative;
+        left: 10vw;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+    }
+
+    @include tablet-portrait {
+
+        width: 50vw;
+        left: 25vw;
+    }
+}
+
 .search-buttons--background {
 
     background-color: #d5c1c199;
+    border-radius: 6px;
+   // border: 1px solid #000000b3;
+
+   @include tablet-portrait {
+
+    border: 1px solid #000000b3;
+
+   }
 }
 
 .search-buttons__button {
 
     margin: 1.5rem;
 
-    p {
+        @include xs-mobile-landscape {
+
+            margin: .5rem;
+        }
+
+        @include xl-mobile-landscape {
+
+            margin: 1.5rem;
+        }
+
+        p {
 
         margin-top: .3rem;
         margin-bottom: .3rem;
@@ -479,10 +576,11 @@ $xlarge-desktop-width: 1500px;
 
     @include search-button-mobile;
 
-    @include desktop {
+    @include tablet-portrait {
 
-        @include search-button-mobile;
+        @include search-button-desktop;
     }
+
 
 }
 
@@ -498,6 +596,16 @@ $xlarge-desktop-width: 1500px;
 
     margin-top: 1rem;
 
+    @include sm-mobile {
+
+        margin-top: 2rem;
+    }
+
+    @include tablet-portrait {
+
+        margin-top: 7rem;
+
+    }
     /*@include desktop {
 
         margin-top: 5rem;
@@ -525,6 +633,11 @@ $xlarge-desktop-width: 1500px;
     font-size: 2rem;
     margin: 0px;
     color: #fff;
+
+    @include tablet-portrait {
+
+        width: 8rem
+    }
     
 }
 
@@ -534,7 +647,7 @@ $xlarge-desktop-width: 1500px;
 .search-bar__input {
 
     width: 20rem;
-    height: 2.5rem;
+    height: 1.5rem;
     border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
@@ -542,6 +655,17 @@ $xlarge-desktop-width: 1500px;
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: center;
+
+    @include tablet {
+
+        height: 2rem;
+    }
+
+    /*@include xs-mobile-landscape {
+
+        margin-bottom: .5rem;
+
+    }*/
 
     /*@include desktop {
 
