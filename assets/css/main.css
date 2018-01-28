@@ -1,121 +1,78 @@
-html {
-  font-size: 12px; }
+/*
+Error: Undefined mixin 'xl-mobile-landscape'.
+        on line 225 of main.scss, in `xl-mobile-landscape'
+        from line 225 of main.scss
 
-html, body {
-  border: 0;
-  margin: 0;
-  padding: 0; }
+220:         justify-content: left;
+221:         left: 8vw;
+222: 
+223:     }
+224: 
+225:     @include xl-mobile-landscape {
+226: 
+227:         position: relative;
+228:         top: 5rem;
+229:         width: 90vw;
+230:         display: flex;
 
-.background {
-  background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-CONTRAST-UP.jpg");
-  background-attachment: fixed;
-  background-position: 50% 0%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw; }
-
-.logo {
-  position: relative;
-  top: 14rem;
-  left: 10vw;
-  width: 95vw; }
-
-.logo__title {
-  margin: 0; }
-
-.logo__title--font {
-  font-family: "Lobster", cursive;
-  font-size: 8rem;
-  color: #001541; }
-
-.search-container {
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  width: 40vw;
-  justify-content: center;
-  position: relative;
-  left: 30vw;
-  top: 30vh; }
-  .search-container p {
-    font-family: "Pontano Sans", sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    margin-top: 0; }
-
-.search-container--color {
-  background-color: #ffffff4d;
-  border-radius: 50px;
-  border: 1px solid #414141;
-  box-shadow: 2px 4px 6px 0px #592b15; }
-
-.search-buttons, .search-bar, .go-button {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  /*transform: translateY(-50%);*/ }
-
-.search-buttons__button {
-  margin: 1.5rem; }
-  .search-buttons__button p {
-    margin-top: .3rem;
-    margin-bottom: .3rem;
-    font-family: "Pontano Sans", sans-serif;
-    font-size: 1rem;
-    color: #010b20; }
-
-.search-buttons__button__element--style {
-  width: 6rem;
-  height: 5rem;
-  border-radius: 0.6rem;
-  border: 1px solid #000000b2;
-  box-shadow: 2px 4px 6px 0px #592b15;
-  background-color: rgba(0, 21, 65, 0.09);
-  display: flex;
-  flex-direction: column;
-  align-content: center; }
-
-.search-buttons__icon--style {
-  font-size: 1.6rem;
-  color: #010b20; }
-
-.go-button {
-  margin-top: 5rem; }
-
-/*.search-bar--style{
-
-    width: 250px;
-    height: 25px;
-    border-radius: 6px;
-    border: 1px solid #000;
-}*/
-.go-button__button--style {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 3rem;
-  box-shadow: 2px 4px 6px 0px #592b15;
-  border: 2px solid rgba(255, 255, 255, 0.747);
-  background-color: #217219;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Pontano Sans", sans-serif;
-  font-size: 1rem;
-  font-size: 2rem;
-  margin: 0px;
-  color: #fff; }
-
-.search-bar__input {
-  width: 25rem;
-  height: 2.5rem;
-  border-radius: 0.3rem;
-  border: 1px solid #000;
-  margin-bottom: 50px;
-  box-shadow: 2px 4px 6px 0px #592b15;
-  font-family: "Pontano Sans", sans-serif;
-  font-size: 1.2rem;
-  text-align: center; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+main.scss:225:in `xl-mobile-landscape'
+main.scss:225
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `block in with_mixin'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `with_mixin'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'xl-mobile-landscape'.\A         on line 225 of main.scss, in `xl-mobile-landscape'\A         from line 225 of main.scss\A \A 220:         justify-content: left;\A 221:         left: 8vw;\A 222: \A 223:     }\A 224: \A 225:     @include xl-mobile-landscape {\A 226: \A 227:         position: relative;\A 228:         top: 5rem;\A 229:         width: 90vw;\A 230:         display: flex;"; }

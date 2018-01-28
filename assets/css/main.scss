@@ -22,14 +22,124 @@ $button-font:"Pontano Sans", sans-serif;
 
 $button-shadow: 2px 4px 6px 0px rgb(89, 43, 21);
 
+// MEDIA QUERIES
+
+$xs-mobile-height: 320px;
+$mobile-height: 375px;
+$tablet-height: 768px;
+
+$xs-mobile-width: 320px;
+$mobile-width: 500px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$large-desktop-width: 1200px;
+$xlarge-desktop-width: 1500px;
+
+@mixin xs-mobile-landscape {
+
+    @media(min-width:$mobile-width) and (min-height:$xs-mobile-height) {
+
+        @content;
+
+    }
+}
+
+@mixin mobile-landscape {
+
+    @media(min-width:$mobile-width) and (min-height: $mobile-height) {
+
+        @content;
+
+    }
+
+}
+
+
+@mixin xl-mobile-portrait {
+
+    @media(min-width:$xs-mobile-width) and (min-height: $tablet-height) {
+
+        @content;
+
+    }
+
+}
+
+@mixin tablet-portrait {
+
+    @media(min-width:$tablet-width) and (min-height: $tablet-height) {
+
+        @content;
+
+    }
+}
+
+@mixin xs-mobile {
+
+    @media(min-width:$xs-mobile-width) and (max-width:$mobile-width - 1px) {
+        
+        @content;
+    }
+}
+
+@mixin mobile {
+
+    @media(min-width:$mobile-width) and (max-width:$tablet-width - 1px) {
+        
+        @content;
+    }
+}
+
+@mixin tablet {
+
+    @media(min-width:$tablet-width) and (max-width:$desktop-width - 1px) {
+        
+        @content;
+    }
+}
+
+@mixin desktop {
+
+    @media(min-width:$desktop-width) and (max-width:$large-desktop-width - 1px) {
+        
+        @content;
+    }
+}
+
+@mixin large {
+
+    @media(min-width:$large-desktop-width) and (max-width:$xlarge-desktop-width - 1px){
+
+        @content;
+    }
+}
+
+@mixin xlarge {
+
+    @media(min-width:$xlarge-desktop-width){
+
+        @content;
+    }
+}
+
+
+//----------------------------------------//
+
 // MIXINS //
+
+@mixin logo-text-mobile {
+
+    font-family: $logo-font;
+    font-size: 6rem;
+    color: #001541;
+    
+}
 
 @mixin logo-text-desktop {
 
     font-family: $logo-font;
     font-size: 8rem;
     color: #001541;
-    
 }
 
 @mixin button-text-desktop {
@@ -67,7 +177,8 @@ $button-shadow: 2px 4px 6px 0px rgb(89, 43, 21);
 //-------------------------------------------------------------//
 
 
-// LANDING PAGE //
+//-------------------- LANDING PAGE --------------------------//
+
 .background {
 
     background-image: url("/Users/dafyddarchard/Documents/WEB_DESIGN_STUFF/Code_Institute/stream-one-interactive-front-end/assets/images/puppy-pxhere.com-1920-1080-CONTRAST-UP.jpg");
@@ -83,10 +194,107 @@ $button-shadow: 2px 4px 6px 0px rgb(89, 43, 21);
 .logo {
 
     position: relative;
-    top: 14rem;
-    left: 10vw;
-    width: 95vw;
+    top: 15rem;
+    //left: 10vw;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+   @include xs-mobile-landscape {
+
+        position: relative;
+        top: 2.5rem;
+        width: 92vw;
+        display: flex;
+        justify-content: left;
+        left: 8vw;
+
+    }
+
+    @include mobile-landscape {
+
+        position: relative;
+        top: 3.5rem;
+        width: 92vw;
+        display: flex;
+        justify-content: left;
+        left: 8vw;
+
+    }
+
+    @include xl-mobile-landscape {
+
+        position: relative;
+        top: 5rem;
+        width: 90vw;
+        display: flex;
+        justify-content: left; 
+        left: 10vw;
+    }
+    /*@include xs-mobile-portrait {
+
+        position: relative;
+        top: 20rem;
+        //left: 10vw;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+
+    }*/
+    @include xs-mobile {
+
+        position: relative;
+        top: 18rem;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        left:0;
+   
+    }
+
+   @include tablet-portrait {
+
+        position: relative;
+        top: 26rem;        
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        left:0;
+   
+    }
+
+    @include desktop {
+
+        position: relative;
+        top: 9rem;
+        left: 5vw;
+        width: 95vw;
+        display: flex;
+        justify-content: left;
+        
+    }    
+
+    @include large {
+
+        position: relative;
+        top: 7rem;
+        left: 5vw;
+        width: 95vw;
+        display: flex;
+        justify-content: left;
     
+    }
+
+    @include xlarge {
+
+        position: relative;
+        top: 14rem;
+        left: 10vw;
+        width: 90vw;
+        display: flex;
+        justify-content: left;
+       
+    }
 }
 .logo__title {
 
@@ -95,30 +303,54 @@ $button-shadow: 2px 4px 6px 0px rgb(89, 43, 21);
 
 .logo__title--font {
 
-    @include logo-text-desktop;
+    @include logo-text-mobile;
 
+    @include xs-mobile-landscape {
+
+        font-size: 4rem;
+    }
+
+    @include large {
+
+        @include logo-text-desktop;
+
+    }
+
+    @include xlarge {
+
+        @include logo-text-desktop;
+
+
+    }
 }
 
 // --------------- SEARCH BUTTONS ---------------//
 
 .search-container {
 
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    width: 40vw;
-    justify-content: center;
-    position: relative;
-    left: 30vw;
-    top: 30vh;
+    @include desktop {
 
-    p {
-        font-family: $button-font;
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        width: 40vw;
+        justify-content: center;
+        position: relative;
+        left: 30vw;
+        top: 30vh;
+
+        p {
+            font-family: $button-font;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 0;
+        }
+
     }
+    
+
+    
    
     
 }
