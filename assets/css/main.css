@@ -308,11 +308,7 @@ html, body {
   border-radius: 0.6rem;
   border: 1px solid #d56d05c7;
   box-shadow: 2px 4px 6px 0px #592b15;
-  background-color: #010b20e6;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center; }
+  background-color: #010b20e6; }
   @media (min-width: 700px) and (min-height: 1024px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -320,11 +316,7 @@ html, body {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center; } }
+      background-color: #010b20e6; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -332,11 +324,7 @@ html, body {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center; } }
+      background-color: #010b20e6; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -344,11 +332,7 @@ html, body {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center; } }
+      background-color: #010b20e6; } }
   @media (min-width: 1500px) {
     .search-buttons__button__element--style {
       width: 12rem;
@@ -356,11 +340,7 @@ html, body {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      justify-content: center; } }
+      background-color: #010b20e6; } }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
