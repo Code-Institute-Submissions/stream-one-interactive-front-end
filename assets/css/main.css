@@ -7,37 +7,40 @@ html, body {
   padding: 0; }
 
 .background {
-  position: relative;
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP.jpg");
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100vw; }
-
-.nav {
-  height: 2.5rem;
   width: 100vw;
-  background-color: #e7e7e7;
+  position: relative; }
+
+nav {
+  height: 50vh;
+  width: 100vw;
+  background-color: #ffffff;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
-  font-size: 1.5rem;
+  font-size: 4rem;
   color: #010b20e6;
-  border: 1px solid #010b20e6;
-  padding: 0rem 0.2rem;
-  border-radius: .2rem;
-  background-color: #ffffffe6; }
+  /* text-align: center; */
+  margin: 0;
+  /* position: relative; */
+  /* top: 15vh; */
+  border: 2px solid #010b20e6;
+  padding: 0rem 0.7rem;
+  border-radius: .5rem; }
 
 .logo {
   position: relative;
   top: 15rem;
   width: 100vw;
-  display: flex;
+  display: none;
   justify-content: center;
     /*@include mobile {
 
@@ -161,7 +164,7 @@ html, body {
 
 .search-container {
   position: relative;
-  top: 19vh;
+  top: 25vh;
         /*@include xl-mobile-portrait {
 
             top: 28vh;
@@ -365,7 +368,11 @@ html, body {
   color: #d56c05; }
 
 .go-button {
-  margin-top: 1rem;
+  margin-top: 0rem;
+  padding-bottom: 3.5rem;
+  background-color: red;
+  padding-top: 3.5rem;
+  width: 100vw;
     /*@include desktop {
 
         margin-top: 5rem;
@@ -435,7 +442,7 @@ html, body {
   height: 1.5rem;
   border-radius: 0.3rem;
   border: 1px solid #000;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3.5rem;
   box-shadow: 2px 4px 6px 0px #4b2413;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1.2rem;
