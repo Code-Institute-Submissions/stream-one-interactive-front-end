@@ -186,7 +186,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin search-button-mobile {
 
-    width: 5rem;
+    width: 6rem;
     height: 4rem;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
@@ -252,7 +252,7 @@ $xlarge-desktop-width: 1500px;
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
     position: relative;
     
@@ -260,12 +260,13 @@ $xlarge-desktop-width: 1500px;
 
 nav {
 
-    height: 50vh;
+    height: 20vh;
     width: 100vw;
-    background-color: #ffffff;
+    background-color: #1a182d;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0px;
 
 }
 
@@ -281,6 +282,7 @@ nav {
     border: 2px solid #010b20e6;
     padding: 0rem 0.7rem;
     border-radius: .5rem;
+    background-color: #fef9f8;
 
 
 }
@@ -465,11 +467,11 @@ nav {
 
         
     position: relative;
-    top: 25vh;
+    top: 16vh;
 
         @include xs-mobile-landscape {
 
-            top:11vh;
+            top:25vh;
 
         }
 
@@ -480,7 +482,7 @@ nav {
 
         @include mobile-landscape {
 
-            top:14vh;
+            top: 26vh;;
         }
 
         @include xl-mobile-landscape {
@@ -600,20 +602,22 @@ nav {
 
 .search-buttons {
 
-        width: 90vw;
+        width: 100vw;
         position: relative;
-        left: 5vw;
+        left: 0vw;
 
     @include sm-mobile {
 
-        width: 80vw;
-        left: 10vw;
+        width: 100vw;
+        //left: 10vw;
     }
     @include xs-mobile-landscape {
 
-    
-        padding-top: 0rem;
-        padding-bottom: 0rem;
+        width: 100vw;
+        height: 50vh;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        //left: 25vw;
 
     }
 
@@ -650,10 +654,10 @@ nav {
 
 .search-buttons--background {
 
-    background-color: #d5c1c199;
-    border-radius: 6px;
-    box-shadow: $button-shadow;
-    border: 1px solid #000000b3;
+    background-color: #fff9f8;
+    //border-radius: 6px;
+    //box-shadow: $button-shadow;
+    //border: 1px solid #000000b3;
 
    @include tablet-portrait {
 
@@ -685,10 +689,12 @@ nav {
 .search-buttons__button {
 
     margin: 1.5rem;
+    padding-top: 1rem;
 
         @include xs-mobile-landscape {
 
             margin: .5rem;
+            padding-top: 0rem;
         }
 
         @include xl-mobile-landscape {
@@ -748,8 +754,8 @@ nav {
 
     margin-top: 0rem;
     padding-bottom: 3.5rem;
-    background-color: red;
-    padding-top: 3.5rem;
+    /* background-color: red; */
+    padding-top: 2rem;
     width: 100vw;
 
     @include sm-mobile {
@@ -840,14 +846,19 @@ nav {
 .search-bar__input {
 
     width: 20rem;
-    height: 1.5rem;
+    height: 2rem;
     border-radius: 0.3rem;
     border: 1px solid #000;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
     box-shadow: $button-shadow;
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: left;
+
+    @include mobile-landscape {
+
+        margin-bottom: 2.5rem;
+    }
 
     @include tablet {
 
