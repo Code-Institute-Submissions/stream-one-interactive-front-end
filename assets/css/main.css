@@ -69,12 +69,24 @@ html, body {
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80.6vh;
+  height: 100vh;
   width: 100vw;
   position: relative; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .background {
+      height: 120vh; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .background {
+      height: 80vh; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .background {
       height: 100vh; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .background {
+      height: 88vh; } }
+  @media (min-width: 1500px) {
+    .background {
+      height: 88vh; } }
 
 nav {
   height: 20vh;
@@ -84,32 +96,48 @@ nav {
   align-items: center;
   justify-content: center;
   border: 0px; }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 1200px) and (max-width: 1499px) {
     nav {
-      display: none; } }
+      height: 12vh; } }
+  @media (min-width: 1500px) {
+    nav {
+      height: 12vh; } }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
   font-size: 4rem;
-  color: #010b20e6;
+  color: #ffffff;
   /* text-align: center; */
   margin: 0;
   /* position: relative; */
   /* top: 15vh; */
-  border: 2px solid #010b20e6;
-  padding: 0rem 0.7rem;
-  border-radius: .5rem;
-  background-color: #fdeae8; }
+  background-color: #010b20e6; }
   @media (min-width: 768px) and (max-width: 991px) {
     .nav__navtext {
       font-size: 6rem; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .nav__navtext {
+      font-size: 6rem; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .nav__navtext {
+      font-size: 5rem; } }
+  @media (min-width: 1500px) {
+    .nav__navtext {
+      font-size: 7rem; } }
 
-.logo {
-  position: relative;
-  top: 15rem;
-  width: 100vw;
-  display: none;
-  justify-content: center;
+.search-form {
+  display: flex;
+  flex-direction: column; }
+
+/*.logo {
+
+    position: relative;
+    top: 15rem;
+    //left: 10vw;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+
    /*@include xs-mobile-landscape {
         
         position: relative;
@@ -195,7 +223,21 @@ nav {
         left:0;
    
     }*/
-      /*   
+   /* @include desktop {
+
+        position: relative;
+        top: 9rem;
+        left: 3vw;
+        width: 30vw;
+        //padding-left: 0.3rem;
+        display: flex;
+        justify-content: left;
+        border: 2px solid #010b20e6;
+        padding: 0rem 0.7rem;
+        border-radius: .5rem;
+        background-color: #fef9f800;
+        
+    } /*   
 
     @include large {
 
@@ -217,27 +259,22 @@ nav {
         display: flex;
         justify-content: left;
        
-    }*/ }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .logo {
-      position: relative;
-      top: 9rem;
-      left: 3vw;
-      width: 30vw;
-      display: flex;
-      justify-content: left;
-      border: 2px solid #010b20e6;
-      padding: 0rem 0.7rem;
-      border-radius: .5rem;
-      background-color: #fef9f800; } }
-
+    }*/
+/*}
 .logo__title {
-  margin: 0; }
+
+    margin: 0;
+}
 
 .logo__title--font {
-  font-family: "Bungee Shade", cursive;
-  font-size: 4rem;
-  color: #010b20e6;
+
+    @include logo-text-mobile;
+
+    //@include xs-mobile {
+
+        //font-size: 4rem;
+    //}
+
     /*@include xs-mobile-landscape {
 
         font-size: 2.5rem;
@@ -266,11 +303,10 @@ nav {
         @include logo-text-desktop;
 
 
-    }*/ }
-
+    }*/
 .search-container {
   position: relative;
-  top: 17vh;
+  top: 24vh;
         /*@include xs-mobile-landscape {
 
             top:25vh;
@@ -320,13 +356,19 @@ nav {
           }*/ }
   @media (min-width: 500px) and (max-width: 767px) {
     .search-container {
-      top: 23vh; } }
+      top: 27vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .search-container {
       top: 25vh; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-container {
-      top: 27vh; } }
+      top: 30vh; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .search-container {
+      top: 30vh; } }
+  @media (min-width: 1500px) {
+    .search-container {
+      top: 35vh; } }
 
 .instructions {
   visibility: hidden;
@@ -357,10 +399,13 @@ nav {
     
         }*/ }
 
-.search-container--color {
-  background-color: #ffffff00;
-  border-radius: 50px;
-  border: 1px solid rgba(65, 65, 65, 0);
+/*.search-container--color{
+
+    background-color: #ffffff00;
+    border-radius: 50px;
+    border: 1px solid rgba(65, 65, 65, 0);
+     
+
     /*@include xlarge {
 
     background-color: #ffffff4d;
@@ -368,18 +413,17 @@ nav {
     border: 1px solid rgb(65, 65, 65);
     box-shadow: $button-shadow; 
 
-    }*/ }
-
+    }*/
 .search-buttons, .search-bar, .go-button {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   /*transform: translateY(-50%);*/ }
 
 .search-buttons {
   position: relative;
   left: 0vw;
-  height: 46vh;
+  height: 40vh;
    /* @include xs-mobile-landscape {
 
         width: 100vw;
@@ -421,10 +465,10 @@ nav {
     }*/ }
   @media (min-width: 500px) and (max-width: 767px) {
     .search-buttons {
-      height: 56vh; } }
+      height: 32vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .search-buttons {
-      height: 34vh;
+      height: 25vh;
       width: 50vw;
       left: 25vw; } }
   @media (min-width: 992px) and (max-width: 1199px) {
@@ -432,7 +476,17 @@ nav {
       width: 40vw;
       position: relative;
       left: 30vw;
-      height: 40vh; } }
+      height: 22.5rem; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .search-buttons {
+      left: 20vw;
+      height: 11rem;
+      width: 60vw; } }
+  @media (min-width: 1500px) {
+    .search-buttons {
+      left: 15vw;
+      height: 13rem;
+      width: 70vw; } }
 
 .search-buttons--background {
   background-color: #fdeae86e;
@@ -460,6 +514,14 @@ nav {
       border: 1px solid #000000b3;
       border-radius: 0.5rem; } }
   @media (min-width: 992px) and (max-width: 1199px) {
+    .search-buttons--background {
+      border: 1px solid #000000b3;
+      border-radius: 0.5rem; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .search-buttons--background {
+      border: 1px solid #000000b3;
+      border-radius: 0.5rem; } }
+  @media (min-width: 1500px) {
     .search-buttons--background {
       border: 1px solid #000000b3;
       border-radius: 0.5rem; } }
@@ -491,7 +553,7 @@ nav {
 
 .search-buttons__button__element--style {
   width: 6rem;
-  height: 4rem;
+  height: 5rem;
   border-radius: 0.6rem;
   border: 1px solid #d56d05c7;
   box-shadow: 2px 4px 6px 0px #592b15;
@@ -499,28 +561,35 @@ nav {
    /* @include tablet-portrait {
 
         @include search-button-desktop;
-    }*/
-     /*
-
-    @include large {
-
-        @include search-button-desktop;
-    }
-
-    @include xlarge {
-
-        @include search-button-lg-desktop;
-        
-    
     }*/ }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .search-buttons__button__element--style {
+      width: 5rem;
+      height: 4rem; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons__button__element--style {
-      width: 6rem;
-      height: 5rem;
+      width: 7rem;
+      height: 6rem;
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
       background-color: #0e0920; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .search-buttons__button__element--style {
+      width: 7rem;
+      height: 6rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d56d05c7;
+      box-shadow: 2px 4px 6px 0px #592b15;
+      background-color: #0e0920; } }
+  @media (min-width: 1500px) {
+    .search-buttons__button__element--style {
+      width: 11rem;
+      height: 8rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d56d05c7;
+      box-shadow: 2px 4px 6px 0px #592b15;
+      background-color: #010b20e6; } }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
@@ -528,9 +597,9 @@ nav {
 
 .go-button {
   margin-top: 0rem;
-  padding-bottom: 3.5rem;
+  /* padding-bottom: 3.5rem; */
   /* background-color: red; */
-  /* padding-top: 2rem; */
+  padding-top: 2rem;
   width: 100vw;
     /*@include sm-mobile {
 
@@ -562,6 +631,15 @@ nav {
         margin-top: 5rem;
 
     }*/ }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .go-button {
+      margin-top: 3rem; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .go-button {
+      margin-top: 3rem; } }
+  @media (min-width: 1500px) {
+    .go-button {
+      margin-top: 3rem; } }
 
 /*.search-bar--style{
 
@@ -612,6 +690,14 @@ nav {
         height: 9rem;
         border-radius: 4.5rem;
     }*/ }
+  @media (min-width: 1500px) {
+    .go-button__button--style {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 4rem;
+      box-shadow: 2px 4px 6px 0px #4b2413;
+      border: 2px solid white;
+      background-color: #217219; } }
 
 .search-bar__input {
   width: 20rem;
@@ -644,21 +730,17 @@ nav {
     text-align: center;
 
     }*/ }
-  @media (min-width: 768px) and (max-width: 991px) {
-    .search-bar__input {
-      height: 2rem; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-bar__input {
-      height: 2rem;
       width: 25rem; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .search-bar__input {
-      height: 2rem;
+      height: 2.5rem;
       width: 25rem; } }
   @media (min-width: 1500px) {
     .search-bar__input {
-      height: 2rem;
+      height: 2.5rem;
       width: 25rem;
-      margin-bottom: 3.5rem; } }
+      margin-bottom: 2.5rem; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -110,7 +110,7 @@ $xlarge-desktop-width: 1500px;
     }
 }
 
-@mixin mobile {
+@mixin mobile-landscape {
 
     @media(min-width:$mobile-width) and (max-width:$tablet-width - 1px) {
         
@@ -187,7 +187,7 @@ $xlarge-desktop-width: 1500px;
 @mixin search-button-mobile {
 
     width: 6rem;
-    height: 4rem;
+    height: 5rem;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
@@ -201,8 +201,8 @@ $xlarge-desktop-width: 1500px;
 
 @mixin search-button-desktop {
 
-    width: 6rem;
-    height: 5rem;
+    width: 7rem;
+    height: 6rem;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
@@ -216,7 +216,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin search-button-lg-desktop {
 
-    width: 12rem;
+    width: 11rem;
     height: 8rem;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
@@ -240,6 +240,22 @@ $xlarge-desktop-width: 1500px;
     background-color: #217219;
 }
 
+@mixin go-button-large-desktop {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 4rem;
+    box-shadow:$button-shadow;
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: #217219;
+    
+}
+
+@mixin search-buttons-border {
+
+    border: 1px solid #000000b3;
+    border-radius: 0.5rem;
+}
+
 //-------------------------------------------------------------//
 
 
@@ -252,13 +268,35 @@ $xlarge-desktop-width: 1500px;
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80.6vh;
+    height: 100vh;
     width: 100vw;
     position: relative;
+
+    @include mobile-landscape {
+
+        height: 120vh;
+    
+    }
+
+    @include tablet {
+
+        height: 80vh;
+    }
 
     @include desktop {
 
         height: 100vh;
+    }
+
+    @include large {
+
+        height: 88vh;
+        
+    }
+
+    @include xlarge {
+
+        height: 88vh;
     }
     
 }
@@ -273,9 +311,14 @@ nav {
     justify-content: center;
     border: 0px;
 
-    @include desktop {
+    @include large {
 
-        display: none;
+        height: 12vh;
+    }
+
+    @include xlarge {
+
+        height: 12vh;
     }
 }
 
@@ -283,23 +326,43 @@ nav {
 
     font-family: "Bungee Shade", cursive;
     font-size: 4rem;
-    color: #010b20e6;
+    color: #ffffff;
     /* text-align: center; */
     margin: 0;
     /* position: relative; */
     /* top: 15vh; */
-    border: 2px solid #010b20e6;
-    padding: 0rem 0.7rem;
-    border-radius: .5rem;
-    background-color: #fdeae8;
+    //border: 2px solid #010b20e6;
+    //padding: 0rem 0.7rem;
+    //border-radius: .5rem;
+    background-color: #010b20e6;
 
     @include tablet {
 
         font-size: 6rem;
     }
+
+    @include desktop {
+
+        font-size: 6rem;
+    }
+    @include large {
+
+        font-size: 5rem;
+    }
+
+    @include xlarge {
+
+        font-size: 7rem;
+    }
 }
 
-.logo {
+.search-form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+/*.logo {
 
     position: relative;
     top: 15rem;
@@ -395,7 +458,7 @@ nav {
    
     }*/
 
-    @include desktop {
+   /* @include desktop {
 
         position: relative;
         top: 9rem;
@@ -432,7 +495,7 @@ nav {
         justify-content: left;
        
     }*/
-}
+/*}
 .logo__title {
 
     margin: 0;
@@ -476,7 +539,7 @@ nav {
 
 
     }*/
-}
+//}*/
 
 // --------------- SEARCH BUTTONS ---------------//
 
@@ -484,7 +547,7 @@ nav {
 
         
     position: relative;
-    top: 17vh;
+    top: 24vh;
 
         /*@include xs-mobile-landscape {
 
@@ -492,9 +555,9 @@ nav {
 
         }*/
 
-       @include mobile {
+       @include mobile-landscape {
 
-            top: 23vh;
+            top: 27vh;
         }
 
        /* @include mobile-landscape {
@@ -519,7 +582,17 @@ nav {
 
         @include desktop {
 
-            top: 27vh;
+            top: 30vh;
+        }
+
+        @include large {
+
+            top: 30vh;
+        }
+
+        @include xlarge {
+
+            top: 35vh;
         }
 /*
         @include large {
@@ -589,7 +662,7 @@ nav {
    
     
 
-.search-container--color{
+/*.search-container--color{
 
     background-color: #ffffff00;
     border-radius: 50px;
@@ -605,12 +678,12 @@ nav {
 
     }*/
     
-}
+//}
 
 .search-buttons , .search-bar, .go-button{
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     //position: relative;
    // top: 30vh;
@@ -622,17 +695,17 @@ nav {
         //width: 100vw;
         position: relative;
         left: 0vw;
-        height: 46vh;
+        height: 40vh;
 
-    @include mobile {
+    @include mobile-landscape {
 
-        height: 56vh;
+        height: 32vh;
         //left: 10vw;
     }
 
     @include tablet {
 
-        height: 34vh;
+        height: 25vh;
         width: 50vw;
         left: 25vw;
     }
@@ -642,7 +715,22 @@ nav {
         width: 40vw;
         position: relative;
         left: 30vw;
-        height: 40vh;
+        height: 22.5rem;;
+    }
+
+    @include large {
+
+        left: 20vw;
+        height: 11rem;
+        width: 60vw;
+    }
+
+    @include xlarge {
+
+        
+        left: 15vw;
+        height: 13rem;
+        width: 70vw;
     }
    /* @include xs-mobile-landscape {
 
@@ -694,18 +782,27 @@ nav {
 
    @include tablet {
 
-    border: 1px solid #000000b3;
-    border-radius: 0.5rem;
+    @include search-buttons-border;
 
    }
 
    @include desktop {
 
-    border: 1px solid #000000b3;
-    border-radius: 0.5rem;
-    //background-color: #fff9f8e3;
+    @include search-buttons-border;
     
    }
+
+   @include large {
+
+    @include search-buttons-border;
+   }
+
+   @include xlarge {
+
+    @include search-buttons-border;
+
+   }
+   
 
    /*@include desktop {
 
@@ -732,6 +829,8 @@ nav {
 
     margin: 1.5rem;
     padding-top: 1rem;
+    //flex-grow: 1;
+    //flex-shrink: 1;
 
         /*@include xs-mobile-landscape {
 
@@ -765,15 +864,21 @@ nav {
 
         @include search-button-desktop;
     }*/
+    @include mobile-landscape {
 
+    width: 5rem;
+    height: 4rem;
+
+    }
     @include desktop {
 
         @include search-button-desktop;
-    }/*
-
+    }
+    
     @include large {
-
+     
         @include search-button-desktop;
+        
     }
 
     @include xlarge {
@@ -781,7 +886,7 @@ nav {
         @include search-button-lg-desktop;
         
     
-    }*/
+    }
 
 }
 
@@ -796,10 +901,28 @@ nav {
 .go-button {
 
     margin-top: 0rem;
-    padding-bottom: 3.5rem;
+    /* padding-bottom: 3.5rem; */
     /* background-color: red; */
-    /* padding-top: 2rem; */
+    padding-top: 2rem;
     width: 100vw;
+
+    @include tablet {
+
+        margin-top: 3rem;
+    }
+
+    @include desktop {
+
+        margin-top: 3rem;
+    }
+
+
+    @include xlarge {
+
+       
+        margin-top: 3rem;
+        
+    }
 
     /*@include sm-mobile {
 
@@ -881,6 +1004,11 @@ nav {
         height: 9rem;
         border-radius: 4.5rem;
     }*/
+
+    @include xlarge {
+
+        @include go-button-large-desktop;
+    }
 }
 
 
@@ -903,28 +1031,23 @@ nav {
         margin-bottom: 2.5rem;
     }*/
 
-    @include tablet {
-
-        height: 2rem;
-    }
 
     @include desktop {
 
-        height: 2rem;
         width: 25rem;
     }
 
     @include large {
 
-        height: 2rem;
+        height: 2.5rem;
         width: 25rem;
     }
 
     @include xlarge {
 
-        height: 2rem;
+        height: 2.5rem;
         width: 25rem;
-        margin-bottom: 3.5rem;
+        margin-bottom: 2.5rem;
     }
 
     /*@include xs-mobile-landscape {
