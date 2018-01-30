@@ -36,63 +36,7 @@ $desktop-width: 992px;
 $large-desktop-width: 1200px;
 $xlarge-desktop-width: 1500px;
 
-/*@mixin xs-mobile-landscape {
 
-    @media(min-width:$mobile-width) and (min-height:$xs-mobile-height) {
-
-        @content;
-
-    }
-}
-
-@mixin mobile-landscape {
-
-    @media(min-width:$mobile-width) and (min-height: $mobile-height) {
-
-        @content;
-
-    }
-
-}
-
-
-@mixin xl-mobile-landscape {
-
-    @media(min-width:$tablet-width) and (min-height: $mobile-height) {
-
-        @content;
-
-    }
-
-}
-
-@mixin xl-mobile-portrait {
-
-    @media(min-width:$xs-mobile-width) and (min-height: $tablet-width) {
-
-        @content;
-
-    }
-
-}
-
-@mixin tablet-portrait {
-
-    @media(min-width:$tablet-width) and (min-height: $tablet-height) {
-
-        @content;
-
-    }
-}
-
-@mixin tablet-landscape {
-
-    @media(min-width:$tablet-height) and (min-height: $tablet-width) {
-
-        @content;
-
-    }
-}*/
 
 @mixin xs-mobile {
 
@@ -155,28 +99,6 @@ $xlarge-desktop-width: 1500px;
 
 // MIXINS //
 
-@mixin logo-text-mobile {
-
-    font-family: $logo-font;
-    font-size: 4rem;
-    color: #010b20e6;;
-    
-}
-
-@mixin logo-text-tablet {
-
-    font-family: $logo-font;
-    font-size: 7rem;
-    color: #010b20e6;;
-    
-}
-
-@mixin logo-text-desktop {
-
-    font-family: $logo-font;
-    font-size: 8rem;
-    color: #010b20e6;;
-}
 
 @mixin button-text-desktop {
 
@@ -192,10 +114,7 @@ $xlarge-desktop-width: 1500px;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
     background-color:#0e0920;
-    //display: flex;
-    //flex-direction: column;
-    //align-content: center;
-    //justify-content: center;
+    
     
 }
 
@@ -207,10 +126,7 @@ $xlarge-desktop-width: 1500px;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
     background-color: #0e0920;
-    //display: flex;
-    //flex-direction: column;
-    //align-content: center;
-    //justify-content: center;
+    
     
 }
 
@@ -222,10 +138,7 @@ $xlarge-desktop-width: 1500px;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
     background-color: #010b20e6;
-    //display: flex;
-    //flex-direction: column;
-    //align-content: center;
-    //justify-content: center;
+   
 }
 
 
@@ -327,13 +240,7 @@ nav {
     font-family: "Bungee Shade", cursive;
     font-size: 4rem;
     color: #ffffff;
-    /* text-align: center; */
     margin: 0;
-    /* position: relative; */
-    /* top: 15vh; */
-    //border: 2px solid #010b20e6;
-    //padding: 0rem 0.7rem;
-    //border-radius: .5rem;
     background-color: #010b20e6;
 
     @include tablet {
@@ -362,57 +269,6 @@ nav {
     flex-direction: column;
 }
 
-/*.logo {
-
-    position: relative;
-    top: 15rem;
-    //left: 10vw;
-    width: 100vw;
-    display: none;
-    justify-content: center;
-
-   /*@include xs-mobile-landscape {
-        
-        position: relative;
-        top: 4rem;
-        width: 92vw;
-        display: none;
-        justify-content: left;
-        left: 2vw;
-
-    }
-
-    @include mobile-landscape {
-
-        position: relative;
-        top: 4rem;
-        width: 92vw;
-        display: none;
-        justify-content: left;
-        left: 8vw;
-
-    }
-
-    @include xl-mobile-landscape {
-
-        position: relative;
-        text-outline: 6rem;
-        width: 90vw;
-        display: none;
-        justify-content: left; 
-        left: 7vw;
-    }
-  
-    @include xs-mobile {
-
-        position: relative;
-        top: 14.5rem;
-        width: 100vw;
-        display: none;
-        justify-content: center;
-        left:0;
-   
-    }
 
     @include sm-mobile {
 
@@ -425,121 +281,7 @@ nav {
    
     }
 
-    /*@include mobile {
-
-        position: relative;
-        top: 18rem;
-        width: 100vw;
-        display: none;
-        justify-content: center;
-        left:0;
-   
-    }*/
-
-   /*@include xl-mobile-portrait {
-
-        position: relative;
-        top: 22rem;
-        //left: 10vw;
-        width: 100vw;
-        display: none;
-        justify-content: center;
-
-    }
-
-   @include tablet-portrait {
-
-        position: relative;
-        top: 28rem;        
-        width: 100vw;
-        display: none;
-        justify-content: center;
-        left:0;
-   
-    }*/
-
-   /* @include desktop {
-
-        position: relative;
-        top: 9rem;
-        left: 3vw;
-        width: 30vw;
-        //padding-left: 0.3rem;
-        display: flex;
-        justify-content: left;
-        border: 2px solid #010b20e6;
-        padding: 0rem 0.7rem;
-        border-radius: .5rem;
-        background-color: #fef9f800;
-        
-    } /*   
-
-    @include large {
-
-        position: relative;
-        top: 8rem;
-        left: 3vw;
-        width: 97vw;
-        display: flex;
-        justify-content: left;
     
-    }
-
-    @include xlarge {
-
-        position: relative;
-        top: 13rem;
-        left: 3vw;
-        width: 97vw;
-        display: flex;
-        justify-content: left;
-       
-    }*/
-/*}
-.logo__title {
-
-    margin: 0;
-}
-
-.logo__title--font {
-
-    @include logo-text-mobile;
-
-    //@include xs-mobile {
-
-        //font-size: 4rem;
-    //}
-
-    /*@include xs-mobile-landscape {
-
-        font-size: 2.5rem;
-    }
-
-    @include tablet-portrait {
-
-        @include logo-text-tablet;
-    }
-
-   @include tablet-landscape {
-
-        font-size: 4rem;
-
-    }
-
-    @include large {
-
-       @include logo-text-tablet;
-        font-size: 6rem;
-
-    }
-
-    @include xlarge {
-
-        @include logo-text-desktop;
-
-
-    }*/
-//}*/
 
 // --------------- SEARCH BUTTONS ---------------//
 
@@ -549,31 +291,12 @@ nav {
     position: relative;
     top: 24vh;
 
-        /*@include xs-mobile-landscape {
-
-            top:25vh;
-
-        }*/
 
        @include mobile-landscape {
 
             top: 27vh;
         }
 
-       /* @include mobile-landscape {
-
-            top: 26vh;;
-        }*/
-
-       /* @include xl-mobile-landscape {
-
-            top: 18vh;
-        }
-
-        /*@include xl-mobile-portrait {
-
-            top: 28vh;
-        }*/
 
         @include tablet {
 
@@ -594,35 +317,7 @@ nav {
 
             top: 35vh;
         }
-/*
-        @include large {
 
-            top: 20vh;
-        }
-
-        @include xlarge {
-
-            
-            top: 22vh;
-        }
-    /*@include desktop {
-
-        display: flex;
-        flex-direction: column;
-        height: 50vh;
-        width: 40vw;
-        justify-content: center;
-        position: relative;
-        left: 30vw;
-        top: 30vh;
-
-        p {
-            font-family: $button-font;
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            margin-top: 0;
-        }*/
 
     }
 
@@ -634,27 +329,7 @@ nav {
         margin-bottom: 2rem;
         margin-top: 0;
 
-       /* @include xs-mobile-landscape {
-
-            visibility: hidden;
-            font-family: $button-font;
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            margin-top: 0;
-
-        }
-
-        /*@include desktop {
-
-        visibility: hidden;
-        font-family: $button-font;
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        margin-top: 0;
-    
-        }*/
+       
     }
     
 
@@ -662,37 +337,19 @@ nav {
    
     
 
-/*.search-container--color{
 
-    background-color: #ffffff00;
-    border-radius: 50px;
-    border: 1px solid rgba(65, 65, 65, 0);
-     
-
-    /*@include xlarge {
-
-    background-color: #ffffff4d;
-    border-radius: 50px;
-    border: 1px solid rgb(65, 65, 65);
-    box-shadow: $button-shadow; 
-
-    }*/
-    
-//}
 
 .search-buttons , .search-bar, .go-button{
 
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    //position: relative;
-   // top: 30vh;
-    /*transform: translateY(-50%);*/
+    
 }
 
 .search-buttons {
 
-        //width: 100vw;
+        
         position: relative;
         left: 0vw;
         height: 40vh;
@@ -700,7 +357,7 @@ nav {
     @include mobile-landscape {
 
         height: 32vh;
-        //left: 10vw;
+       
     }
 
     @include tablet {
@@ -732,53 +389,13 @@ nav {
         height: 13rem;
         width: 70vw;
     }
-   /* @include xs-mobile-landscape {
-
-        width: 100vw;
-        height: 50vh;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        //left: 25vw;
-
-    }
-
-    @include tablet-portrait {
-
-        width: 50vw;
-        left: 25vw;
-    }
-
-    @include desktop {
-
-        width: 40vw;
-        left: 30vw;
-    }
-
-    @include large {
-
-        width: 30vw;
-        left: 35vw;
-    }
-
-    @include large {
-
-        width: 30vw;
-        left: 35vw;
-    }
-
-    @include xlarge {
-
-        width: 40vw;
-        left: 30vw;
-    }*/
+   
 }
 
 .search-buttons--background {
 
     background-color: #fdeae86e;
-    //border-radius: 6px;
-    //box-shadow: $button-shadow;
-    //border: 1px solid #000000b3;
+   
 
    @include tablet {
 
@@ -803,50 +420,13 @@ nav {
 
    }
    
-
-   /*@include desktop {
-
-    border: 1px solid #000000b3;
-    //border-radius: 25px;
-
-   }
-
-   @include large {
-
-    border: 1px solid #000000b3;
-    //border-radius: 25px;
-
-   }
-
-   @include xlarge {
-
-    //border-radius: 25px;
-
-   }*/
 }
 
 .search-buttons__button {
 
     margin: 1.5rem;
     padding-top: 1rem;
-    //flex-grow: 1;
-    //flex-shrink: 1;
 
-        /*@include xs-mobile-landscape {
-
-            margin: .5rem;
-            padding-top: 0rem;
-        }
-
-        @include xl-mobile-landscape {
-
-            margin: 1.5rem;
-        }
-
-        @include xlarge {
-
-            margin: 2.5rem;
-        }*/
         p {
 
         margin-top: .3rem;
@@ -860,10 +440,7 @@ nav {
 
     @include search-button-mobile;
 
-   /* @include tablet-portrait {
-
-        @include search-button-desktop;
-    }*/
+   
     @include mobile-landscape {
 
     width: 5rem;
@@ -901,8 +478,6 @@ nav {
 .go-button {
 
     margin-top: 0rem;
-    /* padding-bottom: 3.5rem; */
-    /* background-color: red; */
     padding-top: 2rem;
     width: 100vw;
 
@@ -924,45 +499,9 @@ nav {
         
     }
 
-    /*@include sm-mobile {
-
-        margin-top: 2rem;
-    }
-
-    @include tablet-portrait {
-
-        margin-top: 7rem;
-
-    }
-
-    @include desktop {
-
-        margin-top: 4rem;
-    }
-
-    @include large {
-
-        margin-top: 4rem;
-    }
-
-    @include xlarge {
-
-        margin-top: 4rem;
-    }
-    /*@include desktop {
-
-        margin-top: 5rem;
-
-    }*/
+   
 }
 
-/*.search-bar--style{
-
-    width: 250px;
-    height: 25px;
-    border-radius: 6px;
-    border: 1px solid #000;
-}*/
 
 .go-button__button--style {
 
@@ -976,34 +515,6 @@ nav {
     font-size: 2rem;
     margin: 0px;
     color: #fff;
-
-    /*@include tablet-portrait {
-
-        width: 8rem;
-        height: 8rem;
-        border-radius: 4rem;
-    }
-
-    @include desktop {
-
-        width: 8rem;
-        height: 8rem;
-        border-radius: 4rem;
-    }
-
-    @include large {
-
-        width: 8rem;
-        height: 8rem;
-        border-radius: 4rem;
-    }
-    
-    @include xlarge {
-
-        width: 9rem;
-        height: 9rem;
-        border-radius: 4.5rem;
-    }*/
 
     @include xlarge {
 
@@ -1021,15 +532,9 @@ nav {
     border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
-    //box-shadow: $button-shadow;
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: left;
-
-   /* @include mobile-landscape {
-
-        margin-bottom: 2.5rem;
-    }*/
 
 
     @include desktop {
@@ -1050,24 +555,5 @@ nav {
         margin-bottom: 2.5rem;
     }
 
-    /*@include xs-mobile-landscape {
-
-        margin-bottom: .5rem;
-
-    }*/
-
-    /*@include desktop {
-
-    width: 25rem;
-    height: 2.5rem;
-    border-radius: 0.3rem;
-    border: 1px solid #000;
-    margin-bottom: 50px;
-    box-shadow: $button-shadow;
-    font-family: $button-font;
-    font-size: 1.2rem;
-    text-align: center;
-
-    }*/
 }
 
