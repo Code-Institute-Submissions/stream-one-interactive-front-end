@@ -99,7 +99,7 @@ nav {
   border: 2px solid #010b20e6;
   padding: 0rem 0.7rem;
   border-radius: .5rem;
-  background-color: #fef9f8; }
+  background-color: #fdeae8; }
   @media (min-width: 768px) and (max-width: 991px) {
     .nav__navtext {
       font-size: 6rem; } }
@@ -436,7 +436,7 @@ nav {
       height: 40vh; } }
 
 .search-buttons--background {
-  background-color: #fff9f8;
+  background-color: #fdeae8;
    /*@include desktop {
 
     border: 1px solid #000000b3;
@@ -463,8 +463,7 @@ nav {
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons--background {
       border: 1px solid #000000b3;
-      border-radius: 0.5rem;
-      background-color: #fff9f8e3; } }
+      border-radius: 0.5rem; } }
 
 .search-buttons__button {
   margin: 1.5rem;
