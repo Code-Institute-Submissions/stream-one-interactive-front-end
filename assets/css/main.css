@@ -270,7 +270,7 @@ nav {
 
 .search-container {
   position: relative;
-  top: 17.5vh;
+  top: 17vh;
         /*@include xs-mobile-landscape {
 
             top:25vh;
@@ -436,7 +436,7 @@ nav {
       height: 40vh; } }
 
 .search-buttons--background {
-  background-color: #fdeae8;
+  background-color: #fdeae86e;
    /*@include desktop {
 
     border: 1px solid #000000b3;
