@@ -69,7 +69,7 @@ html, body {
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 80.6vh;
   width: 100vw;
   position: relative; }
   @media (min-width: 992px) and (max-width: 1199px) {
@@ -377,10 +377,9 @@ nav {
   /*transform: translateY(-50%);*/ }
 
 .search-buttons {
-  width: 100vw;
   position: relative;
   left: 0vw;
-  height: 50vh;
+  height: 46vh;
    /* @include xs-mobile-landscape {
 
         width: 100vw;
