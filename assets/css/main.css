@@ -266,4 +266,13 @@ nav {
       width: 25rem;
       margin-bottom: 2.5rem; } }
 
+.results {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: relative; }
+
+.results--background {
+  background-color: #feefeb; }
+
 /*# sourceMappingURL=main.css.map */
