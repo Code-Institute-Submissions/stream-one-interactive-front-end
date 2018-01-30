@@ -31,12 +31,12 @@ $tablet-height: 1024px;
 $xs-mobile-width: 320px;
 $sm-mobile-width: 375px;
 $mobile-width: 500px;
-$tablet-width: 700px;
+$tablet-width: 768px;
 $desktop-width: 992px;
 $large-desktop-width: 1200px;
 $xlarge-desktop-width: 1500px;
 
-@mixin xs-mobile-landscape {
+/*@mixin xs-mobile-landscape {
 
     @media(min-width:$mobile-width) and (min-height:$xs-mobile-height) {
 
@@ -92,7 +92,7 @@ $xlarge-desktop-width: 1500px;
         @content;
 
     }
-}
+}*/
 
 @mixin xs-mobile {
 
@@ -159,7 +159,7 @@ $xlarge-desktop-width: 1500px;
 
     font-family: $logo-font;
     font-size: 4rem;
-    color: #13182a;;
+    color: #010b20e6;;
     
 }
 
@@ -167,7 +167,7 @@ $xlarge-desktop-width: 1500px;
 
     font-family: $logo-font;
     font-size: 7rem;
-    color: #13182a;;
+    color: #010b20e6;;
     
 }
 
@@ -175,7 +175,7 @@ $xlarge-desktop-width: 1500px;
 
     font-family: $logo-font;
     font-size: 8rem;
-    color: #13182a;;
+    color: #010b20e6;;
 }
 
 @mixin button-text-desktop {
@@ -191,7 +191,7 @@ $xlarge-desktop-width: 1500px;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
-    background-color:#010b20e6;
+    background-color:#0e0920;
     //display: flex;
     //flex-direction: column;
     //align-content: center;
@@ -206,7 +206,7 @@ $xlarge-desktop-width: 1500px;
     border-radius: 0.6rem;
     border: 1px solid #d56d05c7;
     box-shadow: 2px 4px 6px 0px #592b15;
-    background-color: #010b20e6;
+    background-color: #0e0920;
     //display: flex;
     //flex-direction: column;
     //align-content: center;
@@ -247,7 +247,7 @@ $xlarge-desktop-width: 1500px;
 
 .background {
 
-    background-image: url("../images/puppy-pxhere.com-1920-1080-BRIGHTER-2.jpg");
+    background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
     background-repeat: no-repeat;
@@ -255,6 +255,11 @@ $xlarge-desktop-width: 1500px;
     height: 80vh;
     width: 100vw;
     position: relative;
+
+    @include desktop {
+
+        height: 100vh;
+    }
     
 }
 
@@ -262,12 +267,16 @@ nav {
 
     height: 20vh;
     width: 100vw;
-    background-color: #1a182d;
+    background-color: #0e091f;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0px;
 
+    @include desktop {
+
+        display: none;
+    }
 }
 
 .nav__navtext {
@@ -284,7 +293,10 @@ nav {
     border-radius: .5rem;
     background-color: #fef9f8;
 
+    @include tablet {
 
+        font-size: 6rem;
+    }
 }
 
 .logo {
@@ -381,18 +393,23 @@ nav {
         justify-content: center;
         left:0;
    
-    }
+    }*/
 
     @include desktop {
 
         position: relative;
         top: 9rem;
-        left: 5vw;
-        width: 95vw;
-        display: none;
+        left: 3vw;
+        width: 30vw;
+        //padding-left: 0.3rem;
+        display: flex;
         justify-content: left;
+        border: 2px solid #010b20e6;
+        padding: 0rem 0.7rem;
+        border-radius: .5rem;
+        background-color: #fef9f800;
         
-    }    
+    } /*   
 
     @include large {
 
@@ -430,7 +447,7 @@ nav {
         //font-size: 4rem;
     //}
 
-    @include xs-mobile-landscape {
+    /*@include xs-mobile-landscape {
 
         font-size: 2.5rem;
     }
@@ -458,7 +475,7 @@ nav {
         @include logo-text-desktop;
 
 
-    }
+    }*/
 }
 
 // --------------- SEARCH BUTTONS ---------------//
@@ -467,7 +484,7 @@ nav {
 
         
     position: relative;
-    top: 16vh;
+    top: 17.5vh;
 
         /*@include xs-mobile-landscape {
 
@@ -475,9 +492,9 @@ nav {
 
         }*/
 
-       /* @include sm-mobile {
+       @include mobile {
 
-            top: 17vh;
+            top: 23vh;
         }
 
        /* @include mobile-landscape {
@@ -495,16 +512,16 @@ nav {
             top: 28vh;
         }*/
 
-      /*  @include tablet-portrait {
+        @include tablet {
 
-            top: 35vh;
+            top: 25vh;
         }
 
         @include desktop {
 
-            top: 26vh;
+            top: 27vh;
         }
-
+/*
         @include large {
 
             top: 20vh;
@@ -544,7 +561,7 @@ nav {
         margin-bottom: 2rem;
         margin-top: 0;
 
-        @include xs-mobile-landscape {
+       /* @include xs-mobile-landscape {
 
             visibility: hidden;
             font-family: $button-font;
@@ -605,14 +622,29 @@ nav {
         width: 100vw;
         position: relative;
         left: 0vw;
-        height: 49vh;
+        height: 50vh;
 
-    @include sm-mobile {
+    @include mobile {
 
-        width: 100vw;
+        height: 56vh;
         //left: 10vw;
     }
-    @include xs-mobile-landscape {
+
+    @include tablet {
+
+        height: 34vh;
+        width: 50vw;
+        left: 25vw;
+    }
+
+    @include desktop {
+
+        width: 40vw;
+        position: relative;
+        left: 30vw;
+        height: 40vh;
+    }
+   /* @include xs-mobile-landscape {
 
         width: 100vw;
         height: 50vh;
@@ -650,7 +682,7 @@ nav {
 
         width: 40vw;
         left: 30vw;
-    }
+    }*/
 }
 
 .search-buttons--background {
@@ -660,13 +692,22 @@ nav {
     //box-shadow: $button-shadow;
     //border: 1px solid #000000b3;
 
-   @include tablet-portrait {
+   @include tablet {
 
     border: 1px solid #000000b3;
+    border-radius: 0.5rem;
 
    }
 
    @include desktop {
+
+    border: 1px solid #000000b3;
+    border-radius: 0.5rem;
+    background-color: #fff9f8e3;
+    
+   }
+
+   /*@include desktop {
 
     border: 1px solid #000000b3;
     //border-radius: 25px;
@@ -684,7 +725,7 @@ nav {
 
     //border-radius: 25px;
 
-   }
+   }*/
 }
 
 .search-buttons__button {
@@ -692,7 +733,7 @@ nav {
     margin: 1.5rem;
     padding-top: 1rem;
 
-        @include xs-mobile-landscape {
+        /*@include xs-mobile-landscape {
 
             margin: .5rem;
             padding-top: 0rem;
@@ -706,7 +747,7 @@ nav {
         @include xlarge {
 
             margin: 2.5rem;
-        }
+        }*/
         p {
 
         margin-top: .3rem;
@@ -720,15 +761,15 @@ nav {
 
     @include search-button-mobile;
 
-    @include tablet-portrait {
+   /* @include tablet-portrait {
 
         @include search-button-desktop;
-    }
+    }*/
 
     @include desktop {
 
         @include search-button-desktop;
-    }
+    }/*
 
     @include large {
 
@@ -739,7 +780,8 @@ nav {
 
         @include search-button-lg-desktop;
         
-    }
+    
+    }*/
 
 }
 
@@ -812,7 +854,7 @@ nav {
     margin: 0px;
     color: #fff;
 
-    @include tablet-portrait {
+    /*@include tablet-portrait {
 
         width: 8rem;
         height: 8rem;
@@ -838,7 +880,7 @@ nav {
         width: 9rem;
         height: 9rem;
         border-radius: 4.5rem;
-    }
+    }*/
 }
 
 
@@ -851,15 +893,15 @@ nav {
     border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
-    box-shadow: $button-shadow;
+    //box-shadow: $button-shadow;
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: left;
 
-    @include mobile-landscape {
+   /* @include mobile-landscape {
 
         margin-bottom: 2.5rem;
-    }
+    }*/
 
     @include tablet {
 

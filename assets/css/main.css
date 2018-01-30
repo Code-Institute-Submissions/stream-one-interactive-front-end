@@ -6,8 +6,65 @@ html, body {
   margin: 0;
   padding: 0; }
 
+/*@mixin xs-mobile-landscape {
+
+    @media(min-width:$mobile-width) and (min-height:$xs-mobile-height) {
+
+        @content;
+
+    }
+}
+
+@mixin mobile-landscape {
+
+    @media(min-width:$mobile-width) and (min-height: $mobile-height) {
+
+        @content;
+
+    }
+
+}
+
+
+@mixin xl-mobile-landscape {
+
+    @media(min-width:$tablet-width) and (min-height: $mobile-height) {
+
+        @content;
+
+    }
+
+}
+
+@mixin xl-mobile-portrait {
+
+    @media(min-width:$xs-mobile-width) and (min-height: $tablet-width) {
+
+        @content;
+
+    }
+
+}
+
+@mixin tablet-portrait {
+
+    @media(min-width:$tablet-width) and (min-height: $tablet-height) {
+
+        @content;
+
+    }
+}
+
+@mixin tablet-landscape {
+
+    @media(min-width:$tablet-height) and (min-height: $tablet-width) {
+
+        @content;
+
+    }
+}*/
 .background {
-  background-image: url("../images/puppy-pxhere.com-1920-1080-BRIGHTER-2.jpg");
+  background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -15,15 +72,21 @@ html, body {
   height: 80vh;
   width: 100vw;
   position: relative; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .background {
+      height: 100vh; } }
 
 nav {
   height: 20vh;
   width: 100vw;
-  background-color: #1a182d;
+  background-color: #0e091f;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0px; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    nav {
+      display: none; } }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
@@ -37,6 +100,9 @@ nav {
   padding: 0rem 0.7rem;
   border-radius: .5rem;
   background-color: #fef9f8; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .nav__navtext {
+      font-size: 6rem; } }
 
 .logo {
   position: relative;
@@ -128,18 +194,8 @@ nav {
         justify-content: center;
         left:0;
    
-    }
-
-    @include desktop {
-
-        position: relative;
-        top: 9rem;
-        left: 5vw;
-        width: 95vw;
-        display: none;
-        justify-content: left;
-        
-    }    
+    }*/
+      /*   
 
     @include large {
 
@@ -162,6 +218,18 @@ nav {
         justify-content: left;
        
     }*/ }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .logo {
+      position: relative;
+      top: 9rem;
+      left: 3vw;
+      width: 30vw;
+      display: flex;
+      justify-content: left;
+      border: 2px solid #010b20e6;
+      padding: 0rem 0.7rem;
+      border-radius: .5rem;
+      background-color: #fef9f800; } }
 
 .logo__title {
   margin: 0; }
@@ -169,43 +237,45 @@ nav {
 .logo__title--font {
   font-family: "Bungee Shade", cursive;
   font-size: 4rem;
-  color: #13182a; }
-  @media (min-width: 500px) and (min-height: 320px) {
-    .logo__title--font {
-      font-size: 2.5rem; } }
-  @media (min-width: 700px) and (min-height: 1024px) {
-    .logo__title--font {
-      font-family: "Bungee Shade", cursive;
-      font-size: 7rem;
-      color: #13182a; } }
-  @media (min-width: 1024px) and (min-height: 700px) {
-    .logo__title--font {
-      font-size: 4rem; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .logo__title--font {
-      font-family: "Bungee Shade", cursive;
-      font-size: 7rem;
-      color: #13182a;
-      font-size: 6rem; } }
-  @media (min-width: 1500px) {
-    .logo__title--font {
-      font-family: "Bungee Shade", cursive;
-      font-size: 8rem;
-      color: #13182a; } }
+  color: #010b20e6;
+    /*@include xs-mobile-landscape {
+
+        font-size: 2.5rem;
+    }
+
+    @include tablet-portrait {
+
+        @include logo-text-tablet;
+    }
+
+   @include tablet-landscape {
+
+        font-size: 4rem;
+
+    }
+
+    @include large {
+
+       @include logo-text-tablet;
+        font-size: 6rem;
+
+    }
+
+    @include xlarge {
+
+        @include logo-text-desktop;
+
+
+    }*/ }
 
 .search-container {
   position: relative;
-  top: 16vh;
+  top: 17.5vh;
         /*@include xs-mobile-landscape {
 
             top:25vh;
 
         }*/
-       /* @include sm-mobile {
-
-            top: 17vh;
-        }
-
        /* @include mobile-landscape {
 
             top: 26vh;;
@@ -219,44 +289,44 @@ nav {
 
             top: 28vh;
         }*/
-      /*  @include tablet-portrait {
-
-            top: 35vh;
-        }
-
-        @include desktop {
-
-            top: 26vh;
-        }
-
-        @include large {
-
-            top: 20vh;
-        }
-
-        @include xlarge {
-
-            
-            top: 22vh;
-        }
-    /*@include desktop {
-
-        display: flex;
-        flex-direction: column;
-        height: 50vh;
-        width: 40vw;
-        justify-content: center;
-        position: relative;
-        left: 30vw;
-        top: 30vh;
-
-        p {
-            font-family: $button-font;
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            margin-top: 0;
-        }*/ }
+  /*
+          @include large {
+  
+              top: 20vh;
+          }
+  
+          @include xlarge {
+  
+              
+              top: 22vh;
+          }
+      /*@include desktop {
+  
+          display: flex;
+          flex-direction: column;
+          height: 50vh;
+          width: 40vw;
+          justify-content: center;
+          position: relative;
+          left: 30vw;
+          top: 30vh;
+  
+          p {
+              font-family: $button-font;
+              font-size: 1.5rem;
+              text-align: center;
+              margin-bottom: 3rem;
+              margin-top: 0;
+          }*/ }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .search-container {
+      top: 23vh; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .search-container {
+      top: 25vh; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .search-container {
+      top: 27vh; } }
 
 .instructions {
   visibility: hidden;
@@ -265,6 +335,17 @@ nav {
   text-align: center;
   margin-bottom: 2rem;
   margin-top: 0;
+       /* @include xs-mobile-landscape {
+
+            visibility: hidden;
+            font-family: $button-font;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+
+        }
+
         /*@include desktop {
 
         visibility: hidden;
@@ -275,14 +356,6 @@ nav {
         margin-top: 0;
     
         }*/ }
-  @media (min-width: 500px) and (min-height: 320px) {
-    .instructions {
-      visibility: hidden;
-      font-family: "Pontano Sans", sans-serif;
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      margin-top: 0; } }
 
 .search-container--color {
   background-color: #ffffff00;
@@ -307,62 +380,110 @@ nav {
   width: 100vw;
   position: relative;
   left: 0vw;
-  height: 49vh; }
-  @media (min-width: 375px) and (max-width: 499px) {
+  height: 50vh;
+   /* @include xs-mobile-landscape {
+
+        width: 100vw;
+        height: 50vh;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        //left: 25vw;
+
+    }
+
+    @include tablet-portrait {
+
+        width: 50vw;
+        left: 25vw;
+    }
+
+    @include desktop {
+
+        width: 40vw;
+        left: 30vw;
+    }
+
+    @include large {
+
+        width: 30vw;
+        left: 35vw;
+    }
+
+    @include large {
+
+        width: 30vw;
+        left: 35vw;
+    }
+
+    @include xlarge {
+
+        width: 40vw;
+        left: 30vw;
+    }*/ }
+  @media (min-width: 500px) and (max-width: 767px) {
     .search-buttons {
-      width: 100vw; } }
-  @media (min-width: 500px) and (min-height: 320px) {
+      height: 56vh; } }
+  @media (min-width: 768px) and (max-width: 991px) {
     .search-buttons {
-      width: 100vw;
-      height: 50vh;
-      padding-top: 2rem;
-      padding-bottom: 2rem; } }
-  @media (min-width: 700px) and (min-height: 1024px) {
-    .search-buttons {
+      height: 34vh;
       width: 50vw;
       left: 25vw; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons {
       width: 40vw;
-      left: 30vw; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .search-buttons {
-      width: 30vw;
-      left: 35vw; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .search-buttons {
-      width: 30vw;
-      left: 35vw; } }
-  @media (min-width: 1500px) {
-    .search-buttons {
-      width: 40vw;
-      left: 30vw; } }
+      position: relative;
+      left: 30vw;
+      height: 40vh; } }
 
 .search-buttons--background {
-  background-color: #fff9f8; }
-  @media (min-width: 700px) and (min-height: 1024px) {
+  background-color: #fff9f8;
+   /*@include desktop {
+
+    border: 1px solid #000000b3;
+    //border-radius: 25px;
+
+   }
+
+   @include large {
+
+    border: 1px solid #000000b3;
+    //border-radius: 25px;
+
+   }
+
+   @include xlarge {
+
+    //border-radius: 25px;
+
+   }*/ }
+  @media (min-width: 768px) and (max-width: 991px) {
     .search-buttons--background {
-      border: 1px solid #000000b3; } }
+      border: 1px solid #000000b3;
+      border-radius: 0.5rem; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons--background {
-      border: 1px solid #000000b3; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .search-buttons--background {
-      border: 1px solid #000000b3; } }
+      border: 1px solid #000000b3;
+      border-radius: 0.5rem;
+      background-color: #fff9f8e3; } }
 
 .search-buttons__button {
   margin: 1.5rem;
-  padding-top: 1rem; }
-  @media (min-width: 500px) and (min-height: 320px) {
-    .search-buttons__button {
-      margin: .5rem;
-      padding-top: 0rem; } }
-  @media (min-width: 700px) and (min-height: 375px) {
-    .search-buttons__button {
-      margin: 1.5rem; } }
-  @media (min-width: 1500px) {
-    .search-buttons__button {
-      margin: 2.5rem; } }
+  padding-top: 1rem;
+        /*@include xs-mobile-landscape {
+
+            margin: .5rem;
+            padding-top: 0rem;
+        }
+
+        @include xl-mobile-landscape {
+
+            margin: 1.5rem;
+        }
+
+        @include xlarge {
+
+            margin: 2.5rem;
+        }*/ }
   .search-buttons__button p {
     margin-top: .3rem;
     margin-bottom: .3rem;
@@ -376,15 +497,24 @@ nav {
   border-radius: 0.6rem;
   border: 1px solid #d56d05c7;
   box-shadow: 2px 4px 6px 0px #592b15;
-  background-color: #010b20e6; }
-  @media (min-width: 700px) and (min-height: 1024px) {
-    .search-buttons__button__element--style {
-      width: 6rem;
-      height: 5rem;
-      border-radius: 0.6rem;
-      border: 1px solid #d56d05c7;
-      box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6; } }
+  background-color: #0e0920;
+   /* @include tablet-portrait {
+
+        @include search-button-desktop;
+    }*/
+     /*
+
+    @include large {
+
+        @include search-button-desktop;
+    }
+
+    @include xlarge {
+
+        @include search-button-lg-desktop;
+        
+    
+    }*/ }
   @media (min-width: 992px) and (max-width: 1199px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -392,23 +522,7 @@ nav {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .search-buttons__button__element--style {
-      width: 6rem;
-      height: 5rem;
-      border-radius: 0.6rem;
-      border: 1px solid #d56d05c7;
-      box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6; } }
-  @media (min-width: 1500px) {
-    .search-buttons__button__element--style {
-      width: 12rem;
-      height: 8rem;
-      border-radius: 0.6rem;
-      border: 1px solid #d56d05c7;
-      box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6; } }
+      background-color: #0e0920; } }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
@@ -472,27 +586,34 @@ nav {
   font-size: 1rem;
   font-size: 2rem;
   margin: 0px;
-  color: #fff; }
-  @media (min-width: 700px) and (min-height: 1024px) {
-    .go-button__button--style {
-      width: 8rem;
-      height: 8rem;
-      border-radius: 4rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .go-button__button--style {
-      width: 8rem;
-      height: 8rem;
-      border-radius: 4rem; } }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    .go-button__button--style {
-      width: 8rem;
-      height: 8rem;
-      border-radius: 4rem; } }
-  @media (min-width: 1500px) {
-    .go-button__button--style {
-      width: 9rem;
-      height: 9rem;
-      border-radius: 4.5rem; } }
+  color: #fff;
+    /*@include tablet-portrait {
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+    }
+
+    @include desktop {
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+    }
+
+    @include large {
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+    }
+    
+    @include xlarge {
+
+        width: 9rem;
+        height: 9rem;
+        border-radius: 4.5rem;
+    }*/ }
 
 .search-bar__input {
   width: 20rem;
@@ -500,10 +621,13 @@ nav {
   border-radius: 0.3rem;
   border: 1px solid #000;
   margin-bottom: 1.5rem;
-  box-shadow: 2px 4px 6px 0px #4b2413;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1.2rem;
   text-align: left;
+   /* @include mobile-landscape {
+
+        margin-bottom: 2.5rem;
+    }*/
     /*@include xs-mobile-landscape {
 
         margin-bottom: .5rem;
@@ -522,10 +646,7 @@ nav {
     text-align: center;
 
     }*/ }
-  @media (min-width: 500px) and (min-height: 375px) {
-    .search-bar__input {
-      margin-bottom: 2.5rem; } }
-  @media (min-width: 700px) and (max-width: 991px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     .search-bar__input {
       height: 2rem; } }
   @media (min-width: 992px) and (max-width: 1199px) {
