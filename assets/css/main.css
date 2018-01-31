@@ -50,8 +50,7 @@ nav {
   font-family: "Bungee Shade", cursive;
   font-size: 4rem;
   color: #ffffff;
-  margin: 0;
-  background-color: #010b20e6; }
+  margin: 0; }
   @media (min-width: 768px) and (max-width: 991px) {
     .nav__navtext {
       font-size: 6rem; } }
@@ -200,7 +199,7 @@ nav {
       border-radius: 0.6rem;
       border: 1px solid #d56d05c7;
       box-shadow: 2px 4px 6px 0px #592b15;
-      background-color: #010b20e6; } }
+      background-color: #0e0920; } }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
