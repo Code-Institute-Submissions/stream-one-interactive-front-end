@@ -274,4 +274,8 @@ nav {
 .results--background {
   background-color: #feefeb; }
 
+#map {
+  height: 250px;
+  width: 250px; }
+
 /*# sourceMappingURL=main.css.map */
