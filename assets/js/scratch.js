@@ -1,34 +1,25 @@
 
 
 // ------------- Need to set location with user input ------------//
-var buttonParams = {
+var searchParams = {searchLocation:"London", searchType: "vets"};
 
-    dogWalker: "Dog walker, dog walking",
-    petSitting: "Pet sitter, pet services, dog sitting",
-    grooming: "Pet groomer, pet grooming, dog groomer",
-    vet: "vets",
-    boarder: "pet boarding, pet holiday",
-    petShop: "Pet shops"
-}
-var searchParams = {searchLocation:"Richmond, UK", searchType: buttonParams.petShop};
+//var searchLocation = "twickenham";
+//var searchType = "pet groomer";
 
-// ACTIVATE XMLHTTP REQUEST ON GO CLICK //
+var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchParams.searchLocation+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
-var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchParams.searchLocation.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
-
-//--------HTTP REQUEST-------------------//
-
-function getLocation(geoUrl, locationData) { 
+function getLocation(geoUrl, locationData) { //argument of cb passed to function
     
-    var xhr = new XMLHttpRequest(); 
+    var xhr = new XMLHttpRequest(); // new variable set to a new instance of XMLHttpRequest Object
     
-    xhr.open("GET", geoUrl); 
-    xhr.send(); 
+    xhr.open("GET", geoUrl); // .open method called to set the argument of the api URL
+    xhr.send(); // request posted
     
     xhr.onreadystatechange = function() {
        
-        if (this.readyState == 4 && this.status == 200) { 
-            locationData(JSON.parse(this.responseText));
+        if (this.readyState == 4 && this.status == 200) { // once the xhr request is completed 
+            locationData(JSON.parse(this.responseText));// cb invoked and retrieved responsetext stored as parameter of getData function
+            
         }
     };
     
@@ -61,13 +52,16 @@ position(function(latLong){
 
     function initialize() { 
 
+        //var lat = latLong[0];
+        //var long = latLong[1];
         
+    
         var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]);
 
         map = new google.maps.Map(document.getElementById('map'), {
 
             center: mapLocation,
-            zoom: 12
+            zoom: 10
 
         });
 
@@ -76,7 +70,7 @@ position(function(latLong){
         var request = {
 
             location: mapLocation,
-            radius: '5000',
+            radius: '500',
             query: searchParams.searchType
         };
 
@@ -114,21 +108,7 @@ position(function(latLong){
             reference: place.reference
         };
 
-       // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
-        
-            service.getDetails(request, function(details, status){
-
-            var info = {
-                name: details.name.toString(),
-                address: details.formatted_address.toString(),
-                website: details.website.toString(),
-                number: details.formatted_phone_number.toString(),
-                reviews: details.reviews[0].text.toString()
-            };
-           
-            console.log(info);
-        
-       
+        service.getDetails(request, function(details, status){
 
             infowindow.setContent([
                 details.name,
@@ -149,19 +129,7 @@ position(function(latLong){
   
     
     
-service.getDetails (request, function(details){
 
-    var details = {
-        name: details.name.toString(),
-        address: details.formatted_address.toString(),
-        website: details.website.toString(),
-        number: details.formatted_phone_number.toString(),
-        reviews: details.reviews[0].text.toString()
-    };
-   
-    console.log(details);
-
-})
 
 
 
