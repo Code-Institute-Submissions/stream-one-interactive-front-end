@@ -2,7 +2,8 @@
 
 // ------------- Need to set location with user input ------------//
 
-var searchLocation = "london";
+var searchLocation = "twickenham";
+var searchType = "pet groomer";
 var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchLocation+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
 function getLocation(geoUrl, locationData) { //argument of cb passed to function
@@ -22,52 +23,135 @@ function getLocation(geoUrl, locationData) { //argument of cb passed to function
     
 }
 
+// GET LAT AND LONG OF LOCATION //
 
+function position(callback) {
 
-// invoke getData and parse jSON to extract Lat/Long to set search params and position map //
+    getLocation(geoUrl, function(locationData){
 
+        var geoData = locationData.results[0].geometry.location;
+        var lat = geoData.lat.toString();
+        var long = geoData.lng.toString();
 
-
-getLocation(geoUrl, function(data) {
-    
-    var geoData = data.results[0].geometry.location;
-    
-    var lat = geoData.lat.toString();
-    var long = geoData.lng.toString();
-
-    console.log(lat,long);
-    console.log(typeof(lat,long));
-
-
-});
-
-
-var type = "vet";
-var x = "51.5073509";
-var y = "-0.1277583";
-var nearbyUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+x+','+y+'&radius=500&type='+type+'key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
-
-function getNearby(nearbyUrl, nearbyData) {
-    
-    var xhr = new XMLHttpRequest();
-    
-    xhr.open("GET", nearbyUrl); 
-    xhr.send(); 
-    
-    xhr.onreadystatechange = function() {
-       
-        if (this.readyState == 4 && this.status == 200) {  
-            nearbyData(JSON.parse(this.responseText));
-            
-        }
-    };
-    
+        var latLong = [lat, long];
+        callback(latLong);
+    });
 }
 
-getLocation(nearbyUrl, function(nearby) {
-        
-    console.log(nearby);
 
+//------- INITIALIZE GOOGLE MAP WITH LATLONG -------------//
+var map;
+var service;
+var infowindow;
+
+position(function(latLong){
+
+    
+
+    function initialize() { 
+
+        var lat = latLong[0];
+        var long = latLong[1];
+        
+    
+        var mapLocation = new google.maps.LatLng(lat,long);
+
+        map = new google.maps.Map(document.getElementById('map'), {
+
+            center: mapLocation,
+            zoom: 15
+
+        });
+
+        // PASS IN UI TO REQUEST //
+
+        var request = {
+
+            location: mapLocation,
+            radius: '500',
+            query: searchType
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, callback);
+      
+    }
+        
+    
+    function callback(results, status) {
+        if(status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+
+                var place = results[i];
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+    infowindow = new google.maps.InfoWindow();
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+
+    }
+
+    initialize();
 
 });
+  
+    
+    
 
+
+
+
+
+
+     /*   var map;
+        var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: -33.867, lng: 151.195};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }*/
