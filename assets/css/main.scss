@@ -561,6 +561,11 @@ nav {
 
 // ----------------------- RESULTS STYLES --------------------------//
 
+.hide-results {
+
+    display: none;
+}
+
 .results {
 
     min-height: 100vh;
@@ -571,6 +576,8 @@ nav {
     //left: 25vw;
 
 }
+
+
 
 .results--background {
 
@@ -597,8 +604,23 @@ nav {
 .results-text {
 
     position: relative;
-    top: 10rem;
+    top: 5rem;
     width: 50vw;
     height: auto;
     left: 25vw;
+}
+
+.map-instructions {
+
+    position: relative;
+    text-align: center;
+}
+
+.reset {
+
+    position: relative;
+   // margin: 0 auto;
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 5rem;
 }

@@ -25,11 +25,11 @@
                 <p class="instructions">Simply type your location, select your stops and GO GO GO!</p>
                 <form class="search-form">
                     <div class="search-bar search-bar--style">
-                        <input class="search-bar__input" type="text" placeholder="   Location eg. Richmond, UK">
+                        <input id="user-input" class="search-bar__input" type="text" placeholder="   Location eg. Richmond, UK">
                     </div>
                     <div class="search-buttons search-buttons--background">
                         <div class="search-buttons__button search-buttons__button--style">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="walk-button" type="button" value="dog walker" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-paw search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -37,7 +37,7 @@
                             </button>
                         </div>
                         <div class="search-buttons__button">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="sit-button" type="button" value="dog sitter, dog sitting, pet sitting" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-home search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -45,7 +45,7 @@
                             </button>
                         </div>
                         <div class="search-buttons__button">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="board-button" type="button" value="pet boarding, kennels, cattery" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-bed search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -53,7 +53,7 @@
                             </button>
                         </div>
                         <div class="search-buttons__button">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="vet-button" type="button" value="vet" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-stethoscope search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -61,7 +61,7 @@
                             </button>
                         </div>
                         <div class="search-buttons__button">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="shop-button" type="button" value="pet shop" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-shopping-basket search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -69,7 +69,7 @@
                             </button>
                         </div>
                         <div class="search-buttons__button">
-                            <button type="button" class="search-buttons__button__element--style">
+                            <button id="groom-button" type="button" value="dog groomer, pet grooming" class="search-buttons__button__element--style">
                                 <div>
                                     <i class="fa fa-scissors search-buttons__icon--style" aria-hidden="true"></i>
                                 </div>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="go-button">
-                        <input id="Submit" type="submit" value="GO!" class="go-button__button go-button__button--style">
+                        <input id="send" type="button" value="GO!" class="go-button__button go-button__button--style">
                     </div>
                 </form>
                     
@@ -87,14 +87,22 @@
         </div>
 
     </div>
-    <section class="results results--background">
-        <div class="results__display results__display--style">
-            <div id="map"></div>
-        </div>
-        <div class="results-text results-text--style">
-            <div id="text" class="results-text__text results-text__text--style"></div>
+    <section class = "hide-results">
+        <div class="results results--background">
+            <div class="results__display results__display--style">
+                <div id="map"></div>
+            </div>
+            <button class = "reset" type="button" value="reset">RESET SEARCH</button>
+            <div>
+                <p class="map-instructions">Click on a Marker to display info</p>
+            </div>
+            <div class="results-text results-text--style">
+                <div id="text" class="results-text__text results-text__text--style"></div>
+            </div>
         </div>
         
+
+
     </section>
     
     

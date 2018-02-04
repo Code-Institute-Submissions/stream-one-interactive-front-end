@@ -1,7 +1,59 @@
 
 
 // ------------- Need to set location with user input ------------//
-var buttonParams = {
+
+// GLOBAL VARIABLES //
+
+document.getElementById("user-input").value = "";
+
+var userInput;
+
+var buttonParam;
+
+// SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION
+document.getElementById('walk-button').onclick = function(){
+
+    buttonParam = document.getElementById('walk-button').value.toString();
+    console.log(buttonParam);
+    console.log(userInput);
+};
+
+document.getElementById('sit-button').onclick = function(){
+
+    buttonParam = document.getElementById('sit-button').value;
+    console.log(buttonParam);
+};
+
+document.getElementById('board-button').onclick = function(){
+
+    buttonParam = document.getElementById('board-button').value;
+    console.log(buttonParam);
+};
+
+document.getElementById('vet-button').onclick = function(){
+
+    buttonParam = document.getElementById('vet-button').value;
+    console.log(buttonParam);
+};
+
+document.getElementById('shop-button').onclick = function(){
+
+    buttonParam = document.getElementById('shop-button').value;
+    console.log(buttonParam);
+};
+
+document.getElementById('groom-button').onclick = function(){
+
+    buttonParam = document.getElementById('groom-button').value;
+    console.log(buttonParam);
+};
+
+
+
+
+
+
+/*var buttonParams = {
 
     dogWalker: "Dog walker, dog walking",
     petSitting: "Pet sitter, pet services, dog sitting",
@@ -9,210 +61,191 @@ var buttonParams = {
     vet: "vets",
     boarder: "pet boarding, pet holiday",
     petShop: "Pet shops"
-}
-var searchParams = {searchLocation:"Richmond, UK", searchType: buttonParams.petShop};
+}*/
+
+//var searchParams = {searchLocation: userInput, searchType: buttonParams};
+
+//console.log(searchParams.searchType);
 
 // ACTIVATE XMLHTTP REQUEST ON GO CLICK //
 
-var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+searchParams.searchLocation.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
+ function sendSearch(){
 
-//--------HTTP REQUEST-------------------//
-
-function getLocation(geoUrl, locationData) { 
     
-    var xhr = new XMLHttpRequest(); 
-    
-    xhr.open("GET", geoUrl); 
-    xhr.send(); 
-    
-    xhr.onreadystatechange = function() {
-       
-        if (this.readyState == 4 && this.status == 200) { 
-            locationData(JSON.parse(this.responseText));
-        }
-    };
-    
-}
 
-// GET LAT AND LONG OF LOCATION //
+    var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
-function position(callback) {
+    //--------HTTP REQUEST-------------------//
 
-    getLocation(geoUrl, function(locationData){
-
-        var geoData = locationData.results[0].geometry.location;
-        var lat = geoData.lat.toString();
-        var long = geoData.lng.toString();
-
-        var latLong = [lat, long];
-        callback(latLong);
-    });
-}
-
-
-//------- INITIALIZE GOOGLE MAP AND PASS IN LATLONG -------------//
-
-
-position(function(latLong){
-
-    var map;
-    var service;
-    var infowindow;
-
-    function initialize() { 
-
+    function getLocation(geoUrl, locationData) { 
         
-        var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]);
-
-        map = new google.maps.Map(document.getElementById('map'), {
-
-            center: mapLocation,
-            zoom: 12
-
-        });
-
-        // PASS IN UI TO REQUEST //
-
-        var request = {
-
-            location: mapLocation,
-            radius: '5000',
-            query: searchParams.searchType
-        };
-
-       
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, callback);
-      
-    }
+        var xhr = new XMLHttpRequest(); 
         
-    
-    function callback(results, status) {
-        if(status == google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-
-                var place = results[i];
-                createMarker(results[i]);
+        xhr.open("GET", geoUrl); 
+        xhr.send(); 
+        
+        xhr.onreadystatechange = function() {
+        
+            if (this.readyState == 4 && this.status == 200) { 
+                locationData(JSON.parse(this.responseText));
             }
-        }
+        };
+        
     }
 
-    infowindow = new google.maps.InfoWindow();
+    // GET LAT AND LONG OF LOCATION //
 
-    function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location,
+    function position(callback) {
+
+        getLocation(geoUrl, function(locationData){
+
+            var geoData = locationData.results[0].geometry.location;
+            var lat = geoData.lat.toString();
+            var long = geoData.lng.toString();
+
+            var latLong = [lat, long];
+            callback(latLong);
         });
+    }
 
-    //---- Modified Code from Stack Overflow 'https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api' -----//
 
-        marker.addListener('click', function() {
+    //------- INITIALIZE GOOGLE MAP AND PASS IN LATLONG -------------//
+    
 
-            var request = {
-            reference: place.reference
-            };
-        
-           service.getDetails(request, function(details, status) {
-        
-        // ---- retrieve all reviews and create new array --------- //
+    position(function(latLong){
 
-            if (status == google.maps.places.PlacesServiceStatus.OK){
+        var map;
+        var service;
+        var infowindow;
 
-                var reviewArray = [];
+        function initialize() { 
 
-                    for(var i=0; i < details.reviews.length; i++) {
+            
+            var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]);
 
-                        
-                        reviewArray.push(details.reviews[i].text.toString());
-                        
-                        
-                    }
+            map = new google.maps.Map(document.getElementById('map'), {
 
-                   
-// ---- object created for details ready to be passed to a DIV for styling below the map ---- //
-                    
-                var info = {
-                    name: details.name.toString(),
-                    address: details.formatted_address.toString(),
-                    website: details.website.toString(),
-                    number: details.formatted_phone_number.toString(),
-                    reviews: reviewArray,
-                    rating: details.rating.toString()
-                };
+                center: mapLocation,
+                zoom: 12
 
-                console.log(info.reviewArray);
-                
-// ---------- write to document place details on Marker click ---------------------//
-
-                document.getElementById("text").innerHTML=
-                `<h2>${info.name}</h2>
-                <h3>Address</h3>
-                <p>${info.address}</p>
-                <h3>Website</h3>
-                <p><a href="${info.website}">Click here for company website</a></p>
-                <h3>Phone</h3>
-                <p>${info.number}</p>
-                <h3>Overall Rating</h3>
-                <p>${info.rating}</p>
-                <h3>Reviews</h3>`;
-
-                var eachReview;
-
-                for (i = 0; i < reviewArray.length; i++) {
-
-                    eachReview = document.createElement("p");
-                    eachReview.innerHTML = reviewArray[i];
-                    document.getElementById('text').appendChild(eachReview);
-
-                }
-
-                
-
-                //placeText.innerHTML = info;
-                
-                console.log(info);
-
-                    infowindow.setContent(
-                        details.name);
-                    // details.formatted_address,
-                        //details.website,
-                        //details.formatted_phone_number,
-                        //details.reviews[0].text].join("<br /><br />"));
-                    infowindow.open(map, marker);
-
-                }
             });
 
+            // PASS IN UI TO REQUEST //
+
+            var request = {
+
+                location: mapLocation,
+                radius: '5000',
+                query: buttonParam
+            };
+
         
+            service = new google.maps.places.PlacesService(map);
+            service.textSearch(request, callback);
+        
+        }
             
-        });
+        
+        function callback(results, status) {
+            if(status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
 
-    }
+                    var place = results[i];
+                    createMarker(results[i]);
+                }
+            }
+        }
 
-    initialize();
+        infowindow = new google.maps.InfoWindow();
 
-});
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            });
+
+        //---- Modified Code from Stack Overflow 'https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api' -----//
+
+            marker.addListener('click', function() {
+
+                var request = {
+                reference: place.reference
+                };
+            
+            service.getDetails(request, function(details, status) {
+            
+            // ---- retrieve all reviews and create new array --------- //
+
+                //if (status == google.maps.places.PlacesServiceStatus.OK){
+
+                    var reviewArray = [];
+
+                        for(var i=0; i < details.reviews.length; i++) {
+
+                            
+                            reviewArray.push(details.reviews[i].text.toString());
+                            
+                            
+                       // }
+
+                    
+    // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
+                        
+                    var info = {
+                        name: details.name.toString(),
+                        address: details.formatted_address.toString(),
+                        website: details.website.toString(),
+                        number: details.formatted_phone_number.toString(),
+                       // reviews: reviewArray,
+                        rating: details.rating.toString()
+                    };
+
+                    //console.log(info.reviewArray);
+
+    // ---------- write to document place details on Marker click ---------------------//
+
+                    document.getElementById("text").innerHTML=
+                    `<h2>${info.name}</h2>
+                    <h3>Address</h3>
+                    <p>${info.address}</p>
+                    <h3>Website</h3>
+                    <p><a href="${info.website} target="_blank">Click here for company website</a></p>
+                    <h3>Phone</h3>
+                    <p>${info.number}</p>
+                    <h3>Overall Rating</h3>
+                    <p>${info.rating}</p>
+                    <h3>Reviews</h3>`;
+
+                    var eachReview;
+
+                    for (i = 0; i < reviewArray.length; i++) {
+
+                        eachReview = document.createElement("p");
+                        eachReview.innerHTML = reviewArray[i];
+                        document.getElementById('text').appendChild(eachReview);
+
+                    }
+
+                        infowindow.setContent(details.name);
+                        infowindow.open(map, marker);
+
+                    }
+                }); 
+            });
+
+        }
+
+        initialize();
+
+    });
   
+} //close sendSearch Function//
 
-//})
+document.getElementById('send').onclick = function(){
 
-/*
-marker.addListener('click', function() {
+    userInput = document.getElementById('user-input').value;
+    sendSearch();
 
-    var request = {
-        reference: place.reference
-    };
-
-
-
-    service.getDetails(request, function(details, status){
-
-            var info = {
-                name: details.name.toString(),
-                address: details.formatted_address.toString(),
-                website: details.website.toString(),
-                number: details.formatted_phone_number.toString(),
-                reviews: details.reviews[0].text.toString()
-            };*/
+    $("section").removeClass("hide-results");
+};

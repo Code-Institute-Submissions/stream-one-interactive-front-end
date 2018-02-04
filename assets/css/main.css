@@ -265,6 +265,9 @@ nav {
       width: 25rem;
       margin-bottom: 2.5rem; } }
 
+.hide-results {
+  display: none; }
+
 .results {
   min-height: 100vh;
   width: 100vw;
@@ -287,9 +290,19 @@ nav {
 
 .results-text {
   position: relative;
-  top: 10rem;
+  top: 5rem;
   width: 50vw;
   height: auto;
   left: 25vw; }
+
+.map-instructions {
+  position: relative;
+  text-align: center; }
+
+.reset {
+  position: relative;
+  left: 50vw;
+  transform: translateX(-50%);
+  top: 5rem; }
 
 /*# sourceMappingURL=main.css.map */
