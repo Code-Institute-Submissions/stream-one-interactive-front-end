@@ -266,19 +266,30 @@ nav {
       margin-bottom: 2.5rem; } }
 
 .results {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  display: flex;
   position: relative; }
 
 .results--background {
   background-color: #feefeb; }
 
+.results__display {
+  width: 50vw;
+  height: 50vh;
+  top: 5%;
+  left: 25vw;
+  position: relative; }
+
 #map {
-  height: 40%;
-  width: 40vw;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+
+.results-text {
   position: relative;
-  left: 30vw;
-  top: 5%; }
+  top: 10rem;
+  width: 50vw;
+  height: auto;
+  left: 25vw; }
 
 /*# sourceMappingURL=main.css.map */

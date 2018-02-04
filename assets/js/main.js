@@ -110,36 +110,84 @@ position(function(latLong){
 
         marker.addListener('click', function() {
 
-        var request = {
+            var request = {
             reference: place.reference
-        };
-
-       // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
-        
-            service.getDetails(request, function(details, status){
-
-            var info = {
-                name: details.name.toString(),
-                address: details.formatted_address.toString(),
-                website: details.website.toString(),
-                number: details.formatted_phone_number.toString(),
-                reviews: details.reviews[0].text.toString()
             };
-           
-            console.log(info);
         
-       
+           service.getDetails(request, function(details, status) {
+        
+        // ---- retrieve all reviews and create new array --------- //
 
-            infowindow.setContent([
-                details.name,
-                details.formatted_address,
-                details.website,
-                details.formatted_phone_number,
-                details.reviews[0].text].join("<br /><br />"));
-            infowindow.open(map, marker);
+            if (status == google.maps.places.PlacesServiceStatus.OK){
+
+                var reviewArray = [];
+
+                    for(var i=0; i < details.reviews.length; i++) {
+
+                        
+                        reviewArray.push(details.reviews[i].text.toString());
+                        
+                        
+                    }
+
+                   
+// ---- object created for details ready to be passed to a DIV for styling below the map ---- //
+                    
+                var info = {
+                    name: details.name.toString(),
+                    address: details.formatted_address.toString(),
+                    website: details.website.toString(),
+                    number: details.formatted_phone_number.toString(),
+                    reviews: reviewArray,
+                    rating: details.rating.toString()
+                };
+
+                console.log(info.reviewArray);
+                
+// ---------- write to document place details on Marker click ---------------------//
+
+                document.getElementById("text").innerHTML=
+                `<h2>${info.name}</h2>
+                <h3>Address</h3>
+                <p>${info.address}</p>
+                <h3>Website</h3>
+                <p><a href="${info.website}">Click here for company website</a></p>
+                <h3>Phone</h3>
+                <p>${info.number}</p>
+                <h3>Overall Rating</h3>
+                <p>${info.rating}</p>
+                <h3>Reviews</h3>`;
+
+                var eachReview;
+
+                for (i = 0; i < reviewArray.length; i++) {
+
+                    eachReview = document.createElement("p");
+                    eachReview.innerHTML = reviewArray[i];
+                    document.getElementById('text').appendChild(eachReview);
+
+                }
+
+                
+
+                //placeText.innerHTML = info;
+                
+                console.log(info);
+
+                    infowindow.setContent(
+                        details.name);
+                    // details.formatted_address,
+                        //details.website,
+                        //details.formatted_phone_number,
+                        //details.reviews[0].text].join("<br /><br />"));
+                    infowindow.open(map, marker);
+
+                }
+            });
+
+        
+            
         });
-     
-      });
 
     }
 
@@ -147,23 +195,24 @@ position(function(latLong){
 
 });
   
-    
-    
-service.getDetails (request, function(details){
 
-    var details = {
-        name: details.name.toString(),
-        address: details.formatted_address.toString(),
-        website: details.website.toString(),
-        number: details.formatted_phone_number.toString(),
-        reviews: details.reviews[0].text.toString()
+//})
+
+/*
+marker.addListener('click', function() {
+
+    var request = {
+        reference: place.reference
     };
-   
-    console.log(details);
-
-})
 
 
 
+    service.getDetails(request, function(details, status){
 
-
+            var info = {
+                name: details.name.toString(),
+                address: details.formatted_address.toString(),
+                website: details.website.toString(),
+                number: details.formatted_phone_number.toString(),
+                reviews: details.reviews[0].text.toString()
+            };*/

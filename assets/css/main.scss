@@ -563,10 +563,12 @@ nav {
 
 .results {
 
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    display: flex;
+    //display: flex;
     position: relative;
+    //top: 5%;
+    //left: 25vw;
 
 }
 
@@ -575,11 +577,28 @@ nav {
     background-color: #feefeb;
 }
 
+.results__display {
+
+    width: 50vw;
+    height: 50vh;
+    top: 5%;
+    left: 25vw;
+    position: relative;
+}
+
 #map {
 
-    height: 40%;
-    width: 40vw;
+    height: 100%;
+    width: 100%;
     position: relative;
-    left: 30vw;
-    top: 5%;
+        
+}
+
+.results-text {
+
+    position: relative;
+    top: 10rem;
+    width: 50vw;
+    height: auto;
+    left: 25vw;
 }
