@@ -568,12 +568,11 @@ nav {
 
 .results {
 
-    min-height: 100vh;
+    height: auto;
     width: 100vw;
-    //display: flex;
     position: relative;
-    //top: 5%;
-    //left: 25vw;
+    overflow: auto;
+    padding-bottom: 10rem;
 
 }
 

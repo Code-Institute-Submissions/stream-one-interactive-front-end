@@ -177,28 +177,28 @@ document.getElementById('groom-button').onclick = function(){
             
             // ---- retrieve all reviews and create new array --------- //
 
-                //if (status == google.maps.places.PlacesServiceStatus.OK){
+                if (status == google.maps.places.PlacesServiceStatus.OK){
 
                     var reviewArray = [];
 
                         for(var i=0; i < details.reviews.length; i++) {
 
                             
-                            reviewArray.push(details.reviews[i].text.toString());
+                            reviewArray.push(details.reviews[i].text);
                             
                             
-                       // }
+                       }
 
                     
     // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
                         
                     var info = {
-                        name: details.name.toString(),
-                        address: details.formatted_address.toString(),
-                        website: details.website.toString(),
-                        number: details.formatted_phone_number.toString(),
+                        name: details.name,
+                        address: details.formatted_address,
+                        website: details.website,
+                        number: details.formatted_phone_number,
                        // reviews: reviewArray,
-                        rating: details.rating.toString()
+                        rating: details.rating
                     };
 
                     //console.log(info.reviewArray);
