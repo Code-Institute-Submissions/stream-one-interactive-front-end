@@ -95,6 +95,14 @@ $xlarge-desktop-width: 1500px;
     }
 }
 
+@mixin tablet-portrait {
+
+    @media(min-width:$tablet-width) and (min-height:$tablet-height){
+
+        @content;
+    }
+}
+
 
 //---------------------------------------------------------------------//
 
@@ -107,6 +115,17 @@ $xlarge-desktop-width: 1500px;
     font-size: 1rem;
 }
 
+@mixin search-button-xs-mobile {
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.6rem;
+    border: 1px solid #d56d05c7;
+    box-shadow: 2px 4px 6px 0px #592b15;
+    background-color:#0e0920;
+    
+
+}
 @mixin search-button-mobile {
 
     width: 6rem;
@@ -194,7 +213,12 @@ $xlarge-desktop-width: 1500px;
 
     @include tablet {
 
-        height: 80vh;
+        height: 125vh;
+    }
+
+    @include tablet-portrait{
+
+        height:80vh;
     }
 
     @include desktop {
@@ -290,8 +314,13 @@ nav {
 
         
     position: relative;
-    top: 24vh;
+    top: 21vh;
 
+        @include sm-mobile {
+
+            top: 24vh;
+
+        }
 
        @include mobile-landscape {
 
@@ -301,22 +330,22 @@ nav {
 
         @include tablet {
 
-            top: 25vh;
+            top: 29vh;
         }
 
         @include desktop {
 
-            top: 30vh;
+            top: 17rem;
         }
 
         @include large {
 
-            top: 30vh;
+            top: 20rem;
         }
 
         @include xlarge {
 
-            top: 35vh;
+            top: 27rem;
         }
 
 
@@ -344,28 +373,33 @@ nav {
 
     display: flex;
     justify-content: space-around;
+   
     flex-wrap: wrap;
     
 }
 
 .search-buttons {
 
-        
+        align-content: center;
         position: relative;
         left: 0vw;
-        height: 40vh;
+        height: 38vh;
 
+    @include sm-mobile {
+
+        height: 40vh;
+    }
     @include mobile-landscape {
 
-        height: 32vh;
+        height: 10rem;
        
     }
 
     @include tablet {
 
-        height: 25vh;
-        width: 50vw;
-        left: 25vw;
+        height: 8rem;
+        width: 86vw;
+        left: 7vw;
     }
 
     @include desktop {
@@ -426,7 +460,7 @@ nav {
 .search-buttons__button {
 
     margin: 1.5rem;
-    padding-top: 1rem;
+    //padding-top: 1rem;
 
         p {
 
@@ -435,23 +469,41 @@ nav {
         @include button-text-desktop;
         color: #d56c05;;
     }
+
+    @include tablet {
+
+        padding-top: 0rem;
+        
+    }
 }
 
 .search-buttons__button__element--style {
 
-    @include search-button-mobile;
 
+    @include search-button-xs-mobile;
+
+    @include sm-mobile {
+        
+       @include search-button-mobile;
+
+    }
    
     @include mobile-landscape {
 
-    width: 5rem;
-    height: 4rem;
+        @include search-button-xs-mobile;
 
+    }
+
+    @include tablet {
+
+        @include search-button-mobile;
     }
     @include desktop {
 
         @include search-button-desktop;
     }
+
+    
     
     @include large {
      
@@ -481,6 +533,11 @@ nav {
     margin-top: 0rem;
     padding-top: 2rem;
     width: 100vw;
+
+    @include mobile-landscape {
+
+        padding-top: 1rem;
+    }
 
     @include tablet {
 
@@ -571,7 +628,7 @@ nav {
 
     height: auto;
     width: 100vw;
-    overflow: auto;
+    overflow: visible;
 }
 .results {
 
@@ -579,12 +636,12 @@ nav {
     width: 100vw;
     position: relative;
     overflow: auto;
-    padding-bottom: 5rem;
+   // padding-bottom: 9rem;
     display: flex;
     flex-direction: column;
     //justify-content: center;
     flex-wrap: wrap;
-    top: 2rem;
+    top: 4rem;
     align-content: center;
 }
 
@@ -593,6 +650,7 @@ nav {
 .all-results--background {
 
     background-color: #0e0920;
+    padding-bottom: 9rem;
 }
 
 .results__display {
@@ -602,6 +660,30 @@ nav {
    // top: 5rem;
     //left: 25vw;
     position: relative;
+
+    @include tablet {
+
+        width: 50rem;
+        height: 30rem;
+    }
+
+    @include desktop {
+
+        width: 50rem;
+        height: 30rem;
+    }
+
+    @include large {
+
+        width: 50rem;
+        height: 30rem;
+    }
+
+    @include xlarge {
+
+        width: 50rem;
+        height: 30rem;
+    }
 }
 
 #map {
@@ -622,6 +704,26 @@ nav {
     height: auto;
     //left: 25vw;
     text-align: center;
+
+    @include tablet {
+
+        width: 48rem;
+    }
+
+    @include desktop {
+
+        width: 48rem;
+    }
+
+    @include large {
+
+        width: 48rem;
+    }
+
+    @include xlarge {
+
+        width: 48rem;
+    }
 }
 
 .results-text--style {

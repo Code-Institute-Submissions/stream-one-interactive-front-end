@@ -217,7 +217,7 @@ document.getElementById('groom-button').onclick = function(){
                         for (i = 0; i < reviewArray.length; i++) {
 
                             eachReview = document.createElement("p");
-                            eachReview.innerHTML = `"${reviewArray[i]}"`;
+                            eachReview.innerHTML = `<em>"${reviewArray[i]}"</em>`;
                             document.getElementById('text').appendChild(eachReview);
 
                         }
