@@ -67,7 +67,7 @@
                                 </div>
                                 <p>Shop</p>
                             </button>
-                        </div>
+                        </div>  
                         <div class="search-buttons__button">
                             <button id="groom-button" type="button" value="dog groomer, pet grooming" class="search-buttons__button__element--style">
                                 <div>
@@ -88,17 +88,19 @@
 
     </div>
     <section class = "hide-results">
-        <div class="results results--background">
-            <div class="results__display results__display--style">
-                <div id="map"></div>
-            </div>
-            <button class = "reset" type="button" value="reset">RESET SEARCH</button>
-            <div>
-                <p class="map-instructions">Click on a Marker to display info</p>
-            </div>
-            <div class="results-text results-text--style">
-                <div id="text" class="results-text__text results-text__text--style"></div>
-            </div>
+        <div class="all-results all-results--background">
+            <div class="results">
+                <div class="results__display results__display--style">
+                    <div id="map"></div>
+                </div>
+                <p class="map-instructions">Click on a marker to display more info.</p>
+                <div id="results-text-show" class="results-text">
+                    <div id="text" class="results-text__text results-text__text--style"></div>
+                </div>
+                <div class="reset">
+                    <button id="reset-button" class = "reset__button reset__button--style" type="button" value="reset">AGAIN!</button>
+                </div>
+            </div>  
         </div>
         
 

@@ -1,6 +1,10 @@
 
+//---------------------- UI SCRIPTS ---------------------------------//
 
-// ------------- Need to set location with user input ------------//
+
+//---------------------- FUNCTIONAL SCRIPT --------------------------//
+
+
 
 // GLOBAL VARIABLES //
 
@@ -10,7 +14,8 @@ var userInput;
 
 var buttonParam;
 
-// SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION
+// SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION //
+
 document.getElementById('walk-button').onclick = function(){
 
     buttonParam = document.getElementById('walk-button').value.toString();
@@ -22,57 +27,45 @@ document.getElementById('sit-button').onclick = function(){
 
     buttonParam = document.getElementById('sit-button').value;
     console.log(buttonParam);
+    console.log(userInput);
 };
 
 document.getElementById('board-button').onclick = function(){
 
     buttonParam = document.getElementById('board-button').value;
     console.log(buttonParam);
+    console.log(userInput);
 };
 
 document.getElementById('vet-button').onclick = function(){
 
     buttonParam = document.getElementById('vet-button').value;
     console.log(buttonParam);
+    console.log(userInput);
 };
 
 document.getElementById('shop-button').onclick = function(){
 
     buttonParam = document.getElementById('shop-button').value;
     console.log(buttonParam);
+    console.log(userInput);
 };
 
 document.getElementById('groom-button').onclick = function(){
 
     buttonParam = document.getElementById('groom-button').value;
     console.log(buttonParam);
+    console.log(userInput);
 };
 
 
 
-
-
-
-/*var buttonParams = {
-
-    dogWalker: "Dog walker, dog walking",
-    petSitting: "Pet sitter, pet services, dog sitting",
-    grooming: "Pet groomer, pet grooming, dog groomer",
-    vet: "vets",
-    boarder: "pet boarding, pet holiday",
-    petShop: "Pet shops"
-}*/
-
-//var searchParams = {searchLocation: userInput, searchType: buttonParams};
-
-//console.log(searchParams.searchType);
 
 // ACTIVATE XMLHTTP REQUEST ON GO CLICK //
 
  function sendSearch(){
 
     
-
     var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
     //--------HTTP REQUEST-------------------//
@@ -173,67 +166,76 @@ document.getElementById('groom-button').onclick = function(){
                 reference: place.reference
                 };
             
-            service.getDetails(request, function(details, status) {
-            
-            // ---- retrieve all reviews and create new array --------- //
+                service.getDetails(request, function(details, status) {
+                
+                // ---- retrieve all reviews and create new array --------- //
 
-                if (status == google.maps.places.PlacesServiceStatus.OK){
+                    if (status == google.maps.places.PlacesServiceStatus.OK){
 
-                    var reviewArray = [];
+                        var reviewArray = [];
 
-                        for(var i=0; i < details.reviews.length; i++) {
+                            for(var i=0; i < details.reviews.length; i++) {
 
-                            
-                            reviewArray.push(details.reviews[i].text);
-                            
-                            
-                       }
+                                
+                                reviewArray.push(details.reviews[i].text);
+                                
+                                
+                        }
 
-                    
-    // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
                         
-                    var info = {
-                        name: details.name,
-                        address: details.formatted_address,
-                        website: details.website,
-                        number: details.formatted_phone_number,
-                       // reviews: reviewArray,
-                        rating: details.rating
-                    };
+        // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
+                            
+                        var info = {
+                            name: details.name,
+                            address: details.formatted_address,
+                            website: details.website,
+                            number: details.formatted_phone_number,
+                        // reviews: reviewArray,
+                            rating: details.rating
+                        };
 
-                    //console.log(info.reviewArray);
+                        //console.log(info.reviewArray);
 
-    // ---------- write to document place details on Marker click ---------------------//
+        // ---------- write to document place details on Marker click ---------------------//
 
-                    document.getElementById("text").innerHTML=
-                    `<h2>${info.name}</h2>
-                    <h3>Address</h3>
-                    <p>${info.address}</p>
-                    <h3>Website</h3>
-                    <p><a href="${info.website} target="_blank">Click here for company website</a></p>
-                    <h3>Phone</h3>
-                    <p>${info.number}</p>
-                    <h3>Overall Rating</h3>
-                    <p>${info.rating}</p>
-                    <h3>Reviews</h3>`;
+                        
 
-                    var eachReview;
+                        document.getElementById("text").innerHTML =
+                        `<h2>${info.name}</h2>
+                        <h3>Address</h3>
+                        <p>${info.address}</p>
+                        <h3>Website</h3>
+                        <p><a href="${info.website} target="_blank">Click here for company website</a></p>
+                        <h3>Phone</h3>
+                        <p>${info.number}</p>
+                        <h3>Overall Rating</h3>
+                        <p>${info.rating}</p>
+                        <h3>Reviews</h3>`;
 
-                    for (i = 0; i < reviewArray.length; i++) {
+                        var eachReview;
 
-                        eachReview = document.createElement("p");
-                        eachReview.innerHTML = reviewArray[i];
-                        document.getElementById('text').appendChild(eachReview);
+                        for (i = 0; i < reviewArray.length; i++) {
+
+                            eachReview = document.createElement("p");
+                            eachReview.innerHTML = `"${reviewArray[i]}"`;
+                            document.getElementById('text').appendChild(eachReview);
+
+                        }
+
+                        $("#results-text-show").addClass("results-text--style");  
 
                     }
 
-                        infowindow.setContent(details.name);
+                        
+                }); 
+
+                        infowindow.setContent(place.name, place.opening_hours);
                         infowindow.open(map, marker);
 
-                    }
-                }); 
+                        
             });
 
+                        
         }
 
         initialize();
@@ -242,10 +244,20 @@ document.getElementById('groom-button').onclick = function(){
   
 } //close sendSearch Function//
 
+// SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP //
+
 document.getElementById('send').onclick = function(){
 
     userInput = document.getElementById('user-input').value;
     sendSearch();
 
     $("section").removeClass("hide-results");
+};
+
+// RESET SEARCH BAR FUNCTION //
+
+document.getElementById("reset-button").onclick = function(){
+
+    document.getElementById('user-input').value = "";
+    $("section").addClass("hide-results");
 };

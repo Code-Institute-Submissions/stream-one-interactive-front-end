@@ -268,19 +268,29 @@ nav {
 .hide-results {
   display: none; }
 
-.results {
-  min-height: 100vh;
+.all-results {
+  height: auto;
   width: 100vw;
-  position: relative; }
+  overflow: auto; }
 
-.results--background {
-  background-color: #feefeb; }
+.results {
+  height: auto;
+  width: 100vw;
+  position: relative;
+  overflow: auto;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top: 2rem;
+  align-content: center; }
+
+.all-results--background {
+  background-color: #0e0920; }
 
 .results__display {
-  width: 50vw;
-  height: 50vh;
-  top: 5%;
-  left: 25vw;
+  width: 27rem;
+  height: 20rem;
   position: relative; }
 
 #map {
@@ -289,20 +299,49 @@ nav {
   position: relative; }
 
 .results-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
   position: relative;
-  top: 5rem;
-  width: 50vw;
+  width: 25rem;
   height: auto;
-  left: 25vw; }
+  text-align: center; }
+
+.results-text--style {
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #0e0920; }
 
 .map-instructions {
   position: relative;
-  text-align: center; }
+  text-align: center;
+  padding-top: 1rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: #fff; }
 
 .reset {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.reset__button {
   position: relative;
-  left: 50vw;
-  transform: translateX(-50%);
-  top: 5rem; }
+  top: 2rem;
+  text-align: center; }
+
+.reset__button--style {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  border: 2px solid white;
+  background-color: #dd1616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 1.5rem;
+  margin: 0px;
+  color: #fff; }
 
 /*# sourceMappingURL=main.css.map */
