@@ -439,4 +439,29 @@ nav {
   background-color: #fff;
   color: #dd1616; }
 
+.website-button {
+  height: 3rem;
+  width: 6rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #d56d05;
+  color: #0e0920;
+  transition: background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.website-button:hover,
+.website-button:focus {
+  background-color: #0e0920;
+  color: #d56d05; }
+
+.search-button-clicked {
+  width: 11rem;
+  height: 8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #d56d05c7;
+  box-shadow: 6px 6px 6px 0px #33180a;
+  background-color: #0e0920;
+  transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: #d56c05;
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0); }
+
 /*# sourceMappingURL=main.css.map */

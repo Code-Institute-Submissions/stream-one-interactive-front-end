@@ -1,6 +1,16 @@
 
 //---------------------- UI SCRIPTS ---------------------------------//
 
+$(document).ready(function(){
+
+    
+    $(".search-buttons__button").click(function(){
+
+        $.("button").css("background-color:blue");
+    });
+
+
+});
 
 //---------------------- FUNCTIONAL SCRIPT --------------------------//
 
@@ -205,7 +215,7 @@ document.getElementById('groom-button').onclick = function(){
                         <h3>Address</h3>
                         <p>${info.address}</p>
                         <h3>Website</h3>
-                        <p><a href="${info.website} target="_blank">Click here for company website</a></p>
+                        <p><a href="${info.website} target = "_blank"><button class="website-button">Click Me</button></a></p>
                         <h3>Phone</h3>
                         <p>${info.number}</p>
                         <h3>Overall Rating</h3>
