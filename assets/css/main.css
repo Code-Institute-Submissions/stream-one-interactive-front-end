@@ -420,16 +420,15 @@ a {
 .reset {
   display: flex;
   flex-direction: row;
-  justify-content: center; }
-
-.reset__button {
-  position: relative;
-  top: 2rem;
-  text-align: center; }
-
-.reset__button--style {
+  justify-content: center;
   width: 6rem;
   height: 6rem;
+  align-content: center;
+  top: 2rem;
+  position: relative;
+  align-self: center; }
+
+.reset__button--style {
   border-radius: 3rem;
   border: 2px solid white;
   background-color: #dd1616;

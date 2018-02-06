@@ -831,22 +831,31 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    //justify-content: center;
+    align-content: center;
+    top: 2rem;
+    position: relative;
+    //left: 50vw;
+    //transform: translatex(-50%);
+    align-self: center;
 
 }
-.reset__button {
+//.reset__button {
 
-    position: relative;
-    top: 2rem;
+    //position: relative;
+    //top: 2rem;
    // width: 25rem;
     //height: auto;
    // left: 25vw;
-    text-align: center;
-}
+    //text-align: center;
+//}
 
 .reset__button--style {
 
-    width: 6rem;
-    height: 6rem;
+    //width: 6rem;
+    //height: 6rem;
     border-radius: 3rem;
     //box-shadow: 2px 4px 6px 0px #4b2413;
     border: 2px solid white;
