@@ -640,16 +640,24 @@ nav {
     }
 }
 
+a {
+
+    text-decoration: none;
+}
+
 .go-button__button--style:hover,
 .go-button__button--style:focus {
 
     box-shadow: 2px 3px 3px 2px #24110c;
+   // background-color: #397532;
 }
 
 .go-click {
 
     box-shadow: 2px 3px 3px 2px #24110c;
-    //border: 2px solid #217219;
+    //background-color: #397532;
+    //border: 2px solid rgba(255, 255, 255, 1);
+    font-size:2.5rem;
     //background-color: rgba(255, 255, 255, 1);
     //color: #217219;
 }
@@ -854,14 +862,22 @@ nav {
 
 }
 
-.reset:hover {
+.reset:hover,
+.reset:focus {
 
     .reset__button--style {
 
-        border: 2px solid #dd1616;
-        background-color: #fff;
-        color: #dd1616;
+        //border: 2px solid #dd1616;
+        background-color:#db4646;
+        //color: #dd1616;
     }
+}
+
+.reset-click {
+
+    border: 2px solid #dd1616;
+    color: #dd1616;
+    background-color:#fff;
 }
 
 .website-button {

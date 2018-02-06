@@ -11,9 +11,9 @@
 
 document.getElementById("user-input").value = "";
 
-var userInput;
+var userInput = "";
 
-var buttonParam;
+var buttonParam = "";
 
 // SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION //
 
@@ -224,6 +224,11 @@ document.getElementById('groom-button').onclick = function(){
                         }
 
                         $("#results-text-show").addClass("results-text--style");  
+                        $("#results-text-show").delay(400).slideDown(400);
+
+                        /*$('html, body').delay(400).animate({
+                            scrollTop: $("#results-text-show").offset().top
+                            }, 400);*/
 
                     }
 
@@ -247,27 +252,48 @@ document.getElementById('groom-button').onclick = function(){
 
 //---------------------- UI SCRIPTS ---------------------------------//
 
-// SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP //
+// SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP, SLIDE DOWN //
 
-document.getElementById('send').onclick = function(){
+document.getElementById('go').onclick = function(){
 
     userInput = document.getElementById('user-input').value;
+
     sendSearch();
 
-    $("section").removeClass("hide-results");
+   
+    
 };
 
-// RESET SEARCH BAR FUNCTION //
+ 
+
+
+// RESET SEARCH FUNCTION //
 
 
 document.getElementById("reset-button").onclick = function(){
 
+    
     document.getElementById('user-input').value = "";
-    $("section").addClass("hide-results");
+    userInput="";
+    buttonParam="";
+    
+    $("#results-text-show").delay(400).slideUp(400);
+    $("section").delay(1000).slideUp(400);
+
+    $('button').removeClass('search-button-clicked');
+    $('button').contents().removeAttr('id');
+
+    $('.go-button__button').removeClass('go-click');
+
+    console.log(userInput);
+    console.log(buttonParam);
+
 };
 
 
-//BUTTON SCRIPT//
+//BUTTON SCRIPTS//
+
+//--- CLASS TOGGLE FOR SEARCH BUTTON STYLING -----//
 
 $('.search-buttons__button__element--style').on('click',function(){
         
@@ -287,8 +313,33 @@ $('.search-buttons__button__element--style').on('click',function(){
     }
 });
 
+//------ GO BUTTON STYLING -----//
 $('.go-button__button').on('click', function (){
 
-    $('.go-button__button').toggleClass('go-click');
+   
+
+    if((userInput == "") && (buttonParam == "")){
+
+            alert("Please enter a location, and choose a Pet Stop");
+
+        }else if((userInput == "") && (buttonParam !== "")){
+
+            alert("Please enter a location");
+
+        }else if ((userInput !== "") && (buttonParam == "")){
+
+            alert("Please enter a Pet Stop");
+       
+        }else {
+
+            $('.go-button__button').toggleClass('go-click');
+            $("section").slideDown('fast');
+
+            $('html, body').delay(800).animate({
+            scrollTop: $( $(this).parent().attr('href') ).offset().top
+            }, 400);
+   
+
+    }
 });
 
