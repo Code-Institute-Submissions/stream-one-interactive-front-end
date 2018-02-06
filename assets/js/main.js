@@ -1,16 +1,7 @@
 
-//---------------------- UI SCRIPTS ---------------------------------//
-
-$(document).ready(function(){
-
-    
-    $(".search-buttons__button").click(function(){
-
-        $.("button").css("background-color:blue");
-    });
 
 
-});
+
 
 //---------------------- FUNCTIONAL SCRIPT --------------------------//
 
@@ -254,6 +245,8 @@ document.getElementById('groom-button').onclick = function(){
   
 } //close sendSearch Function//
 
+//---------------------- UI SCRIPTS ---------------------------------//
+
 // SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP //
 
 document.getElementById('send').onclick = function(){
@@ -266,8 +259,36 @@ document.getElementById('send').onclick = function(){
 
 // RESET SEARCH BAR FUNCTION //
 
+
 document.getElementById("reset-button").onclick = function(){
 
     document.getElementById('user-input').value = "";
     $("section").addClass("hide-results");
 };
+
+
+//BUTTON SCRIPT//
+
+$('.search-buttons__button__element--style').on('click',function(){
+        
+
+    if ($(this).hasClass('search-button-clicked')) {
+
+        $(this).removeClass('search-button-clicked');
+        $(this).contents().removeAttr('id');
+
+    } else {
+
+        $('button').removeClass('search-button-clicked');
+        $('button').contents().removeAttr('id');
+        $(this).addClass('search-button-clicked');
+        $(this).contents().attr('id', 'search-buttons__icon--clicked');
+        
+    }
+});
+
+$('.go-button__button').on('click', function (){
+
+    $('.go-button__button').toggleClass('go-click');
+});
+

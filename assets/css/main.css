@@ -167,7 +167,7 @@ nav {
 
 .search-buttons__button {
   margin: 1.5rem; }
-  .search-buttons__button p {
+  .search-buttons__button .search-buttons__button__text {
     margin-top: .3rem;
     margin-bottom: .3rem;
     font-family: "Pontano Sans", sans-serif;
@@ -241,22 +241,23 @@ nav {
       background-color: #0e0920;
       transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
 
+.search-button-clicked {
+  border: 1px solid #0e0920;
+  transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: #d56c05;
+  box-shadow: 2px 4px 2px 0px #33180a; }
+
 .search-buttons__icon--style {
   font-size: 1.6rem;
   color: #d56c05;
   transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
+#search-buttons__icon--clicked {
+  color: #0e0920; }
+
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
-  border: 1px solid #0e0920;
-  box-shadow: 2px 4px 2px 0px #33180a;
-  background-color: #e8811bcc; }
-  .search-buttons__button__element--style:hover .search-buttons__icon--style,
-  .search-buttons__button__element--style:focus .search-buttons__icon--style {
-    color: #0e0920; }
-  .search-buttons__button__element--style:hover .search-buttons__button__text,
-  .search-buttons__button__element--style:focus .search-buttons__button__text {
-    color: #0e0920; }
+  box-shadow: 2px 4px 2px 0px #33180a; }
 
 .go-button {
   margin-top: 0rem;
@@ -302,6 +303,9 @@ nav {
 
 .go-button__button--style:hover,
 .go-button__button--style:focus {
+  box-shadow: 2px 3px 3px 2px #24110c; }
+
+.go-click {
   box-shadow: 2px 3px 3px 2px #24110c; }
 
 .search-bar__input {
@@ -452,16 +456,5 @@ nav {
 .website-button:focus {
   background-color: #0e0920;
   color: #d56d05; }
-
-.search-button-clicked {
-  width: 11rem;
-  height: 8rem;
-  border-radius: 0.6rem;
-  border: 1px solid #d56d05c7;
-  box-shadow: 6px 6px 6px 0px #33180a;
-  background-color: #0e0920;
-  transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background-color: #d56c05;
-  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0); }
 
 /*# sourceMappingURL=main.css.map */
