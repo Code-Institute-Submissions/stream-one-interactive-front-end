@@ -298,6 +298,27 @@ nav {
     }
 }
 
+img {
+
+    visibility: hidden;
+    height: 12rem;
+    position: relative;
+    left: 59vw;
+    top: 0vh;
+
+    @include large {
+
+        //display: block;
+
+    }
+
+    @include xlarge {
+
+        //display: block;
+        height: 16rem;
+    }
+}
+
 .search-form {
 
     display: flex;
@@ -350,7 +371,7 @@ nav {
 
         @include large {
 
-            top: 20rem;
+            top: 5.5rem;
         }
 
         @include xlarge {
@@ -391,6 +412,7 @@ nav {
 .search-buttons {
 
         align-content: center;
+        align-items: center;
         position: relative;
         left: 0vw;
         height: 38vh;

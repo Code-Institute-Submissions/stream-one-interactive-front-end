@@ -67,6 +67,16 @@ nav {
     .nav__navtext {
       font-size: 7rem; } }
 
+img {
+  visibility: hidden;
+  height: 12rem;
+  position: relative;
+  left: 59vw;
+  top: 0vh; }
+  @media (min-width: 1500px) {
+    img {
+      height: 16rem; } }
+
 .search-form {
   display: flex;
   flex-direction: column; }
@@ -95,7 +105,7 @@ nav {
       top: 17rem; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .search-container {
-      top: 20rem; } }
+      top: 5.5rem; } }
   @media (min-width: 1500px) {
     .search-container {
       top: 27rem; } }
@@ -115,6 +125,7 @@ nav {
 
 .search-buttons {
   align-content: center;
+  align-items: center;
   position: relative;
   left: 0vw;
   height: 38vh; }

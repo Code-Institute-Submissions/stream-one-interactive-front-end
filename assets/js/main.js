@@ -20,6 +20,7 @@ var buttonParam = "";
 document.getElementById('walk-button').onclick = function(){
 
     buttonParam = document.getElementById('walk-button').value.toString();
+    $('img').show();
     console.log(buttonParam);
     console.log(userInput);
 };
@@ -254,7 +255,7 @@ document.getElementById('groom-button').onclick = function(){
 
 // SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP, SLIDE DOWN //
 
-document.getElementById('go').onclick = function(){
+/*document.getElementById('go').onclick = function(){
 
     userInput = document.getElementById('user-input').value;
 
@@ -262,7 +263,7 @@ document.getElementById('go').onclick = function(){
 
    
     
-};
+};*/
 
  
 
@@ -316,7 +317,7 @@ $('.search-buttons__button__element--style').on('click',function(){
 //------ GO BUTTON STYLING -----//
 $('.go-button__button').on('click', function (){
 
-   
+    userInput = document.getElementById('user-input').value;
 
     if((userInput == "") && (buttonParam == "")){
 
@@ -331,6 +332,10 @@ $('.go-button__button').on('click', function (){
             alert("Please enter a Pet Stop");
        
         }else {
+
+            
+
+            sendSearch();
 
             $('.go-button__button').toggleClass('go-click');
             $("section").slideDown('fast');
