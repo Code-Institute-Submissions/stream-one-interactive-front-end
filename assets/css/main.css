@@ -96,7 +96,7 @@ img {
       top: -1vh; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     img {
-      height: 7rem;
+      height: 9rem;
       left: 57vw;
       top: 1vh; } }
   @media (min-width: 1500px) {
@@ -139,7 +139,7 @@ img {
       top: 9rem; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .search-container {
-      top: 5.5rem; } }
+      top: 9.5rem; } }
   @media (min-width: 1500px) {
     .search-container {
       top: 14.5rem; } }

@@ -17,7 +17,7 @@ var buttonParam = "";
 
 // SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION //
 
-document.getElementById('walk-button').onclick = function(){
+/*document.getElementById('walk-button').onclick = function(){
 
     buttonParam = document.getElementById('walk-button').value.toString();
     console.log(buttonParam);
@@ -57,7 +57,7 @@ document.getElementById('groom-button').onclick = function(){
     buttonParam = document.getElementById('groom-button').value;
     console.log(buttonParam);
     console.log(userInput);
-};
+};*/
 
 
 
@@ -170,19 +170,25 @@ document.getElementById('groom-button').onclick = function(){
                 service.getDetails(request, function(details, status) {
                 
                 // ---- retrieve all reviews and create new array --------- //
+                    var reviewArray = [];
 
                     if (status == google.maps.places.PlacesServiceStatus.OK){
 
-                        var reviewArray = [];
+                       if (details.reviews == undefined) {
+
+                            reviewArray.push('No Reviews for this company');
+
+                       } else {
 
                             for(var i=0; i < details.reviews.length; i++) {
 
                                 
                                 reviewArray.push(details.reviews[i].text);
                                 
-                                
+                            }
                         }
 
+                        console.log(reviewArray);
                         
         // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
                             
@@ -199,39 +205,39 @@ document.getElementById('groom-button').onclick = function(){
 
         // ---------- write to document place details on Marker click ---------------------//
 
-                        
+                       // setTimeout(function(){
 
-                        document.getElementById("text").innerHTML =
-                        `<h2>${info.name}</h2>
-                        <h3>Address</h3>
-                        <p>${info.address}</p>
-                        <h3>Website</h3>
-                        <p><a href="${info.website} target = "_blank"><button class="website-button">Click Me</button></a></p>
-                        <h3>Phone</h3>
-                        <p>${info.number}</p>
-                        <h3>Overall Rating</h3>
-                        <p>${info.rating}</p>
-                        <h3>Reviews</h3>`;
+                            document.getElementById("text").innerHTML =
+                            `<h2>${info.name}</h2>
+                            <h3>Address</h3>
+                            <p>${info.address}</p>
+                            <h3>Website</h3>
+                            <p><a href="${info.website} target = "_blank"><button class="website-button">Click Me</button></a></p>
+                            <h3>Phone</h3>
+                            <p>${info.number}</p>
+                            <h3>Overall Rating</h3>
+                            <p>${info.rating}</p>
+                            <h3>Reviews</h3>`;
 
-                        var eachReview;
+                            var eachReview;
 
-                        for (i = 0; i < reviewArray.length; i++) {
+                            for (i = 0; i < reviewArray.length; i++) {
 
-                            eachReview = document.createElement("p");
-                            eachReview.innerHTML = `<em>"${reviewArray[i]}"</em>`;
-                            document.getElementById('text').appendChild(eachReview);
+                                eachReview = document.createElement("p");
+                                eachReview.innerHTML = `<em>"${reviewArray[i]}"</em>`;
+                                document.getElementById('text').appendChild(eachReview);
 
+                            }
+
+                            $("#results-text-show").addClass("results-text--style");  
+                            $("#results-text-show").delay(400).slideDown(400);
+
+                            /*$('html, body').delay(400).animate({
+                                scrollTop: $("#results-text-show").offset().top
+                                }, 400);*/
+                         //   }, 1000);
                         }
-
-                        $("#results-text-show").addClass("results-text--style");  
-                        $("#results-text-show").delay(400).slideDown(400);
-
-                        /*$('html, body').delay(400).animate({
-                            scrollTop: $("#results-text-show").offset().top
-                            }, 400);*/
-
-                    }
-
+                
                         
                 }); 
 
@@ -252,98 +258,6 @@ document.getElementById('groom-button').onclick = function(){
 
 //---------------------- UI SCRIPTS ---------------------------------//
 
-// SET SEARCH BAR USER INPUT TO VARIABLE, CALL SEND SEARCH FUNCTION, REVEAL MAP, SLIDE DOWN //
-
-/*document.getElementById('go').onclick = function(){
-
-    userInput = document.getElementById('user-input').value;
-
-    sendSearch();
-
-   
-    
-};*/
-
- 
-
-
-// RESET SEARCH FUNCTION //
-
-
-document.getElementById("reset-button").onclick = function(){
-
-    
-    document.getElementById('user-input').value = "";
-    userInput="";
-    buttonParam="";
-    
-    $("#results-text-show").delay(400).slideUp(400);
-    $("section").delay(1000).slideUp(400);
-
-    $('button').removeClass('search-button-clicked');
-    $('button').contents().removeAttr('id');
-
-    $('.go-button__button').removeClass('go-click');
-
-    console.log(userInput);
-    console.log(buttonParam);
-
-};
-
-
-//BUTTON SCRIPTS//
-
-//--- CLASS TOGGLE FOR SEARCH BUTTON STYLING -----//
-$('.search-buttons__button__element--style').on('click',function(){
-        
-
-    if ($(this).hasClass('search-button-clicked')) {
-
-        $(this).removeClass('search-button-clicked');
-        $(this).contents().removeAttr('id');
-
-    } else {
-
-        $('button').removeClass('search-button-clicked');
-        $('button').contents().removeAttr('id');
-        $(this).addClass('search-button-clicked');
-        $(this).contents().attr('id', 'search-buttons__icon--clicked');
-        
-    }
-});
-
-
-//------ GO BUTTON STYLING -----//
-$('.go-button__button').on('click', function (){
-
-    userInput = document.getElementById('user-input').value;
-
-    if((userInput == "") && (buttonParam == "")){
-
-            alert("Please enter a location, and choose a Pet Stop");
-
-        }else if((userInput == "") && (buttonParam !== "")){
-
-            alert("Please enter a location");
-
-        }else if ((userInput !== "") && (buttonParam == "")){
-
-            alert("Please enter a Pet Stop");
-       
-        }else {
-
-            sendSearch();
-
-            $('.go-button__button').toggleClass('go-click');
-            $("section").slideDown('fast');
-
-            $('html, body').delay(800).animate({
-            scrollTop: $( $(this).parent().attr('href') ).offset().top
-            }, 400);
-   
-
-    }
-});
 
 var images = { 
 
@@ -375,11 +289,30 @@ var buttonIdArray = Object.keys(buttonId).map (function(key) {
     return [buttonId[key]]
 });
 
-console.log(imageBubbleArray);
-console.log(buttonIdArray);
+//console.log(imageBubbleArray);
+//console.log(buttonIdArray);
 
 
 $('button').on('click', function(){
+
+
+    if ($(this).hasClass('search-button-clicked')) {
+
+        $(this).removeClass('search-button-clicked');
+        $(this).contents().removeAttr('id');
+        buttonParam = "";
+
+    } else {
+
+        $('button').removeClass('search-button-clicked');
+        $('button').contents().removeAttr('id');
+        $(this).addClass('search-button-clicked');
+        $(this).contents().attr('id', 'search-buttons__icon--clicked');
+        buttonParam = $(this).attr('value').toString();
+        
+    }
+
+    console.log(buttonParam);
 
     for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
 
@@ -388,10 +321,12 @@ $('button').on('click', function(){
             if ($(this).attr('id') == buttonIdArray[i]) {// when the buttonArray ID matches the button ID
                 
                 var imageString = imageBubbleArray[i].toString();
+                
+
                 //$('img').attr('src', imageBubbleArray[i].toString()); // set the image based on the button ID index
                // $('img').toggleClass('img-click');
                // return imageBubbleArray[i];
-                console.log(imageString);
+                //console.log(imageString);
 
             
                 if (($('img').hasClass('img-click')) && ($('img').attr('src') !== imageString)) { // if the img doesn't have img-click and this button has search button clicked add class
@@ -433,6 +368,93 @@ $('button').on('click', function(){
         }
     }   
 });
+
+ 
+
+
+// RESET SEARCH FUNCTION //
+
+
+document.getElementById("reset-button").onclick = function(){
+
+    
+    document.getElementById('user-input').value = "";
+    userInput="";
+    buttonParam="";
+    
+    $("#results-text-show").delay(400).slideUp(400);
+    $("section").delay(1000).slideUp(400);
+
+    $('button').removeClass('search-button-clicked');
+    $('button').contents().removeAttr('id');
+
+    $('.go-button__button').removeClass('go-click');
+
+    $('img').removeClass('img-click');
+
+    console.log(userInput);
+    console.log(buttonParam);
+
+};
+
+
+//BUTTON SCRIPTS//
+
+//--- CLASS TOGGLE FOR SEARCH BUTTON STYLING -----//
+/*$('.search-buttons__button__element--style').on('click',function(){
+        
+
+    if ($(this).hasClass('search-button-clicked')) {
+
+        $(this).removeClass('search-button-clicked');
+        $(this).contents().removeAttr('id');
+
+    } else {
+
+        $('button').removeClass('search-button-clicked');
+        $('button').contents().removeAttr('id');
+        $(this).addClass('search-button-clicked');
+        $(this).contents().attr('id', 'search-buttons__icon--clicked');
+        
+    }
+});*/
+
+
+//------ GO BUTTON STYLING -----//
+$('.go-button__button').on('click', function (){
+
+    userInput = document.getElementById('user-input').value;
+
+    if ((userInput == "") && (buttonParam == "")){
+
+            alert("Please enter a location, and choose a Pet Stop");
+
+        } else if((userInput == "") && (buttonParam !== "")){
+
+            alert("Please enter a location");
+
+        } else if ((userInput !== "") && (buttonParam == "")){
+
+            alert("Please enter a Pet Stop");
+       
+        } else {
+
+            sendSearch();
+
+            $('.go-button__button').toggleClass('go-click');
+            $("section").slideDown('fast');
+
+            $('html, body').delay(800).animate({
+            scrollTop: $( $(this).parent().attr('href') ).offset().top
+            }, 400);
+
+            console.log(userInput);
+   
+
+    }
+});
+
+
 
 
 
