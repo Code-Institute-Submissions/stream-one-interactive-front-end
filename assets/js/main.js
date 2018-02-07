@@ -295,23 +295,7 @@ document.getElementById("reset-button").onclick = function(){
 
 //--- CLASS TOGGLE FOR SEARCH BUTTON STYLING -----//
 
-$('.search-buttons__button__element--style').on('click',function(){
-        
 
-    if ($(this).hasClass('search-button-clicked')) {
-
-        $(this).removeClass('search-button-clicked');
-        $(this).contents().removeAttr('id');
-
-    } else {
-
-        $('button').removeClass('search-button-clicked');
-        $('button').contents().removeAttr('id');
-        $(this).addClass('search-button-clicked');
-        $(this).contents().attr('id', 'search-buttons__icon--clicked');
-        
-    }
-});
 
 //------ GO BUTTON STYLING -----//
 $('.go-button__button').on('click', function (){
@@ -383,37 +367,61 @@ console.log(buttonIdArray);
 
 $('button').on('click', function(){
 
-   // console.log($(this).attr('id'));
-    for (i=0; i < buttonIdArray.length; i++) {
+    for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
 
-        for (i=0; i <imageBubbleArray.length; i++) {
+        for (i=0; i <imageBubbleArray.length; i++) { // loop through Bubble Array
 
-            if ($(this).attr('id') == buttonIdArray[i]){
+            if ($(this).attr('id') == buttonIdArray[i].toString()) {// when the buttonArray ID matches the button ID
                 
-                $('img').attr('src', imageBubbleArray[i]);
+                $('img').attr('src', imageBubbleArray[i].toString()); // set the image based on the button ID index
                // $('img').toggleClass('img-click');
                // return imageBubbleArray[i];
-                console.log(imageBubbleArray[i]);
-                
-                if (($('img').attr('class') !== 'img-click')) {
-
-                    $('img').delay(1000).addClass('img-click');
-        
-                } else if ($('img').hasClass('img-click')) {
-        
-                    $('img').delay(1000).removeClass('img-click');
-        
-                } 
-
-            }           
+                console.log($(this).attr('class'));
 
             
+                
+                if ((($('img').attr('class') !== 'img-click')) && ($(this).attr('class') !== 'search-button-clicked')) { // if the img doesn't have img-click and this button has search button clicked add class
 
-    }         
-}
+                    $('img').delay(1000).addClass('img-click'); // add image-click class
+                    console.log('if');
+                    console.log($(this));
+
+                } else if (($('img').hasClass('img-click')) && ($(this).attr('class') !== 'search-button-clicked'))  { // if the image has image-click and this button doesn't have seaerch button clicked, remove
         
+                    $('img').delay(1000).addClass('img-click');
+
+                    console.log('if else');
+                    console.log($(this));
+
+                } else if (($('img').hasClass('img-click')) && (($(this).attr('class') == 'search-button-clicked'))) { // if the image hasn't got image-click and the button hasn't got search clicked, remove 
+        
+                    $('img').delay(1000).removeClass('img-click'); // remove class
+
+                    console.log('if else else');
+                }
+
+            }           
+        }
+    }   
 });
 
+$('.search-buttons__button__element--style').on('click',function(){
+        
+
+    if ($(this).hasClass('search-button-clicked')) {
+
+        $(this).removeClass('search-button-clicked');
+        $(this).contents().removeAttr('id');
+
+    } else {
+
+        $('button').removeClass('search-button-clicked');
+        $('button').contents().removeAttr('id');
+        $(this).addClass('search-button-clicked');
+        $(this).contents().attr('id', 'search-buttons__icon--clicked');
+        
+    }
+});
 
 
 
