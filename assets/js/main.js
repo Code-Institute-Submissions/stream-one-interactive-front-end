@@ -20,7 +20,6 @@ var buttonParam = "";
 document.getElementById('walk-button').onclick = function(){
 
     buttonParam = document.getElementById('walk-button').value.toString();
-    $('img').show();
     console.log(buttonParam);
     console.log(userInput);
 };
@@ -348,3 +347,40 @@ $('.go-button__button').on('click', function (){
     }
 });
 
+var images = { 
+
+    imageWalk: 'assets/images/walkies.gif',
+    imageSit:  'assets/images/sitter.gif',
+    imageBoard: 'assets/images/walkies.gif',
+    imageVet: 'assets/images/vet.gif',
+    imageShop: 'assets/images/shop.gif',
+    imageGroom: 'assets/images/board.gif'
+}
+
+$('#walk-button').on('click', function (){
+
+    if ($('img').hasClass('img-click')){
+
+        $('img').delay(1000).removeClass('img-click');
+
+    } else {
+
+        $('img').attr('src', images.imageWalk).delay(1000).addClass('img-click');
+
+    }
+});
+
+
+
+$('#sit-button').on('click', function(){
+
+    if($('img').hasClass('img-click')){
+
+        $('img').delay(1000).removeClass('img-click');
+    }else{
+
+        $('img').attr('src', images.imageSit).delay(1000).addClass('img-click');
+    }
+
+    
+})

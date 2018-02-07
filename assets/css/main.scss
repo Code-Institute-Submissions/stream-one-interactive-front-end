@@ -300,23 +300,65 @@ nav {
 
 img {
 
-    visibility: hidden;
-    height: 12rem;
+    visibility: visible;
+    opacity: 0;
+    height: 6rem;
     position: relative;
-    left: 59vw;
-    top: 0vh;
+    left: 64vw;
+    top: -2vh;
+    transition: opacity, 0.8s, ease-in;
 
+    @include mobile-landscape{
+
+        left: 56vw;
+        top: -1vh;
+    }
+
+    @include tablet {
+       
+        height: 6rem;
+        left: 58vw;
+        top: 1vh;
+
+    }
+
+    @include tablet-portrait {
+
+        height: 9rem;
+        left: 63vw;
+        top: -1vh;
+
+    }
+
+    @include desktop {
+
+        height: 8rem;
+        left: 59vw;
+        top: -1vh;
+    }
+
+    
     @include large {
 
-        //display: block;
+        height: 7rem;
+        left: 57vw;
+        top: 1vh;
 
     }
 
     @include xlarge {
 
         //display: block;
-        height: 16rem;
+        height: 12rem;
+        left: 58vw;
+        top: 0vh;
     }
+}
+
+.img-click {
+
+    opacity: 1;
+    
 }
 
 .search-form {
@@ -345,28 +387,33 @@ img {
 
         
     position: relative;
-    top: 21vh;
+    top: 8vh;
 
         @include sm-mobile {
 
-            top: 24vh;
+            top: 14.5vh;
 
         }
 
        @include mobile-landscape {
 
-            top: 27vh;
+            top: 9vh;
         }
 
 
         @include tablet {
 
-            top: 29vh;
+            top: 10.5vh;
+        }
+
+        @include tablet-portrait {
+
+            top: 15.5vh;
         }
 
         @include desktop {
 
-            top: 17rem;
+            top: 9rem;
         }
 
         @include large {
@@ -376,7 +423,7 @@ img {
 
         @include xlarge {
 
-            top: 27rem;
+            top: 14.5rem;
         }
 
 
