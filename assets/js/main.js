@@ -349,6 +349,7 @@ $('.go-button__button').on('click', function (){
 
 var images = { 
 
+    default: 'assets/images/thoughts.gif',
     imageWalk: 'assets/images/walkies.gif',
     imageSit:  'assets/images/sitter.gif',
     imageBoard: 'assets/images/walkies.gif',
@@ -359,14 +360,29 @@ var images = {
 
 $('#walk-button').on('click', function (){
 
-    if ($('img').hasClass('img-click')){
+    if (($('img').hasClass('img-click')) && ($('img').attr('src') !== images.imageWalk)){
+
+        $('img').removeClass('img-click');
+
+        setTimeout(function() {
+
+            $('img').attr('src', images.imageWalk).delay(400).addClass('img-click');
+
+        }, 400) ;
+        
+
+    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == images.imageWalk)) {
 
         $('img').delay(1000).removeClass('img-click');
 
-    } else {
+
+    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== images.imageWalk)) {
 
         $('img').attr('src', images.imageWalk).delay(1000).addClass('img-click');
 
+    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == images.imageWalk)) {
+
+        $('img').delay(1000).addClass('img-click');
     }
 });
 
@@ -374,13 +390,29 @@ $('#walk-button').on('click', function (){
 
 $('#sit-button').on('click', function(){
 
-    if($('img').hasClass('img-click')){
+    if (($('img').hasClass('img-click')) && ($('img').attr('src') !== images.imageSit)){
+
+        $('img').removeClass('img-click');
+
+        setTimeout(function() {
+
+            $('img').attr('src', images.imageSit).delay(400).addClass('img-click');
+
+        }, 400) ;
+
+    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == images.imageSit)) {
 
         $('img').delay(1000).removeClass('img-click');
-    }else{
+
+
+    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== images.imageSit)) {
 
         $('img').attr('src', images.imageSit).delay(1000).addClass('img-click');
+
+    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == images.imageSit)) {
+
+        $('img').delay(1000).addClass('img-click');
     }
 
     
-})
+});
