@@ -349,16 +349,93 @@ $('.go-button__button').on('click', function (){
 
 var images = { 
 
-    default: 'assets/images/thoughts.gif',
     imageWalk: 'assets/images/walkies.gif',
     imageSit:  'assets/images/sitter.gif',
-    imageBoard: 'assets/images/walkies.gif',
+    imageBoard: 'assets/images/board.gif',
     imageVet: 'assets/images/vet.gif',
     imageShop: 'assets/images/shop.gif',
-    imageGroom: 'assets/images/board.gif'
+    imageGroom: 'assets/images/groomer.gif'
 }
 
-$('#walk-button').on('click', function (){
+var buttonId = {
+
+    walkId: 'walk-button',
+    sitId: 'sit-button',
+    boardId: 'board-button',
+    vetId: 'vet-button',
+    shopId: 'shop-button',
+    groomId: 'groom-button'
+}
+
+var imageBubbleArray = Object.keys(images).map(function(key) {
+
+    return [images[key]];
+});
+
+var buttonIdArray = Object.keys(buttonId).map (function(key) {
+
+    return [buttonId[key]]
+});
+
+console.log(imageBubbleArray);
+console.log(buttonIdArray);
+
+
+$('button').on('click', function(){
+
+   // console.log($(this).attr('id'));
+    for (i=0; i < buttonIdArray.length; i++) {
+
+        for (i=0; i <imageBubbleArray.length; i++) {
+
+            if ($(this).attr('id') == buttonIdArray[i]){
+                
+                $('img').attr('src', imageBubbleArray[i]);
+
+                return imageBubbleArray[i];
+
+                    //console.log(imageBubbleArray[i]);
+             
+            }
+    
+
+   
+    if (($('img').hasClass)('img-click') && ($('img').attr('src') !== imageBubbleArray[i])) {
+
+        $('img').removeClass('img-click');
+
+        setTimeout(function() {
+
+            $('img').delay(400).addClass('img-click');
+
+        }, 400) ;
+
+    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == imageBubbleArray[i])) {
+
+        $('img').delay(1000).removeClass('img-click');
+
+
+    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== imageBubbleArray[i])) {
+
+        $('img').delay(1000).addClass('img-click');
+
+    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == imageBubbleArray[i])) {
+
+        $('img').delay(1000).addClass('img-click');
+    }
+
+    }         
+}
+        
+});
+
+
+
+
+
+
+
+/*$('#walk-button').on('click', function (){
 
     if (($('img').hasClass('img-click')) && ($('img').attr('src') !== images.imageWalk)){
 
@@ -415,4 +492,4 @@ $('#sit-button').on('click', function(){
     }
 
     
-});
+});*/
