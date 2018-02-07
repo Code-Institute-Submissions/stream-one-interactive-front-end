@@ -391,38 +391,23 @@ $('button').on('click', function(){
             if ($(this).attr('id') == buttonIdArray[i]){
                 
                 $('img').attr('src', imageBubbleArray[i]);
+               // $('img').toggleClass('img-click');
+               // return imageBubbleArray[i];
+                console.log(imageBubbleArray[i]);
+                
+                if (($('img').attr('class') !== 'img-click')) {
 
-                return imageBubbleArray[i];
+                    $('img').delay(1000).addClass('img-click');
+        
+                } else if ($('img').hasClass('img-click')) {
+        
+                    $('img').delay(1000).removeClass('img-click');
+        
+                } 
 
-                    //console.log(imageBubbleArray[i]);
-             
-            }
-    
+            }           
 
-   
-    if (($('img').hasClass)('img-click') && ($('img').attr('src') !== imageBubbleArray[i])) {
-
-        $('img').removeClass('img-click');
-
-        setTimeout(function() {
-
-            $('img').delay(400).addClass('img-click');
-
-        }, 400) ;
-
-    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == imageBubbleArray[i])) {
-
-        $('img').delay(1000).removeClass('img-click');
-
-
-    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== imageBubbleArray[i])) {
-
-        $('img').delay(1000).addClass('img-click');
-
-    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == imageBubbleArray[i])) {
-
-        $('img').delay(1000).addClass('img-click');
-    }
+            
 
     }         
 }
