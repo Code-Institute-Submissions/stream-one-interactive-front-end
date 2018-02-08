@@ -3,7 +3,7 @@
 
 
 
-//---------------------- FUNCTIONAL SCRIPT --------------------------//
+//---------------------- FUNCTIONAL SCRIPTS --------------------------//
 
 
 
@@ -15,59 +15,30 @@ var userInput = "";
 
 var buttonParam = "";
 
-// SET PLACE TYPE SEARCH QUERY BY BUTTON SELECTION //
+//----------------------------------------------------------------------//
 
-/*document.getElementById('walk-button').onclick = function(){
+//-------------------- AUTO COMPLETE ----------------------------------//
+var input = document.getElementById('user-input');
+var options = {
 
-    buttonParam = document.getElementById('walk-button').value.toString();
-    console.log(buttonParam);
-    console.log(userInput);
+    types: ['(cities)'],
+    componentRestrictions: {
+        
+        country: ['uk','ie']}
 };
 
-document.getElementById('sit-button').onclick = function(){
-
-    buttonParam = document.getElementById('sit-button').value;
-    console.log(buttonParam);
-    console.log(userInput);
-};
-
-document.getElementById('board-button').onclick = function(){
-
-    buttonParam = document.getElementById('board-button').value;
-    console.log(buttonParam);
-    console.log(userInput);
-};
-
-document.getElementById('vet-button').onclick = function(){
-
-    buttonParam = document.getElementById('vet-button').value;
-    console.log(buttonParam);
-    console.log(userInput);
-};
-
-document.getElementById('shop-button').onclick = function(){
-
-    buttonParam = document.getElementById('shop-button').value;
-    console.log(buttonParam);
-    console.log(userInput);
-};
-
-document.getElementById('groom-button').onclick = function(){
-
-    buttonParam = document.getElementById('groom-button').value;
-    console.log(buttonParam);
-    console.log(userInput);
-};*/
+autocomplete = new google.maps.places.Autocomplete(input, options);
 
 
+//---------------------------------------------------------------------------//
 
-
-// ACTIVATE XMLHTTP REQUEST ON GO CLICK //
+// ACTIVATE XMLHTTP REQUEST ON GO CLICK - SEE UI SCRIPTS BELOW //
 
  function sendSearch(){
 
     
     var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
+
 
     //--------HTTP REQUEST-------------------//
 
@@ -115,12 +86,12 @@ document.getElementById('groom-button').onclick = function(){
         function initialize() { 
 
             
-            var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]);
+            var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
 
             map = new google.maps.Map(document.getElementById('map'), {
 
                 center: mapLocation,
-                zoom: 12
+                zoom: 11
 
             });
 
@@ -170,102 +141,87 @@ document.getElementById('groom-button').onclick = function(){
                 service.getDetails(request, function(details, status) {
                 
                 // ---- retrieve all reviews and create new array --------- //
+
                     var reviewArray = [];
 
                     if (status == google.maps.places.PlacesServiceStatus.OK){
 
                        if (details.reviews == undefined) {
 
-                            reviewArray.push('No Reviews for this company');
+                            reviewArray.push('No Reviews for this company'); //----- if no reviews insert string ----//
 
                        } else {
 
-                            for(var i=0; i < details.reviews.length; i++) {
+                            for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
 
                                 
                                 reviewArray.push(details.reviews[i].text);
                                 
                             }
                         }
-
-                        console.log(reviewArray);
+            
                         
-        // ---- object created for details ready to be passed to a DIV for styling below the map ---- //
+        // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
                             
                         var info = {
                             name: details.name,
                             address: details.formatted_address,
                             website: details.website,
                             number: details.formatted_phone_number,
-                        // reviews: reviewArray,
                             rating: details.rating
                         };
 
-                        //console.log(info.reviewArray);
 
-        // ---------- write to document place details on Marker click ---------------------//
+        // ---------- write to document below HTML on Marker click ---------------------//
 
-                       // setTimeout(function(){
+                     
 
-                            document.getElementById("text").innerHTML =
-                            `<h2>${info.name}</h2>
-                            <h3>Address</h3>
-                            <p>${info.address}</p>
-                            <h3>Website</h3>
-                            <p><a href="${info.website} target = "_blank"><button class="website-button">Click Me</button></a></p>
-                            <h3>Phone</h3>
-                            <p>${info.number}</p>
-                            <h3>Overall Rating</h3>
-                            <p>${info.rating}</p>
-                            <h3>Reviews</h3>`;
+                        document.getElementById("text").innerHTML =
+                        `<h2>${info.name}</h2>
+                        <h3>Address</h3>
+                        <p>${info.address}</p>
+                        <h3>Website</h3>
+                        <p><a href="${info.website} target = "_blank"><button class="website-button">Click Me</button></a></p>
+                        <h3>Phone</h3>
+                        <p>${info.number}</p>
+                        <h3>Overall Rating</h3>
+                        <p>${info.rating}</p>
+                        <h3>Reviews</h3>`;
 
-                            var eachReview;
+                        var eachReview;
 
-                            for (i = 0; i < reviewArray.length; i++) {
+                        for (i = 0; i < reviewArray.length; i++) { //---iterate reviewArray and create HTML---//
 
-                                eachReview = document.createElement("p");
-                                eachReview.innerHTML = `<em>"${reviewArray[i]}"</em>`;
-                                document.getElementById('text').appendChild(eachReview);
+                            eachReview = document.createElement("p");
+                            eachReview.innerHTML = `<em><strong>"${reviewArray[i]}</strong>"</em>`;
+                            document.getElementById('text').appendChild(eachReview);
 
-                            }
-
-                            $("#results-text-show").addClass("results-text--style");  
-                            $("#results-text-show").delay(400).slideDown(400);
-
-                            /*$('html, body').delay(400).animate({
-                                scrollTop: $("#results-text-show").offset().top
-                                }, 400);*/
-                         //   }, 1000);
                         }
+
+                        $("#results-text-show").addClass("results-text--style"); 
+                        $("#results-text-show").delay(400).slideDown(400);
+
+                    } // closed if statement //
                 
                         
                 }); 
 
-                        infowindow.setContent(place.name, place.opening_hours);
+                        infowindow.setContent(place.name);
                         infowindow.open(map, marker);
-
-                        
+         
             });
 
                         
         }
 
-        initialize();
+        initialize(); //--- INITIALIZE MAP-----//
 
     });
   
-} //close sendSearch Function//
+ }
 
 //---------------------- UI SCRIPTS ---------------------------------//
-//document.getElementById('go').onclick = function(){
 
-  //  userInput = document.getElementById('user-input').value;
-
-   // sendSearch();
-
-   
-    
-//};
 
 var images = { 
 
@@ -328,38 +284,51 @@ $('button').on('click', function(){
 
             if ($(this).attr('id') == buttonIdArray[i]) {// when the buttonArray ID matches the button ID
                 
-                var imageString = imageBubbleArray[i].toString();
+                var imageString = imageBubbleArray[i].toString(); // set imageString to the selected index and convert to string
 
-                if (($('.bubble-image').hasClass('img-click')) && ($('.bubble-image').attr('src') !== imageString)) { // if the img doesn't have img-click and this button has search button clicked add class
+                if (($('.bubble-image').hasClass('img-click')) && ($('.bubble-image').attr('src') !== imageString)) { 
 
                     $('.bubble-image').removeClass('img-click');
 
                     setTimeout(function() {
+                        
+                        
+                        $('.bubble-image').attr('src',imageString).addClass('img-click');
             
-                        $('.bubble-image').attr('src',imageString).delay(400).addClass('img-click');
-            
-                    }, 400) ;
+                    }, 300) ;
 
                     
-                    console.log('if');
-                    console.log(imageString);
+                   console.log('if');
+                   console.log(imageString);
                     
 
                 } else if ($('.bubble-image').hasClass('img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
-                    $('.bubble-image').delay(1000).removeClass('img-click');
+                    setTimeout(function(){
+
+                    $('.bubble-image').removeClass('img-click');
+
+                    },200);
                     
                     console.log('if else1');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click' ) && ($('.bubble-image').attr('src') !== imageString)) {
 
-                    $('.bubble-image').attr('src', imageString).delay(400).addClass('img-click');
+                    setTimeout(function(){
+
+                    $('.bubble-image').attr('src', imageString).addClass('img-click');
+
+                    },200);
 
                     console.log('if else2');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
-                    $('.bubble-image').delay(1000).addClass('img-click');
+                    setTimeout(function(){
+
+                    $('.bubble-image').addClass('img-click');
+
+                    },200);
 
                     console.log('if else3');
                 }
@@ -385,8 +354,8 @@ $("#reset-button").on('click', function(){
     userInput="";
     buttonParam="";
     
-    $("#results-text-show").delay(400).slideUp(400);
-    $("section").delay(1000).slideUp(400);
+    $("#results-text-show").delay(200).slideUp(400);
+    $("section").delay(800).slideUp(400);
 
     $('button').removeClass('search-button-clicked');
     $('button').contents().removeAttr('id');
@@ -395,8 +364,11 @@ $("#reset-button").on('click', function(){
 
     $('.bubble-image').removeClass('img-click');
 
-    console.log(userInput);
-    console.log(buttonParam);
+    //$("#reset-button").removeClass('reset__button--style');
+    $("#reset-button").addClass('reset-click');
+
+   // console.log(userInput);
+    //console.log(buttonParam);
 
 });
 
@@ -406,6 +378,7 @@ $("#reset-button").on('click', function(){
 $('.go-button__button').on('click', function (){
 
     userInput = $('#user-input').val();
+    
 
     // variables to determine content of modal //
     var modal = $('.modal');
@@ -429,7 +402,7 @@ $('.go-button__button').on('click', function (){
                 modal.fadeOut();
             })
 
-            console.log(typeof(modalTextObj.enterBoth));
+           // console.log(typeof(modalTextObj.enterBoth));
            
 
         } else if((userInput == "") && (buttonParam !== "")){
@@ -456,18 +429,20 @@ $('.go-button__button').on('click', function (){
 
             //alert("Please enter a Pet Stop");
        
-        } else {
+        } else if ((userInput !== "") && (buttonParam !== "")) {
 
             sendSearch();
 
             $('.go-button__button').toggleClass('go-click');
+
             $("section").slideDown('fast');
 
-            $('html, body').delay(800).animate({
+            $('html, body').delay(600).animate({
             scrollTop: $( $(this).parent().attr('href') ).offset().top
             }, 400);
 
-            console.log(userInput);
+            $("#reset-button").removeClass('reset-click');
+            //.log(userInput);
    
 
     }

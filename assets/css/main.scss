@@ -693,11 +693,13 @@ nav {
 
 .go-button__button--style {
 
-    
-    @include go-button-mobile;
+
+   // @include go-button-mobile;
     display:flex;
     justify-content: center;
     align-items: center;
+    transition-delay: .4s;
+    //transition: font-size 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     
     @include button-text-desktop;
@@ -731,11 +733,11 @@ a {
 .go-click {
 
     box-shadow: 2px 3px 3px 2px #24110c;
-    //background-color: #397532;
-    //border: 2px solid rgba(255, 255, 255, 1);
     font-size:2.5rem;
-    //background-color: rgba(255, 255, 255, 1);
     //color: #217219;
+    //border: 2px solid #217219;
+    background-color: #509949;
+   
 }
 // ----------------- SEARCH BAR ----------------//
 
@@ -884,6 +886,7 @@ a {
 
 .results-text--style {
 
+    display: none;
     //border: 1px solid #0e0920;
     padding: 1rem;
     border-radius: 6px;
@@ -917,6 +920,12 @@ a {
     //transform: translatex(-50%);
     align-self: center;
 
+    @include xlarge {
+
+        width: 8rem;
+        height: 8rem;
+    }
+
 }
 //.reset__button {
 
@@ -930,8 +939,8 @@ a {
 
 .reset__button--style {
 
-    //width: 6rem;
-    //height: 6rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 3rem;
     //box-shadow: 2px 4px 6px 0px #4b2413;
     border: 2px solid white;
@@ -943,19 +952,29 @@ a {
     font-size: 1.5rem;
     margin: 0px;
     color: #fff;
+    transition-delay: .2s;
     transition: border 0.3s, background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+
+    @include xlarge {
+
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+    }
 }
 
 .reset:hover,
 .reset:focus {
 
-    .reset__button--style {
+    cursor: pointer;
+
+    //.reset__button--style {
 
         //border: 2px solid #dd1616;
-        background-color:#db4646;
+       // background-color:#db4646;
         //color: #dd1616;
-    }
+   // }
 }
 
 .reset-click {

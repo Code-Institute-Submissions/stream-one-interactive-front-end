@@ -323,15 +323,10 @@ nav {
       margin-top: 3rem; } }
 
 .go-button__button--style {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 3rem;
-  box-shadow: 5px 6px 6px 2px #24110c;
-  border: 2px solid white;
-  background-color: #217219;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-delay: .4s;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1rem;
   transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -359,7 +354,8 @@ a {
 
 .go-click {
   box-shadow: 2px 3px 3px 2px #24110c;
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  background-color: #509949; }
 
 .search-bar__input {
   width: 20rem;
@@ -453,6 +449,7 @@ a {
       width: 48rem; } }
 
 .results-text--style {
+  display: none;
   padding: 1rem;
   border-radius: 6px;
   background-color: #fff;
@@ -476,8 +473,14 @@ a {
   top: 2rem;
   position: relative;
   align-self: center; }
+  @media (min-width: 1500px) {
+    .reset {
+      width: 8rem;
+      height: 8rem; } }
 
 .reset__button--style {
+  width: 6rem;
+  height: 6rem;
   border-radius: 3rem;
   border: 2px solid white;
   background-color: #dd1616;
@@ -488,11 +491,17 @@ a {
   font-size: 1.5rem;
   margin: 0px;
   color: #fff;
+  transition-delay: .2s;
   transition: border 0.3s, background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  @media (min-width: 1500px) {
+    .reset__button--style {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 4rem; } }
 
-.reset:hover .reset__button--style,
-.reset:focus .reset__button--style {
-  background-color: #db4646; }
+.reset:hover,
+.reset:focus {
+  cursor: pointer; }
 
 .reset-click {
   border: 2px solid #dd1616;
