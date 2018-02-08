@@ -18,7 +18,7 @@ html, body {
   overflow: hidden; }
   @media (min-width: 500px) and (max-width: 767px) {
     .background {
-      height: 120vh; } }
+      height: 130vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .background {
       height: 125vh; } }
@@ -128,7 +128,7 @@ nav {
       top: 14.5vh; } }
   @media (min-width: 500px) and (max-width: 767px) {
     .search-container {
-      top: 9vh; } }
+      top: 11vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .search-container {
       top: 10.5vh; } }
@@ -169,7 +169,7 @@ nav {
       height: 40vh; } }
   @media (min-width: 500px) and (max-width: 767px) {
     .search-buttons {
-      height: 10rem; } }
+      height: 8rem; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .search-buttons {
       height: 8rem;
@@ -311,7 +311,7 @@ nav {
   width: 100vw; }
   @media (min-width: 500px) and (max-width: 767px) {
     .go-button {
-      padding-top: 1rem; } }
+      padding-top: 2rem; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .go-button {
       margin-top: 3rem; } }

@@ -218,7 +218,7 @@ $xlarge-desktop-width: 1500px;
 
     @include mobile-landscape {
 
-        height: 120vh;
+        height: 130vh;
     
     }
 
@@ -398,7 +398,7 @@ nav {
 
        @include mobile-landscape {
 
-            top: 9vh;
+            top: 11vh;
         }
 
 
@@ -471,7 +471,7 @@ nav {
     }
     @include mobile-landscape {
 
-        height: 10rem;
+        height: 8rem;
        
     }
 
@@ -666,7 +666,7 @@ nav {
 
     @include mobile-landscape {
 
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
 
     @include tablet {

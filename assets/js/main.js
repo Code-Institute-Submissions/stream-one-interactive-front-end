@@ -392,9 +392,7 @@ $("#reset-button").on('click', function(){
     
    resetAll();
 
-   // console.log(userInput);
-    //console.log(buttonParam);
-
+  
 });
 
 
@@ -455,9 +453,8 @@ $('.go-button__button').on('click', function (){
     
     } else if ((userInput !== "") && (buttonParam !== "")) {
 
-            if ($('#go').hasClass('go-click')){
+            if ($('#go').hasClass('go-click')){ 
 
-                
                 $('#go').addClass('go-click');   
                
               console.log('if');
