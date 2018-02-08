@@ -527,13 +527,26 @@ a {
   margin: auto;
   padding: 2rem;
   border: 1px solid #0e0920;
-  width: 26rem;
+  width: 16rem;
   position: relative;
-  top: 10rem;
+  top: 11vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 1rem; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .modal__content {
+      width: 26rem; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .modal__content {
+      width: 26rem; } }
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    .modal__content {
+      width: 26rem; } }
+  @media (min-width: 1500px) {
+    .modal__content {
+      width: 26rem;
+      top: 18vh; } }
 
 .modal__content__close {
   color: #171520cc;

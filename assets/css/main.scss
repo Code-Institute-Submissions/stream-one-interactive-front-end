@@ -1000,14 +1000,37 @@ a {
     margin: auto;
     padding: 2rem;
     border: 1px solid #0e0920;
-    width: 26rem;
+    width: 16rem;
     position: relative;
-    top: 10rem;
+    top: 11vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 1rem;
 
+    @include tablet {
+
+        width: 26rem;
+
+    }
+
+    @include desktop {
+
+        width: 26rem;
+        
+    }
+
+    @include large {
+
+        width: 26rem;
+
+    }
+
+    @include xlarge {
+        
+        width: 26rem;
+        top: 18vh;
+    }
 }
 
 .modal__content__close {
