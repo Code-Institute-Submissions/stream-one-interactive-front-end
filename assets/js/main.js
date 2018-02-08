@@ -257,7 +257,15 @@ document.getElementById('groom-button').onclick = function(){
 } //close sendSearch Function//
 
 //---------------------- UI SCRIPTS ---------------------------------//
+//document.getElementById('go').onclick = function(){
 
+  //  userInput = document.getElementById('user-input').value;
+
+   // sendSearch();
+
+   
+    
+//};
 
 var images = { 
 
@@ -539,3 +547,6 @@ $('#sit-button').on('click', function(){
 
     
 });*/
+
+
+
