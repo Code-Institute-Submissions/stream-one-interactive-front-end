@@ -400,21 +400,59 @@ document.getElementById("reset-button").onclick = function(){
 
 
 //------ GO BUTTON -----//
+
 $('.go-button__button').on('click', function (){
 
     userInput = document.getElementById('user-input').value;
+    
+    // variables to determine content of modal //
+    var modal = $('.modal');
+    var close = $('.modal__content__close');
+    var modalText = $('.modal__content__text');
+    var modalTextObj = {
+
+        enterBoth: 'Please enter a location and select a Pet Stop',
+        enterLocation: 'Please enter a location',
+        selectStop: 'Please select a Pet Stop'
+    }
 
     if ((userInput == "") && (buttonParam == "")){
 
-            alert("Please enter a location, and choose a Pet Stop");
+            modalText.html(modalTextObj.enterBoth);
+
+            modal.fadeIn();
+
+            close.on('click', function() {
+
+                modal.fadeOut();
+            })
+
+            console.log(typeof(modalTextObj.enterBoth));
+           
 
         } else if((userInput == "") && (buttonParam !== "")){
 
-            alert("Please enter a location");
+            modalText.html(modalTextObj.enterLocation);
+
+            modal.fadeIn();
+            close.on('click', function() {
+
+                modal.fadeOut();
+            })
+
+           
 
         } else if ((userInput !== "") && (buttonParam == "")){
 
-            alert("Please enter a Pet Stop");
+            modalText.html(modalTextObj.selectStop);
+
+            modal.fadeIn();
+            close.on('click', function() {
+
+                modal.fadeOut();
+            })
+
+            //alert("Please enter a Pet Stop");
        
         } else {
 
