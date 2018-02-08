@@ -67,7 +67,7 @@ nav {
     .nav__navtext {
       font-size: 7rem; } }
 
-img {
+.bubble-image {
   visibility: visible;
   opacity: 0;
   height: 6rem;
@@ -76,31 +76,31 @@ img {
   top: -2vh;
   transition: opacity, 0.8s, ease-in; }
   @media (min-width: 500px) and (max-width: 767px) {
-    img {
+    .bubble-image {
       left: 56vw;
       top: -1vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    img {
+    .bubble-image {
       height: 6rem;
       left: 58vw;
       top: 1vh; } }
   @media (min-width: 768px) and (min-height: 1024px) {
-    img {
+    .bubble-image {
       height: 9rem;
       left: 63vw;
       top: -1vh; } }
   @media (min-width: 992px) and (max-width: 1199px) {
-    img {
+    .bubble-image {
       height: 8rem;
       left: 59vw;
       top: -1vh; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
-    img {
+    .bubble-image {
       height: 9rem;
       left: 57vw;
       top: 1vh; } }
   @media (min-width: 1500px) {
-    img {
+    .bubble-image {
       height: 12rem;
       left: 58vw;
       top: 0vh; } }

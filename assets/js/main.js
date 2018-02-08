@@ -329,21 +329,14 @@ $('button').on('click', function(){
             if ($(this).attr('id') == buttonIdArray[i]) {// when the buttonArray ID matches the button ID
                 
                 var imageString = imageBubbleArray[i].toString();
-                
 
-                //$('img').attr('src', imageBubbleArray[i].toString()); // set the image based on the button ID index
-               // $('img').toggleClass('img-click');
-               // return imageBubbleArray[i];
-                //console.log(imageString);
+                if (($('.bubble-image').hasClass('img-click')) && ($('.bubble-image').attr('src') !== imageString)) { // if the img doesn't have img-click and this button has search button clicked add class
 
-            
-                if (($('img').hasClass('img-click')) && ($('img').attr('src') !== imageString)) { // if the img doesn't have img-click and this button has search button clicked add class
-
-                    $('img').removeClass('img-click');
+                    $('.bubble-image').removeClass('img-click');
 
                     setTimeout(function() {
             
-                        $('img').attr('src',imageString).delay(400).addClass('img-click');
+                        $('.bubble-image').attr('src',imageString).delay(400).addClass('img-click');
             
                     }, 400) ;
 
@@ -352,21 +345,21 @@ $('button').on('click', function(){
                     console.log(imageString);
                     
 
-                } else if ($('img').hasClass('img-click') && ($('img').attr('src') == imageString)) {
+                } else if ($('.bubble-image').hasClass('img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
-                    $('img').delay(1000).removeClass('img-click');
+                    $('.bubble-image').delay(1000).removeClass('img-click');
                     
                     console.log('if else1');
             
-                } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== imageString)) {
+                } else if (($('.bubble-image').attr('class') !== 'img-click' ) && ($('.bubble-image').attr('src') !== imageString)) {
 
-                    $('img').attr('src', imageString).delay(400).addClass('img-click');
+                    $('.bubble-image').attr('src', imageString).delay(400).addClass('img-click');
 
                     console.log('if else2');
             
-                } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == imageString)) {
+                } else if (($('.bubble-image').attr('class') !== 'img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
-                    $('img').delay(1000).addClass('img-click');
+                    $('.bubble-image').delay(1000).addClass('img-click');
 
                     console.log('if else3');
                 }
@@ -398,7 +391,7 @@ document.getElementById("reset-button").onclick = function(){
 
     $('.go-button__button').removeClass('go-click');
 
-    $('img').removeClass('img-click');
+    $('.bubble-image').removeClass('img-click');
 
     console.log(userInput);
     console.log(buttonParam);
@@ -406,29 +399,7 @@ document.getElementById("reset-button").onclick = function(){
 };
 
 
-//BUTTON SCRIPTS//
-
-//--- CLASS TOGGLE FOR SEARCH BUTTON STYLING -----//
-/*$('.search-buttons__button__element--style').on('click',function(){
-        
-
-    if ($(this).hasClass('search-button-clicked')) {
-
-        $(this).removeClass('search-button-clicked');
-        $(this).contents().removeAttr('id');
-
-    } else {
-
-        $('button').removeClass('search-button-clicked');
-        $('button').contents().removeAttr('id');
-        $(this).addClass('search-button-clicked');
-        $(this).contents().attr('id', 'search-buttons__icon--clicked');
-        
-    }
-});*/
-
-
-//------ GO BUTTON STYLING -----//
+//------ GO BUTTON -----//
 $('.go-button__button').on('click', function (){
 
     userInput = document.getElementById('user-input').value;
@@ -461,6 +432,8 @@ $('.go-button__button').on('click', function (){
 
     }
 });
+
+
 
 
 
@@ -547,6 +520,3 @@ $('#sit-button').on('click', function(){
 
     
 });*/
-
-
-
