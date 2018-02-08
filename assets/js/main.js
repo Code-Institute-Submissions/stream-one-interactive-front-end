@@ -263,6 +263,8 @@ function resetAll() {
     userInput="";
     buttonParam="";
     
+    $('section').attr('id', 'scrollTo');
+
     $("#results-text-show").delay(200).slideUp(400);
     $("section").delay(800).slideUp(400);
 
@@ -460,15 +462,30 @@ $('.go-button__button').on('click', function (){
                
               console.log('if');
 
-        }   else if (($('#go').attr('class') !== 'go-click') && ($('#reset-button').attr('class') !== 'reset-click')) {
+        }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == 'scrollTo')) {
 
                 goAll();
-               console.log('else');
+               
                 $('html, body').delay(600).animate({
-                    scrollTop: $( $(this).parent().attr('href') ).offset().top
+                    scrollTop: $($(this).parent().attr('href')).offset().top
                     }, 400);
 
-        } 
+                setTimeout(function(){
+
+                    $('section').removeAttr('id');
+                    console.log( $('section').attr('id'));
+
+                },1000);
+
+                console.log('else');
+
+        }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == undefined)) {
+
+            
+                goAll();
+                //$('#go').addClass('go-click');
+                console.log('else else');
+        }
     }
 });
 
