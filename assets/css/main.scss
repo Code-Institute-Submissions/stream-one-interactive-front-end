@@ -214,6 +214,7 @@ $xlarge-desktop-width: 1500px;
     height: 100vh;
     width: 100vw;
     position: relative;
+    overflow: hidden;
 
     @include mobile-landscape {
 
@@ -418,7 +419,7 @@ nav {
 
         @include large {
 
-            top: 9.5rem;
+            top: 8.0rem;
         }
 
         @include xlarge {
@@ -692,6 +693,7 @@ nav {
 
 .go-button__button--style {
 
+    
     @include go-button-mobile;
     display:flex;
     justify-content: center;
@@ -707,6 +709,11 @@ nav {
 
         @include go-button-large-desktop;
     }
+}
+
+.go-deactivate {
+
+    display: none;
 }
 
 a {

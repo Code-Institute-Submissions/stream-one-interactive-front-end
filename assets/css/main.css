@@ -14,7 +14,8 @@ html, body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   @media (min-width: 500px) and (max-width: 767px) {
     .background {
       height: 120vh; } }
@@ -139,7 +140,7 @@ nav {
       top: 9rem; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .search-container {
-      top: 9.5rem; } }
+      top: 8.0rem; } }
   @media (min-width: 1500px) {
     .search-container {
       top: 14.5rem; } }
@@ -345,6 +346,9 @@ nav {
       box-shadow: 5px 6px 6px 2px #24110c;
       border: 2px solid white;
       background-color: #217219; } }
+
+.go-deactivate {
+  display: none; }
 
 a {
   text-decoration: none; }

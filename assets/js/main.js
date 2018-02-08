@@ -373,13 +373,15 @@ $('button').on('click', function(){
  
 
 
+
+
 // RESET SEARCH FUNCTION //
 
 
-document.getElementById("reset-button").onclick = function(){
+$("#reset-button").on('click', function(){
 
     
-    document.getElementById('user-input').value = "";
+    $('#user-input').val("");
     userInput="";
     buttonParam="";
     
@@ -396,15 +398,15 @@ document.getElementById("reset-button").onclick = function(){
     console.log(userInput);
     console.log(buttonParam);
 
-};
+});
 
 
 //------ GO BUTTON -----//
 
 $('.go-button__button').on('click', function (){
 
-    userInput = document.getElementById('user-input').value;
-    
+    userInput = $('#user-input').val();
+
     // variables to determine content of modal //
     var modal = $('.modal');
     var close = $('.modal__content__close');
@@ -475,86 +477,3 @@ $('.go-button__button').on('click', function (){
 
 
 
-
-
-
-     /*if ((($('img').attr('class') !== 'img-click')) && ($(this).attr('class') !== 'search-button-clicked')) { // if the img doesn't have img-click and this button has search button clicked add class
-
-                    $('img').delay(1000).addClass('img-click'); // add image-click class
-                    console.log('if');
-                    console.log($(this));
-
-                } else if (($('img').hasClass('img-click')) && ($(this).attr('class') !== 'search-button-clicked'))  { // if the image has image-click and this button doesn't have seaerch button clicked, remove
-        
-                    $('img').delay(1000).addClass('img-click');
-
-                    console.log('if else');
-                    console.log($(this));
-
-                } else if (($('img').hasClass('img-click')) && (($(this).attr('class') == 'search-button-clicked'))) { // if the image hasn't got image-click and the button hasn't got search clicked, remove 
-        
-                    $('img').delay(1000).removeClass('img-click'); // remove class
-
-                    console.log('if else else');
-                }*/
-
-
-
-/*$('#walk-button').on('click', function (){
-
-    if (($('img').hasClass('img-click')) && ($('img').attr('src') !== images.imageWalk)){
-
-        $('img').removeClass('img-click');
-
-        setTimeout(function() {
-
-            $('img').attr('src', images.imageWalk).delay(400).addClass('img-click');
-
-        }, 400) ;
-        
-
-    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == images.imageWalk)) {
-
-        $('img').delay(1000).removeClass('img-click');
-
-
-    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== images.imageWalk)) {
-
-        $('img').attr('src', images.imageWalk).delay(1000).addClass('img-click');
-
-    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == images.imageWalk)) {
-
-        $('img').delay(1000).addClass('img-click');
-    }
-});
-
-
-
-$('#sit-button').on('click', function(){
-
-    if (($('img').hasClass('img-click')) && ($('img').attr('src') !== images.imageSit)){
-
-        $('img').removeClass('img-click');
-
-        setTimeout(function() {
-
-            $('img').attr('src', images.imageSit).delay(400).addClass('img-click');
-
-        }, 400) ;
-
-    } else if ($('img').hasClass('img-click') && ($('img').attr('src') == images.imageSit)) {
-
-        $('img').delay(1000).removeClass('img-click');
-
-
-    } else if (($('img').attr('class') !== 'img-click' ) && ($('img').attr('src') !== images.imageSit)) {
-
-        $('img').attr('src', images.imageSit).delay(1000).addClass('img-click');
-
-    } else if (($('img').attr('class') !== 'img-click') && ($('img').attr('src') == images.imageSit)) {
-
-        $('img').delay(1000).addClass('img-click');
-    }
-
-    
-});*/
