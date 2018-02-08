@@ -323,6 +323,12 @@ nav {
       margin-top: 3rem; } }
 
 .go-button__button--style {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  box-shadow: 5px 6px 6px 2px #24110c;
+  border: 2px solid white;
+  background-color: #217219;
   display: flex;
   justify-content: center;
   align-items: center;

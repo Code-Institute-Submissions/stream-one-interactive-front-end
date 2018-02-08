@@ -694,7 +694,7 @@ nav {
 .go-button__button--style {
 
 
-   // @include go-button-mobile;
+    @include go-button-mobile;
     display:flex;
     justify-content: center;
     align-items: center;

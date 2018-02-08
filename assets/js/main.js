@@ -222,7 +222,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 
 //---------------------- UI SCRIPTS ---------------------------------//
 
-
+//---- global variables---//
 var images = { 
 
     imageWalk: 'assets/images/walkies.gif',
@@ -243,22 +243,63 @@ var buttonId = {
     groomId: 'groom-button'
 }
 
-var imageBubbleArray = Object.keys(images).map(function(key) {
+//-----------------------------------------//
+//---------------- GO FUNCTION ------------ //
 
-    return [images[key]];
-});
 
-var buttonIdArray = Object.keys(buttonId).map (function(key) {
+function goAll() {
 
-    return [buttonId[key]]
-});
+    sendSearch();
+    $('.go-button__button').addClass('go-click');
+    $("section").slideDown('fast');
+    $("#reset-button").removeClass('reset-click');
 
-//console.log(imageBubbleArray);
-//console.log(buttonIdArray);
+}
+//----------------- RESET FUNCTION -----------//
+
+function resetAll() { 
+
+    $('#user-input').val("");
+    userInput="";
+    buttonParam="";
+    
+    $("#results-text-show").delay(200).slideUp(400);
+    $("section").delay(800).slideUp(400);
+
+    $('button').removeClass('search-button-clicked');
+    $('button').contents().removeAttr('id');
+
+    $('.go-button__button').removeClass('go-click');
+
+    $('.bubble-image').removeClass('img-click');
+
+    //$("#reset-button").removeClass('reset__button--style');
+    $("#reset-button").addClass('reset-click');
+
+}
+//------------------ HALF RESET FUNCTION ------------//
+
+function stylesReset() {
+
+    $("#results-text-show").delay(200).slideUp(400);
+   //$("section").delay(800).slideUp(400);
+    $('.go-button__button').removeClass('go-click');
+}
+//---------------------------------------------------//
+
 
 
 $('button').on('click', function(){
 
+    var imageBubbleArray = Object.keys(images).map(function(key) {
+
+        return [images[key]];
+    });
+    
+    var buttonIdArray = Object.keys(buttonId).map (function(key) {
+    
+        return [buttonId[key]]
+    });
 
     if ($(this).hasClass('search-button-clicked')) {
 
@@ -276,7 +317,7 @@ $('button').on('click', function(){
         
     }
 
-    console.log(buttonParam);
+  //  console.log(buttonParam);
 
     for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
 
@@ -298,8 +339,8 @@ $('button').on('click', function(){
                     }, 300) ;
 
                     
-                   console.log('if');
-                   console.log(imageString);
+                  // console.log('if');
+                  // console.log(imageString);
                     
 
                 } else if ($('.bubble-image').hasClass('img-click') && ($('.bubble-image').attr('src') == imageString)) {
@@ -310,7 +351,7 @@ $('button').on('click', function(){
 
                     },200);
                     
-                    console.log('if else1');
+                   // console.log('if else1');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click' ) && ($('.bubble-image').attr('src') !== imageString)) {
 
@@ -320,7 +361,7 @@ $('button').on('click', function(){
 
                     },200);
 
-                    console.log('if else2');
+                   // console.log('if else2');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
@@ -330,7 +371,7 @@ $('button').on('click', function(){
 
                     },200);
 
-                    console.log('if else3');
+                    //console.log('if else3');
                 }
            
 
@@ -339,33 +380,15 @@ $('button').on('click', function(){
     }   
 });
 
- 
 
 
-
-
-// RESET SEARCH FUNCTION //
+// RESET SEARCH  //
 
 
 $("#reset-button").on('click', function(){
 
     
-    $('#user-input').val("");
-    userInput="";
-    buttonParam="";
-    
-    $("#results-text-show").delay(200).slideUp(400);
-    $("section").delay(800).slideUp(400);
-
-    $('button').removeClass('search-button-clicked');
-    $('button').contents().removeAttr('id');
-
-    $('.go-button__button').removeClass('go-click');
-
-    $('.bubble-image').removeClass('img-click');
-
-    //$("#reset-button").removeClass('reset__button--style');
-    $("#reset-button").addClass('reset-click');
+   resetAll();
 
    // console.log(userInput);
     //console.log(buttonParam);
@@ -375,11 +398,11 @@ $("#reset-button").on('click', function(){
 
 //------ GO BUTTON -----//
 
+
 $('.go-button__button').on('click', function (){
 
     userInput = $('#user-input').val();
     
-
     // variables to determine content of modal //
     var modal = $('.modal');
     var close = $('.modal__content__close');
@@ -391,64 +414,78 @@ $('.go-button__button').on('click', function (){
         selectStop: 'Please select a Pet Stop'
     }
 
+    // MODAL FUNCTION //
+
+    function myModal() {
+
+        modal.fadeIn();
+
+        close.on('click', function() {
+
+            modal.fadeOut();
+        })
+    }
+
     if ((userInput == "") && (buttonParam == "")){
 
-            modalText.html(modalTextObj.enterBoth);
+        modalText.html(modalTextObj.enterBoth);
 
-            modal.fadeIn();
+        myModal();
 
-            close.on('click', function() {
+        // console.log(typeof(modalTextObj.enterBoth));
+        
 
-                modal.fadeOut();
-            })
+    } else if((userInput == "") && (buttonParam !== "")){
 
-           // console.log(typeof(modalTextObj.enterBoth));
-           
+        modalText.html(modalTextObj.enterLocation);
 
-        } else if((userInput == "") && (buttonParam !== "")){
+        myModal();
 
-            modalText.html(modalTextObj.enterLocation);
+        
 
-            modal.fadeIn();
-            close.on('click', function() {
+    } else if ((userInput !== "") && (buttonParam == "")){
 
-                modal.fadeOut();
-            })
+        modalText.html(modalTextObj.selectStop);
 
-           
+        myModal();
 
-        } else if ((userInput !== "") && (buttonParam == "")){
+        //alert("Please enter a Pet Stop");
+    
+    } else if ((userInput !== "") && (buttonParam !== "")) {
 
-            modalText.html(modalTextObj.selectStop);
+            if ($('#go').hasClass('go-click')){
 
-            modal.fadeIn();
-            close.on('click', function() {
+                
+                $('#go').addClass('go-click');   
+               
+              console.log('if');
 
-                modal.fadeOut();
-            })
+        }   else if (($('#go').attr('class') !== 'go-click') && ($('#reset-button').attr('class') !== 'reset-click')) {
 
-            //alert("Please enter a Pet Stop");
-       
-        } else if ((userInput !== "") && (buttonParam !== "")) {
+                goAll();
+               console.log('else');
+                $('html, body').delay(600).animate({
+                    scrollTop: $( $(this).parent().attr('href') ).offset().top
+                    }, 400);
 
-            sendSearch();
-
-            $('.go-button__button').toggleClass('go-click');
-
-            $("section").slideDown('fast');
-
-            $('html, body').delay(600).animate({
-            scrollTop: $( $(this).parent().attr('href') ).offset().top
-            }, 400);
-
-            $("#reset-button").removeClass('reset-click');
-            //.log(userInput);
-   
-
+        } 
     }
 });
 
 
 
+//------- INPUT CLICK RESET STYLES --------//
 
+$('#user-input').on('click', function(){
 
+    stylesReset();
+
+});
+
+//------- SEARCH BUTTON CLICK RESET STYLES ---------//
+
+$('button').on('click', function(){
+
+    stylesReset();
+
+});
