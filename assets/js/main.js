@@ -146,6 +146,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 
                     if (status == google.maps.places.PlacesServiceStatus.OK){
 
+
                        if (details.reviews == undefined) {
 
                             reviewArray.push('No Reviews for this company'); //----- if no reviews insert string ----//
@@ -154,11 +155,14 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 
                             for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
 
-                                
-                                reviewArray.push(details.reviews[i].text);
-                                
+                               if (details.reviews[i].text.length !== 0) {
+
+                                reviewArray.push(details.reviews[i].text); //----- check if the array item isn't empty -------//
+
+                                } 
                             }
                         }
+                       // console.log(reviewArray);
             
                         
         // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
@@ -195,13 +199,13 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
                             eachReview = document.createElement("p");
                             eachReview.innerHTML = `<em><strong>"${reviewArray[i]}</strong>"</em>`;
                             document.getElementById('text').appendChild(eachReview);
-
+                           
                         }
 
                         $("#results-text-show").addClass("results-text--style"); 
                         $("#results-text-show").delay(400).slideDown(400);
 
-                    } // closed if statement //
+                    } 
                 
                         
                 }); 

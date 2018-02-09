@@ -6,13 +6,16 @@ html, body {
   margin: 0;
   padding: 0; }
 
+button, input {
+  outline: none; }
+
 .background {
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   position: relative;
   overflow: hidden; }
@@ -122,10 +125,10 @@ nav {
   left: 0; }
 .search-container {
   position: relative;
-  top: 8vh; }
+  top: 11vh; }
   @media (min-width: 375px) and (max-width: 499px) {
     .search-container {
-      top: 14.5vh; } }
+      top: 16.5vh; } }
   @media (min-width: 500px) and (max-width: 767px) {
     .search-container {
       top: 11vh; } }
@@ -402,7 +405,7 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   top: 4rem;
-  align-content: center; }
+  align-items: center; }
 
 .all-results--background {
   background-color: #0e0920;

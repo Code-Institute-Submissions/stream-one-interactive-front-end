@@ -11,6 +11,10 @@ html, body {
     padding: 0;
 }
 
+button, input {
+
+    outline: none;
+}
 
 //------------- VARIABLES ---------------// 
 
@@ -32,11 +36,13 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 $xs-mobile-height: 320px;
 $mobile-height: 375px;
 $tablet-height: 1024px;
+$large-tablet-height: 1366px;
 
 $xs-mobile-width: 320px;
 $sm-mobile-width: 375px;
 $mobile-width: 500px;
 $tablet-width: 768px;
+$large-tablet-width: 1024;
 $desktop-width: 992px;
 $large-desktop-width: 1200px;
 $xlarge-desktop-width: 1500px;
@@ -105,6 +111,33 @@ $xlarge-desktop-width: 1500px;
 
         @content;
     }
+}
+
+@mixin large-tablet-portrait {
+
+    @media(min-width:$large-tablet-width) and (max-height:$large-tablet-height){
+
+        @content;
+    }
+
+}
+
+@mixin large-tablet-portrait {
+
+    @media(min-width:$large-tablet-width) and (max-height:$large-tablet-height){
+
+        @content;
+    }
+
+}
+
+@mixin large-tablet-landscape {
+
+    @media (min-width:$large-tablet-height) and (min-height:$large-tablet-width){
+
+        @content;
+    }
+
 }
 
 
@@ -211,7 +244,7 @@ $xlarge-desktop-width: 1500px;
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 105vh;
     width: 100vw;
     position: relative;
     overflow: hidden;
@@ -388,11 +421,11 @@ nav {
 
         
     position: relative;
-    top: 8vh;
+    top: 11vh;
 
         @include sm-mobile {
 
-            top: 14.5vh;
+            top: 16.5vh;
 
         }
 
@@ -412,6 +445,17 @@ nav {
             top: 15.5vh;
         }
 
+       // @include large-tablet-portrait {
+
+        //    top: 28rem;
+      //  }
+//
+       // @include large-tablet-landscape {
+
+          ///  top: 16rem;
+
+       // }
+
         @include desktop {
 
             top: 9rem;
@@ -427,6 +471,7 @@ nav {
             top: 14.5rem;
         }
 
+        
 
     }
 
@@ -800,7 +845,7 @@ a {
     //justify-content: center;
     flex-wrap: wrap;
     top: 4rem;
-    align-content: center;
+    align-items: center;
 }
 
 
