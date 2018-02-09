@@ -10,6 +10,7 @@ button, input {
   outline: none; }
 
 .background {
+  opacity: 0;
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
@@ -18,7 +19,13 @@ button, input {
   height: 105vh;
   width: 100vw;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  animation-name: fade-up;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media (min-width: 500px) and (max-width: 767px) {
     .background {
       height: 130vh; } }
@@ -39,13 +46,20 @@ button, input {
       height: 88vh; } }
 
 nav {
+  opacity: 0;
   height: 20vh;
   width: 100vw;
   background-color: #0e091f;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0px; }
+  border: 0px;
+  animation-name: fade-up;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media (min-width: 1200px) and (max-width: 1499px) {
     nav {
       height: 12vh; } }
@@ -125,7 +139,13 @@ nav {
   left: 0; }
 .search-container {
   position: relative;
-  top: 11vh; }
+  top: 11vh;
+  animation-name: fade-up;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media (min-width: 375px) and (max-width: 499px) {
     .search-container {
       top: 16.5vh; } }
@@ -585,5 +605,11 @@ a {
 .modal__content__text {
   font-family: "Quicksand", sans-serif;
   color: #0e0920; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /*# sourceMappingURL=main.css.map */

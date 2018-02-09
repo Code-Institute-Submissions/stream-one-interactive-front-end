@@ -255,6 +255,7 @@ function goAll() {
 
     sendSearch();
     $('.go-button__button').addClass('go-click');
+    
     $("section").slideDown('fast');
     $("#reset-button").removeClass('reset-click');
 

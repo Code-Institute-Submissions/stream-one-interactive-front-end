@@ -239,6 +239,7 @@ $xlarge-desktop-width: 1500px;
 
 .background {
 
+    opacity: 0;
     background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
@@ -248,6 +249,14 @@ $xlarge-desktop-width: 1500px;
     width: 100vw;
     position: relative;
     overflow: hidden;
+
+  
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
     @include mobile-landscape {
 
@@ -284,7 +293,7 @@ $xlarge-desktop-width: 1500px;
 }
 
 nav {
-
+    opacity: 0;
     height: 20vh;
     width: 100vw;
     background-color: #0e091f;
@@ -292,6 +301,13 @@ nav {
     align-items: center;
     justify-content: center;
     border: 0px;
+
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
     @include large {
 
@@ -422,6 +438,13 @@ nav {
         
     position: relative;
     top: 11vh;
+
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
         @include sm-mobile {
 
@@ -1127,3 +1150,20 @@ a {
 
 }
 
+@keyframes fade-up {
+    
+    from {
+
+        opacity: 0;
+
+        
+    }
+
+    to {
+
+        opacity: 1;
+
+        
+
+    }
+}
