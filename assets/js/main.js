@@ -162,7 +162,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
                                 } 
                             }
                         }
-                       // console.log(reviewArray);
+                       console.log(reviewArray);
             
                         
         // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
@@ -203,7 +203,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
                         }
 
                         $("#results-text-show").addClass("results-text--style"); 
-                        $("#results-text-show").delay(400).slideDown(400);
+                        $("#results-text-show").delay(200).slideDown(400);
 
                     } 
                 
@@ -409,6 +409,7 @@ $('.go-button__button').on('click', function (){
     userInput = $('#user-input').val();
     
     // variables to determine content of modal //
+
     var modal = $('.modal');
     var close = $('.modal__content__close');
     var modalText = $('.modal__content__text');

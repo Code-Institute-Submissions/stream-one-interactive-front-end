@@ -86,17 +86,18 @@ nav {
       font-size: 7rem; } }
 
 .bubble-image {
+  z-index: 100;
   visibility: visible;
   opacity: 0;
   height: 6rem;
   position: relative;
-  left: 64vw;
-  top: -2vh;
+  left: 69vw;
+  top: 0vh;
   transition: opacity, 0.8s, ease-in; }
   @media (min-width: 500px) and (max-width: 767px) {
     .bubble-image {
       left: 56vw;
-      top: -1vh; } }
+      top: 0vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .bubble-image {
       height: 6rem;
@@ -106,12 +107,12 @@ nav {
     .bubble-image {
       height: 9rem;
       left: 63vw;
-      top: -1vh; } }
+      top: 0vh; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .bubble-image {
       height: 8rem;
       left: 59vw;
-      top: -1vh; } }
+      top: 0vh; } }
   @media (min-width: 1200px) and (max-width: 1499px) {
     .bubble-image {
       height: 9rem;

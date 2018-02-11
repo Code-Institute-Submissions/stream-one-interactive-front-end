@@ -1,239 +1,13 @@
-// global resets //
+@import "helpers/global-resets";
+@import "helpers/fonts";
+@import "helpers/mixins";
 
-html {
 
-    font-size: 12px;
-}
-html, body {
-
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-button, input {
-
-    outline: none;
-}
-
-//------------- VARIABLES ---------------// 
-
-// FONTS //
-$logo-font: "Bungee Shade", cursive;
-$button-font:"Pontano Sans", sans-serif;
-$text-font: "Quicksand", sans-serif;
-
-// BUTTONS //
-
+// BUTTON TRANSITIONS //
 
 $search-button-background-transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $search-button-text-transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-
-// MEDIA QUERIES //
-
-$xs-mobile-height: 320px;
-$mobile-height: 375px;
-$tablet-height: 1024px;
-$large-tablet-height: 1366px;
-
-$xs-mobile-width: 320px;
-$sm-mobile-width: 375px;
-$mobile-width: 500px;
-$tablet-width: 768px;
-$large-tablet-width: 1024;
-$desktop-width: 992px;
-$large-desktop-width: 1200px;
-$xlarge-desktop-width: 1500px;
-
-
-
-@mixin xs-mobile {
-
-    @media(min-width:$xs-mobile-width) and (max-width:$mobile-width - 1px) {
-        
-        @content;
-    }
-}
-
-@mixin sm-mobile {
-
-    @media(min-width:$sm-mobile-width) and (max-width:$mobile-width - 1px) {
-        
-        @content;
-    }
-}
-
-@mixin mobile-landscape {
-
-    @media(min-width:$mobile-width) and (max-width:$tablet-width - 1px) {
-        
-        @content;
-    }
-}
-
-@mixin tablet {
-
-    @media(min-width:$tablet-width) and (max-width:$desktop-width - 1px) {
-        
-        @content;
-    }
-}
-
-@mixin desktop {
-
-    @media(min-width:$desktop-width) and (max-width:$large-desktop-width - 1px) {
-        
-        @content;
-    }
-}
-
-@mixin large {
-
-    @media(min-width:$large-desktop-width) and (max-width:$xlarge-desktop-width - 1px){
-
-        @content;
-    }
-}
-
-@mixin xlarge {
-
-    @media(min-width:$xlarge-desktop-width){
-
-        @content;
-    }
-}
-
-@mixin tablet-portrait {
-
-    @media(min-width:$tablet-width) and (min-height:$tablet-height){
-
-        @content;
-    }
-}
-
-@mixin large-tablet-portrait {
-
-    @media(min-width:$large-tablet-width) and (max-height:$large-tablet-height){
-
-        @content;
-    }
-
-}
-
-@mixin large-tablet-portrait {
-
-    @media(min-width:$large-tablet-width) and (max-height:$large-tablet-height){
-
-        @content;
-    }
-
-}
-
-@mixin large-tablet-landscape {
-
-    @media (min-width:$large-tablet-height) and (min-height:$large-tablet-width){
-
-        @content;
-    }
-
-}
-
-
-//---------------------------------------------------------------------//
-
-// MIXINS //
-
-
-@mixin button-text-desktop {
-
-    font-family: $button-font;
-    font-size: 1rem;
-    transition: $search-button-text-transition;
-}
-
-@mixin search-button-xs-mobile {
-
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color:#0e0920;
-    transition: $search-button-background-transition;
-    
-
-}
-@mixin search-button-mobile {
-
-    width: 6rem;
-    height: 5rem;
-    border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color:#0e0920;
-    transition: $search-button-background-transition;
-    
-    
-}
-
-@mixin search-button-desktop {
-
-    width: 7rem;
-    height: 6rem;
-    border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color: #0e0920;
-    transition: $search-button-background-transition;
-    
-    
-}
-
-@mixin search-button-lg-desktop {
-
-    width: 11rem;
-    height: 8rem;
-    border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color: #0e0920;
-    transition: $search-button-background-transition;
-    
-   
-}
-
-
-
-@mixin go-button-mobile {
-
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3rem;
-    box-shadow:5px 6px 6px 2px #24110c;
-    border: 2px solid rgba(255, 255, 255, 1);
-    background-color: #217219;
-}
-
-@mixin go-button-large-desktop {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 4rem;
-    box-shadow:5px 6px 6px 2px #24110c;
-    border: 2px solid rgba(255, 255, 255, 1);
-    background-color: #217219;
-    
-}
-
-@mixin search-buttons-border {
-
-    border: 1px solid #000000b3;
-    border-radius: 0.5rem;
-}
-
-//-------------------------------------------------------------//
-
 
 //-------------------- LANDING PAGE --------------------------//
 
@@ -350,18 +124,19 @@ nav {
 
 .bubble-image {
 
+    z-index: 100;
     visibility: visible;
     opacity: 0;
     height: 6rem;
     position: relative;
-    left: 64vw;
-    top: -2vh;
+    left: 69vw;
+    top: 0vh;
     transition: opacity, 0.8s, ease-in;
 
     @include mobile-landscape{
 
         left: 56vw;
-        top: -1vh;
+        top: 0vh;
     }
 
     @include tablet {
@@ -376,7 +151,7 @@ nav {
 
         height: 9rem;
         left: 63vw;
-        top: -1vh;
+        top: 0vh;
 
     }
 
@@ -384,7 +159,7 @@ nav {
 
         height: 8rem;
         left: 59vw;
-        top: -1vh;
+        top: 0vh;
     }
 
     
@@ -696,17 +471,15 @@ nav {
 #search-buttons__icon--clicked {
     
     color: #0e0920;
-    //transition: $search-button-text-transition;
+   
 }
 
 
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
 
-    //border-radius: 0.6rem;
-    //border: 1px solid #0e0920;
     box-shadow: 2px 4px 2px 0px #33180a;;
-    //background-color: #d56c05;
+  
 
     .search-buttons__icon--style {
 
@@ -767,7 +540,7 @@ nav {
     justify-content: center;
     align-items: center;
     transition-delay: .4s;
-    //transition: font-size 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
 
     
     @include button-text-desktop;
@@ -795,15 +568,13 @@ a {
 .go-button__button--style:focus {
 
     box-shadow: 2px 3px 3px 2px #24110c;
-   // background-color: #397532;
+ 
 }
 
 .go-click {
 
     box-shadow: 2px 3px 3px 2px #24110c;
     font-size:2.5rem;
-    //color: #217219;
-    //border: 2px solid #217219;
     background-color: #509949;
    
 }
@@ -995,22 +766,12 @@ a {
     }
 
 }
-//.reset__button {
-
-    //position: relative;
-    //top: 2rem;
-   // width: 25rem;
-    //height: auto;
-   // left: 25vw;
-    //text-align: center;
-//}
 
 .reset__button--style {
 
     width: 6rem;
     height: 6rem;
     border-radius: 3rem;
-    //box-shadow: 2px 4px 6px 0px #4b2413;
     border: 2px solid white;
     background-color: #dd1616;
     display: flex;
@@ -1037,12 +798,6 @@ a {
 
     cursor: pointer;
 
-    //.reset__button--style {
-
-        //border: 2px solid #dd1616;
-       // background-color:#db4646;
-        //color: #dd1616;
-   // }
 }
 
 .reset-click {
