@@ -340,7 +340,7 @@ $('button').on('click', function(){
                         
                         $('.bubble-image').attr('src',imageString).addClass('img-click');
             
-                    }, 300) ;
+                    }, 600) ;
 
                     
                   // console.log('if');
@@ -353,7 +353,7 @@ $('button').on('click', function(){
 
                     $('.bubble-image').removeClass('img-click');
 
-                    },200);
+                    },300);
                     
                    // console.log('if else1');
             
@@ -363,7 +363,7 @@ $('button').on('click', function(){
 
                     $('.bubble-image').attr('src', imageString).addClass('img-click');
 
-                    },200);
+                    },300);
 
                    // console.log('if else2');
             
@@ -373,7 +373,7 @@ $('button').on('click', function(){
 
                     $('.bubble-image').addClass('img-click');
 
-                    },200);
+                    },300);
 
                     //console.log('if else3');
                 }
