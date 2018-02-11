@@ -1,11 +1,5 @@
 
-
-
-
-
 //---------------------- FUNCTIONAL SCRIPTS --------------------------//
-
-
 
 // GLOBAL VARIABLES //
 
@@ -18,13 +12,15 @@ var buttonParam = "";
 //----------------------------------------------------------------------//
 
 //-------------------- AUTO COMPLETE ----------------------------------//
+
 var input = document.getElementById('user-input');
 var options = {
 
     types: ['(cities)'],
     componentRestrictions: {
         
-        country: ['uk','ie']}
+        country: ['uk','ie']
+    }
 };
 
 autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -162,7 +158,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
                                 } 
                             }
                         }
-                       console.log(reviewArray);
+                       //console.log(reviewArray);
             
                         
         // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
@@ -226,7 +222,8 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 
 //---------------------- UI SCRIPTS ---------------------------------//
 
-//---- global variables---//
+//---- global search button variables---//
+
 var images = { 
 
     imageWalk: 'assets/images/walkies.gif',
@@ -463,7 +460,7 @@ $('.go-button__button').on('click', function (){
 
                 $('#go').addClass('go-click');   
                
-              console.log('if');
+             // console.log('if');
 
         }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == 'scrollTo')) {
 
@@ -476,18 +473,18 @@ $('.go-button__button').on('click', function (){
                 setTimeout(function(){
 
                     $('section').removeAttr('id');
-                    console.log( $('section').attr('id'));
+                    //console.log( $('section').attr('id'));
 
                 },1000);
 
-                console.log('else');
+               // console.log('else');
 
         }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == undefined)) {
 
             
                 goAll();
                 //$('#go').addClass('go-click');
-                console.log('else else');
+                //console.log('else else');
         }
     }
 });

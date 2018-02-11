@@ -9,22 +9,49 @@ html, body {
 button, input {
   outline: none; }
 
+/*
+
+  Mixins
+  Author - Andy Crone | @andycrone_
+  + Popular mixins including vendor prefixes for cross-browser support
+
+*/
 .background {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0 )";
   opacity: 0;
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 105vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
+  -webkit-animation-name: fade-up;
+  -moz-animation-name: fade-up;
+  -o-animation-name: fade-up;
   animation-name: fade-up;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
   animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.2s;
+  -moz-animation-duration: 0.2s;
+  -o-animation-duration: 0.2s;
   animation-duration: 0.2s;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
   animation-iteration-count: 1; }
   @media (min-width: 500px) and (max-width: 767px) {
     .background {
@@ -46,19 +73,42 @@ button, input {
       height: 88vh; } }
 
 nav {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0 )";
   opacity: 0;
   height: 20vh;
   width: 100vw;
   background-color: #0e091f;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border: 0px;
+  -webkit-animation-name: fade-up;
+  -moz-animation-name: fade-up;
+  -o-animation-name: fade-up;
   animation-name: fade-up;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
   animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.2s;
+  -moz-animation-duration: 0.2s;
+  -o-animation-duration: 0.2s;
   animation-duration: 0.2s;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
   animation-iteration-count: 1; }
   @media (min-width: 1200px) and (max-width: 1499px) {
     nav {
@@ -86,13 +136,14 @@ nav {
       font-size: 7rem; } }
 
 .bubble-image {
-  z-index: 100;
   visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0 )";
   opacity: 0;
   height: 6rem;
   position: relative;
   left: 69vw;
   top: 0vh;
+  -webkit-transition: opacity, 0.8s, ease-in;
   transition: opacity, 0.8s, ease-in; }
   @media (min-width: 500px) and (max-width: 767px) {
     .bubble-image {
@@ -125,10 +176,15 @@ nav {
       top: 0vh; } }
 
 .img-click {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100 )";
   opacity: 1; }
 
 .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column; }
 
 @media (min-width: 375px) and (max-width: 499px) {
@@ -136,16 +192,34 @@ nav {
   top: 18.5rem;
   width: 100vw;
   display: none;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   left: 0; }
 .search-container {
   position: relative;
   top: 11vh;
+  -webkit-animation-name: fade-up;
+  -moz-animation-name: fade-up;
+  -o-animation-name: fade-up;
   animation-name: fade-up;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
   animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.2s;
+  -moz-animation-duration: 0.2s;
+  -o-animation-duration: 0.2s;
   animation-duration: 0.2s;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
   animation-iteration-count: 1; }
   @media (min-width: 375px) and (max-width: 499px) {
     .search-container {
@@ -178,12 +252,22 @@ nav {
   margin-top: 0; }
 
 .search-buttons, .search-bar, .go-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
   justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
 .search-buttons {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   left: 0vw;
@@ -313,13 +397,17 @@ nav {
 
 .search-button-clicked {
   border: 1px solid #0e0920;
+  -webkit-transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background-color: #d56c05;
+  -webkit-box-shadow: 2px 4px 2px 0px #33180a;
+  -moz-box-shadow: 2px 4px 2px 0px #33180a;
   box-shadow: 2px 4px 2px 0px #33180a; }
 
 .search-buttons__icon--style {
   font-size: 1.6rem;
   color: #d56c05;
+  -webkit-transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 #search-buttons__icon--clicked {
@@ -327,6 +415,8 @@ nav {
 
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
+  -webkit-box-shadow: 2px 4px 2px 0px #33180a;
+  -moz-box-shadow: 2px 4px 2px 0px #33180a;
   box-shadow: 2px 4px 2px 0px #33180a; }
 
 .go-button {
@@ -353,8 +443,14 @@ nav {
   box-shadow: 5px 6px 6px 2px #24110c;
   border: 2px solid white;
   background-color: #217219;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   transition-delay: .4s;
   font-family: "Pontano Sans", sans-serif;
@@ -380,9 +476,13 @@ a {
 
 .go-button__button--style:hover,
 .go-button__button--style:focus {
+  -webkit-box-shadow: 2px 3px 3px 2px #24110c;
+  -moz-box-shadow: 2px 3px 3px 2px #24110c;
   box-shadow: 2px 3px 3px 2px #24110c; }
 
 .go-click {
+  -webkit-box-shadow: 2px 3px 3px 2px #24110c;
+  -moz-box-shadow: 2px 3px 3px 2px #24110c;
   box-shadow: 2px 3px 3px 2px #24110c;
   font-size: 2.5rem;
   background-color: #509949; }
@@ -390,6 +490,8 @@ a {
 .search-bar__input {
   width: 20rem;
   height: 2rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
   border-radius: 0.3rem;
   border: 1px solid #000;
   margin-bottom: 1.5rem;
@@ -422,10 +524,18 @@ a {
   width: 100vw;
   position: relative;
   overflow: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   top: 4rem;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center; }
 
 .all-results--background {
@@ -481,7 +591,9 @@ a {
 .results-text--style {
   display: none;
   padding: 1rem;
-  border-radius: 6px;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
   background-color: #fff;
   color: #0e0920; }
 
@@ -494,14 +606,24 @@ a {
   color: #fff; }
 
 .reset {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 6rem;
   height: 6rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   top: 2rem;
   position: relative;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center; }
   @media (min-width: 1500px) {
     .reset {
@@ -511,22 +633,37 @@ a {
 .reset__button--style {
   width: 6rem;
   height: 6rem;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
   border-radius: 3rem;
   border: 2px solid white;
   background-color: #dd1616;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1.5rem;
   margin: 0px;
   color: #fff;
   transition-delay: .2s;
-  transition: border 0.3s, background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  -webkit-transition: border, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: border, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @media (min-width: 1500px) {
     .reset__button--style {
       width: 8rem;
       height: 8rem;
+      -webkit-border-radius: 4rem;
+      -moz-border-radius: 4rem;
       border-radius: 4rem; } }
 
 .reset:hover,
@@ -542,10 +679,15 @@ a {
   height: 3rem;
   width: 6rem;
   border: none;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
   border-radius: 0.3rem;
   background-color: #d56d05;
   color: #0e0920;
-  transition: background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  -webkit-transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 .website-button:hover,
 .website-button:focus {
@@ -573,9 +715,17 @@ a {
   width: 16rem;
   position: relative;
   top: 11vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
   justify-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
   border-radius: 1rem; }
   @media (min-width: 768px) and (max-width: 991px) {
     .modal__content {
@@ -596,7 +746,8 @@ a {
   float: right;
   font-size: 2rem;
   font-weight: normal;
-  transition: color, 0.3s ease-in; }
+  -webkit-transition: color, 0.3s, ease-in;
+  transition: color, 0.3s, ease-in; }
 
 .modal__content__close:hover,
 .modal__content__close:focus {
@@ -607,10 +758,19 @@ a {
   font-family: "Quicksand", sans-serif;
   color: #0e0920; }
 
+@-webkit-keyframes fade-up {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+  to {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; } }
 @keyframes fade-up {
   from {
-    opacity: 0; }
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
   to {
-    opacity: 1; } }
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; } }
 
 /*# sourceMappingURL=main.css.map */

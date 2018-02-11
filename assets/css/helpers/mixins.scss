@@ -200,3 +200,224 @@ $xlarge-desktop-width: 1500px;
 }
 
 //-------------------------------------------------------------//
+
+// VENDOR PREFIXES //
+
+/*
+
+  Mixins
+  Author - Andy Crone | @andycrone_
+  + Popular mixins including vendor prefixes for cross-browser support
+
+*/
+
+// ADDITIONAL/MODIFIED MIXINS ADDED BY MYSELF ARE MARKED//
+
+// === Standard layout & styling
+
+@mixin box-sizing($value){
+    -webkit-box-sizing: $value;
+       -moz-box-sizing: $value;
+            box-sizing: $value;
+  }
+  @mixin box-shadow($value){
+    -webkit-box-shadow: $value;
+       -moz-box-shadow: $value;
+            box-shadow: $value;
+  }
+  @mixin border-radius($value){
+    -webkit-border-radius: $value;
+       -moz-border-radius: $value;
+            border-radius: $value;
+  }
+  @mixin background-size($value){
+   
+    -webkit-background-size: $value;
+       -moz-background-size: $value;
+         -o-background-size: $value;
+            background-size: $value;
+  }
+  @mixin linear-gradient($angle,$gradient1, $gradient2) {
+    background-color: $gradient2; /* Fallback Color */
+    background-image: -webkit-gradient(linear, $angle, from($gradient1), to($gradient2)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient($angle, $gradient1, $gradient2); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient($angle, $gradient1, $gradient2); /* FF3.6 */
+    background-image:     -ms-linear-gradient($angle, $gradient1, $gradient2); /* IE10 */
+    background-image:      -o-linear-gradient($angle, $gradient1, $gradient2); /* Opera 11.10+ */
+    background-image:         linear-gradient($angle, $gradient1, $gradient2);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}');
+  }
+
+  // ADDITIONAL MIXIN //
+  @mixin opacity($value) {
+    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100} )";
+    opacity:$value;
+  }
+  //---------------------//
+  
+  // === Animations
+  
+  // MODIFIED //
+  @mixin transition($value1, $value2, $value3) {
+    -webkit-transition: $value1, $value2, $value3;
+            transition: $value1, $value2, $value3;
+  }
+//---------------//
+
+  // ADDITIONAL MIXIN //
+  @mixin transition-mixin ($mixin) {
+
+    -webkit-transition: $mixin;
+            transition: $mixin;
+  }
+  //-----------------------//
+  @mixin transform($value) {
+
+    -webkit-transform: $value;
+        -ms-transform: $value;
+        -o-transform: $value;
+           transform: $value;
+  }
+  @mixin transform-origin ($value) {
+   
+    -webkit-transform-origin: $value;
+        -ms-transform-origin: $value;
+         -o-transform-origin: $value;
+            transform-origin: $value;
+  }
+
+  // MODIFIED //
+
+  @mixin animation-name($name){
+  
+    -webkit-animation-name: $name;
+       -moz-animation-name: $name;
+        -o-animation-name: $name;
+            animation-name: $name;
+  }
+  @mixin animation-duration($duration){
+    
+    -webkit-animation-duration: $duration;
+       -moz-animation-duration: $duration;
+         -o-animation-duration: $duration;
+            animation-duration: $duration;
+  }
+  @mixin animation-timing-function($timing){
+   
+    -webkit-animation-timing-function: $timing;
+       -moz-animation-timing-function: $timing;
+         -o-animation-timing-function: $timing;
+            animation-timing-function: $timing;
+  }
+  @mixin animation-fill-mode($type){
+
+    -webkit-animation-fill-mode: $type;
+       -moz-animation-fill-mode: $type;
+         -o-animation-fill-mode: $type;
+            animation-fill-mode: $type;
+  }
+
+  @mixin animation-iteration-count($value) {
+
+    -webkit-animation-iteration-count: $value;
+       -moz-animation-iteration-count: $value;
+         -o-animation-iteration-count: $value;
+            animation-iteration-count: $value;
+
+  }
+
+
+  //-------------------------//
+
+  @mixin animation-delay($value){
+
+    -webkit-animation-delay: $value;
+     //  -moz-animation-delay: $value;
+       //  -o-animation-delay: $value;
+            animation-delay: $value;
+  }
+
+  
+  // === Filters
+  
+  @mixin filter($value){
+    -webkit-filter: $value;
+       -moz-filter: $value;
+        -ms-filter: $value;
+         -o-filter: $value;
+            filter: $value;
+  }
+  
+  // === Browser mods
+  
+  @mixin appearance($value){
+   
+    -webkit-appearance: $value;
+       -moz-appearance: $value;
+            appearance: $value;
+  }
+  @mixin user-select($value){
+    -webkit-touch-callout: $value;
+    -webkit-user-select: $value;
+     -khtml-user-select: $value;
+       -moz-user-select: $value;
+        -ms-user-select: $value;
+            user-select: $value;
+  }
+
+
+// ADDITIONAL MIXINS //
+
+
+  // FLEXBOX //
+
+  @mixin display-flex {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+  }
+
+  @mixin align-content ($value) {
+
+    -webkit-align-content: $value;
+	    -ms-flex-line-pack: $value;
+	        align-content: $value;
+  }
+
+  @mixin justify-content ($value) {
+
+    -webkit-justify-content: $value;
+	    -ms-flex-pack: $value;
+	        justify-content: $value;
+  }
+
+  @mixin align-items ($value) {
+
+    -webkit-align-items: $value;
+    -ms-flex-align: $value;
+        align-items: $value;
+  }
+
+  @mixin flex-direction ($value) {
+
+    -webkit-flex-direction: $value;
+    -ms-flex-direction: $value;
+        flex-direction: $value;
+  }
+
+  @mixin flex-wrap ($value) {
+
+    -webkit-flex-wrap: $value;
+        -ms-flex-wrap: $value;
+            flex-wrap: $value;
+  }
+
+  @mixin align-self ($value) {
+
+    -webkit-align-self: $value;
+    -ms-flex-item-align: $value;
+        align-self: $value;
+  }
