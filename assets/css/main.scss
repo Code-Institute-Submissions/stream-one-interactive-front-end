@@ -13,26 +13,26 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 .background {
 
-    @include opacity (0);
+    opacity: 0;
     background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
     background-repeat: no-repeat;
-    @include background-size (cover);
+    background-size: cover;
     height: 105vh;
     width: 100vw;
     position: relative;
     overflow: hidden;
 
   
-    @include animation-name (fade-up);
-    @include animation-timing-function (ease-in);
-    @include animation-duration (0.2s);
-    @include animation-delay (0.5s);
-    @include animation-fill-mode (forwards);
-    @include animation-iteration-count (1);
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
-    @include mobile-landscape {
+    mobile-landscape {
 
         height: 130vh;
     
@@ -67,21 +67,21 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 
 nav {
-    @include opacity (0);
+    opacity: (0);
     height: 20vh;
     width: 100vw;
     background-color: #0e091f;
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(center);
+    display: flex;
+    align-items:center;
+    justify-content:center;
     border: 0px;
 
-    @include animation-name (fade-up);
-    @include animation-timing-function (ease-in);
-    @include animation-duration (0.2s);
-    @include animation-delay (0.5s);
-    @include animation-fill-mode (forwards);
-    @include animation-iteration-count (1);
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
     @include large {
 
@@ -126,12 +126,12 @@ nav {
 
     //z-index: 100;
     visibility: visible;
-    @include opacity(0);
+    opacity:0;
     height: 6rem;
     position: relative;
     left: 69vw;
     top: 0vh;
-    @include transition (opacity, 0.8s, ease-in);
+    transition: opacity, 0.8s, ease-in;
 
     @include mobile-landscape{
 
@@ -182,14 +182,14 @@ nav {
 
 .img-click {
 
-    @include opacity (1);
+    opacity :1;
     
 }
 
 .search-form {
 
-    @include display-flex;
-    @include flex-direction(column);
+    display: flex;
+    flex-direction:column;
 }
 
 
@@ -199,7 +199,7 @@ nav {
         top: 18.5rem;
         width: 100vw;
         display: none;
-        @include justify-content(center);
+        justify-content:center;
         left:0;
    
     }
@@ -210,16 +210,15 @@ nav {
 
 .search-container {
 
-        
     position: relative;
     top: 11vh;
 
-    @include animation-name (fade-up);
-    @include animation-timing-function (ease-in);
-    @include animation-duration (0.2s);
-    @include animation-delay (0.5s);
-    @include animation-fill-mode (forwards);
-    @include animation-iteration-count (1);
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
         @include sm-mobile {
 
@@ -293,17 +292,17 @@ nav {
 
 .search-buttons , .search-bar, .go-button{
 
-    @include display-flex;
-    @include justify-content(space-around);
+    display: flex;
+    justify-content: space-around;
    
-    @include flex-wrap(wrap);
+    flex-wrap: wrap;
     
 }
 
 .search-buttons {
 
-        @include align-content (center);
-        @include align-items(center);
+        align-content: center;
+        align-items: center;
         position: relative;
         left: 0vw;
         height: 38vh;
@@ -450,9 +449,9 @@ nav {
 .search-button-clicked {
    
     border: 1px solid #0e0920;
-    @include transition(background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
+    transition: background-color, 0.2s, cubic-bezier( 0.175, 0.885, 0.32, 1.275);
     background-color: #d56c05;
-    @include box-shadow (2px 4px 2px 0px #33180a);
+    box-shadow: 2px 4px 2px 0px #33180a;
 
 }
 
@@ -465,7 +464,7 @@ nav {
 
     font-size: 1.6rem;
     color: #d56c05;
-    @include transition-mixin($search-button-text-transition);
+    transition: $search-button-text-transition;
 }
 
 #search-buttons__icon--clicked {
@@ -478,7 +477,7 @@ nav {
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
 
-   @include box-shadow (2px 4px 2px 0px #33180a);
+   box-shadow: 2px 4px 2px 0px #33180a;
   
 
     .search-buttons__icon--style {
@@ -536,9 +535,9 @@ nav {
 
 
     @include go-button-mobile;
-    @include display-flex;
-    @include justify-content(center);
-    @include align-items(center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition-delay: .4s;
   
 
@@ -567,13 +566,13 @@ a {
 .go-button__button--style:hover,
 .go-button__button--style:focus {
 
-    @include box-shadow(2px 3px 3px 2px #24110c);
+    box-shadow: 2px 3px 3px 2px #24110c;
  
 }
 
 .go-click {
 
-    @include box-shadow (2px 3px 3px 2px #24110c);
+    box-shadow : 2px 3px 3px 2px #24110c;
     font-size:2.5rem;
     background-color: #509949;
    
@@ -584,7 +583,7 @@ a {
 
     width: 20rem;
     height: 2rem;
-    @include border-radius(0.3rem);
+    border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
     font-family: $button-font;
@@ -634,12 +633,12 @@ a {
     position: relative;
     overflow: visible;
    // padding-bottom: 9rem;
-   @include display-flex;
-   @include flex-direction(column);
+    display: flex;
+    flex-direction: column;
     //justify-content: center;
-    @include flex-wrap(wrap);
+    flex-wrap: wrap;
     top: 4rem;
-    @include align-items(center);
+    align-items: center;
 }
 
 
@@ -728,7 +727,7 @@ a {
     display: none;
     //border: 1px solid #0e0920;
     padding: 1rem;
-    @include border-radius (0.5rem);
+    border-radius: 0.5rem;
     background-color: #fff;
     color: #0e0920;
     //box-shadow: 2px 4px 6px 0px #4b241399;
@@ -746,18 +745,18 @@ a {
 
 .reset {
 
-    @include display-flex;
-    @include flex-direction(row);
-    @include justify-content(center);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 6rem;
     height: 6rem;
     //justify-content: center;
-    @include align-content(center);
+    align-content: center;
     top: 2rem;
     position: relative;
     //left: 50vw;
     //transform: translatex(-50%);
-    @include align-self (center);
+    align-self: center;
 
     @include xlarge {
 
@@ -771,26 +770,25 @@ a {
 
     width: 6rem;
     height: 6rem;
-    @include border-radius(3rem);
+    border-radius: 3rem;
     border: 2px solid white;
     background-color: #dd1616;
-    @include display-flex;
-    @include justify-content(center);
-    @include align-items(center);
+    display: flex;
+    justify-content:center;
+    align-items:center;
     font-family: $button-font;
     font-size: 1.5rem;
     margin: 0px;
     color: #fff;
     transition-delay: .2s;
    // transition: border 0.3s, background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    @include transition(border, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
-    @include transition(background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
-    @include transition(color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
+    transition: border, 0.3s, background-color, 0.3s, color, 0.3s, cubic-bezier cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
     @include xlarge {
 
         width: 8rem;
         height: 8rem;
-        @include border-radius (4rem);
+        border-radius: 4rem;
     }
 }
 
@@ -813,11 +811,11 @@ a {
     height: 3rem;
     width: 6rem;
     border: none;
-    @include border-radius (0.3rem);
+    border-radius: (0.3rem);
     background-color: #d56d05;
     color: #0e0920;
-    @include transition(color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
-    @include transition(background-color, 0.3s,cubic-bezier(0.175, 0.885, 0.32, 1.275));
+    transition: color, 0.3s, background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
 }
 
 .website-button:hover,
@@ -854,10 +852,10 @@ a {
     width: 16rem;
     position: relative;
     top: 11vh;
-    @include display-flex;
-    @include justify-content(space-around);
-    @include align-items(center);
-    @include border-radius (1rem);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
 
     @include tablet {
 
@@ -890,7 +888,7 @@ a {
     float: right;
     font-size: 2rem;
     font-weight: normal;
-    @include transition (color, 0.3s, ease-in);
+    transition: color, 0.3s, ease-in;
 }
 
 .modal__content__close:hover,
@@ -907,14 +905,7 @@ a {
 
 }
 
-@-webkit-keyframes fade-up {
-    from {
-      opacity: 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
-    to {
-      opacity: 1;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; } }
-  
+
   @keyframes fade-up {
     from {
       opacity: 0;

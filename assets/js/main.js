@@ -340,10 +340,10 @@ $('button').on('click', function(){
                         
                         $('.bubble-image').attr('src',imageString).addClass('img-click');
             
-                    }, 600) ;
+                    }, 400) ;
 
                     
-                  // console.log('if');
+                  console.log('if');
                   // console.log(imageString);
                     
 
@@ -355,7 +355,7 @@ $('button').on('click', function(){
 
                     },300);
                     
-                   // console.log('if else1');
+                   console.log('if else1');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click' ) && ($('.bubble-image').attr('src') !== imageString)) {
 
@@ -365,7 +365,7 @@ $('button').on('click', function(){
 
                     },300);
 
-                   // console.log('if else2');
+                   console.log('if else2');
             
                 } else if (($('.bubble-image').attr('class') !== 'img-click') && ($('.bubble-image').attr('src') == imageString)) {
 
@@ -375,7 +375,7 @@ $('button').on('click', function(){
 
                     },300);
 
-                    //console.log('if else3');
+                    console.log('if else3');
                 }
            
 
