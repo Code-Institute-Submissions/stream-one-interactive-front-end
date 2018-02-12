@@ -7,7 +7,7 @@ The purpose of the appliciation is to enable pet owners to quickly and easily lo
 The main aims of the application are: 
 
 1. To allow the user to search pre-defined pet services for any given location in the UK and Ireland.
-2. Based upon the location entered, retrieve company location details, contact details, website links and       reviews for any user selected company.
+2. Based upon the location entered, retrieve company location details, contact details, website links and reviews for any user selected company.
 3. To be user friendly and simple to use.
 4. To display the information in a clear and concise manner.
 
@@ -23,16 +23,16 @@ A demo of the site is available [here] (https://darchard1984.github.io/stream-on
 
 ## Built With 
 
-** HTML, CSS, SASS/SCSS, FLEXBOX, JAVASCRIPT, jQUERY, FONT-AWESOME, GOOGLE-FONTS, GOOGLE-PLACES API, PHOTOSHOP, BALSAMIQ.
+** HTML, CSS, SASS/SCSS, FLEXBOX, JAVASCRIPT, jQUERY, FONT-AWESOME, GOOGLE-FONTS, GOOGLE-MAPS/PLACES API, PHOTOSHOP, BALSAMIQ.
 
 ## UX Design
 
-Details of the UX design and research process is available in the repo "supporting-documentation" folder. The documents show how I approached the design of the site using the 5 layers approach. (Strategy, Structure,Scope, Skeleton, Surface). 
+Details of the UX design and research process is available in the repo "documentation" folder. The documents show how I approached the design of the site using the 5 layers approach. (Strategy, Structure,Scope, Skeleton, Surface). 
 
 ## Build Approach
 
 1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time around. I wanted to expand my knowledge of CSS and build everything from scratch. Using Flexbox as the grid system for the project. And creating my own custom mixins for media queries.
-2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled into. 
+2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled in to. 
 3. The Google Places API is called to retreive data according to the user input. The user has a choice of 6 Pet Stops to choose from, along with a location of their choosing. Data is populated dynamically below the landing page. Information includes company name, address, website, phone number, overall rating and reviews if available. 
 4. I have tried to code the applciation defensively as possible. Taking into account user error when making decisions on functionality. 
 5. All button styles, modal styles and colour schemes are my own. The main photo is from the online resource px-here.com and is a free to use asset.

@@ -340,7 +340,7 @@ $('button').on('click', function(){
                         
                         $('.bubble-image').attr('src',imageString).addClass('img-click');
             
-                    }, 400) ;
+                    }, 600) ;
 
                     
                   console.log('if');

@@ -32,7 +32,7 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 
-    mobile-landscape {
+    @include mobile-landscape {
 
         height: 130vh;
     
@@ -190,7 +190,7 @@ nav {
 
     display: flex;
     flex-direction:column;
-}
+
 
 
     @include sm-mobile {
@@ -204,7 +204,7 @@ nav {
    
     }
 
-    
+}
 
 // --------------- SEARCH BUTTONS ---------------//
 
@@ -385,7 +385,8 @@ nav {
     //padding-top: 1rem;
 
         .search-buttons__button__text {
-
+        
+        display: block;
         margin-top: .3rem;
         margin-bottom: .3rem;
         @include button-text-desktop;

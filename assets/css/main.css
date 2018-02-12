@@ -9,6 +9,9 @@ html, body {
 button, input {
   outline: none; }
 
+a {
+  text-decoration: none; }
+
 /*
 
   Mixins
@@ -33,8 +36,9 @@ button, input {
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1; }
-  .background mobile-landscape {
-    height: 130vh; }
+  @media (min-width: 500px) and (max-width: 767px) {
+    .background {
+      height: 130vh; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .background {
       height: 125vh; } }
@@ -135,14 +139,15 @@ nav {
 .search-form {
   display: flex;
   flex-direction: column; }
+  @media (min-width: 375px) and (max-width: 499px) {
+    .search-form {
+      position: relative;
+      top: 18.5rem;
+      width: 100vw;
+      display: none;
+      justify-content: center;
+      left: 0; } }
 
-@media (min-width: 375px) and (max-width: 499px) {
-  position: relative;
-  top: 18.5rem;
-  width: 100vw;
-  display: none;
-  justify-content: center;
-  left: 0; }
 .search-container {
   position: relative;
   top: 11vh;
@@ -243,6 +248,7 @@ nav {
 .search-buttons__button {
   margin: 1.5rem; }
   .search-buttons__button .search-buttons__button__text {
+    display: block;
     margin-top: .3rem;
     margin-bottom: .3rem;
     font-family: "Pontano Sans", sans-serif;
