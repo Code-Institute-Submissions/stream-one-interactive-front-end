@@ -186,25 +186,23 @@ nav {
     
 }
 
-.search-form {
+/*.search-form {
 
     display: flex;
     flex-direction:column;
-
-
 
     @include sm-mobile {
 
         position: relative;
         top: 18.5rem;
         width: 100vw;
-        display: none;
+        //display: none;
         justify-content:center;
         left:0;
    
     }
 
-}
+}*/
 
 // --------------- SEARCH BUTTONS ---------------//
 
@@ -212,7 +210,7 @@ nav {
 
     position: relative;
     top: 11vh;
-
+    
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -382,11 +380,11 @@ nav {
 .search-buttons__button {
 
     margin: 1.5rem;
+    display: block;
     //padding-top: 1rem;
 
         .search-buttons__button__text {
-        
-        display: block;
+
         margin-top: .3rem;
         margin-bottom: .3rem;
         @include button-text-desktop;
@@ -450,9 +448,9 @@ nav {
 .search-button-clicked {
    
     border: 1px solid #0e0920;
-    transition: background-color, 0.2s, cubic-bezier( 0.175, 0.885, 0.32, 1.275);
+    transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: #d56c05;
-    box-shadow: 2px 4px 2px 0px #33180a;
+    box-shadow: 2px 4px 2px 0px #33180a 
 
 }
 
@@ -463,6 +461,7 @@ nav {
 
 .search-buttons__icon--style {
 
+    display: block;
     font-size: 1.6rem;
     color: #d56c05;
     transition: $search-button-text-transition;
@@ -471,15 +470,17 @@ nav {
 #search-buttons__icon--clicked {
     
     color: #0e0920;
-   
+    //transition: $search-button-text-transition;
 }
 
 
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
 
-   box-shadow: 2px 4px 2px 0px #33180a;
-  
+    //border-radius: 0.6rem;
+    //border: 1px solid #0e0920;
+    box-shadow: 2px 4px 2px 0px #33180a;;
+    //background-color: #d56c05;
 
     .search-buttons__icon--style {
 
@@ -493,6 +494,8 @@ nav {
     }
 
 }
+
+
 
 
 
