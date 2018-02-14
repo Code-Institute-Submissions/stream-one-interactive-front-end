@@ -2,23 +2,23 @@
 
 $xs-mobile-height: 320px;
 $mobile-height: 375px;
-$tablet-height: 1024px;
+$tablet-height: 1023px;
 $large-tablet-height: 1366px;
 
 $xs-mobile-width: 320px;
 $sm-mobile-width: 375px;
-$mobile-width: 500px;
-$tablet-width: 768px;
-$large-tablet-width: 1024;
-$desktop-width: 992px;
-$large-desktop-width: 1200px;
-$xlarge-desktop-width: 1500px;
+$mobile-width: 575px;
+$tablet-width: 767px;
+//$large-tablet-width: 1023;
+$desktop-width: 991px;
+$large-desktop-width: 1199px;
+$xlarge-desktop-width: 1499px;
 
 
 
 @mixin xs-mobile {
 
-    @media(min-width:$xs-mobile-width) and (max-width:$mobile-width - 1px) {
+    @media(min-width:$xs-mobile-width){
         
         @content;
     }
@@ -26,7 +26,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin sm-mobile {
 
-    @media(min-width:$sm-mobile-width) and (max-width:$mobile-width - 1px) {
+    @media(min-width:$sm-mobile-width){
         
         @content;
     }
@@ -34,7 +34,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin mobile-landscape {
 
-    @media(min-width:$mobile-width) and (max-width:$tablet-width - 1px) {
+    @media(min-width:$mobile-width){
         
         @content;
     }
@@ -42,7 +42,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin tablet {
 
-    @media(min-width:$tablet-width) and (max-width:$desktop-width - 1px) {
+    @media(min-width:$tablet-width) {
         
         @content;
     }
@@ -50,7 +50,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin desktop {
 
-    @media(min-width:$desktop-width) and (max-width:$large-desktop-width - 1px) {
+    @media(min-width:$desktop-width){
         
         @content;
     }
@@ -58,7 +58,7 @@ $xlarge-desktop-width: 1500px;
 
 @mixin large {
 
-    @media(min-width:$large-desktop-width) and (max-width:$xlarge-desktop-width - 1px){
+    @media(min-width:$large-desktop-width){
 
         @content;
     }
@@ -89,14 +89,6 @@ $xlarge-desktop-width: 1500px;
 
 }
 
-@mixin large-tablet-portrait {
-
-    @media(min-width:$large-tablet-width) and (max-height:$large-tablet-height){
-
-        @content;
-    }
-
-}
 
 @mixin large-tablet-landscape {
 

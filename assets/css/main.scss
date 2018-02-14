@@ -15,61 +15,68 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
     display: flex;
     flex-direction: column;
+    height: 150vh;
+    
+    @include tablet {
+
+        
+        height: 100vh;
+    }
 }
 .background {
 
-    opacity: 0;
-    background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
+    //opacity: 0;
+    background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(10rem + 100vh);
     width: 100vw;
+    height: 10rem;
     position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1;
 
   
-    animation-name: fade-up;
-    animation-timing-function: ease-in;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
+    //animation-name: fade-up;
+    //animation-timing-function: ease-in;
+    //animation-duration: 0.2s;
+    //animation-delay: 0.5s;
+    //animation-fill-mode: forwards;
+   // animation-iteration-count: 1;
 
+   @include sm-mobile {
+
+    height: 10rem;
+
+   }
     @include mobile-landscape {
 
-        height: calc(10rem + 100vh);
+    height: 10rem;
     
     }
 
     @include tablet {
 
-        height: 125vh;
+        flex-grow: 2;
+        min-height: 20rem;
     }
 
-    @include tablet-portrait{
-
-        height:80vh;
-    }
 
     @include desktop {
 
-        height: 100vh;
+        min-height: 20rem;
     }
 
     @include large {
 
-        height: 88vh;
-        
+        min-height: 40rem;
     }
 
     @include xlarge {
-
-        height: 88vh;
+        flex-grow: 1;
+        min-height: 44rem;
     }
+    
     
 }
 
@@ -82,15 +89,23 @@ nav {
     align-items:center;
     justify-content:center;
     border: 0px;
+    flex-grow:1;
+    
 
    /* animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 1;
+    animation-iteration-count: 1;*/
 
-    @include large {
+    @include tablet {
+
+        height: 16rem;
+        flex-grow:1;
+    }
+
+    /*@include large {
 
         height: 12vh;
     }
@@ -136,7 +151,7 @@ nav {
     opacity:0;
     height: 6rem;
     position: relative;
-    left: 69vw;
+    //left: 69vw;
     top: 0vh;
     transition: opacity, 0.8s, ease-in;
 
@@ -216,61 +231,40 @@ nav {
 .search-container {
 
     position: relative;
-    top: 23%;
-    
+    //top: 23%;
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    padding: 2.5rem 0rem;
+    background-color: #fceee7e6;
+    flex-grow: 1;
+   
+
+
 
         @include sm-mobile {
 
-            top: 16.5vh;
+           //9 top: 16.5vh;
 
         }
 
        @include mobile-landscape {
 
-            top: 11vh;
+            //top: 11vh;
         }
 
 
         @include tablet {
-
-            top: 10.5vh;
+            flex-grow: 1;
+            //top: 10.5vh;
         }
-
-        @include tablet-portrait {
-
-            top: 15.5vh;
-        }
-
-       // @include large-tablet-portrait {
-
-        //    top: 28rem;
-      //  }
-//
-       // @include large-tablet-landscape {
-
-          ///  top: 16rem;
-
-       // }
 
         @include desktop {
 
-            top: 9rem;
-        }
-
-        @include large {
-
-            top: 8.0rem;
-        }
-
-        @include xlarge {
-
-            top: 14.5rem;
+            flex-grow: 1;
         }
 
         
@@ -290,11 +284,6 @@ nav {
     
 
     
-   
-    
-
-
-
 .search-buttons , .search-bar, .go-button{
 
     display: flex;
@@ -306,19 +295,17 @@ nav {
 
 .search-buttons {
 
-        align-content: center;
-        align-items: center;
-        position: relative;
-        left: 0vw;
-        height: 38vh;
+    align-content: center;
+    align-items: center;
+    position: relative;;
 
     @include sm-mobile {
 
-        height: 40vh;
+        //height: 40vh;
     }
     @include mobile-landscape {
 
-        height: 8rem;
+       // height: 8rem;
        
     }
 
@@ -331,11 +318,12 @@ nav {
 
     @include desktop {
 
-        width: 40vw;
-        position: relative;
-        left: 30vw;
-        height: 22.5rem;;
+        width: 72vw;
+        //position: relative;
+        left: 14vw;
+        height: 10.5rem;
     }
+    
 
     @include large {
 
@@ -395,7 +383,7 @@ nav {
         margin-top: .3rem;
         margin-bottom: .3rem;
         @include button-text-desktop;
-        color: #d56c05;;
+        color: #0e091f;;
     }
 
     @include tablet {
@@ -521,13 +509,13 @@ nav {
     }
 
     @include tablet {
-
-        margin-top: 3rem;
+        padding-top: 0rem;
+        margin-top: 2rem;
     }
 
     @include desktop {
 
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
 
