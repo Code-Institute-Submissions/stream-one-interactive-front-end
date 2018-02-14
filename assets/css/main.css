@@ -19,6 +19,10 @@ a {
   + Popular mixins including vendor prefixes for cross-browser support
 
 */
+.flex-container {
+  display: flex;
+  flex-direction: column; }
+
 .background {
   opacity: 0;
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored.jpg");
@@ -26,10 +30,12 @@ a {
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 105vh;
+  height: calc(10rem + 100vh);
   width: 100vw;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   animation-name: fade-up;
   animation-timing-function: ease-in;
   animation-duration: 0.2s;
@@ -38,7 +44,7 @@ a {
   animation-iteration-count: 1; }
   @media (min-width: 500px) and (max-width: 767px) {
     .background {
-      height: 130vh; } }
+      height: calc(10rem + 100vh); } }
   @media (min-width: 768px) and (max-width: 991px) {
     .background {
       height: 125vh; } }
@@ -56,26 +62,29 @@ a {
       height: 88vh; } }
 
 nav {
-  opacity: 0;
-  height: 20vh;
+  height: 10rem;
   width: 100vw;
   background-color: #0e091f;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0px;
-  animation-name: fade-up;
-  animation-timing-function: ease-in;
-  animation-duration: 0.2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1; }
-  @media (min-width: 1200px) and (max-width: 1499px) {
-    nav {
-      height: 12vh; } }
-  @media (min-width: 1500px) {
-    nav {
-      height: 12vh; } }
+   /* animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+
+    @include large {
+
+        height: 12vh;
+    }
+
+    @include xlarge {
+
+        height: 12vh;
+    }*/ }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
@@ -155,7 +164,7 @@ nav {
 }*/
 .search-container {
   position: relative;
-  top: 11vh;
+  top: 23%;
   animation-name: fade-up;
   animation-timing-function: ease-in;
   animation-duration: 0.2s;

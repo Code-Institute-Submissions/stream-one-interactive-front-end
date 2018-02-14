@@ -11,6 +11,11 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
 //-------------------- LANDING PAGE --------------------------//
 
+.flex-container {
+
+    display: flex;
+    flex-direction: column;
+}
 .background {
 
     opacity: 0;
@@ -19,10 +24,12 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 105vh;
+    height: calc(10rem + 100vh);
     width: 100vw;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
   
     animation-name: fade-up;
@@ -34,7 +41,7 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
     @include mobile-landscape {
 
-        height: 130vh;
+        height: calc(10rem + 100vh);
     
     }
 
@@ -67,8 +74,8 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 
 nav {
-    opacity: (0);
-    height: 20vh;
+    //opacity: 0;
+    height: 10rem;
     width: 100vw;
     background-color: #0e091f;
     display: flex;
@@ -76,7 +83,7 @@ nav {
     justify-content:center;
     border: 0px;
 
-    animation-name: fade-up;
+   /* animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
@@ -91,7 +98,7 @@ nav {
     @include xlarge {
 
         height: 12vh;
-    }
+    }*/
 }
 
 .nav__navtext {
@@ -209,7 +216,7 @@ nav {
 .search-container {
 
     position: relative;
-    top: 11vh;
+    top: 23%;
     
     animation-name: fade-up;
     animation-timing-function: ease-in;
