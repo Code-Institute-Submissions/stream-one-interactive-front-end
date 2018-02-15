@@ -7,7 +7,7 @@ $large-tablet-height: 1366px;
 
 $xs-mobile-width: 320px;
 $sm-mobile-width: 375px;
-$mobile-width: 575px;
+$mobile-width: 500px;
 $tablet-width: 767px;
 //$large-tablet-width: 1023;
 $desktop-width: 991px;
@@ -104,6 +104,11 @@ $xlarge-desktop-width: 1499px;
 
 // MIXINS //
 
+$search-button-background: #d56c05;
+$search_button-border:1px solid #0e091f;
+$search-button-box-shadow:6px 6px 6px 0px #33180a;
+$search-button-icon-color:#0e091f;
+
 
 @mixin button-text-desktop {
 
@@ -117,9 +122,9 @@ $xlarge-desktop-width: 1499px;
     width: 4rem;
     height: 4rem;
     border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color:#0e0920;
+    border: $search_button-border;
+    box-shadow: $search-button-box-shadow;
+    background-color: $search-button-background;
     transition: $search-button-background-transition;
     
 
@@ -129,10 +134,11 @@ $xlarge-desktop-width: 1499px;
     width: 6rem;
     height: 5rem;
     border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color:#0e0920;
+    border: $search_button-border;
+    box-shadow: $search-button-box-shadow;
+    background-color: $search-button-background;
     transition: $search-button-background-transition;
+    
     
     
 }
@@ -142,9 +148,9 @@ $xlarge-desktop-width: 1499px;
     width: 7rem;
     height: 6rem;
     border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color: #0e0920;
+    border: $search_button-border;
+    box-shadow: $search-button-box-shadow;
+    background-color: $search-button-background;
     transition: $search-button-background-transition;
     
     
@@ -155,12 +161,11 @@ $xlarge-desktop-width: 1499px;
     width: 11rem;
     height: 8rem;
     border-radius: 0.6rem;
-    border: 1px solid #d56d05c7;
-    box-shadow: 6px 6px 6px 0px #33180a;
-    background-color: #0e0920;
+    border: $search_button-border;
+    box-shadow: $search-button-box-shadow;
+    background-color: $search-button-background;
     transition: $search-button-background-transition;
     
-   
 }
 
 
@@ -170,7 +175,7 @@ $xlarge-desktop-width: 1499px;
     width: 6rem;
     height: 6rem;
     border-radius: 3rem;
-    box-shadow:5px 6px 6px 2px #24110c;
+    //box-shadow:5px 6px 6px 2px #24110c;
     border: 2px solid rgba(255, 255, 255, 1);
     background-color: #217219;
 }
@@ -179,7 +184,7 @@ $xlarge-desktop-width: 1499px;
     width: 8rem;
     height: 8rem;
     border-radius: 4rem;
-    box-shadow:5px 6px 6px 2px #24110c;
+    //box-shadow:5px 6px 6px 2px #24110c;
     border: 2px solid rgba(255, 255, 255, 1);
     background-color: #217219;
     

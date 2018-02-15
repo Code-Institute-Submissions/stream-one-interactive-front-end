@@ -35,6 +35,7 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     height: 10rem;
     position: relative;
     flex-grow: 1;
+    flex-shrink: 0;
 
   
     //animation-name: fade-up;
@@ -46,35 +47,41 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
    @include sm-mobile {
 
-    height: 10rem;
+        //height: 10rem;
+        flex-basis: 10rem;
 
    }
     @include mobile-landscape {
 
-    height: 10rem;
+        //height: 10rem;
+        flex-basis: 10rem;
     
     }
 
     @include tablet {
 
         flex-grow: 2;
-        min-height: 20rem;
+        //min-height: 20rem;
+        flex-basis: 10rem;
     }
 
 
     @include desktop {
-
-        min-height: 20rem;
+        flex-shrink: 1;
+        //min-height: 20rem;
+        flex-basis: 20rem;
     }
 
     @include large {
-
-        min-height: 40rem;
+       
+        //min-height: 40rem;
+        flex-basis: 40rem;
     }
 
     @include xlarge {
         flex-grow: 1;
-        min-height: 44rem;
+        //min-height: 44rem;
+        flex-basis: 44rem;
     }
     
     
@@ -89,7 +96,8 @@ nav {
     align-items:center;
     justify-content:center;
     border: 0px;
-    flex-grow:1;
+    flex-grow: 1;
+    flex-shrink: 1;
     
 
    /* animation-name: fade-up;
@@ -101,8 +109,9 @@ nav {
 
     @include tablet {
 
-        height: 16rem;
-        flex-grow:1;
+        //height: 16rem;
+        flex-basis: 16rem;
+       // flex-grow:1;
     }
 
     /*@include large {
@@ -151,14 +160,14 @@ nav {
     opacity:0;
     height: 6rem;
     position: relative;
-    //left: 69vw;
+    left: 66%;;
     top: 0vh;
     transition: opacity, 0.8s, ease-in;
 
     @include mobile-landscape{
 
-        left: 56vw;
-        top: 0vh;
+        left: 58%;
+        top: -3vh;
     }
 
     @include tablet {
@@ -239,8 +248,9 @@ nav {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     padding: 2.5rem 0rem;
-    background-color: #fceee7e6;
+    background-color: #0e091f;
     flex-grow: 1;
+    flex-shrink: 1;
    
 
 
@@ -258,13 +268,13 @@ nav {
 
 
         @include tablet {
-            flex-grow: 1;
+            //flex-grow: 1;
             //top: 10.5vh;
         }
 
         @include desktop {
 
-            flex-grow: 1;
+           // flex-grow: 1;
         }
 
         
@@ -442,9 +452,9 @@ nav {
 
 .search-button-clicked {
    
-    border: 1px solid #0e0920;
+    border: 1px solid $search-button-background;
     transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background-color: #d56c05;
+    background-color: $search-button-icon-color;
     box-shadow: 2px 4px 2px 0px #33180a 
 
 }
@@ -458,13 +468,14 @@ nav {
 
     display: block;
     font-size: 1.6rem;
-    color: #d56c05;
+    color: $search-button-icon-color;
     transition: $search-button-text-transition;
 }
 
 #search-buttons__icon--clicked {
     
-    color: #0e0920;
+    color: $search-button-background;
+   // background-color: $search-button-icon-color;
     //transition: $search-button-text-transition;
 }
 
@@ -573,7 +584,9 @@ a {
 
     box-shadow : 2px 3px 3px 2px #24110c;
     font-size:2.5rem;
-    background-color: #509949;
+    background-color: #fff;
+    color: #509949;
+    border: 1px solid #509949;
    
 }
 // ----------------- SEARCH BAR ----------------//
@@ -664,21 +677,11 @@ a {
 
     @include desktop {
 
-        width: 50rem;
-        height: 30rem;
+        width: 60rem;
+        height: 40rem;
     }
 
-    @include large {
-
-        width: 50rem;
-        height: 30rem;
-    }
-
-    @include xlarge {
-
-        width: 50rem;
-        height: 30rem;
-    }
+   
 }
 
 #map {
@@ -705,19 +708,19 @@ a {
         width: 48rem;
     }
 
-    @include desktop {
+   /* @include desktop {
 
         width: 48rem;
-    }
+    }*/
 
     @include large {
 
-        width: 48rem;
+        width: 60rem;
     }
 
     @include xlarge {
 
-        width: 48rem;
+        width: 60rem;
     }
 }
 
