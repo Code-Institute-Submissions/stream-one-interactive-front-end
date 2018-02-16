@@ -224,7 +224,7 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
 
 //---- global search button variables---//
 
-var images = { 
+/*var images = { 
 
     imageWalk: 'assets/images/walkies.gif',
     imageSit:  'assets/images/sitter.gif',
@@ -242,7 +242,7 @@ var buttonId = {
     vetId: 'vet-button',
     shopId: 'shop-button',
     groomId: 'groom-button'
-}
+}*/
 
 //-----------------------------------------//
 //---------------- GO FUNCTION ------------ //
@@ -293,9 +293,10 @@ function stylesReset() {
 
 
 
-$('button').on('click', function(){
 
-    var imageBubbleArray = Object.keys(images).map(function(key) {
+$('.search-buttons__button__element--style').on('click', function(event){
+
+    /*var imageBubbleArray = Object.keys(images).map(function(key) {
 
         return [images[key]];
     });
@@ -303,13 +304,26 @@ $('button').on('click', function(){
     var buttonIdArray = Object.keys(buttonId).map (function(key) {
     
         return [buttonId[key]]
-    });
+    });*/
+
+    var imageSelect = {
+
+        activeService: ""
+        
+    }
+
+    imageSelect.activeService = "assets/images/"+ event.target.id + ".gif";
+    $(".bubble-image").attr('src', imageSelect.activeService);
+    console.log(imageSelect.activeService);
+    
+    
 
     if ($(this).hasClass('search-button-clicked')) {
 
         $(this).removeClass('search-button-clicked');
         $(this).contents().removeAttr('id');
         buttonParam = "";
+        $(".bubble-image").removeClass('img-click');
 
     } else {
 
@@ -318,12 +332,21 @@ $('button').on('click', function(){
         $(this).addClass('search-button-clicked');
         $(this).contents().attr('id', 'search-buttons__icon--clicked');
         buttonParam = $(this).attr('value').toString();
+        $(".bubble-image").addClass('img-click');
         
     }
 
+   
+
+    
+
+    
+
+
+
   //  console.log(buttonParam);
 
-    for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
+    /*for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
 
         for (i=0; i <imageBubbleArray.length; i++) { // loop through Bubble Array
 
@@ -381,7 +404,7 @@ $('button').on('click', function(){
 
             }           
         }
-    }   
+    }  */ 
 });
 
 

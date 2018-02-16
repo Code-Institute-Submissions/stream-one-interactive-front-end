@@ -51,9 +51,11 @@ a {
   @media (min-width: 991px) {
     .background {
       flex-shrink: 1;
+      flex-grow: 1;
       flex-basis: 20rem; } }
   @media (min-width: 1199px) {
     .background {
+      flex-grow: 1;
       flex-basis: 40rem; } }
   @media (min-width: 1499px) {
     .background {
@@ -176,7 +178,8 @@ nav {
   padding: 2.5rem 0rem;
   background-color: #0e091f;
   flex-grow: 1;
-  flex-shrink: 1; }
+  flex-shrink: 1;
+  border-top: 0.5rem solid #f9e5e6; }
 
 .instructions {
   visibility: hidden;

@@ -36,6 +36,7 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     position: relative;
     flex-grow: 1;
     flex-shrink: 0;
+    
 
   
     //animation-name: fade-up;
@@ -68,12 +69,13 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
     @include desktop {
         flex-shrink: 1;
+        flex-grow:1;
         //min-height: 20rem;
         flex-basis: 20rem;
     }
 
     @include large {
-       
+       flex-grow: 1;
         //min-height: 40rem;
         flex-basis: 40rem;
     }
@@ -251,6 +253,7 @@ nav {
     background-color: #0e091f;
     flex-grow: 1;
     flex-shrink: 1;
+    border-top: 0.5rem solid #f9e5e6;
    
 
 
