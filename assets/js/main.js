@@ -15,13 +15,13 @@
 
     //-------------------- AUTO COMPLETE ----------------------------------//
 
-    var input = document.getElementById('user-input');
+    var input = document.getElementById("user-input");
     var options = {
 
-        types: ['(cities)'],
+        types: ["(cities)"],
         componentRestrictions: {
             
-            country: ['uk','ie']
+            country: ["uk","ie"]
         }
     };
 
@@ -36,7 +36,7 @@
     function sendSearch(){
 
         
-        var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
+        var geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+userInput.toString()+"&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs";
 
 
         //--------HTTP REQUEST-------------------//
@@ -87,7 +87,7 @@
                 
                 var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
 
-                map = new google.maps.Map(document.getElementById('map'), {
+                map = new google.maps.Map(document.getElementById("map"), {
 
                     center: mapLocation,
                     zoom: 11
@@ -99,7 +99,7 @@
                 var request = {
 
                     location: mapLocation,
-                    radius: '5000',
+                    radius: "5000",
                     query: buttonParam
                 };
 
@@ -129,9 +129,9 @@
                 position: place.geometry.location,
                 });
 
-            //---- Modified Code from Stack Overflow 'https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api' -----//
+            //---- Modified Code from Stack Overflow "https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api" -----//
 
-                marker.addListener('click', function() {
+                marker.addListener("click", function() {
 
                     var request = {
                     reference: place.reference
@@ -148,7 +148,7 @@
 
                         if (details.reviews == undefined) {
 
-                                reviewArray.push('No Reviews for this company'); //----- if no reviews insert string ----//
+                                reviewArray.push("No Reviews for this company"); //----- if no reviews insert string ----//
 
                         } else {
 
@@ -156,13 +156,11 @@
 
                                 if (details.reviews[i].text.length !== 0) {
 
-                                    reviewArray.push(details.reviews[i].text); //----- check if the array item isn't empty -------//
+                                    reviewArray.push(details.reviews[i].text); //----- check if the array item isn"t empty -------//
 
                                     } 
                                 }
                             }
-                        //console.log(reviewArray);
-                
                             
             // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
                                 
@@ -197,7 +195,7 @@
 
                                 eachReview = document.createElement("p");
                                 eachReview.innerHTML = `<em><strong>"${reviewArray[i]}</strong>"</em>`;
-                                document.getElementById('text').appendChild(eachReview);
+                                document.getElementById("text").appendChild(eachReview);
                             
                             }
 
@@ -234,10 +232,10 @@
     function goAll() {
 
         sendSearch();
-        $('.go-button__button').addClass('go-click');
+        $(".go-button__button").addClass("go-click");
         
-        $("section").slideDown('fast');
-        $("#reset-button").removeClass('reset-click');
+        $("section").slideDown("fast");
+        $("#reset-button").removeClass("reset-click");
 
     }
 
@@ -246,25 +244,25 @@
 
     function resetAll() { 
 
-        $('#user-input').val("");
+        $("#user-input").val("");
 
         userInput="";
         buttonParam="";
         
-        $('section').attr('id', 'scrollTo');
+        $("section").attr("id", "scrollTo");
 
         $("#results-text-show").delay(200).slideUp(400);
         $("section").delay(800).slideUp(400);
 
-        $('button').removeClass('search-button-clicked');
-        $('button').contents().removeAttr('id');
+        $("button").removeClass("search-button-clicked");
+        $("button").contents().removeAttr("id");
 
-        $('.go-button__button').removeClass('go-click');
+        $(".go-button__button").removeClass("go-click");
 
-        $('.bubble-image').removeClass('img-click');
+        $(".bubble-image").removeClass("img-click");
 
-        //$("#reset-button").removeClass('reset__button--style');
-        $("#reset-button").addClass('reset-click');
+        //$("#reset-button").removeClass("reset__button--style");
+        $("#reset-button").addClass("reset-click");
 
     }
     //------------------ HALF RESET FUNCTION ------------//
@@ -273,7 +271,7 @@
 
         $("#results-text-show").delay(200).slideUp(400);
     //$("section").delay(800).slideUp(400);
-        $('.go-button__button').removeClass('go-click');
+        $(".go-button__button").removeClass("go-click");
     }
     //---------------------------------------------------//
 
@@ -282,7 +280,7 @@
 
     (function(){
         
-            $('.search-buttons__button__element--style').on('click', function(event){
+            $(".search-buttons__button__element--style").on("click", function(event){
 
 
             var imageSelect = {
@@ -297,7 +295,7 @@
 
             setTimeout(function(){
 
-                $(".bubble-image").attr('src', imageSelect.activeService);
+                $(".bubble-image").attr("src", imageSelect.activeService);
 
             }, 400);
             
@@ -305,28 +303,28 @@
             
             
 
-            if ($(this).hasClass('search-button-clicked')) {
+            if ($(this).hasClass("search-button-clicked")) {
 
-                $(this).removeClass('search-button-clicked');
-                //$(this).contents().removeAttr('id');
+                $(this).removeClass("search-button-clicked");
+                //$(this).contents().removeAttr("id");
 
                 buttonParam = "";
                 
-                $(".bubble-image").removeClass('img-click');
+                $(".bubble-image").removeClass("img-click");
 
             } else {
 
-                $('.search-buttons__button__element--style').removeClass('search-button-clicked');
-                $('.search-buttons__button__element--style').contents().removeAttr('id');
-                $(this).addClass('search-button-clicked');
-                $(this).contents().attr('id', 'search-buttons__icon--clicked');
+                $(".search-buttons__button__element--style").removeClass("search-button-clicked");
+                $(".search-buttons__button__element--style").contents().removeAttr("id");
+                $(this).addClass("search-button-clicked");
+                $(this).contents().attr("id", "search-buttons__icon--clicked");
 
-                    buttonParam = $(this).attr('value').toString();
+                    buttonParam = $(this).attr("value").toString();
 
-                    $(".bubble-image").removeClass('img-click');
+                    $(".bubble-image").removeClass("img-click");
                     setTimeout(function(){
 
-                        $(".bubble-image").addClass('img-click');
+                        $(".bubble-image").addClass("img-click");
 
                     }, 400);
                 
@@ -341,7 +339,7 @@
 
     (function(){
 
-        $("#reset-button").on('click', function(){
+        $("#reset-button").on("click", function(){
 
             
         resetAll();
@@ -354,20 +352,20 @@
     //------ GO BUTTON -----//
 
     (function(){
-        $('.go-button__button').on('click', function (){
+        $(".go-button__button").on("click", function (){
 
-            userInput = $('#user-input').val();
+            userInput = $("#user-input").val();
             
             // variables to determine content of modal //
 
-            var modal = $('.modal');
-            var close = $('.modal__content__close');
-            var modalText = $('.modal__content__text');
+            var modal = $(".modal");
+            var close = $(".modal__content__close");
+            var modalText = $(".modal__content__text");
             var modalTextObj = {
 
-                enterBoth: 'Please enter a location and select a Pet Stop',
-                enterLocation: 'Please enter a location',
-                selectStop: 'Please select a Pet Stop'
+                enterBoth: "Please enter a location and select a Pet Stop",
+                enterLocation: "Please enter a location",
+                selectStop: "Please select a Pet Stop"
             }
        
 
@@ -378,7 +376,7 @@
 
             modal.fadeIn();
 
-            close.on('click', function() {
+            close.on("click", function() {
 
                 modal.fadeOut();
             })
@@ -411,35 +409,30 @@
             
             } else if ((userInput !== "") && (buttonParam !== "")) {
 
-                    if ($('#go').hasClass('go-click')){ 
+                    if ($("#go").hasClass("go-click")){ 
 
-                        $('#go').addClass('go-click');   
+                        $("#go").addClass("go-click");   
                     
-                    // console.log('if');
 
-            } else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == 'scrollTo')) {
+            } else if (($("#go").attr("class") !== "go-click") && ($("section").attr("id") == "scrollTo")) {
 
                     goAll();
                 
-                    $('html, body').delay(600).animate({
-                        scrollTop: $($(this).parent().attr('href')).offset().top
+                    $("html, body").delay(600).animate({
+                        scrollTop: $($(this).parent().attr("href")).offset().top
                         }, 400);
 
                     setTimeout(function(){
 
-                        $('section').removeAttr('id');
-                        //console.log( $('section').attr('id'));
-
+                        $("section").removeAttr("id");
+                       
                     },1000);
 
-                    // console.log('else');
+                   
+            } else if (($("#go").attr("class") !== "go-click") && ($("section").attr("id") == undefined)) {
 
-            } else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == undefined)) {
-
-                    
                     goAll();
-                    //$('#go').addClass('go-click');
-                    //console.log('else else');
+                  
                 }
             }
         });
@@ -450,7 +443,7 @@
 
     //------- INPUT CLICK RESET STYLES --------//
     (function(){
-        $('#user-input').on('click', function(){
+        $("#user-input").on("click", function(){
 
             stylesReset();
 
@@ -460,7 +453,7 @@
     //------- SEARCH BUTTON CLICK RESET STYLES ---------//
 
     (function(){
-        $('button').on('click', function(){
+        $("button").on("click", function(){
 
             stylesReset();
 

@@ -28,42 +28,37 @@ a {
       height: 100vh; } }
 
 .background {
+  opacity: 0;
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  height: 10rem;
   position: relative;
   flex-grow: 1;
-  flex-shrink: 0; }
-  @media (min-width: 375px) {
-    .background {
-      flex-basis: 10rem; } }
-  @media (min-width: 500px) {
-    .background {
-      flex-basis: 10rem; } }
+  flex-shrink: 0;
+  flex-basis: 10rem;
+  animation-name: fade-up;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media (min-width: 767px) {
     .background {
-      flex-grow: 2;
-      flex-basis: 10rem; } }
+      flex-basis: 20rem; } }
   @media (min-width: 991px) {
     .background {
-      flex-shrink: 1;
-      flex-grow: 1;
-      flex-basis: 20rem; } }
-  @media (min-width: 1199px) {
-    .background {
-      flex-grow: 1;
-      flex-basis: 40rem; } }
+      flex-grow: 2;
+      flex-basis: 25rem; } }
   @media (min-width: 1499px) {
     .background {
       flex-grow: 1;
-      flex-basis: 44rem; } }
+      flex-basis: 35rem; } }
 
 nav {
-  height: 10rem;
+  opacity: 0;
   width: 100vw;
   background-color: #0e091f;
   display: flex;
@@ -72,21 +67,13 @@ nav {
   border: 0px;
   flex-grow: 1;
   flex-shrink: 1;
-  /* animation-name: fade-up;
-   animation-timing-function: ease-in;
-   animation-duration: 0.2s;
-   animation-delay: 0.5s;
-   animation-fill-mode: forwards;
-   animation-iteration-count: 1;*/
-    /*@include large {
-
-        height: 12vh;
-    }
-
-    @include xlarge {
-
-        height: 12vh;
-    }*/ }
+  flex-basis: 10rem;
+  animation-name: fade-up;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1; }
   @media (min-width: 767px) {
     nav {
       flex-basis: 16rem; } }
@@ -150,24 +137,8 @@ nav {
 .img-click {
   opacity: 1; }
 
-/*.search-form {
-
-    display: flex;
-    flex-direction:column;
-
-    @include sm-mobile {
-
-        position: relative;
-        top: 18.5rem;
-        width: 100vw;
-        //display: none;
-        justify-content:center;
-        left:0;
-   
-    }
-
-}*/
 .search-container {
+  opacity: 0;
   position: relative;
   animation-name: fade-up;
   animation-timing-function: ease-in;
@@ -178,7 +149,7 @@ nav {
   padding: 2.5rem 0rem;
   background-color: #0e091f;
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   border-top: 0.5rem solid #f9e5e6; }
 
 .instructions {
@@ -205,8 +176,8 @@ nav {
       left: 7vw; } }
   @media (min-width: 991px) {
     .search-buttons {
-      width: 72vw;
-      left: 14vw;
+      width: 74vw;
+      left: 13vw;
       height: 10.5rem; } }
   @media (min-width: 1199px) {
     .search-buttons {
@@ -462,11 +433,7 @@ a {
   position: relative;
   width: 25rem;
   height: auto;
-  text-align: center;
-   /* @include desktop {
-
-        width: 48rem;
-    }*/ }
+  text-align: center; }
   @media (min-width: 767px) {
     .results-text {
       width: 48rem; } }

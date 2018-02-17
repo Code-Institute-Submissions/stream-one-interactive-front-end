@@ -25,73 +25,54 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
 .background {
 
-    //opacity: 0;
+    opacity: 0;
     background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 10rem;
+    //height: 10rem;
     position: relative;
     flex-grow: 1;
     flex-shrink: 0;
+    flex-basis: 10rem;
     
 
   
-    //animation-name: fade-up;
-    //animation-timing-function: ease-in;
-    //animation-duration: 0.2s;
-    //animation-delay: 0.5s;
-    //animation-fill-mode: forwards;
-   // animation-iteration-count: 1;
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
-   @include sm-mobile {
-
-        //height: 10rem;
-        flex-basis: 10rem;
-
-   }
-    @include mobile-landscape {
-
-        //height: 10rem;
-        flex-basis: 10rem;
-    
-    }
 
     @include tablet {
 
-        flex-grow: 2;
-        //min-height: 20rem;
-        flex-basis: 10rem;
+        flex-basis:20rem;
     }
 
 
     @include desktop {
-        flex-shrink: 1;
-        flex-grow:1;
-        //min-height: 20rem;
-        flex-basis: 20rem;
+       // flex-shrink: 0;
+        flex-grow:2;
+        flex-basis: 25rem;
     }
 
-    @include large {
-       flex-grow: 1;
-        //min-height: 40rem;
-        flex-basis: 40rem;
-    }
+    
 
     @include xlarge {
-        flex-grow: 1;
-        //min-height: 44rem;
-        flex-basis: 44rem;
+        flex-grow:1;
+        flex-basis: 35rem;
     }
     
     
 }
 
 nav {
-    //opacity: 0;
-    height: 10rem;
+    opacity: 0;
+    //height: 10rem;
     width: 100vw;
     background-color: #0e091f;
     display: flex;
@@ -100,31 +81,22 @@ nav {
     border: 0px;
     flex-grow: 1;
     flex-shrink: 1;
-    
+    flex-basis: 10rem;
 
-   /* animation-name: fade-up;
+    animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;
 
     @include tablet {
 
-        //height: 16rem;
+      
         flex-basis: 16rem;
        // flex-grow:1;
     }
 
-    /*@include large {
-
-        height: 12vh;
-    }
-
-    @include xlarge {
-
-        height: 12vh;
-    }*/
 }
 
 .nav__navtext {
@@ -133,7 +105,7 @@ nav {
     font-size: 4rem;
     color: #ffffff;
     margin: 0;
-    //background-color: #010b20e6;
+
 
     @include tablet {
 
@@ -157,7 +129,7 @@ nav {
 
 .bubble-image {
 
-    //z-index: 100;
+
     visibility: visible;
     opacity:0;
     height: 6rem;
@@ -206,7 +178,6 @@ nav {
 
     @include xlarge {
 
-        //display: block;
         height: 12rem;
         left: 58vw;
         top: 0vh;
@@ -219,30 +190,32 @@ nav {
     
 }
 
-/*.search-form {
+//.search-form {
 
-    display: flex;
-    flex-direction:column;
+    //display: flex;
+   // flex-direction:column;
+   // flex-shrink: 2;
+   // flex-grow: 1;
 
-    @include sm-mobile {
+    
 
-        position: relative;
-        top: 18.5rem;
-        width: 100vw;
+ //position: relative;
+        //top: 18.5rem;
+       // width: 100vw;
         //display: none;
-        justify-content:center;
-        left:0;
+       // justify-content:center;
+        //left:0;
    
-    }
+    
 
-}*/
+//}/
 
 // --------------- SEARCH BUTTONS ---------------//
 
 .search-container {
 
+    opacity: 0;
     position: relative;
-    //top: 23%;
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -252,48 +225,22 @@ nav {
     padding: 2.5rem 0rem;
     background-color: #0e091f;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 0;
     border-top: 0.5rem solid #f9e5e6;
-   
+          
 
+}
 
+.instructions {
+    visibility: hidden;
+    font-family: $button-font;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
 
-        @include sm-mobile {
-
-           //9 top: 16.5vh;
-
-        }
-
-       @include mobile-landscape {
-
-            //top: 11vh;
-        }
-
-
-        @include tablet {
-            //flex-grow: 1;
-            //top: 10.5vh;
-        }
-
-        @include desktop {
-
-           // flex-grow: 1;
-        }
-
-        
-
-    }
-
-    .instructions {
-        visibility: hidden;
-        font-family: $button-font;
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        margin-top: 0;
-
-       
-    }
+    
+}
     
 
     
@@ -310,17 +257,8 @@ nav {
 
     align-content: center;
     align-items: center;
-    position: relative;;
+    position: relative;
 
-    @include sm-mobile {
-
-        //height: 40vh;
-    }
-    @include mobile-landscape {
-
-       // height: 8rem;
-       
-    }
 
     @include tablet {
 
@@ -331,9 +269,8 @@ nav {
 
     @include desktop {
 
-        width: 72vw;
-        //position: relative;
-        left: 14vw;
+        width: 74vw;
+        left: 13vw;
         height: 10.5rem;
     }
     
@@ -389,14 +326,14 @@ nav {
 
     margin: 1.5rem;
     display: block;
-    //padding-top: 1rem;
+ 
 
-        .search-buttons__button__text {
+    .search-buttons__button__text {
 
-        margin-top: .3rem;
-        margin-bottom: .3rem;
-        @include button-text-desktop;
-        color: #0e091f;;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    @include button-text-desktop;
+    color: #0e091f;;
     }
 
     @include tablet {
@@ -463,10 +400,6 @@ nav {
 }
 
 
-
-
-
-
 .search-buttons__icon--style {
 
     display: block;
@@ -478,29 +411,16 @@ nav {
 #search-buttons__icon--clicked {
     
     color: $search-button-background;
-   // background-color: $search-button-icon-color;
-    //transition: $search-button-text-transition;
+
 }
 
 
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
 
-    //border-radius: 0.6rem;
-    //border: 1px solid #0e0920;
+  
     box-shadow: 2px 4px 2px 0px #33180a;;
-    //background-color: #d56c05;
 
-    .search-buttons__icon--style {
-
-        //color: #0e0920;
-
-    }
-
-    .search-buttons__button__text {
-
-        //color: #0e0920;
-    }
 
 }
 
@@ -647,10 +567,8 @@ a {
     width: 100vw;
     position: relative;
     overflow: visible;
-   // padding-bottom: 9rem;
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     flex-wrap: wrap;
     top: 4rem;
     align-items: center;
@@ -668,8 +586,6 @@ a {
 
     width: 27rem;
     height: 20rem;
-   // top: 5rem;
-    //left: 25vw;
     position: relative;
 
     @include tablet {
@@ -711,10 +627,6 @@ a {
         width: 48rem;
     }
 
-   /* @include desktop {
-
-        width: 48rem;
-    }*/
 
     @include large {
 
@@ -730,12 +642,11 @@ a {
 .results-text--style {
 
     display: none;
-    //border: 1px solid #0e0920;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #fff;
     color: #0e0920;
-    //box-shadow: 2px 4px 6px 0px #4b241399;
+
 
 }
 .map-instructions {
@@ -755,12 +666,9 @@ a {
     justify-content: center;
     width: 6rem;
     height: 6rem;
-    //justify-content: center;
     align-content: center;
     top: 2rem;
     position: relative;
-    //left: 50vw;
-    //transform: translatex(-50%);
     align-self: center;
 
     @include xlarge {
@@ -786,7 +694,6 @@ a {
     margin: 0px;
     color: #fff;
     transition-delay: .2s;
-   // transition: border 0.3s, background-color 0.3s, color 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: border, 0.3s, background-color, 0.3s, color, 0.3s, cubic-bezier cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
     @include xlarge {
