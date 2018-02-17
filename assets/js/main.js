@@ -1,22 +1,20 @@
 
 //---------------------- FUNCTIONAL SCRIPTS (VANILLA JS) --------------------------//
 
-// GLOBAL VARIABLES //
+// UI VARIABLES //
 
 (function(){
+
     document.getElementById("user-input").value = "";
 
     var userInput = "";
 
     var buttonParam = "";
 
-})();
+    //----------------------------------------------------------------------//
 
-//----------------------------------------------------------------------//
+    //-------------------- AUTO COMPLETE ----------------------------------//
 
-//-------------------- AUTO COMPLETE ----------------------------------//
-
-(function(){
     var input = document.getElementById('user-input');
     var options = {
 
@@ -27,428 +25,446 @@
         }
     };
 
+
     autocomplete = new google.maps.places.Autocomplete(input, options);
-})();
-
-//---------------------------------------------------------------------------//
-
-// ACTIVATE XMLHTTP REQUEST ON GO CLICK - SEE UI SCRIPTS BELOW //
-
- function sendSearch(){
-
-    
-    var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
 
-    //--------HTTP REQUEST-------------------//
+    //---------------------------------------------------------------------------//
 
-    function getLocation(geoUrl, locationData) { 
+    // ACTIVATE XMLHTTP REQUEST ON GO CLICK - SEE UI SCRIPTS BELOW //
+
+    function sendSearch(){
+
         
-        var xhr = new XMLHttpRequest(); 
-        
-        xhr.open("GET", geoUrl); 
-        xhr.send(); 
-        
-        xhr.onreadystatechange = function() {
-        
-            if (this.readyState == 4 && this.status == 200) { 
-                locationData(JSON.parse(this.responseText));
-            }
-        };
-        
-    }
-
-    // GET LAT AND LONG OF LOCATION //
-
-    function position(callback) {
-
-        getLocation(geoUrl, function(locationData){
-
-            var geoData = locationData.results[0].geometry.location;
-            var lat = geoData.lat.toString();
-            var long = geoData.lng.toString();
-
-            var latLong = [lat, long];
-            callback(latLong);
-        });
-    }
+        var geoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+userInput.toString()+'&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs';
 
 
-    //------- INITIALIZE GOOGLE MAP AND PASS IN LATLONG -------------//
-    
+        //--------HTTP REQUEST-------------------//
 
-    position(function(latLong){
-
-        var map;
-        var service;
-        var infowindow;
-
-        function initialize() { 
-
+        function getLocation(geoUrl, locationData) { 
             
-            var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
-
-            map = new google.maps.Map(document.getElementById('map'), {
-
-                center: mapLocation,
-                zoom: 11
-
-            });
-
-            // PASS IN UI TO REQUEST //
-
-            var request = {
-
-                location: mapLocation,
-                radius: '5000',
-                query: buttonParam
-            };
-
-        
-            service = new google.maps.places.PlacesService(map);
-            service.textSearch(request, callback);
-        
-        }
+            var xhr = new XMLHttpRequest(); 
             
-        
-        function callback(results, status) {
-            if(status == google.maps.places.PlacesServiceStatus.OK) {
-                for (var i = 0; i < results.length; i++) {
-
-                    var place = results[i];
-                    createMarker(results[i]);
+            xhr.open("GET", geoUrl); 
+            xhr.send(); 
+            
+            xhr.onreadystatechange = function() {
+            
+                if (this.readyState == 4 && this.status == 200) { 
+                    locationData(JSON.parse(this.responseText));
                 }
-            }
+            };
+            
         }
 
-        infowindow = new google.maps.InfoWindow();
+        // GET LAT AND LONG OF LOCATION //
 
-        function createMarker(place) {
-            var placeLoc = place.geometry.location;
-            var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
+        function position(callback) {
+
+            getLocation(geoUrl, function(locationData){
+
+                var geoData = locationData.results[0].geometry.location;
+                var lat = geoData.lat.toString();
+                var long = geoData.lng.toString();
+
+                var latLong = [lat, long];
+                callback(latLong);
             });
+        }
 
-        //---- Modified Code from Stack Overflow 'https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api' -----//
 
-            marker.addListener('click', function() {
+        //------- INITIALIZE GOOGLE MAP AND PASS IN LATLONG -------------//
+        
+
+        position(function(latLong){
+
+            var map;
+            var service;
+            var infowindow;
+
+            function initialize() { 
+
+                
+                var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
+
+                map = new google.maps.Map(document.getElementById('map'), {
+
+                    center: mapLocation,
+                    zoom: 11
+
+                });
+
+                // PASS IN UI TO REQUEST //
 
                 var request = {
-                reference: place.reference
+
+                    location: mapLocation,
+                    radius: '5000',
+                    query: buttonParam
                 };
+
             
-                service.getDetails(request, function(details, status) {
+                service = new google.maps.places.PlacesService(map);
+                service.textSearch(request, callback);
+            
+            }
                 
-                // ---- retrieve all reviews and create new array --------- //
+            
+            function callback(results, status) {
+                if(status == google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
 
-                    var reviewArray = [];
+                        var place = results[i];
+                        createMarker(results[i]);
+                    }
+                }
+            }
 
-                    if (status == google.maps.places.PlacesServiceStatus.OK){
+            infowindow = new google.maps.InfoWindow();
+
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                });
+
+            //---- Modified Code from Stack Overflow 'https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api' -----//
+
+                marker.addListener('click', function() {
+
+                    var request = {
+                    reference: place.reference
+                    };
+                
+                    service.getDetails(request, function(details, status) {
+                    
+                    // ---- retrieve all reviews and create new array --------- //
+
+                        var reviewArray = [];
+
+                        if (status == google.maps.places.PlacesServiceStatus.OK){
 
 
-                       if (details.reviews == undefined) {
+                        if (details.reviews == undefined) {
 
-                            reviewArray.push('No Reviews for this company'); //----- if no reviews insert string ----//
+                                reviewArray.push('No Reviews for this company'); //----- if no reviews insert string ----//
 
-                       } else {
+                        } else {
 
-                            for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
+                                for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
 
-                               if (details.reviews[i].text.length !== 0) {
+                                if (details.reviews[i].text.length !== 0) {
 
-                                reviewArray.push(details.reviews[i].text); //----- check if the array item isn't empty -------//
+                                    reviewArray.push(details.reviews[i].text); //----- check if the array item isn't empty -------//
 
-                                } 
+                                    } 
+                                }
                             }
-                        }
-                       //console.log(reviewArray);
-            
-                        
-        // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
-                            
-                        var info = {
-                            name: details.name,
-                            address: details.formatted_address,
-                            website: details.website,
-                            number: details.formatted_phone_number,
-                            rating: details.rating
-                        };
-
-
-        // ---------- write to document below HTML on Marker click ---------------------//
-
-                     
-
-                        document.getElementById("text").innerHTML =
-                        `<h2>${info.name}</h2>
-                        <h3>Address</h3>
-                        <p>${info.address}</p>
-                        <h3>Website</h3>
-                        <p><a href="${info.website}" target="_blank"><button class="website-button">Click Me</button></a></p>
-                        <h3>Phone</h3>
-                        <p>${info.number}</p>
-                        <h3>Overall Rating</h3>
-                        <p>${info.rating}</p>
-                        <h3>Reviews</h3>`;
-
-                        var eachReview;
-
-                        for (i = 0; i < reviewArray.length; i++) { //---iterate reviewArray and create HTML---//
-
-                            eachReview = document.createElement("p");
-                            eachReview.innerHTML = `<em><strong>"${reviewArray[i]}</strong>"</em>`;
-                            document.getElementById('text').appendChild(eachReview);
-                           
-                        }
-
-                        $("#results-text-show").addClass("results-text--style"); 
-                        $("#results-text-show").delay(200).slideDown(400);
-
-                    } 
+                        //console.log(reviewArray);
                 
+                            
+            // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
+                                
+                            var info = {
+                                name: details.name,
+                                address: details.formatted_address,
+                                website: details.website,
+                                number: details.formatted_phone_number,
+                                rating: details.rating
+                            };
+
+
+            // ---------- write to document below HTML on Marker click ---------------------//
+
                         
-                }); 
 
-                        infowindow.setContent(place.name);
-                        infowindow.open(map, marker);
-         
-            });
+                            document.getElementById("text").innerHTML =
+                            `<h2>${info.name}</h2>
+                            <h3>Address</h3>
+                            <p>${info.address}</p>
+                            <h3>Website</h3>
+                            <p><a href="${info.website}" target="_blank"><button class="website-button">Click Me</button></a></p>
+                            <h3>Phone</h3>
+                            <p>${info.number}</p>
+                            <h3>Overall Rating</h3>
+                            <p>${info.rating}</p>
+                            <h3>Reviews</h3>`;
 
-                        
-        }
+                            var eachReview;
 
-        initialize(); //--- INITIALIZE MAP-----//
+                            for (i = 0; i < reviewArray.length; i++) { //---iterate reviewArray and create HTML---//
 
-    });
-  
- }
+                                eachReview = document.createElement("p");
+                                eachReview.innerHTML = `<em><strong>"${reviewArray[i]}</strong>"</em>`;
+                                document.getElementById('text').appendChild(eachReview);
+                            
+                            }
 
-//---------------------- UI SCRIPTS (JQUERY) ---------------------------------//
+                            $("#results-text-show").addClass("results-text--style"); 
+                            $("#results-text-show").delay(200).slideDown(400);
 
+                        } 
+                    
+                            
+                    }); 
 
-//---------------- GO FUNCTION ------------ //
+                            infowindow.setContent(place.name);
+                            infowindow.open(map, marker);
+            
+                });
 
+                            
+            }
 
-function goAll() {
+            initialize(); //--- INITIALIZE MAP-----//
 
-    sendSearch();
-    $('.go-button__button').addClass('go-click');
-    
-    $("section").slideDown('fast');
-    $("#reset-button").removeClass('reset-click');
+        });
 
-}
-//----------------- RESET FUNCTION -----------//
-
-function resetAll() { 
-
-    $('#user-input').val("");
-
-    userInput="";
-    buttonParam="";
-    
-    $('section').attr('id', 'scrollTo');
-
-    $("#results-text-show").delay(200).slideUp(400);
-    $("section").delay(800).slideUp(400);
-
-    $('button').removeClass('search-button-clicked');
-    $('button').contents().removeAttr('id');
-
-    $('.go-button__button').removeClass('go-click');
-
-    $('.bubble-image').removeClass('img-click');
-
-    //$("#reset-button").removeClass('reset__button--style');
-    $("#reset-button").addClass('reset-click');
-
-}
-//------------------ HALF RESET FUNCTION ------------//
-
-function stylesReset() {
-
-    $("#results-text-show").delay(200).slideUp(400);
-   //$("section").delay(800).slideUp(400);
-    $('.go-button__button').removeClass('go-click');
-}
-//---------------------------------------------------//
-
-
-
-
-$('.search-buttons__button__element--style').on('click', function(event){
-
-
-    var imageSelect = {
-
-        activeService: ""
-        
     }
 
-    
 
-    imageSelect.activeService = "assets/images/"+ event.target.dataset.name + ".gif";
 
-    setTimeout(function(){
+    //---------------------- UI SCRIPTS (JQUERY) ---------------------------------//
 
-        $(".bubble-image").attr('src', imageSelect.activeService);
 
-    }, 400);
-    
-   
-    
-    
+    //---------------- GO FUNCTION ------------ //
 
-    if ($(this).hasClass('search-button-clicked')) {
 
-        $(this).removeClass('search-button-clicked');
-        //$(this).contents().removeAttr('id');
+    function goAll() {
 
-        buttonParam = "";
+        sendSearch();
+        $('.go-button__button').addClass('go-click');
         
-        $(".bubble-image").removeClass('img-click');
+        $("section").slideDown('fast');
+        $("#reset-button").removeClass('reset-click');
 
-    } else {
-
-        $('.search-buttons__button__element--style').removeClass('search-button-clicked');
-        $('.search-buttons__button__element--style').contents().removeAttr('id');
-        $(this).addClass('search-button-clicked');
-        $(this).contents().attr('id', 'search-buttons__icon--clicked');
-
-        buttonParam = $(this).attr('value').toString();
-
-        $(".bubble-image").removeClass('img-click');
-        setTimeout(function(){
-
-            $(".bubble-image").addClass('img-click');
-
-        }, 400);
-       
-        
     }
 
-});
 
+    //----------------- RESET FUNCTION -----------//
 
+    function resetAll() { 
 
-// RESET SEARCH  //
+        $('#user-input').val("");
 
-
-$("#reset-button").on('click', function(){
-
-    
-   resetAll();
-
-  
-});
-
-
-//------ GO BUTTON -----//
-
-
-$('.go-button__button').on('click', function (){
-
-    userInput = $('#user-input').val();
-    
-    // variables to determine content of modal //
-
-    var modal = $('.modal');
-    var close = $('.modal__content__close');
-    var modalText = $('.modal__content__text');
-    var modalTextObj = {
-
-        enterBoth: 'Please enter a location and select a Pet Stop',
-        enterLocation: 'Please enter a location',
-        selectStop: 'Please select a Pet Stop'
-    }
-
-    // MODAL FUNCTION //
-
-    function myModal() {
-
-        modal.fadeIn();
-
-        close.on('click', function() {
-
-            modal.fadeOut();
-        })
-    }
-
-    if ((userInput == "") && (buttonParam == "")){
-
-        modalText.html(modalTextObj.enterBoth);
-
-        myModal();
-
-        // console.log(typeof(modalTextObj.enterBoth));
+        userInput="";
+        buttonParam="";
         
+        $('section').attr('id', 'scrollTo');
 
-    } else if((userInput == "") && (buttonParam !== "")){
+        $("#results-text-show").delay(200).slideUp(400);
+        $("section").delay(800).slideUp(400);
 
-        modalText.html(modalTextObj.enterLocation);
+        $('button').removeClass('search-button-clicked');
+        $('button').contents().removeAttr('id');
 
-        myModal();
+        $('.go-button__button').removeClass('go-click');
 
+        $('.bubble-image').removeClass('img-click');
+
+        //$("#reset-button").removeClass('reset__button--style');
+        $("#reset-button").addClass('reset-click');
+
+    }
+    //------------------ HALF RESET FUNCTION ------------//
+
+    function stylesReset() {
+
+        $("#results-text-show").delay(200).slideUp(400);
+    //$("section").delay(800).slideUp(400);
+        $('.go-button__button').removeClass('go-click');
+    }
+    //---------------------------------------------------//
+
+
+
+
+    (function(){
         
+            $('.search-buttons__button__element--style').on('click', function(event){
 
-    } else if ((userInput !== "") && (buttonParam == "")){
 
-        modalText.html(modalTextObj.selectStop);
+            var imageSelect = {
 
-        myModal();
-
-        //alert("Please enter a Pet Stop");
-    
-    } else if ((userInput !== "") && (buttonParam !== "")) {
-
-            if ($('#go').hasClass('go-click')){ 
-
-                $('#go').addClass('go-click');   
-               
-             // console.log('if');
-
-        }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == 'scrollTo')) {
-
-                goAll();
-               
-                $('html, body').delay(600).animate({
-                    scrollTop: $($(this).parent().attr('href')).offset().top
-                    }, 400);
-
-                setTimeout(function(){
-
-                    $('section').removeAttr('id');
-                    //console.log( $('section').attr('id'));
-
-                },1000);
-
-               // console.log('else');
-
-        }   else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == undefined)) {
+                activeService: ""
+                
+            }
 
             
-                goAll();
-                //$('#go').addClass('go-click');
-                //console.log('else else');
+
+            imageSelect.activeService = "assets/images/"+ event.target.dataset.name + ".gif";
+
+            setTimeout(function(){
+
+                $(".bubble-image").attr('src', imageSelect.activeService);
+
+            }, 400);
+            
+
+            
+            
+
+            if ($(this).hasClass('search-button-clicked')) {
+
+                $(this).removeClass('search-button-clicked');
+                //$(this).contents().removeAttr('id');
+
+                buttonParam = "";
+                
+                $(".bubble-image").removeClass('img-click');
+
+            } else {
+
+                $('.search-buttons__button__element--style').removeClass('search-button-clicked');
+                $('.search-buttons__button__element--style').contents().removeAttr('id');
+                $(this).addClass('search-button-clicked');
+                $(this).contents().attr('id', 'search-buttons__icon--clicked');
+
+                    buttonParam = $(this).attr('value').toString();
+
+                    $(".bubble-image").removeClass('img-click');
+                    setTimeout(function(){
+
+                        $(".bubble-image").addClass('img-click');
+
+                    }, 400);
+                
+                    
+                }
+
+        });
+    })();
+
+
+    // RESET SEARCH  //
+
+    (function(){
+
+        $("#reset-button").on('click', function(){
+
+            
+        resetAll();
+
+        
+        });
+    })();
+
+
+    //------ GO BUTTON -----//
+
+    (function(){
+        $('.go-button__button').on('click', function (){
+
+            userInput = $('#user-input').val();
+            
+            // variables to determine content of modal //
+
+            var modal = $('.modal');
+            var close = $('.modal__content__close');
+            var modalText = $('.modal__content__text');
+            var modalTextObj = {
+
+                enterBoth: 'Please enter a location and select a Pet Stop',
+                enterLocation: 'Please enter a location',
+                selectStop: 'Please select a Pet Stop'
+            }
+       
+
+        // MODAL FUNCTION //
+
+    
+        function myModal() {
+
+            modal.fadeIn();
+
+            close.on('click', function() {
+
+                modal.fadeOut();
+            })
         }
-    }
-});
+
+            if ((userInput == "") && (buttonParam == "")){
+
+                modalText.html(modalTextObj.enterBoth);
+
+                myModal();
+
+                // console.log(typeof(modalTextObj.enterBoth));
+                
+
+            } else if((userInput == "") && (buttonParam !== "")){
+
+                modalText.html(modalTextObj.enterLocation);
+
+                myModal();
+
+                
+
+            } else if ((userInput !== "") && (buttonParam == "")){
+
+                modalText.html(modalTextObj.selectStop);
+
+                myModal();
+
+                //alert("Please enter a Pet Stop");
+            
+            } else if ((userInput !== "") && (buttonParam !== "")) {
+
+                    if ($('#go').hasClass('go-click')){ 
+
+                        $('#go').addClass('go-click');   
+                    
+                    // console.log('if');
+
+            } else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == 'scrollTo')) {
+
+                    goAll();
+                
+                    $('html, body').delay(600).animate({
+                        scrollTop: $($(this).parent().attr('href')).offset().top
+                        }, 400);
+
+                    setTimeout(function(){
+
+                        $('section').removeAttr('id');
+                        //console.log( $('section').attr('id'));
+
+                    },1000);
+
+                    // console.log('else');
+
+            } else if (($('#go').attr('class') !== 'go-click') && ($('section').attr('id') == undefined)) {
+
+                    
+                    goAll();
+                    //$('#go').addClass('go-click');
+                    //console.log('else else');
+                }
+            }
+        });
+    
+    })();
 
 
 
-//------- INPUT CLICK RESET STYLES --------//
+    //------- INPUT CLICK RESET STYLES --------//
+    (function(){
+        $('#user-input').on('click', function(){
 
-$('#user-input').on('click', function(){
+            stylesReset();
 
-    stylesReset();
+        });
+    })();
 
-});
+    //------- SEARCH BUTTON CLICK RESET STYLES ---------//
 
-//------- SEARCH BUTTON CLICK RESET STYLES ---------//
+    (function(){
+        $('button').on('click', function(){
 
-$('button').on('click', function(){
+            stylesReset();
 
-    stylesReset();
+        });
+    })();
 
-});
+})();
