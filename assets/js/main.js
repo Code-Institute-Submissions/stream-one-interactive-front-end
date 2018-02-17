@@ -1,30 +1,34 @@
 
-//---------------------- FUNCTIONAL SCRIPTS --------------------------//
+//---------------------- FUNCTIONAL SCRIPTS (VANILLA JS) --------------------------//
 
 // GLOBAL VARIABLES //
 
-document.getElementById("user-input").value = "";
+(function(){
+    document.getElementById("user-input").value = "";
 
-var userInput = "";
+    var userInput = "";
 
-var buttonParam = "";
+    var buttonParam = "";
+
+})();
 
 //----------------------------------------------------------------------//
 
 //-------------------- AUTO COMPLETE ----------------------------------//
 
-var input = document.getElementById('user-input');
-var options = {
+(function(){
+    var input = document.getElementById('user-input');
+    var options = {
 
-    types: ['(cities)'],
-    componentRestrictions: {
-        
-        country: ['uk','ie']
-    }
-};
+        types: ['(cities)'],
+        componentRestrictions: {
+            
+            country: ['uk','ie']
+        }
+    };
 
-autocomplete = new google.maps.places.Autocomplete(input, options);
-
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+})();
 
 //---------------------------------------------------------------------------//
 
@@ -220,31 +224,9 @@ autocomplete = new google.maps.places.Autocomplete(input, options);
   
  }
 
-//---------------------- UI SCRIPTS ---------------------------------//
+//---------------------- UI SCRIPTS (JQUERY) ---------------------------------//
 
-//---- global search button variables---//
 
-/*var images = { 
-
-    imageWalk: 'assets/images/walkies.gif',
-    imageSit:  'assets/images/sitter.gif',
-    imageBoard: 'assets/images/board.gif',
-    imageVet: 'assets/images/vet.gif',
-    imageShop: 'assets/images/shop.gif',
-    imageGroom: 'assets/images/groomer.gif'
-}
-
-var buttonId = {
-
-    walkId: 'walk-button',
-    sitId: 'sit-button',
-    boardId: 'board-button',
-    vetId: 'vet-button',
-    shopId: 'shop-button',
-    groomId: 'groom-button'
-}*/
-
-//-----------------------------------------//
 //---------------- GO FUNCTION ------------ //
 
 
@@ -262,6 +244,7 @@ function goAll() {
 function resetAll() { 
 
     $('#user-input').val("");
+
     userInput="";
     buttonParam="";
     
@@ -296,15 +279,6 @@ function stylesReset() {
 
 $('.search-buttons__button__element--style').on('click', function(event){
 
-    /*var imageBubbleArray = Object.keys(images).map(function(key) {
-
-        return [images[key]];
-    });
-    
-    var buttonIdArray = Object.keys(buttonId).map (function(key) {
-    
-        return [buttonId[key]]
-    });*/
 
     var imageSelect = {
 
@@ -312,99 +286,48 @@ $('.search-buttons__button__element--style').on('click', function(event){
         
     }
 
-    imageSelect.activeService = "assets/images/"+ event.target.id + ".gif";
-    $(".bubble-image").attr('src', imageSelect.activeService);
-    console.log(imageSelect.activeService);
+    
+
+    imageSelect.activeService = "assets/images/"+ event.target.dataset.name + ".gif";
+
+    setTimeout(function(){
+
+        $(".bubble-image").attr('src', imageSelect.activeService);
+
+    }, 400);
+    
+   
     
     
 
     if ($(this).hasClass('search-button-clicked')) {
 
         $(this).removeClass('search-button-clicked');
-        $(this).contents().removeAttr('id');
+        //$(this).contents().removeAttr('id');
+
         buttonParam = "";
+        
         $(".bubble-image").removeClass('img-click');
 
     } else {
 
-        $('button').removeClass('search-button-clicked');
-        $('button').contents().removeAttr('id');
+        $('.search-buttons__button__element--style').removeClass('search-button-clicked');
+        $('.search-buttons__button__element--style').contents().removeAttr('id');
         $(this).addClass('search-button-clicked');
         $(this).contents().attr('id', 'search-buttons__icon--clicked');
+
         buttonParam = $(this).attr('value').toString();
-        $(".bubble-image").addClass('img-click');
+
+        $(".bubble-image").removeClass('img-click');
+        setTimeout(function(){
+
+            $(".bubble-image").addClass('img-click');
+
+        }, 400);
+       
         
     }
 
-   
-
-    
-
-    
-
-
-
-  //  console.log(buttonParam);
-
-    /*for (i=0; i < buttonIdArray.length; i++) { // loop through buttonID array
-
-        for (i=0; i <imageBubbleArray.length; i++) { // loop through Bubble Array
-
-            if ($(this).attr('id') == buttonIdArray[i]) {// when the buttonArray ID matches the button ID
-                
-                var imageString = imageBubbleArray[i].toString(); // set imageString to the selected index and convert to string
-
-                if (($('.bubble-image').hasClass('img-click')) && ($('.bubble-image').attr('src') !== imageString)) { 
-
-                    $('.bubble-image').removeClass('img-click');
-
-                    setTimeout(function() {
-                        
-                        
-                        $('.bubble-image').attr('src',imageString).addClass('img-click');
-            
-                    }, 200) ;
-
-                    
-                  console.log('if');
-                  // console.log(imageString);
-                    
-
-                } else if ($('.bubble-image').hasClass('img-click') && ($('.bubble-image').attr('src') == imageString)) {
-
-                    setTimeout(function(){
-
-                    $('.bubble-image').removeClass('img-click');
-
-                    },300);
-                    
-                   console.log('if else1');
-            
-                } else if (($('.bubble-image').attr('class') !== 'img-click' ) && ($('.bubble-image').attr('src') !== imageString)) {
-
-                    setTimeout(function(){
-
-                    $('.bubble-image').attr('src', imageString).addClass('img-click');
-
-                    },300);
-
-                   console.log('if else2');
-            
-                } else if (($('.bubble-image').attr('class') !== 'img-click') && ($('.bubble-image').attr('src') == imageString)) {
-
-                    setTimeout(function(){
-
-                    $('.bubble-image').addClass('img-click');
-
-                    },300);
-
-                    console.log('if else3');
-                }
-           
-
-            }           
-        }
-    }  */ 
 });
 
 
