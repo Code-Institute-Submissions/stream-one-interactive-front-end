@@ -104,6 +104,12 @@ $xlarge-desktop-width: 1499px;
 
 // MIXINS //
 
+// BUTTON TRANSITIONS //
+
+$search-button-background-transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$search-button-text-transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$box-shadow-transition: box-shadow ,0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 $search-button-background: #d56c05;
 $search_button-border:1px solid #0e091f;
 $search-button-box-shadow:6px 6px 6px 0px #33180a;
@@ -114,7 +120,9 @@ $search-button-icon-color:#0e091f;
 
     font-family: $button-font;
     font-size: 1rem;
-    transition: $search-button-text-transition;
+    //transition: $search-button-text-transition;
+    transition: $search-button-background-transition;
+    
 }
 
 @mixin search-button-xs-mobile {
@@ -158,8 +166,8 @@ $search-button-icon-color:#0e091f;
 
 @mixin search-button-lg-desktop {
 
-    width: 11rem;
-    height: 8rem;
+    width: 9rem;
+    height: 7rem;
     border-radius: 0.6rem;
     border: $search_button-border;
     box-shadow: $search-button-box-shadow;

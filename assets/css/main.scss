@@ -3,11 +3,7 @@
 @import "helpers/mixins";
 
 
-// BUTTON TRANSITIONS //
 
-$search-button-background-transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$search-button-text-transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 //-------------------- LANDING PAGE --------------------------//
 
@@ -19,7 +15,6 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     
     @include tablet {
 
-        
         height: 100vh;
     }
 }
@@ -63,6 +58,7 @@ $box-shadow-transition: box-shadow ,0.2, cubic-bezier(0.175, 0.885, 0.32, 1.275)
     
 
     @include xlarge {
+        flex-shrink:1;
         flex-grow:1;
         flex-basis: 35rem;
     }
@@ -190,7 +186,7 @@ nav {
     
 }
 
-//.search-form {
+.search-form {
 
     //display: flex;
    // flex-direction:column;
@@ -205,10 +201,12 @@ nav {
         //display: none;
        // justify-content:center;
         //left:0;
-   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     
 
-//}/
+}
 
 // --------------- SEARCH BUTTONS ---------------//
 
@@ -227,6 +225,8 @@ nav {
     flex-grow: 1;
     flex-shrink: 0;
     border-top: 0.5rem solid #f9e5e6;
+    display: flex;
+    align-content: center;
           
 
 }
@@ -248,7 +248,6 @@ nav {
 
     display: flex;
     justify-content: space-around;
-   
     flex-wrap: wrap;
     
 }
@@ -285,9 +284,9 @@ nav {
     @include xlarge {
 
         
-        left: 15vw;
+        left: 20vw;
         height: 13rem;
-        width: 70vw;
+        width: 60vw;
     }
    
 }
@@ -326,7 +325,16 @@ nav {
 
     margin: 1.5rem;
     display: block;
- 
+   // padding-top: 0rem;
+    
+   @include desktop {
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-evenly;
+
+   }
 
     .search-buttons__button__text {
 
@@ -393,7 +401,7 @@ nav {
 .search-button-clicked {
    
     border: 1px solid $search-button-background;
-    transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: $search-button-icon-color;
     box-shadow: 2px 4px 2px 0px #33180a 
 
@@ -423,6 +431,7 @@ nav {
 
 
 }
+
 
 
 
@@ -461,6 +470,11 @@ nav {
     }
 
    
+}
+
+.go-button__button {
+
+    display: flex;
 }
 
 

@@ -54,6 +54,7 @@ a {
       flex-basis: 25rem; } }
   @media (min-width: 1499px) {
     .background {
+      flex-shrink: 1;
       flex-grow: 1;
       flex-basis: 35rem; } }
 
@@ -137,6 +138,11 @@ nav {
 .img-click {
   opacity: 1; }
 
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+
 .search-container {
   opacity: 0;
   position: relative;
@@ -150,7 +156,9 @@ nav {
   background-color: #0e091f;
   flex-grow: 1;
   flex-shrink: 0;
-  border-top: 0.5rem solid #f9e5e6; }
+  border-top: 0.5rem solid #f9e5e6;
+  display: flex;
+  align-content: center; }
 
 .instructions {
   visibility: hidden;
@@ -186,9 +194,9 @@ nav {
       width: 60vw; } }
   @media (min-width: 1499px) {
     .search-buttons {
-      left: 15vw;
+      left: 20vw;
       height: 13rem;
-      width: 70vw; } }
+      width: 60vw; } }
 
 .search-buttons--background {
   background-color: #fdeae86e; }
@@ -212,12 +220,18 @@ nav {
 .search-buttons__button {
   margin: 1.5rem;
   display: block; }
+  @media (min-width: 991px) {
+    .search-buttons__button {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      justify-content: space-evenly; } }
   .search-buttons__button .search-buttons__button__text {
     margin-top: .3rem;
     margin-bottom: .3rem;
     font-family: "Pontano Sans", sans-serif;
     font-size: 1rem;
-    transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: #0e091f; }
   @media (min-width: 767px) {
     .search-buttons__button {
@@ -230,7 +244,7 @@ nav {
   border: 1px solid #0e091f;
   box-shadow: 6px 6px 6px 0px #33180a;
   background-color: #d56c05;
-  transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @media (min-width: 375px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -239,7 +253,7 @@ nav {
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 500px) {
     .search-buttons__button__element--style {
       width: 4rem;
@@ -248,7 +262,7 @@ nav {
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 767px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -257,7 +271,7 @@ nav {
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 991px) {
     .search-buttons__button__element--style {
       width: 7rem;
@@ -266,7 +280,7 @@ nav {
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 1199px) {
     .search-buttons__button__element--style {
       width: 7rem;
@@ -275,20 +289,20 @@ nav {
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 1499px) {
     .search-buttons__button__element--style {
-      width: 11rem;
-      height: 8rem;
+      width: 9rem;
+      height: 7rem;
       border-radius: 0.6rem;
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
       background-color: #d56c05;
-      transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
+      transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
 
 .search-button-clicked {
   border: 1px solid #d56c05;
-  transition: background-color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background-color: #0e091f;
   box-shadow: 2px 4px 2px 0px #33180a; }
 
@@ -296,7 +310,7 @@ nav {
   display: block;
   font-size: 1.6rem;
   color: #0e091f;
-  transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 #search-buttons__icon--clicked {
   color: #d56c05; }
@@ -323,6 +337,9 @@ nav {
     .go-button {
       margin-top: 3rem; } }
 
+.go-button__button {
+  display: flex; }
+
 .go-button__button--style {
   width: 6rem;
   height: 6rem;
@@ -335,7 +352,7 @@ nav {
   transition-delay: .4s;
   font-family: "Pontano Sans", sans-serif;
   font-size: 1rem;
-  transition: color, 0.2s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   font-size: 2rem;
   margin: 0px;
   color: #fff; }
