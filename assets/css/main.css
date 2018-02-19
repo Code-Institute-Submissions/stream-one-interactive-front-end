@@ -302,7 +302,6 @@ nav {
 
 .search-button-clicked {
   border: 1px solid #d56c05;
-  transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background-color: #0e091f;
   box-shadow: 2px 4px 2px 0px #33180a; }
 
