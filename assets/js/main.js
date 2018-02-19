@@ -288,13 +288,13 @@ $(document).ready(function(){
         (function(){
             
                 $(".search-buttons__button__element--style").on("click", function(event){
-
-                    
+ 
 
                 var imageSelect = "";
                 
 
-                imageSelect= "assets/images/"+ event.target.dataset.name + ".gif";
+                imageSelect= "assets/images/"+ event.currentTarget.dataset.name + ".gif";
+
 
               setTimeout(function(){
 
@@ -302,7 +302,7 @@ $(document).ready(function(){
 
               }, 400);
                 
-              console.log(event.target.dataset.name);
+              //console.log(event);
                 
                 
                 
@@ -315,7 +315,7 @@ $(document).ready(function(){
                     buttonParam = "";
                     
                     $(".bubble-image").removeClass("img-click");
-                    console.log(this);
+                  //  console.log(this);
 
                 } else {
 
@@ -334,7 +334,7 @@ $(document).ready(function(){
 
                         }, 400);
 
-                        console.log(this);
+                      //  console.log(this);
                     
                         
                     }
@@ -343,9 +343,25 @@ $(document).ready(function(){
                 stylesReset();
                 
             });
+
+           
+
         })();
 
+       /* $(".search-buttons__icon--style").on("click", function(event){
 
+            event.stopPropagation();
+
+            console.log(event);
+        });
+
+        $("search-buttons__button__text").on("click", function(event){
+
+            event.stopPropagation();
+
+            console.log(event);
+
+        });*/
 
         //------ GO BUTTON -----//
 
