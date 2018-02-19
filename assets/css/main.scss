@@ -121,14 +121,7 @@ nav {
         font-size: 6rem;
     }
 
-    @include desktop {
-
-        font-size: 6rem;
-    }
-    @include large {
-
-        font-size: 5rem;
-    }
+    
 
     @include xlarge {
 
