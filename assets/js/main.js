@@ -291,54 +291,54 @@ $(document).ready(function(){
 
                     
 
-                var imageSelect = {
-
-                    activeService: ""
-                    
-                }
-
+                var imageSelect = "";
                 
 
-                imageSelect.activeService = "assets/images/"+ event.target.dataset.name + ".gif";
+                imageSelect= "assets/images/"+ event.target.dataset.name + ".gif";
 
-                setTimeout(function(){
+              setTimeout(function(){
 
-                    $(".bubble-image").attr("src", imageSelect.activeService);
+                    $(".bubble-image").attr("src", imageSelect);
 
-                }, 400);
+              }, 400);
                 
-
+              console.log(event.target.dataset.name);
                 
                 
-
+                
                 if ($(this).hasClass("search-button-clicked")) {
 
                     $(this).removeClass("search-button-clicked");
                 //  $(".search-buttons__button__element--style").contents().removeAttr("id");
-                    $(this).contents().removeAttr("id");
+                    $(this).children().removeAttr("id");
 
                     buttonParam = "";
                     
                     $(".bubble-image").removeClass("img-click");
+                    console.log(this);
 
                 } else {
 
                     $(".search-buttons__button__element--style").removeClass("search-button-clicked");
                     $(".search-buttons__button__element--style").contents().removeAttr("id");
                     $(this).addClass("search-button-clicked");
-                    $(this).contents().attr("id", "search-buttons__icon--clicked");
+                    $(this).children().attr("id", "search-buttons__icon--clicked");
 
                         buttonParam = $(this).attr("value").toString();
 
                         $(".bubble-image").removeClass("img-click");
+
                         setTimeout(function(){
 
                             $(".bubble-image").addClass("img-click");
 
                         }, 400);
+
+                        console.log(this);
                     
                         
                     }
+       
             
                 stylesReset();
                 
