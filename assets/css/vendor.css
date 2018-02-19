@@ -82,9 +82,9 @@ a {
               flex-basis: 25rem; } }
   @media (min-width: 1499px) {
     .background {
-      -webkit-flex-shrink: 1;
-          -ms-flex-negative: 1;
-              flex-shrink: 1;
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
       -webkit-box-flex: 1;
       -webkit-flex-grow: 1;
           -ms-flex-positive: 1;
@@ -238,9 +238,9 @@ nav {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
   border-top: 0.5rem solid #f9e5e6;
   display: -webkit-box;
   display: -webkit-flex;
