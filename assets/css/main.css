@@ -51,7 +51,10 @@ a {
       flex-basis: 21rem; } }
   @media (min-width: 1199px) {
     .background {
-      flex-basis: 23rem; } }
+      flex-basis: 22rem; } }
+  @media (min-width: 1499px) {
+    .background {
+      flex-basis: 34rem; } }
 
 nav {
   background-color: #0e091f;
@@ -93,6 +96,31 @@ nav {
   height: 6rem;
   position: relative;
   left: 66%; }
+  @media (min-width: 500px) {
+    .bubble-image {
+      left: 58%; } }
+  @media (min-width: 767px) {
+    .bubble-image {
+      left: 64%;
+      height: 9rem; } }
+  @media (min-width: 767px) and (min-height: 1023px) {
+    .bubble-image {
+      left: 64%;
+      height: 9rem; } }
+  @media (min-width: 991px) {
+    .bubble-image {
+      left: 58%;
+      height: 7rem; } }
+  @media (min-width: 1199px) {
+    .bubble-image {
+      left: 57%;
+      height: 7rem;
+      top: 1rem; } }
+  @media (min-width: 1499px) {
+    .bubble-image {
+      left: 57%;
+      height: 10rem;
+      top: 2rem; } }
 
 .img-click {
   opacity: 1; }
@@ -110,6 +138,9 @@ nav {
   @media (min-width: 1199px) {
     .search-form {
       flex-basis: 20rem; } }
+  @media (min-width: 1499px) {
+    .search-form {
+      flex-basis: 30rem; } }
 
 .search-container {
   border-top: 0.5rem solid #f9e5e6;

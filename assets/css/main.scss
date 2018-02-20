@@ -65,11 +65,12 @@
 
     @include large {
 
-        flex-basis: 23rem;
+        flex-basis: 22rem;
     }
 
     @include xlarge {
         
+        flex-basis: 34rem;
     }
     
     
@@ -137,44 +138,53 @@ nav {
     opacity:0;
     height: 6rem;
     position: relative;
-    left: 66%;;
+    left: 66%;
     //top: 0vh;
     //transition: opacity, 0.8s, ease-in;
 
     @include mobile-landscape{
 
+        left: 58%;
        
        
     }
 
     @include tablet {
        
-       
+        left: 64%;
+        height: 9rem;
        
 
     }
 
     @include tablet-portrait {
 
-       
+        left: 64%;
+        height: 9rem;
        
     }
 
     @include desktop {
 
-       
+        left: 58%;
+        height: 7rem;
        
     }
 
     
     @include large {
 
-      
+        left: 57%;
+        height: 7rem;
+        top: 1rem;
 
     }
 
     @include xlarge {
 
+        left: 57%;
+        height: 10rem;
+        top: 2rem;
         
     }
 }
@@ -203,7 +213,11 @@ nav {
 
         flex-basis: 20rem;
     }
+    
+    @include xlarge {
 
+        flex-basis: 30rem;
+    }
     
 
  //position: relative;
