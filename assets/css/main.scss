@@ -145,10 +145,11 @@ nav {
 
 .bubble-image {
 
-
-    visibility: visible;
-    opacity:0;
+    opacity: 0;
+    //visibility: hidden;
+    //display: hidden;
     height: 6rem;
+    //width: auto;
     position: relative;
     left: 66%;
     //top: 0vh;
@@ -156,15 +157,18 @@ nav {
 
     @include mobile-landscape{
 
+       
         left: 58%;
        
        
     }
 
     @include tablet {
+        
        
+        //opacity: 1;
         left: 64%;
-        height: 9rem;
+        //width: auto;
        
 
     }
@@ -173,6 +177,7 @@ nav {
 
         left: 64%;
         height: 9rem;
+        //width: auto;
        
     }
 
@@ -180,6 +185,7 @@ nav {
 
         left: 58%;
         height: 7rem;
+        //width: auto;
        
     }
 
@@ -188,6 +194,7 @@ nav {
 
         left: 57%;
         height: 7rem;
+        //width: auto;
         top: 1rem;
 
     }
@@ -196,6 +203,7 @@ nav {
 
         left: 57%;
         height: 10rem;
+        //width: auto;
         top: 2rem;
         
     }
@@ -223,6 +231,7 @@ nav {
     justify-content: center;
     //box-sizing: border-box;
    
+    
 
     @include large {
 
@@ -380,16 +389,16 @@ nav {
 .search-buttons__button {
 
     margin: 1.5rem;
-    display: block;
-   // padding-top: 0rem;
-    
-   @include desktop {
-
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     justify-content: space-evenly;
 
+   // padding-top: 0rem;
+    
+   @include desktop {
+
+    
    }
 
     .search-buttons__button__text {
@@ -559,7 +568,7 @@ nav {
 
     @include tablet {
 
-        @include go-button-large-desktop;
+        @include go-button-mobile;
     }
     @include desktop {
 

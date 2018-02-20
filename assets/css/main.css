@@ -94,7 +94,6 @@ nav {
       font-size: 7rem; } }
 
 .bubble-image {
-  visibility: visible;
   opacity: 0;
   height: 6rem;
   position: relative;
@@ -104,8 +103,7 @@ nav {
       left: 58%; } }
   @media (min-width: 767px) {
     .bubble-image {
-      left: 64%;
-      height: 9rem; } }
+      left: 64%; } }
   @media (min-width: 767px) and (min-height: 1023px) {
     .bubble-image {
       left: 64%;
@@ -203,13 +201,10 @@ nav {
 
 .search-buttons__button {
   margin: 1.5rem;
-  display: block; }
-  @media (min-width: 991px) {
-    .search-buttons__button {
-      display: flex;
-      flex-direction: row;
-      flex-grow: 1;
-      justify-content: space-evenly; } }
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly; }
   .search-buttons__button .search-buttons__button__text {
     margin-top: .3rem;
     margin-bottom: .3rem;
@@ -351,9 +346,9 @@ nav {
   color: #fff; }
   @media (min-width: 767px) {
     .go-button__button--style {
-      width: 8rem;
-      height: 8rem;
-      border-radius: 4rem;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 3rem;
       border: 2px solid white;
       background-color: #217219; } }
   @media (min-width: 991px) {
