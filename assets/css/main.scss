@@ -113,6 +113,12 @@ nav {
         flex-basis: 10rem;
     }
 
+    @include large {
+        
+        flex-basis: 8rem;
+    
+    }
+
 }
 
 .nav__navtext {

@@ -80,6 +80,9 @@ nav {
   @media (min-width: 991px) {
     nav {
       flex-basis: 10rem; } }
+  @media (min-width: 1199px) {
+    nav {
+      flex-basis: 8rem; } }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
