@@ -309,8 +309,10 @@ $(document).ready(function(){
                 if ($(this).hasClass("search-button-clicked")) {
 
                     $(this).removeClass("search-button-clicked");
-                //  $(".search-buttons__button__element--style").contents().removeAttr("id");
-                    $(this).children().removeAttr("id");
+                    $(".search-buttons__button__element--style").children("span").removeAttr("id");
+                    $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
+                    $(this).children("i").removeClass("search-buttons__icon--clicked");
+                    $(this).children("span").removeAttr("id");
 
                     buttonParam = "";
                     
@@ -320,9 +322,11 @@ $(document).ready(function(){
                 } else {
 
                     $(".search-buttons__button__element--style").removeClass("search-button-clicked");
-                    $(".search-buttons__button__element--style").contents().removeAttr("id");
+                    $(".search-buttons__button__element--style").children("span").removeAttr("id");
+                    $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
                     $(this).addClass("search-button-clicked");
-                    $(this).children().attr("id", "search-buttons__icon--clicked");
+                    $(this).children("i").addClass("search-buttons__icon--clicked");
+                    $(this).children("span").attr("id","search-buttons__text--clicked");
 
                         buttonParam = $(this).attr("value").toString();
 

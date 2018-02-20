@@ -31,7 +31,7 @@
 }
 .background {
 
-    //opacity: 0;
+    opacity: 0;
     background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
     background-attachment: scroll;
     background-position: 50% 0%;
@@ -47,12 +47,12 @@
     
 
   
-    /*animation-name: fade-up;
+    animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;
 
 
     @include tablet {
@@ -83,7 +83,7 @@
 }
 
 nav {
-   // opacity: 0;
+    opacity: 0;
     //height: 10rem;
    // width: 100vw;
     background-color: #0e091f;
@@ -95,12 +95,12 @@ nav {
     flex-shrink: 0;
     flex-basis: 10rem;
 
-    /*animation-name: fade-up;
+    animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;
 
     @include tablet {
 
@@ -146,18 +146,18 @@ nav {
 .bubble-image {
 
     opacity: 0;
-    //visibility: hidden;
+    visibility: hidden;
     //display: hidden;
     height: 6rem;
     //width: auto;
     position: relative;
     left: 66%;
     //top: 0vh;
-    //transition: opacity, 0.8s, ease-in;
+    transition: opacity 0.8s, ease-in;
 
     @include mobile-landscape{
 
-       
+         
         left: 58%;
        
        
@@ -173,8 +173,9 @@ nav {
 
     }
 
-    @include tablet-portrait {
+    @include tablet {
 
+        visibility: visible;
         left: 64%;
         height: 9rem;
         //width: auto;
@@ -230,6 +231,12 @@ nav {
     //flex-basis: 30rem;
     justify-content: center;
     //box-sizing: border-box;
+    animation-name: fade-up;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
    
     
 
@@ -264,7 +271,7 @@ nav {
 
 // --------------- SEARCH BUTTONS ---------------//
 
-.search-container {
+/*.search-container {
 
     border-top: 0.5rem solid #f9e5e6;
     //display: flex;
@@ -289,7 +296,7 @@ nav {
     animation-duration: 0.2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;
           
     @include tablet {
 
@@ -302,8 +309,9 @@ nav {
     }
    
 }
+*/
 
-.instructions {
+/*.instructions {
 
     visibility: hidden;
     font-family: $button-font;
@@ -313,7 +321,7 @@ nav {
     margin-top: 0;
 
     
-}
+}*/
     
 
     
@@ -406,7 +414,8 @@ nav {
     margin-top: .3rem;
     margin-bottom: .3rem;
     @include button-text-desktop;
-    color: #0e091f;;
+    color: #0e091f;
+    transition: $search-button-text-transition;
     }
 
     @include tablet {
@@ -420,6 +429,7 @@ nav {
 
 
     @include search-button-xs-mobile;
+    transition: $search-button-background-transition;
     
 
     
@@ -482,7 +492,15 @@ nav {
     transition: $search-button-text-transition;
 }
 
-#search-buttons__icon--clicked {
+.search-buttons__icon--clicked {
+    
+    
+    color: $search-button-background;
+
+}
+
+#search-buttons__text--clicked {
+    
     
     color: $search-button-background;
 
@@ -543,10 +561,7 @@ nav {
    
 }
 
-.go-button__button {
 
-   // display: flex;
-}
 
 
 .go-button__button--style {
