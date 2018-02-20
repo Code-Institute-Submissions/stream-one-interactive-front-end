@@ -25,6 +25,9 @@ a {
 .flex-container {
   display: flex;
   flex-direction: column; }
+  @media (min-width: 1199px) {
+    .flex-container {
+      height: 100vh; } }
 
 .background {
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
@@ -34,7 +37,7 @@ a {
   background-size: cover;
   position: relative;
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   flex-basis: 17rem;
   border-bottom: 0.5rem solid #f9e5e6;
   /*animation-name: fade-up;
@@ -132,6 +135,7 @@ nav {
   top: 2.5rem;
   position: relative;
   flex-grow: 1;
+  flex-shrink: 0;
   padding-bottom: 2rem;
   flex-basis: 30rem;
   justify-content: space-around; }
