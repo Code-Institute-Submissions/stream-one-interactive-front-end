@@ -12,22 +12,18 @@ button, input {
 a {
   text-decoration: none; }
 
-/*
 
-  Mixins
-  Author - Andy Crone | @andycrone_
-  + Popular mixins including vendor prefixes for cross-browser support
-
-*/
 .body-background {
   background-color: #0e0920; }
 
 .flex-container {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
   @media (min-width: 767px) {
@@ -36,7 +32,6 @@ a {
 
 .background {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
   background-attachment: scroll;
   background-position: 50% 0%;
@@ -44,12 +39,15 @@ a {
   background-size: cover;
   position: relative;
   -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-preferred-size: 17rem;
-      flex-basis: 17rem;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-flex-basis: 17rem;
+      -ms-flex-preferred-size: 17rem;
+          flex-basis: 17rem;
   border-bottom: 0.5rem solid #f9e5e6;
   -webkit-animation-name: fade-up;
           animation-name: fade-up;
@@ -65,42 +63,51 @@ a {
           animation-iteration-count: 1; }
   @media (min-width: 767px) {
     .background {
-      -ms-flex-preferred-size: 30rem;
-          flex-basis: 30rem; } }
+      -webkit-flex-basis: 30rem;
+          -ms-flex-preferred-size: 30rem;
+              flex-basis: 30rem; } }
   @media (min-width: 991px) {
     .background {
-      -ms-flex-preferred-size: 21rem;
-          flex-basis: 21rem; } }
+      -webkit-flex-basis: 21rem;
+          -ms-flex-preferred-size: 21rem;
+              flex-basis: 21rem; } }
   @media (min-width: 1199px) {
     .background {
-      -ms-flex-preferred-size: 22rem;
-          flex-basis: 22rem; } }
+      -webkit-flex-basis: 22rem;
+          -ms-flex-preferred-size: 22rem;
+              flex-basis: 22rem; } }
   @media (min-width: 1499px) {
     .background {
-      -ms-flex-preferred-size: 34rem;
-          flex-basis: 34rem; } }
+      -webkit-flex-basis: 34rem;
+          -ms-flex-preferred-size: 34rem;
+              flex-basis: 34rem; } }
 
 nav {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   background-color: #0e091f;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   border: 0px;
   -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-preferred-size: 10rem;
-      flex-basis: 10rem;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  -webkit-flex-basis: 10rem;
+      -ms-flex-preferred-size: 10rem;
+          flex-basis: 10rem;
   -webkit-animation-name: fade-up;
           animation-name: fade-up;
   -webkit-animation-timing-function: ease-in;
@@ -115,12 +122,14 @@ nav {
           animation-iteration-count: 1; }
   @media (min-width: 767px) {
     nav {
-      -ms-flex-preferred-size: 18rem;
-          flex-basis: 18rem; } }
+      -webkit-flex-basis: 18rem;
+          -ms-flex-preferred-size: 18rem;
+              flex-basis: 18rem; } }
   @media (min-width: 991px) {
     nav {
-      -ms-flex-preferred-size: 10rem;
-          flex-basis: 10rem; } }
+      -webkit-flex-basis: 10rem;
+          -ms-flex-preferred-size: 10rem;
+              flex-basis: 10rem; } }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
@@ -136,7 +145,6 @@ nav {
 
 .bubble-image {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   visibility: hidden;
   height: 6rem;
   position: relative;
@@ -170,28 +178,34 @@ nav {
       top: 2rem; } }
 
 .img-click {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
+  opacity: 1; }
 
 .search-form {
+  opacity: 0;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   margin-top: 1.5rem;
   position: relative;
   -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-animation-name: fade-up;
@@ -210,11 +224,13 @@ nav {
     .search-form {
       padding-bottom: 0;
       -webkit-box-pack: center;
+      -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; } }
   @media (min-width: 1499px) {
     .search-form {
       -webkit-box-pack: center;
+      -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center; } }
 
@@ -275,18 +291,23 @@ nav {
 
 .search-buttons {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-negative: 0;
-      flex-shrink: 0; }
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
 
 .search-buttons--background {
   background-color: #fdeae86e;
@@ -312,16 +333,20 @@ nav {
 .search-buttons__button {
   margin: 1.5rem;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly; }
   .search-buttons__button .search-buttons__button__text {
@@ -454,12 +479,15 @@ nav {
   border: 2px solid white;
   background-color: #217219;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-transition-delay: .4s;
@@ -536,16 +564,20 @@ a {
   position: relative;
   overflow: visible;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   top: 4rem;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
 
@@ -604,23 +636,28 @@ a {
 
 .reset {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 6rem;
   height: 6rem;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
   top: 2rem;
   position: relative;
-  -ms-flex-item-align: center;
-      align-self: center; }
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
   @media (min-width: 1499px) {
     .reset {
       width: 8rem;
@@ -633,12 +670,15 @@ a {
   border: 2px solid white;
   background-color: #dd1616;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   font-family: "Pontano Sans", sans-serif;
@@ -700,11 +740,14 @@ a {
   width: 16rem;
   position: relative;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1rem; }
