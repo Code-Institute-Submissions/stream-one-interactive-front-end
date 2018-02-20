@@ -196,12 +196,12 @@ nav {
     //padding-top: 2rem;
     padding-bottom: 2rem;
     flex-basis: 30rem;
-    justify-content: space-evenly;
+    justify-content: space-around;
    
 
     @include large {
 
-        flex-basis: 18rem;
+        flex-basis: 20rem;
     }
 
     

@@ -106,10 +106,10 @@ nav {
   flex-grow: 1;
   padding-bottom: 2rem;
   flex-basis: 30rem;
-  justify-content: space-evenly; }
+  justify-content: space-around; }
   @media (min-width: 1199px) {
     .search-form {
-      flex-basis: 18rem; } }
+      flex-basis: 20rem; } }
 
 .search-container {
   border-top: 0.5rem solid #f9e5e6;
