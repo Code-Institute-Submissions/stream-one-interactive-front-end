@@ -154,6 +154,7 @@ nav {
     position: relative;
     left: 66%;
     //top: 0vh;
+    transition-delay:0.4s;
     transition: opacity 0.8s, ease-in;
 
     @include mobile-landscape{
@@ -431,7 +432,7 @@ nav {
 
 
     @include search-button-xs-mobile;
-    transition: $search-button-background-transition;
+    transition: $box-shadow-transition;
     
 
     
@@ -575,6 +576,7 @@ nav {
     justify-content: center;
     align-items: center;
     transition-delay: .4s;
+    transition: color 0.4s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
 
     
@@ -800,7 +802,7 @@ a {
     font-size: 1.5rem;
     margin: 0px;
     color: #fff;
-    transition-delay: .2s;
+    transition-delay: .4s;
     transition: border, 0.3s, background-color, 0.3s, color, 0.3s, cubic-bezier cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
     @include xlarge {

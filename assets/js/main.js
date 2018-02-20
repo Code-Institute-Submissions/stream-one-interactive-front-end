@@ -260,7 +260,8 @@ $(document).ready(function(){
             $("section").delay(800).slideUp(400);
 
             $(".search-buttons__button__element--style").removeClass("search-button-clicked");
-            $(".search-buttons__button__element--style").contents().removeAttr("id");
+            $(".search-buttons__button__element--style").children("span").removeAttr("id");
+            $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
 
             $(".go-button__button").removeClass("go-click");
 
@@ -294,16 +295,6 @@ $(document).ready(function(){
                 
 
                 imageSelect= "assets/images/"+ event.currentTarget.dataset.name + ".gif";
-
-
-              setTimeout(function(){
-
-                    $(".bubble-image").attr("src", imageSelect);
-
-              }, 400);
-                
-              //console.log(event);
-                
                 
                 
                 if ($(this).hasClass("search-button-clicked")) {
@@ -334,7 +325,9 @@ $(document).ready(function(){
 
                         setTimeout(function(){
 
+                            $(".bubble-image").attr("src", imageSelect);
                             $(".bubble-image").addClass("img-click");
+                            
 
                         }, 400);
 
