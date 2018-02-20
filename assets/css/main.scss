@@ -16,16 +16,16 @@
 
     display: flex;
     flex-direction: column;
-  //  height: 150vh;
+    height: 100vh;
     
     @include tablet {
 
      //   height: 100vh;
     }
 
-    @include large{
+    @include desktop{
 
-        height: 100vh;
+        
     }
 }
 .background {
@@ -91,7 +91,7 @@ nav {
     justify-content:center;
     border: 0px;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-basis: 10rem;
 
     /*animation-name: fade-up;
@@ -211,28 +211,30 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 2.5rem;
+    margin-top: 1.5rem;
+    //margin-bottom: 2.5rem;
     position: relative; 
     flex-grow:1;
     flex-shrink: 0;
     //padding-top: 2rem;
-    padding-bottom: 2rem;
-    flex-basis: 30rem;
-    justify-content: space-around;
+    //padding-bottom: 2rem;
+    //flex-basis: 30rem;
+    justify-content: center;
+    //box-sizing: border-box;
    
 
     @include large {
 
-        flex-basis: 20rem;
-        top: 0;
+        //flex-basis: 30rem;
+       // top: 0;
         padding-bottom: 0;
         justify-content: center;
     }
     
     @include xlarge {
 
-        flex-basis: 30rem;
-        justify-content: space-evenly;
+       // flex-basis: 30rem;
+        justify-content: center;
 
     }
     
@@ -319,6 +321,7 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    flex-shrink: 0;
 
 
     @include tablet {
@@ -427,22 +430,23 @@ nav {
 
         @include search-button-mobile;
     }
+
     @include desktop {
 
-        @include search-button-desktop;
+        @include search-button-xlarge;
     }
 
     
     
     @include large {
      
-        @include search-button-desktop;
+        @include search-button-mobile;
         
     }
 
     @include xlarge {
 
-        @include search-button-lg-desktop;
+        @include search-button-xlarge;
         
         
     
@@ -495,8 +499,9 @@ nav {
 .go-button {
 
     position: relative;
-    top: 1rem;
+    //top: 1rem;
     padding-bottom: 1rem;
+    margin-top: 1.5rem;
 
    /* margin-top: 0rem;
     padding-top: 2rem;
@@ -551,6 +556,18 @@ nav {
     margin: 0px;
     color: #fff;
 
+    @include tablet {
+
+        @include go-button-large-desktop;
+    }
+    @include desktop {
+
+        @include go-button-mobile;
+    }
+    @include large {
+
+        @include go-button-mobile; 
+    }
     @include xlarge {
 
         @include go-button-large-desktop;
@@ -592,6 +609,7 @@ a {
     border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
+    
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: left;

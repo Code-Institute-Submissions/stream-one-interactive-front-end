@@ -24,10 +24,8 @@ a {
 
 .flex-container {
   display: flex;
-  flex-direction: column; }
-  @media (min-width: 1199px) {
-    .flex-container {
-      height: 100vh; } }
+  flex-direction: column;
+  height: 100vh; }
 
 .background {
   background-image: url("../images/bg-image-1920-1080-CONTRAST-UP-bg-colored-split-top.jpg");
@@ -66,7 +64,7 @@ nav {
   justify-content: center;
   border: 0px;
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   flex-basis: 10rem;
   /*animation-name: fade-up;
   animation-timing-function: ease-in;
@@ -132,23 +130,18 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 2.5rem;
+  margin-top: 1.5rem;
   position: relative;
   flex-grow: 1;
   flex-shrink: 0;
-  padding-bottom: 2rem;
-  flex-basis: 30rem;
-  justify-content: space-around; }
+  justify-content: center; }
   @media (min-width: 1199px) {
     .search-form {
-      flex-basis: 20rem;
-      top: 0;
       padding-bottom: 0;
       justify-content: center; } }
   @media (min-width: 1499px) {
     .search-form {
-      flex-basis: 30rem;
-      justify-content: space-evenly; } }
+      justify-content: center; } }
 
 .search-container {
   border-top: 0.5rem solid #f9e5e6;
@@ -182,7 +175,8 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-shrink: 0; }
 
 .search-buttons--background {
   background-color: #fdeae86e;
@@ -262,8 +256,8 @@ nav {
       transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 991px) {
     .search-buttons__button__element--style {
-      width: 5rem;
-      height: 4rem;
+      width: 9rem;
+      height: 7rem;
       border-radius: 0.6rem;
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
@@ -271,8 +265,8 @@ nav {
       transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 1199px) {
     .search-buttons__button__element--style {
-      width: 5rem;
-      height: 4rem;
+      width: 6rem;
+      height: 5rem;
       border-radius: 0.6rem;
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
@@ -308,8 +302,8 @@ nav {
 
 .go-button {
   position: relative;
-  top: 1rem;
   padding-bottom: 1rem;
+  margin-top: 1.5rem;
    /* margin-top: 0rem;
     padding-top: 2rem;
     width: 100vw;
@@ -353,6 +347,27 @@ nav {
   font-size: 2rem;
   margin: 0px;
   color: #fff; }
+  @media (min-width: 767px) {
+    .go-button__button--style {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 4rem;
+      border: 2px solid white;
+      background-color: #217219; } }
+  @media (min-width: 991px) {
+    .go-button__button--style {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 3rem;
+      border: 2px solid white;
+      background-color: #217219; } }
+  @media (min-width: 1199px) {
+    .go-button__button--style {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 3rem;
+      border: 2px solid white;
+      background-color: #217219; } }
   @media (min-width: 1499px) {
     .go-button__button--style {
       width: 8rem;

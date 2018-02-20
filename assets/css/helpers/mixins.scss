@@ -151,10 +151,10 @@ $search-button-icon-color:#0e091f;
     
 }
 
-@mixin search-button-desktop {
+@mixin search-button-xlarge {
 
-    width: 5rem;
-    height: 4rem;
+    width: 9rem;
+    height: 7rem;
     border-radius: 0.6rem;
     border: $search_button-border;
     box-shadow: $search-button-box-shadow;
@@ -163,10 +163,10 @@ $search-button-icon-color:#0e091f;
     
 }
 
-@mixin search-button-lg-desktop {
+@mixin search-button-large {
 
-    width: 9rem;
-    height: 7rem;
+    width: 8rem;
+    height: 6rem;
     border-radius: 0.6rem;
     border: $search_button-border;
     box-shadow: $search-button-box-shadow;
@@ -191,6 +191,16 @@ $search-button-icon-color:#0e091f;
     width: 8rem;
     height: 8rem;
     border-radius: 4rem;
+    //box-shadow:5px 6px 6px 2px #24110c;
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: #217219;
+    
+}
+
+@mixin go-button-xlarge{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
     //box-shadow:5px 6px 6px 2px #24110c;
     border: 2px solid rgba(255, 255, 255, 1);
     background-color: #217219;
