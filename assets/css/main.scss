@@ -115,7 +115,7 @@ nav {
 
     @include large {
         
-        flex-basis: 8rem;
+        //flex-basis: 8rem;
     
     }
 
@@ -224,11 +224,16 @@ nav {
     @include large {
 
         flex-basis: 20rem;
+        top: 0;
+        padding-bottom: 0;
+        justify-content: center;
     }
     
     @include xlarge {
 
         flex-basis: 30rem;
+        justify-content: space-evenly;
+
     }
     
 
@@ -596,6 +601,8 @@ a {
         height: 2.5rem;
         width: 25rem;
     }
+
+ 
 
     
 

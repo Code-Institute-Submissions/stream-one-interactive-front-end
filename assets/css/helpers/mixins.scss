@@ -153,14 +153,13 @@ $search-button-icon-color:#0e091f;
 
 @mixin search-button-desktop {
 
-    width: 7rem;
-    height: 6rem;
+    width: 5rem;
+    height: 4rem;
     border-radius: 0.6rem;
     border: $search_button-border;
     box-shadow: $search-button-box-shadow;
     background-color: $search-button-background;
     transition: $search-button-background-transition;
-    
     
 }
 

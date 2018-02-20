@@ -80,9 +80,6 @@ nav {
   @media (min-width: 991px) {
     nav {
       flex-basis: 10rem; } }
-  @media (min-width: 1199px) {
-    nav {
-      flex-basis: 8rem; } }
 
 .nav__navtext {
   font-family: "Bungee Shade", cursive;
@@ -144,10 +141,14 @@ nav {
   justify-content: space-around; }
   @media (min-width: 1199px) {
     .search-form {
-      flex-basis: 20rem; } }
+      flex-basis: 20rem;
+      top: 0;
+      padding-bottom: 0;
+      justify-content: center; } }
   @media (min-width: 1499px) {
     .search-form {
-      flex-basis: 30rem; } }
+      flex-basis: 30rem;
+      justify-content: space-evenly; } }
 
 .search-container {
   border-top: 0.5rem solid #f9e5e6;
@@ -261,8 +262,8 @@ nav {
       transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 991px) {
     .search-buttons__button__element--style {
-      width: 7rem;
-      height: 6rem;
+      width: 5rem;
+      height: 4rem;
       border-radius: 0.6rem;
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
@@ -270,8 +271,8 @@ nav {
       transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); } }
   @media (min-width: 1199px) {
     .search-buttons__button__element--style {
-      width: 7rem;
-      height: 6rem;
+      width: 5rem;
+      height: 4rem;
       border-radius: 0.6rem;
       border: 1px solid #0e091f;
       box-shadow: 6px 6px 6px 0px #33180a;
