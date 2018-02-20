@@ -162,11 +162,15 @@ $(document).ready(function(){
                                         
                                     } else if (details.reviews[i].text.length == 0) {
 
-                                        reviewArray.push("No Reviews for this company");
+                                        var emptyReview = [];
+                                        emptyReview.push("No Reviews for this company");
+
                                     }
                                 }
                             }
-                                console.log(details.reviews);
+
+                                    reviewArray.push(emptyReview[0]);
+                                //console.log(details.reviews);
                 // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
                                     
                                 var info = {
