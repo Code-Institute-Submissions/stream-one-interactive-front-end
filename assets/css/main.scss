@@ -195,13 +195,9 @@ nav {
     flex-grow:1;
     //padding-top: 2rem;
     padding-bottom: 2rem;
-    
-    @include tablet {
-
-        flex-basis: 30rem;
-        justify-content: space-evenly;
+    flex-basis: 30rem;
+    justify-content: space-evenly;
    
-    }
 
     @include large {
 
