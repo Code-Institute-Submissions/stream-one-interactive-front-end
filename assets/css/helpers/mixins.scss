@@ -106,9 +106,9 @@ $xlarge-desktop-width: 1499px;
 
 // BUTTON TRANSITIONS //
 
-$search-button-background-transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$search-button-text-transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$box-shadow-transition: box-shadow ,0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$search-button-background-transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$search-button-text-transition: color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$box-shadow-transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 $search-button-background: #d56c05;
 $search_button-border:1px solid #0e091f;
