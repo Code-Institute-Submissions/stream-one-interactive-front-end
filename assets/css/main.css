@@ -95,7 +95,7 @@ nav {
   position: relative;
   left: 66%;
   transition-delay: 0.4s;
-  transition: opacity 0.8s, ease-in; }
+  transition: opacity 0.8s ease-in; }
   @media (min-width: 500px) {
     .bubble-image {
       left: 58%; } }
@@ -244,7 +244,7 @@ nav {
     font-family: "Pontano Sans", sans-serif;
     font-size: 1rem;
     color: #0e091f;
-    transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    transition: color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @media (min-width: 767px) {
     .search-buttons__button {
       padding-top: 0rem; } }
@@ -256,7 +256,7 @@ nav {
   border: 1px solid #0e091f;
   box-shadow: 6px 6px 6px 0px #33180a;
   background-color: #d56c05;
-  transition: box-shadow, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @media (min-width: 375px) {
     .search-buttons__button__element--style {
       width: 6rem;
@@ -315,7 +315,7 @@ nav {
   display: block;
   font-size: 1.6rem;
   color: #0e091f;
-  transition: color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  transition: color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 .search-buttons__icon--clicked {
   color: #d56c05; }
