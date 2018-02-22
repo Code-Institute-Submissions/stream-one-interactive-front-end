@@ -94,8 +94,9 @@ nav {
   height: 6rem;
   position: relative;
   left: 66%;
+  -webkit-transform: translate3d(0, 0, 0);
   transition-delay: 0.4s;
-  transition: opacity 0.8s ease-in; }
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @media (min-width: 500px) {
     .bubble-image {
       left: 58%; } }
