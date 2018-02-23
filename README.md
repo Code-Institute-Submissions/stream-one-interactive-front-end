@@ -31,9 +31,9 @@ Details of the UX design and research process is available in the repo "document
 
 ## Build Approach
 
-1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time around. I wanted to expand my knowledge of CSS and build everything from scratch. Using Flexbox as the grid system for the project. And creating my own custom mixins for media queries.
-2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled in to. 
-3. The Google Places API is called to retreive data according to the user input. The user has a choice of 6 Pet Stops to choose from, along with a location of their choosing. Data is populated dynamically below the landing page. Information includes company name, address, website, phone number, overall rating and reviews if available. 
+1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time around. I wanted to expand my knowledge of CSS and build everything from scratch, using Flexbox as the grid system for the project. 
+2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled into. 
+3. The Google Places API is called to retreive data according to user input. The user has a choice of 6 Pet Stops to choose from, along with a location of their choosing. Data is populated dynamically below the landing page. Information includes company name, address, website, phone number, overall rating and reviews if available. 
 4. I have tried to code the applciation defensively as possible. Taking into account user error when making decisions on functionality. 
 5. All button styles, modal styles and colour schemes are my own. The main photo is from the online resource px-here.com and is a free to use asset.
 

@@ -21,15 +21,11 @@
     
     @include tablet {
 
-     //   height: 100vh;
         height: 100vh;
     }
 
-    @include desktop{
-
-        
-    }
 }
+
 .background {
 
     opacity: 0;
@@ -38,16 +34,11 @@
     background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    //width: 100vw;
-    //height: 10rem;
     position: relative;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 17rem;
     border-bottom: 0.5rem solid #f9e5e6;
-    
-
-  
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -60,7 +51,6 @@
 
         flex-basis: 30rem;
     
-       
     }
 
 
@@ -85,8 +75,6 @@
 
 nav {
     opacity: 0;
-    //height: 10rem;
-   // width: 100vw;
     background-color: #0e091f;
     display: flex;
     align-items:center;
@@ -95,7 +83,6 @@ nav {
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 10rem;
-
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -105,20 +92,12 @@ nav {
 
     @include tablet {
 
-      
         flex-basis: 18rem;
-       // flex-grow:1;
     }
 
     @include desktop {
 
         flex-basis: 10rem;
-    }
-
-    @include large {
-        
-        //flex-basis: 8rem;
-    
     }
 
 }
@@ -148,31 +127,22 @@ nav {
 
     opacity: 0;
     visibility: hidden;
-    //display: hidden;
     height: 6rem;
-    //width: auto;
     position: relative;
     left: 66%;
-    //top: 0vh;
     -webkit-transform: translate3d(0, 0, 0);
     transition-delay:0.4s;
     transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     @include mobile-landscape{
 
-         
         left: 58%;
-       
-       
+    
     }
 
     @include tablet {
         
-       
-        //opacity: 1;
         left: 64%;
-        //width: auto;
-       
 
     }
 
@@ -181,7 +151,6 @@ nav {
         visibility: visible;
         left: 64%;
         height: 9rem;
-        //width: auto;
        
     }
 
@@ -189,7 +158,6 @@ nav {
 
         left: 58%;
         height: 7rem;
-        //width: auto;
        
     }
 
@@ -198,7 +166,6 @@ nav {
 
         left: 57%;
         height: 7rem;
-        //width: auto;
         top: 1rem;
 
     }
@@ -207,7 +174,6 @@ nav {
 
         left: 57%;
         height: 10rem;
-        //width: auto;
         top: 2rem;
         
     }
@@ -226,15 +192,10 @@ nav {
     flex-direction: column;
     align-items: center;
     margin-top: 1.5rem;
-    //margin-bottom: 2.5rem;
     position: relative; 
     flex-grow:1;
     flex-shrink: 0;
-    //padding-top: 2rem;
-    //padding-bottom: 2rem;
-    //flex-basis: 30rem;
     justify-content: center;
-    //box-sizing: border-box;
     animation-name: fade-up;
     animation-timing-function: ease-in;
     animation-duration: 0.2s;
@@ -246,96 +207,20 @@ nav {
 
     @include large {
 
-        //flex-basis: 30rem;
-       // top: 0;
         padding-bottom: 0;
         justify-content: center;
     }
     
     @include xlarge {
 
-       // flex-basis: 30rem;
         justify-content: center;
 
     }
     
-
- //position: relative;
-        //top: 18.5rem;
-       // width: 100vw;
-        //display: none;
-       // justify-content:center;
-        //left:0;
-    //    display: flex;
-      //  flex-direction: column;
-        //justify-content: space-evenly;
-    
-
 }
 
 // --------------- SEARCH BUTTONS ---------------//
 
-/*.search-container {
-
-    border-top: 0.5rem solid #f9e5e6;
-    //display: flex;
-    //flex-direction: column;
-    //flex-grow: 1;
-    //display: flex;
-    //flex-basis: 32rem;
-    //justify-content: center;
-    //opacity: 0;
-    //position: relative;
-  
-    //padding: 2.5rem 0rem;
-    //background-color: #0e091f;
-    //flex-grow: 1;
-    //flex-shrink: 1;
-    //border-top: 0.5rem solid #f9e5e6;
-    //display: flex;
-    //align-content: center;
-
-    /*animation-name: fade-up;
-    animation-timing-function: ease-in;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-          
-    @include tablet {
-
-        flex-basis: 32rem;
-    }
-
-    @include large {
-
-        flex-basis: 20rem;
-    }
-   
-}
-*/
-
-/*.instructions {
-
-    visibility: hidden;
-    font-family: $button-font;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 0;
-
-    
-}*/
-    
-
-    
-.search-buttons , .search-bar, .go-button{
-
-   /* display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;*/
-    
-}
 
 .search-buttons {
 
@@ -344,27 +229,6 @@ nav {
     flex-wrap: wrap;
     justify-content: space-around;
     flex-shrink: 0;
-
-
-    @include tablet {
-
-    }
-
-    @include desktop {
-
-       
-    }
-    
-
-    @include large {
-
-       
-    }
-
-    @include xlarge {
-
-        
-    }
    
 }
 
@@ -406,13 +270,6 @@ nav {
     flex-grow: 1;
     justify-content: space-evenly;
 
-   // padding-top: 0rem;
-    
-   @include desktop {
-
-    
-   }
-
     .search-buttons__button__text {
 
     margin-top: .3rem;
@@ -435,9 +292,6 @@ nav {
     @include search-button-xs-mobile;
     transition: $box-shadow-transition;
     
-
-    
-
     @include sm-mobile {
         
        @include search-button-mobile;
@@ -472,8 +326,6 @@ nav {
 
         @include search-button-xlarge;
         
-        
-    
     }
 
 }
@@ -481,7 +333,6 @@ nav {
 .search-button-clicked {
    
     border: 1px solid $search-button-background;
-    //transition: background-color, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: $search-button-icon-color;
     box-shadow: 2px 4px 2px 0px #33180a;
 
@@ -514,9 +365,7 @@ nav {
 .search-buttons__button__element--style:hover,
 .search-buttons__button__element--style:focus {
 
-  
     box-shadow: 2px 4px 2px 0px #33180a;;
-
 
 }
 
@@ -531,37 +380,8 @@ nav {
 .go-button {
 
     position: relative;
-    //top: 1rem;
     padding-bottom: 1rem;
     margin-top: 1.5rem;
-
-   /* margin-top: 0rem;
-    padding-top: 2rem;
-    width: 100vw;
-
-    @include mobile-landscape {
-
-        padding-top: 2rem;
-    }
-
-    @include tablet {
-        padding-top: 0rem;
-        margin-top: 2rem;
-    }
-
-    @include desktop {
-
-        margin-top: 2rem;
-    }
-
-
-    @include xlarge {
-
-       
-        margin-top: 3rem;
-        
-    }*/
-
    
 }
 
@@ -639,7 +459,6 @@ a {
     border-radius: 0.3rem;
     border: 1px solid #000;
     margin-bottom: 1.5rem;
-    
     font-family: $button-font;
     font-size: 1.2rem;
     text-align: left;
@@ -665,16 +484,9 @@ a {
     display: none;
 }
 
-.all-results {
 
-    //height: auto;
-    //width: 100vw;
-    //overflow: visible;
-}
 .results {
 
-    //height: auto;
-    //width: 100vw;
     position: relative;
     overflow: visible;
     display: flex;
@@ -688,7 +500,6 @@ a {
 
 .all-results--background {
 
-   // background-color: #0e0920;
     padding-bottom: 9rem;
 }
 
@@ -710,7 +521,6 @@ a {
         height: 40rem;
     }
 
-   
 }
 
 #map {
@@ -726,10 +536,8 @@ a {
     font-family: $text-font;
     font-size: 1rem;
     position: relative;
-    //top: 5rem;
     width: 25rem;
     height: auto;
-    //left: 25vw;
     text-align: center;
 
     @include tablet {
@@ -873,7 +681,6 @@ a {
     border: 1px solid #0e0920;
     width: 16rem;
     position: relative;
-  //  top: 11vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -900,7 +707,7 @@ a {
     @include xlarge {
         
         width: 26rem;
-       // top: 18vh;
+        
     }
 }
 
