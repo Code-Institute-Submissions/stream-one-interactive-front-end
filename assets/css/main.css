@@ -90,7 +90,6 @@ nav {
 
 .bubble-image {
   opacity: 0;
-  visibility: hidden;
   height: 6rem;
   position: relative;
   left: 66%;
@@ -149,61 +148,6 @@ nav {
   @media (min-width: 1499px) {
     .search-form {
       justify-content: center; } }
-
-/*.search-container {
-
-    border-top: 0.5rem solid #f9e5e6;
-    //display: flex;
-    //flex-direction: column;
-    //flex-grow: 1;
-    //display: flex;
-    //flex-basis: 32rem;
-    //justify-content: center;
-    //opacity: 0;
-    //position: relative;
-  
-    //padding: 2.5rem 0rem;
-    //background-color: #0e091f;
-    //flex-grow: 1;
-    //flex-shrink: 1;
-    //border-top: 0.5rem solid #f9e5e6;
-    //display: flex;
-    //align-content: center;
-
-    /*animation-name: fade-up;
-    animation-timing-function: ease-in;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-          
-    @include tablet {
-
-        flex-basis: 32rem;
-    }
-
-    @include large {
-
-        flex-basis: 20rem;
-    }
-   
-}
-*/
-/*.instructions {
-
-    visibility: hidden;
-    font-family: $button-font;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 0;
-
-    
-}*/
-.search-buttons, .search-bar, .go-button {
-  /* display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;*/ }
 
 .search-buttons {
   display: flex;
@@ -331,33 +275,7 @@ nav {
 .go-button {
   position: relative;
   padding-bottom: 1rem;
-  margin-top: 1.5rem;
-   /* margin-top: 0rem;
-    padding-top: 2rem;
-    width: 100vw;
-
-    @include mobile-landscape {
-
-        padding-top: 2rem;
-    }
-
-    @include tablet {
-        padding-top: 0rem;
-        margin-top: 2rem;
-    }
-
-    @include desktop {
-
-        margin-top: 2rem;
-    }
-
-
-    @include xlarge {
-
-       
-        margin-top: 3rem;
-        
-    }*/ }
+  margin-top: 1.5rem; }
 
 .go-button__button--style {
   width: 6rem;
