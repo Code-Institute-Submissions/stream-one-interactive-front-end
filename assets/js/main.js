@@ -327,13 +327,13 @@ $(document).ready(function(){
 
                         $(".bubble-image").removeClass("img-click");
                     
-                        setTimeout(function(){
+                       // setTimeout(function(){
 
                             $(".bubble-image").attr("src", imageSelect);
                             $(".bubble-image").addClass("img-click");
                             
 
-                        }, 400);
+                      //  }, 400);
 
                       //  console.log(this);
                     
