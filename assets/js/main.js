@@ -326,18 +326,10 @@ $(document).ready(function(){
                         buttonParam = $(this).attr("value").toString();
 
                         $(".bubble-image").removeClass("img-click");
-
+                    
                         setTimeout(function(){
 
                             $(".bubble-image").attr("src", imageSelect);
-                          
-                            
-
-                        }, 200);
-
-                        setTimeout(function(){
-
-                          
                             $(".bubble-image").addClass("img-click");
                             
 
