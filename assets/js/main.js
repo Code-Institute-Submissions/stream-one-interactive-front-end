@@ -330,6 +330,14 @@ $(document).ready(function(){
                         setTimeout(function(){
 
                             $(".bubble-image").attr("src", imageSelect);
+                          
+                            
+
+                        }, 200);
+
+                        setTimeout(function(){
+
+                          
                             $(".bubble-image").addClass("img-click");
                             
 
