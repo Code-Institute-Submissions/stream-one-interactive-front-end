@@ -3,7 +3,7 @@
 
 (function(){
 
-    // image preload courtesy of https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/ //
+    /* image preload courtesy of https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/ //
 
     if (document.images) {
 
@@ -21,7 +21,7 @@
         shopImage.src = "assets/images/shop-button.gif";
         groomImage.src = "assets/images/groom-button.gif";
 
-    }
+    }*/
     
 
     // UI VARIABLES //

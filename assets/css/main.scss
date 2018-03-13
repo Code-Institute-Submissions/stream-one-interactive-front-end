@@ -4,8 +4,14 @@
 
 
 
-
 //-------------------- LANDING PAGE --------------------------//
+
+.image-preload {
+
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
 .body-background {
 
     background-color: #0e0920;
