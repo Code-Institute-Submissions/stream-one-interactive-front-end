@@ -12,6 +12,8 @@
     left: -9999px;
     top: -9999px;
 }
+
+
 .body-background {
 
     background-color: #0e0920;
@@ -129,16 +131,16 @@ nav {
     }
 }
 
-.bubble-image {
+.background__bubble-image {
 
     opacity: 0;
-    //visibility: hidden;
     height: 6rem;
     position: relative;
     left: 66%;
     -webkit-transform: translate3d(0, 0, 0);
     transition-delay:0.4s;
     transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    image-rendering:-webkit-optimize-contrast;
 
     @include mobile-landscape{
 
@@ -163,7 +165,7 @@ nav {
     @include desktop {
 
         left: 58%;
-        height: 7rem;
+        height: 8rem;
        
     }
 
@@ -171,7 +173,7 @@ nav {
     @include large {
 
         left: 57%;
-        height: 7rem;
+        height: 8rem;
         top: 1rem;
 
     }

@@ -37,7 +37,7 @@
     const resultSection = $("section");
     const resetButton = $("#reset-button");
     const searchButtonStyle = $(".search-buttons__button__element--style");
-    const thoughtBubble = $(".bubble-image");
+    const thoughtBubble = $(".background__bubble-image");
     
 
     // ON PAGE LOAD CLEAR SEARCH FIELD WITH EMPTY STRING //
