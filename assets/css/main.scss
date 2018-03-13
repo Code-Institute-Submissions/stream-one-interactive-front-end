@@ -230,7 +230,7 @@ nav {
 // --------------- SEARCH BUTTONS ---------------//
 
 
-.search-buttons {
+.search-form__search-buttons {
 
     display: flex;
     flex-direction: row;
@@ -240,7 +240,7 @@ nav {
    
 }
 
-.search-buttons--background {
+.search-form__search-buttons--background {
 
     background-color: #fdeae86e;
     @include search-buttons-border;
@@ -270,7 +270,7 @@ nav {
    
 }
 
-.search-buttons__button {
+.search-form__button {
 
     margin: 1.5rem;
     display: flex;
@@ -278,7 +278,7 @@ nav {
     flex-grow: 1;
     justify-content: space-evenly;
 
-    .search-buttons__button__text {
+    .search-form__button-text {
 
     margin-top: .3rem;
     margin-bottom: .3rem;
@@ -294,7 +294,7 @@ nav {
     }
 }
 
-.search-buttons__button__element--style {
+.search-form__button--style {
 
 
     @include search-button-xs-mobile;
@@ -347,7 +347,7 @@ nav {
 }
 
 
-.search-buttons__icon--style {
+.search-form__icon--style {
 
     display: block;
     font-size: 1.6rem;
@@ -355,7 +355,7 @@ nav {
     transition: $search-button-text-transition;
 }
 
-.search-buttons__icon--clicked {
+.search-form__icon--clicked {
     
     
     color: $search-button-background;
@@ -370,8 +370,8 @@ nav {
 }
 
 
-.search-buttons__button__element--style:hover,
-.search-buttons__button__element--style:focus {
+.search-form__button--style:hover,
+.search-form__button--style:focus {
 
     box-shadow: 2px 4px 2px 0px #33180a;;
 
@@ -385,7 +385,7 @@ nav {
 
 //------------ GO BUTTON ------------------//
 
-.go-button {
+.search-form__go {
 
     position: relative;
     padding-bottom: 1rem;
@@ -396,7 +396,7 @@ nav {
 
 
 
-.go-button__button--style {
+.search-form__go-button--style {
 
 
     @include go-button-mobile;
@@ -442,8 +442,8 @@ a {
     text-decoration: none;
 }
 
-.go-button__button--style:hover,
-.go-button__button--style:focus {
+.search-form__go-button--style:hover,
+.search-form__go-button--style:focus {
 
     box-shadow: 2px 3px 3px 2px #24110c;
  
@@ -460,7 +460,7 @@ a {
 }
 // ----------------- SEARCH BAR ----------------//
 
-.search-bar__input {
+.search-form__input {
 
     width: 20rem;
     height: 2rem;
@@ -493,7 +493,7 @@ a {
 }
 
 
-.results {
+.all-results__results {
 
     position: relative;
     overflow: visible;
@@ -511,7 +511,7 @@ a {
     padding-bottom: 9rem;
 }
 
-.results__display {
+.all-results__display {
 
     width: 27rem;
     height: 20rem;
@@ -539,7 +539,7 @@ a {
         
 }
 
-.results-text {
+.all-results__text {
 
     font-family: $text-font;
     font-size: 1rem;
@@ -565,9 +565,9 @@ a {
     }
 }
 
-.results-text--style {
+.all-results__text--style {
 
-    display: none;
+   // display: none;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #fff;
@@ -575,7 +575,7 @@ a {
 
 
 }
-.map-instructions {
+.all-results__map-instructions {
 
     position: relative;
     text-align: center;
@@ -585,7 +585,7 @@ a {
     color: #fff;
 }
 
-.reset {
+.all-results__reset {
 
     display: flex;
     flex-direction: row;
@@ -605,7 +605,7 @@ a {
 
 }
 
-.reset__button--style {
+.all-results__reset-button--style {
 
     width: 6rem;
     height: 6rem;
@@ -630,14 +630,14 @@ a {
     }
 }
 
-.reset:hover,
-.reset:focus {
+.all-results__reset:hover,
+.all-results__reset:focus {
 
     cursor: pointer;
 
 }
 
-.reset-click {
+.all-results__reset-click {
 
     border: 2px solid #dd1616;
     color: #dd1616;
@@ -719,7 +719,7 @@ a {
     }
 }
 
-.modal__content__close {
+.modal__content-close {
     
     color: #171520cc;
     float: right;
@@ -728,14 +728,14 @@ a {
     transition: color, 0.3s, ease-in;
 }
 
-.modal__content__close:hover,
-.modal__content__close:focus {
+.modal__content-close:hover,
+.modal__content-close:focus {
 
     color: #0e0920;
     cursor: pointer;
 }
 
-.modal__content__text {
+.modal__content-text {
 
         font-family: $text-font;
         color: #0e0920

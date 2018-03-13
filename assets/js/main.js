@@ -3,27 +3,6 @@
 
 (function(){
 
-    /* image preload courtesy of https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/ //
-
-    if (document.images) {
-
-       const walkImage = new Image();
-       const sitImage= new Image();
-       const boardImage = new Image();
-       const vetImage = new Image();
-       const shopImage = new Image();
-       const groomImage = new Image();
-
-        walkImage.src = "assets/images/walk-button.gif";
-        sitImage.src = "assets/images/sit-button.gif";
-        boardImage.src = "assets/images/board-button.gif";
-        vetImage.src = "assets/images/vet-button.gif";
-        shopImage.src = "assets/images/shop-button.gif";
-        groomImage.src = "assets/images/groom-button.gif";
-
-    }*/
-    
-
     // UI VARIABLES //
 
     let userInput = "";
@@ -32,11 +11,11 @@
     // DOM QUERY VARIABLES //
 
     const resultText = $("#results-text-show");
-    const goButtonClick = $(".go-button__button");
+    const goButtonClick = $(".search-form__go-button");
     const goButton = $("#go");
     const resultSection = $("section");
     const resetButton = $("#reset-button");
-    const searchButtonStyle = $(".search-buttons__button__element--style");
+    const searchButtonStyle = $(".search-form__button--style");
     const thoughtBubble = $(".background__bubble-image");
     
 
@@ -51,8 +30,8 @@
 
     //-------------------- AUTO COMPLETE - Restricted to UK and Ireland ----------------------------------//
 
-    var input = searchBar;
-    var options = {
+    let input = searchBar;
+    let options = {
 
         types: ["(cities)"],
         componentRestrictions: {
@@ -72,14 +51,14 @@
     function sendSearch(){
 
         
-        var geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+userInput.toString()+"&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs";
+        let geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+userInput.toString()+"&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs";
 
 
         //--------HTTP REQUEST-------------------//
 
         function getLocation(geoUrl, locationData) { 
             
-            var xhr = new XMLHttpRequest(); 
+            let xhr = new XMLHttpRequest(); 
             
             xhr.open("GET", geoUrl); 
             xhr.send(); 
@@ -245,7 +224,7 @@
                             
                             }
 
-                            resultText.addClass("results-text--style"); 
+                            resultText.addClass("all-results__text--style"); 
                             resultText.delay(200).slideDown(400);
 
                         } 
@@ -280,7 +259,7 @@
 
         goButtonClick.addClass("go-click");
         resultSection.slideDown("fast");
-        resetButton.removeClass("reset-click");
+        resetButton.removeClass("all-results__reset");
 
     }
 
@@ -311,9 +290,9 @@
 
         searchButtonStyle.removeClass("search-button-clicked");
         searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
+        searchButtonStyle.children("i").removeClass("search-form__icon--clicked");
         goButtonClick.removeClass("go-click");
-        resetButton.addClass("reset-click");
+        resetButton.addClass("all-results__reset-click");
 
     }
     //------------------ HALF RESET FUNCTION ------------//
@@ -336,11 +315,11 @@
     if ($(this).hasClass("search-button-clicked")) {
 
         $(this).removeClass("search-button-clicked");
-        $(this).children("i").removeClass("search-buttons__icon--clicked");
+        $(this).children("i").removeClass("search-form__icon--clicked");
         $(this).children("span").removeAttr("id");
 
         searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
+        searchButtonStyle.children("i").removeClass("search-form__icon--clicked");
 
         buttonParam = "";
         
@@ -351,10 +330,10 @@
 
         searchButtonStyle.removeClass("search-button-clicked");
         searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
+        searchButtonStyle.children("i").removeClass("search-form__icon--clicked");
 
         $(this).addClass("search-button-clicked");
-        $(this).children("i").addClass("search-buttons__icon--clicked");
+        $(this).children("i").addClass("search-form__icon--clicked");
         $(this).children("span").attr("id","search-buttons__text--clicked");
 
         buttonParam = $(this).attr("value").toString();
@@ -388,8 +367,8 @@
         // variables to determine content of modal //
 
         const modal = $(".modal");
-        const close = $(".modal__content__close");
-        const modalText = $(".modal__content__text");
+        const close = $(".modal__content-close");
+        const modalText = $(".modal__content-text");
         const modalTextObj = {
 
             enterBoth: "Please enter a location and select a Pet Stop",

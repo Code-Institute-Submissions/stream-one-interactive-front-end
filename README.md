@@ -31,7 +31,7 @@ Details of the UX design and research process is available in the repo "document
 
 ## Build Approach
 
-1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time around. I wanted to expand my knowledge of CSS and build everything from scratch, using Flexbox as the grid system for the project. 
+1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time. I wanted to expand my knowledge of CSS and build everything from scratch, using Flexbox as the grid system for the project. 
 2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled into. 
 3. The Google Places API is called to retreive data according to user input. The user has a choice of 6 Pet Stops to choose from, along with a location of their choosing. Data is populated dynamically below the landing page. Information includes company name, address, website, phone number, overall rating and reviews if available. 
 4. I have tried to code the applciation defensively as possible. Taking into account user error when making decisions on functionality. 
@@ -39,13 +39,15 @@ Details of the UX design and research process is available in the repo "document
 
 The aim in eliminating Bootstrap usage was to push myself to write entirely my own CSS, using SASS/SCSS to achieve this. When approaching JavaScript, I decided to use vanilla JS to code as much of the "functional" aspects of the application (API calls etc) as possible. Then use jQuery to implement JS events and effects. The aim was to combine the two and get a handle on both approaches to scripting. 
 
+I used http://pleeease.io/play/ to generate vendor prefixes once the coding of the appplication was complete. This allowed me to concentrate on writing clean CSS until the end of the project and ready for submission/deployment.
+
 ## Testing
 
 Manual and technical testing of the site was undertaken and passed. 
 
 1. Chrome/Firefox dev tools used throughout to test responsiveness and function.
 2. Testing the site across different devices in real world scenarios. Mobiles, Tablets, Laptops, and Desktops.
-3. Giving the applcation to third party users to get feedback, and see if they could "break" it.
+3. Giving the applcation to third party users to get feedback, and see if they could "break" the application.
 4. W3C code validator to pass HTML,CSS and JS. 
 
 ## Authors

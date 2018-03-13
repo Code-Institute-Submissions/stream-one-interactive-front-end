@@ -1,126 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pet Stop</title>
-    <link rel="icon" href="assets/images/paw.ico" type="image/ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Pontano+Sans|Quicksand:300,400,500,700" rel="stylesheet"> 
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Pet Stop</title>
+        <link rel="icon" href="assets/images/paw.ico" type="image/ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Pontano+Sans|Quicksand:300,400,500,700" rel="stylesheet"> 
+        <link rel="stylesheet" href="assets/css/vendor.css" type="text/css"> 
     
-   <!--<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>-->
-   
-</head>
-<body class="body-background">
-    <div class="image-preload">
-        <img src="assets/images/walk-button.gif"/>
-        <img src="assets/images/sit-button.gif"/>
-        <img src="assets/images/board-button.gif"/>
-        <img src="assets/images/vet-button.gif"/>
-        <img src="assets/images/shop-button.gif"/>
-        <img src="assets/images/groom-button.gif"/>
-    </div>
-    <div class="flex-container">
-        <nav class="nav nav--style">
-            <p class ="nav__navtext">Pet Stop.</p>
-        </nav>
-        <div class="background">
-                <img class="background__bubble-image" src="" alt="thought bubble">
-        </div>  
-      
+    </head>
+    <body class="body-background">
+        <div class="image-preload">
+            <img src="assets/images/walk-button.gif"/>
+            <img src="assets/images/sit-button.gif"/>
+            <img src="assets/images/board-button.gif"/>
+            <img src="assets/images/vet-button.gif"/>
+            <img src="assets/images/shop-button.gif"/>
+            <img src="assets/images/groom-button.gif"/>
+        </div>
+        <div class="flex-container">
+            <nav class="nav nav--style">
+                <p class ="nav__navtext">Pet Stop.</p>
+            </nav>
+            <div class="background">
+                    <img class="background__bubble-image" src="" alt="thought bubble">
+            </div>  
             <form class="search-form">
                 <div class="search-form__search-bar search-form__search-bar--style">
-                    <input id="user-input" class="search-bar__input" type="text" placeholder="Location">
+                    <input id="user-input" class="search-form__input" type="text" placeholder="Location">
                 </div>
-                <div class="search-buttons search-buttons--background">
-                    <div class="search-buttons__button search-buttons__button--style">
-                        <button data-name="walk-button"  type="button" value="dog walker" class="search-buttons__button__element--style">
-                            
-                            <i class="fa fa-paw search-buttons__icon--style" aria-hidden="true"></i>
-                
-                            <span class="search-buttons__button__text">Walk</span>
+                <div class="search-form__search-buttons search-form__search-buttons--background">
+                    <div class="search-form__button">
+                        <button data-name="walk-button"  type="button" value="dog walker" class="search-form__button--style">
+                            <i class="fa fa-paw search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Walk</span>
                         </button>
                     </div>
-                    <div class="search-buttons__button">
-                        <button data-name="sit-button"  type="button" value="dog sitter, dog sitting, pet sitting" class="search-buttons__button__element--style">
-                        
-                            <i class="fa fa-home search-buttons__icon--style" aria-hidden="true"></i>
-                        
-                            <span class="search-buttons__button__text">Sit</span>
+                    <div class="search-form__button">
+                        <button data-name="sit-button"  type="button" value="dog sitter, dog sitting, pet sitting" class="search-form__button--style">
+                            <i class="fa fa-home search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Sit</span>
                         </button>
                     </div>
-                    <div class="search-buttons__button">
-                        <button data-name="board-button"  type="button" value="dog kennels, cattery" class="search-buttons__button__element--style">
-                            
-                            <i class="fa fa-bed search-buttons__icon--style" aria-hidden="true"></i>
-                        
-                            <span class="search-buttons__button__text">Board</span>
+                    <div class="search-form__button">
+                        <button data-name="board-button"  type="button" value="dog kennels, cattery" class="search-form__button--style">
+                            <i class="fa fa-bed search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Board</span>
                         </button>
                     </div>
-                    <div class="search-buttons__button">
-                        <button data-name="vet-button"  type="button" value="vet" class="search-buttons__button__element--style">
-                            
-                            <i class="fa fa-stethoscope search-buttons__icon--style" aria-hidden="true"></i>
-                        
-                            <span class="search-buttons__button__text">Vet</span>
+                    <div class="search-form__button">
+                        <button data-name="vet-button"  type="button" value="vet" class="search-form__button--style">
+                            <i class="fa fa-stethoscope search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Vet</span>
                         </button>
                     </div>
-                    <div class="search-buttons__button">
-                        <button data-name="shop-button"  type="button" value="pet shop" class="search-buttons__button__element--style">
-                            
-                            <i class="fa fa-shopping-basket search-buttons__icon--style" aria-hidden="true"></i>
-                        
-                            <span class="search-buttons__button__text">Shop</span>
+                    <div class="search-form__button">
+                        <button data-name="shop-button"  type="button" value="pet shop" class="search-form__button--style">
+                            <i class="fa fa-shopping-basket search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Shop</span>
                         </button>
                     </div>  
-                    <div class="search-buttons__button">
-                        <button data-name="groom-button"  type="button" value="dog groomer, pet grooming" class="search-buttons__button__element--style">
-                            
-                                <i class="fa fa-scissors search-buttons__icon--style" aria-hidden="true"></i>
-                            
-                            <span class="search-buttons__button__text">Groom</span>
+                    <div class="search-form__button">
+                        <button data-name="groom-button"  type="button" value="dog groomer, pet grooming" class="search-form__button--style">
+                                <i class="fa fa-scissors search-form__icon--style" aria-hidden="true"></i>
+                            <span class="search-form__button-text">Groom</span>
                         </button>
                     </div>
                 </div>
-                <div class="go-button">
-                    <a href='#scrollTo'><button id="go" type="button" class="go-button__button go-button__button--style">GO!</button></a>
+                <div class="search-form__go">
+                    <a href='#scrollTo'><button id="go" type="button" class="search-form__go-button search-form__go-button--style">GO!</button></a>
                 </div>
             </form>  
-        
-   </div>
-    <section id="scrollTo" class="hide-results">
-        <div class="all-results all-results--background">
-            <div class="results">
-                <div class="results__display results__display--style">
-                    <div id="map"></div>
-                </div>
-                <p class="map-instructions">Click on a marker for more info.</p>
-                <div id="results-text-show" class="results-text">
-                    <div id="text" class="results-text__text results-text__text--style"></div>
-                </div>
-                <div class="reset">
-                    <button id="reset-button" class = "reset__button reset__button--style" type="button" value="reset">AGAIN!</button>
-                </div>
-            </div>  
-        </div>
-    </section>
-    <div class="modal">
-        <div class="modal__content">
-            <p class="modal__content__text"></p>
-            <span class="modal__content__close">&times;</span>  
-        </div>
-    </div>  
+    </div>
+        <section id="scrollTo" class="hide-results">
+            <div class="all-results all-results--background">
+                <div class="all-results__results">
+                    <div class="all-results__display all-results__display--style">
+                        <div id="map"></div>
+                    </div>
+                    <p class="all-results__map-instructions">Click on a marker for more info.</p>
+                    <div id="results-text-show" class="all-results__text">
+                        <div id="text" class="all-results__text--style"></div>
+                    </div>
+                    <div class="all-results__reset">
+                        <button id="reset-button" class = "all-results__reset-button all-results__reset-button--style" type="button" value="reset">AGAIN!</button>
+                    </div>
+                </div>  
+            </div>
+        </section>
+        <div class="modal">
+            <div class="modal__content">
+                <p class="modal__content-text"></p>
+                <span class="modal__content-close">&times;</span>  
+            </div>
+        </div>  
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs&libraries=places"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="assets/js/main.js"></script>
-   
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs&libraries=places"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="assets/js/main.js"></script>
     
-    
-</body>
-
+    </body>
 
 </html>
 
