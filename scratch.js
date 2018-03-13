@@ -1,5 +1,8 @@
 
-//---------------------- FUNCTIONAL SCRIPTS --------------------------//
+//---------------------- FUNCTIONAL SCRIPTS (VANILLA JS) --------------------------//
+
+
+
 
 (function(){
 
@@ -13,25 +16,18 @@
 
     // DOM QUERY VARIABLES //
 
-    const resultText = $("#results-text-show");
-    const goButtonClick = $(".go-button__button");
-    const goButton = $("#go");
-    const resultSection = $("section");
-    const resetButton = $("#reset-button");
-    const searchButtonStyle = $(".search-buttons__button__element--style");
-    const thoughtBubble = $(".bubble-image");
-    
+    const searchBar = document.getElementById("user-input");
+    const resultsText = document.getElementById("results-text-show");
+
+
 
     // ON PAGE LOAD CLEAR SEARCH FIELD WITH EMPTY STRING //
-
-
-    const searchBar = document.getElementById("user-input");
 
     searchBar.value = "";
 
     //----------------------------------------------------------------------//
 
-    //-------------------- AUTO COMPLETE - Restricted to UK and Ireland ----------------------------------//
+    //-------------------- AUTO COMPLETE ----------------------------------//
 
     var input = searchBar;
     var options = {
@@ -140,8 +136,6 @@
 
             infowindow = new google.maps.InfoWindow();
 
-//---- Modified Code from Stack Overflow "https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api" -----//
-
             function createMarker(place) {
                 var placeLoc = place.geometry.location;
                 var marker = new google.maps.Marker({
@@ -149,7 +143,7 @@
                 position: place.geometry.location,
                 });
 
-            
+            //---- Modified Code from Stack Overflow "https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api" -----//
 
                 marker.addListener("click", function() {
 
@@ -157,7 +151,6 @@
                     reference: place.reference
                     };
                 
-                    
                     service.getDetails(request, function(details, status) {
                     
                     // ---- retrieve all reviews and create new array --------- //
@@ -189,7 +182,8 @@
                             }
                         }
 
-
+                                //reviewArray.push(emptyReview[0]);
+                            //console.log(details.reviews);
             // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
                                 
                             var info = {
@@ -227,8 +221,8 @@
                             
                             }
 
-                            resultText.addClass("results-text--style"); 
-                            resultText.delay(200).slideDown(400);
+                            $(resultsText).addClass("results-text--style"); 
+                            $(resultsText).delay(200).slideDown(400);
 
                         } 
                     
@@ -249,126 +243,129 @@
 
     }
 
+
+
     //---------------------- UI SCRIPTS (JQUERY) ---------------------------------//
 
 
     //---------------- GO FUNCTION ------------ //
 
 
-
     function goAll() {
 
         sendSearch();
-
-        goButtonClick.addClass("go-click");
-        resultSection.slideDown("fast");
-        resetButton.removeClass("reset-click");
-
-    }
-
-
-    //----------------- RESET FUNCTIONS -----------//
-
-    function resetThoughtBubble() { 
-
-        thoughtBubble.removeClass("img-click");
+        $(".go-button__button").addClass("go-click");
+        
+        $("section").slideDown("fast");
+        $("#reset-button").removeClass("reset-click");
 
     }
-   
-    function resetUI() {
 
-        searchBar.value = "";
+
+    //----------------- RESET FUNCTION -----------//
+
+    function resetAll() { 
+
+        $("#user-input").val("");
+
         userInput="";
         buttonParam="";
-    }
+        
+        $("section").attr("id", "scrollTo");
 
-    function resetResults() {
+        $("#results-text-show").delay(200).slideUp(400);
+        $("section").delay(800).slideUp(400);
 
-        resultSection.attr("id", "scrollTo");
-        resultText.delay(200).slideUp(400);
-        resultSection.delay(800).slideUp(400);
-    }
+        $(".search-buttons__button__element--style").removeClass("search-button-clicked");
+        $(".search-buttons__button__element--style").children("span").removeAttr("id");
+        $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
 
-    function resetButtons() {
+        $(".go-button__button").removeClass("go-click");
 
-        searchButtonStyle.removeClass("search-button-clicked");
-        searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
-        goButtonClick.removeClass("go-click");
-        resetButton.addClass("reset-click");
+        $(".bubble-image").removeClass("img-click");
+
+        //$("#reset-button").removeClass("reset__button--style");
+        $("#reset-button").addClass("reset-click");
+
+    //$(" button > i ").removeAttr("id");
 
     }
     //------------------ HALF RESET FUNCTION ------------//
 
     function stylesReset() {
 
-        resultText.delay(200).slideUp(400);
-        goButtonClick.removeClass("go-click");
+        $("#results-text-show").delay(200).slideUp(400);
+    //$("section").delay(800).slideUp(400);
+        $(".go-button__button").removeClass("go-click");
     }
     //---------------------------------------------------//
 
-    // PET STOP BUTTON STYLE SCRIPTS //
-
-    searchButtonStyle.on("click", function(event){
 
 
-    let imageSelect = "";
+
     
-
-    imageSelect= "assets/images/"+ event.currentTarget.dataset.name + ".gif";
-    
-    
-    if ($(this).hasClass("search-button-clicked")) {
-
-        $(this).removeClass("search-button-clicked");
-        $(this).children("i").removeClass("search-buttons__icon--clicked");
-        $(this).children("span").removeAttr("id");
-
-        searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
-
-        buttonParam = "";
         
-        thoughtBubble.removeClass("img-click");
-        //  console.log(this);
+        $(".search-buttons__button__element--style").on("click", function(event){
 
-    } else {
 
-        searchButtonStyle.removeClass("search-button-clicked");
-        searchButtonStyle.children("span").removeAttr("id");
-        searchButtonStyle.children("i").removeClass("search-buttons__icon--clicked");
+        let imageSelect = "";
+        
 
-        $(this).addClass("search-button-clicked");
-        $(this).children("i").addClass("search-buttons__icon--clicked");
-        $(this).children("span").attr("id","search-buttons__text--clicked");
+        imageSelect= "assets/images/"+ event.currentTarget.dataset.name + ".gif";
+        
+        
+        if ($(this).hasClass("search-button-clicked")) {
 
-        buttonParam = $(this).attr("value").toString();
+            $(this).removeClass("search-button-clicked");
+            $(".search-buttons__button__element--style").children("span").removeAttr("id");
+            $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
+            $(this).children("i").removeClass("search-buttons__icon--clicked");
+            $(this).children("span").removeAttr("id");
 
-        thoughtBubble.removeClass("img-click");
-    
-        setTimeout(function(){
-
-            thoughtBubble.attr("src", imageSelect);
-            thoughtBubble.addClass("img-click");
+            buttonParam = "";
             
+            $(".bubble-image").removeClass("img-click");
+            //  console.log(this);
 
-            }, 400);
+        } else {
 
-        
-        }
+            $(".search-buttons__button__element--style").removeClass("search-button-clicked");
+            $(".search-buttons__button__element--style").children("span").removeAttr("id");
+            $(".search-buttons__button__element--style").children("i").removeClass("search-buttons__icon--clicked");
+            $(this).addClass("search-button-clicked");
+            $(this).children("i").addClass("search-buttons__icon--clicked");
+            $(this).children("span").attr("id","search-buttons__text--clicked");
 
-        stylesReset();
+                buttonParam = $(this).attr("value").toString();
+
+                $(".bubble-image").removeClass("img-click");
+            
+                setTimeout(function(){
+
+                    $(".bubble-image").attr("src", imageSelect);
+                    $(".bubble-image").addClass("img-click");
+                    
+
+                }, 400);
+
+                //  console.log(this);
+            
+                
+            }
+
     
-    });
+        stylesReset();
+        
+        });
 
         
 
     //------ GO BUTTON -----//
 
    
-    goButtonClick.on("click", function (){
+    $(".go-button__button").on("click", function (){
 
-        userInput = $(searchBar).val();
+        userInput = $("#user-input").val();
         
         // variables to determine content of modal //
 
@@ -396,66 +393,69 @@
         })
     }
 
+        if ((userInput == "") && (buttonParam == "")){
 
-    if ((userInput == "") && (buttonParam == "")){
+            modalText.html(modalTextObj.enterBoth);
 
-        modalText.html(modalTextObj.enterBoth);
+            myModal();
 
-        myModal();
-
-        // console.log(typeof(modalTextObj.enterBoth));
-        
-
-    } else if((userInput == "") && (buttonParam !== "")){
-
-        modalText.html(modalTextObj.enterLocation);
-
-        myModal();
-
-        
-
-    } else if ((userInput !== "") && (buttonParam == "")){
-
-        modalText.html(modalTextObj.selectStop);
-
-        myModal();
-
-        //alert("Please enter a Pet Stop");
-    
-    } else if ((userInput !== "") && (buttonParam !== "")) {
-
-            if (goButton.hasClass("go-click")){ 
-
-                goButton.addClass("go-click");   
+            // console.log(typeof(modalTextObj.enterBoth));
             
 
-            } else if ((goButton.attr("class") !== "go-click") && (resultSection.attr("id") == "scrollTo")) {
+        } else if((userInput == "") && (buttonParam !== "")){
 
-                    goAll();
+            modalText.html(modalTextObj.enterLocation);
+
+            myModal();
+
+            
+
+        } else if ((userInput !== "") && (buttonParam == "")){
+
+            modalText.html(modalTextObj.selectStop);
+
+            myModal();
+
+            //alert("Please enter a Pet Stop");
+        
+        } else if ((userInput !== "") && (buttonParam !== "")) {
+
+                if ($("#go").hasClass("go-click")){ 
+
+                    $("#go").addClass("go-click");   
                 
-                    $("html, body").delay(600).animate({
-                        scrollTop: $($(this).parent().attr("href")).offset().top
-                        }, 400);
 
-                    setTimeout(function(){
+        } else if (($("#go").attr("class") !== "go-click") && ($("section").attr("id") == "scrollTo")) {
 
-                        resultSection.removeAttr("id");
-                    
-                    },1000);
+                goAll();
+            
+                $("html, body").delay(600).animate({
+                    scrollTop: $($(this).parent().attr("href")).offset().top
+                    }, 400);
 
+                setTimeout(function(){
+
+                    $("section").removeAttr("id");
                 
-            } else if ((goButton.attr("class") !== "go-click") && (resultSection.attr("id") == undefined)) {
+                },1000);
 
-                    goAll();
-                
-                }
+            
+        } else if (($("#go").attr("class") !== "go-click") && ($("section").attr("id") == undefined)) {
+
+                goAll();
+            
+            }
         }
     });
 
 
+
+
+
 //------- INPUT CLICK RESET STYLES --------//
 
-    $(searchBar).on("click", function(){
+
+    $("#user-input").on("click", function(){
 
         stylesReset();
 
@@ -464,14 +464,17 @@
 
 // RESET SEARCH  //
 
-    resetButton.on("click", function(){
 
-        resetThoughtBubble();
-        resetUI();
-        resetResults();
-        resetButtons();
+
+    $("#reset-button").on("click", function(){
+
+        
+    resetAll();
+
     
     });
    
+    
+
 })();
 
