@@ -3,7 +3,25 @@
 
 (function(){
 
-    
+    // image preload courtesy of https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/ //
+
+    if (document.images) {
+
+       const walkImage = new Image();
+       const sitImage= new Image();
+       const boardImage = new Image();
+       const vetImage = new Image();
+       const shopImage = new Image();
+       const groomImage = new Image();
+
+        walkImage.src = "assets/images/walk-button.gif";
+        sitImage.src = "assets/images/sit-button.gif";
+        boardImage.src = "assets/images/board-button.gif";
+        vetImage.src = "assets/images/vet-button.gif";
+        shopImage.src = "assets/images/shop-button.gif";
+        groomImage.src = "assets/images/groom-button.gif";
+
+    }
     
 
     // UI VARIABLES //
@@ -307,10 +325,7 @@
     }
     //---------------------------------------------------//
 
-    // PET STOP BUTTON STYLE SCRIPTS //
-
     searchButtonStyle.on("click", function(event){
-
 
     let imageSelect = "";
     
