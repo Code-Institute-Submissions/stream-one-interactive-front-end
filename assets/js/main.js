@@ -164,25 +164,26 @@
                         if (status == google.maps.places.PlacesServiceStatus.OK){
 
 
-                        if (details.reviews == undefined) {
+                            if (details.reviews == undefined) {
 
-                                reviewArray.push("No Reviews for this company"); //----- if no reviews insert string ----//
+                                    reviewArray.push("The author didn't leave a review"); //----- if no reviews insert string ----//
 
-                        } else {
+                            } else {
 
-                                for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
+                                    for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
 
-                                if (details.reviews[i].text.length !== 0) {
+                                        if (details.reviews[i].text.length !== 0) {
 
-                                    reviewArray.push(details.reviews[i].text); //----- check if the array item isn"t empty -------//
+                                            reviewArray.push(details.reviews[i].text); //----- check if the array item isn"t empty -------//
 
-                                    
-                                } else if (details.reviews[i].text.length == 0) {
+                                            
+                                        } else if (details.reviews[i].text.length == 0) {
 
-                                    // var emptyReview = [];
-                                    reviewArray.push("No Reviews for this company");
+                                            // var emptyReview = [];
+                                            reviewArray.push("The author didn't leave a review");
 
-                                }
+                                    }
+                                    console.log(details.reviews);
                             }
                         }
 
