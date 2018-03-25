@@ -78,11 +78,11 @@
 
             getLocation(geoUrl, function(locationData){
 
-                var geoData = locationData.results[0].geometry.location;
-                var lat = geoData.lat.toString();
-                var long = geoData.lng.toString();
+                let geoData = locationData.results[0].geometry.location;
+                let lat = geoData.lat.toString();
+                let long = geoData.lng.toString();
 
-                var latLong = [lat, long];
+                let latLong = [lat, long];
                 callback(latLong);
             });
         }
@@ -93,14 +93,14 @@
 
         position(function(latLong){
 
-            var map;
-            var service;
-            var infowindow;
+            let map;
+            let service;
+            let infowindow;
 
             function initialize() { 
 
                 
-                var mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
+                let mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
 
                 map = new google.maps.Map(document.getElementById("map"), {
 
@@ -111,7 +111,7 @@
 
                 // PASS IN UI TO REQUEST //
 
-                var request = {
+                let request = {
 
                     location: mapLocation,
                     radius: "5000",
@@ -127,9 +127,9 @@
             
             function callback(results, status) {
                 if(status == google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
+                    for (let i = 0; i < results.length; i++) {
 
-                        var place = results[i];
+                        let place = results[i];
                         createMarker(results[i]);
                     }
                 }
@@ -140,8 +140,8 @@
 //---- Modified Code from Stack Overflow "https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api" -----//
 
             function createMarker(place) {
-                var placeLoc = place.geometry.location;
-                var marker = new google.maps.Marker({
+                let placeLoc = place.geometry.location;
+                let marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location,
                 });
@@ -150,7 +150,7 @@
 
                 marker.addListener("click", function() {
 
-                    var request = {
+                    let request = {
                     reference: place.reference
                     };
                 
@@ -159,7 +159,7 @@
                     
                     // ---- retrieve all reviews and create new array --------- //
 
-                        var reviewArray = [];
+                        let reviewArray = [];
 
                         if (status == google.maps.places.PlacesServiceStatus.OK){
 
@@ -170,7 +170,7 @@
 
                             } else {
 
-                                    for(var i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
+                                    for(let i=0; i < details.reviews.length; i++) { // ---- else iterate through google reviews array and populate my reviewsArray with results ----//
 
                                         if (details.reviews[i].text.length !== 0) {
 
@@ -179,7 +179,7 @@
                                             
                                         } else if (details.reviews[i].text.length == 0) {
 
-                                            // var emptyReview = [];
+                                            // let emptyReview = [];
                                             reviewArray.push("The author didn't leave a review");
 
                                     }
@@ -190,7 +190,7 @@
 
             // ---- object created with retrieved details ready to be passed to a DIV for styling below the map ---- //
                                 
-                            var info = {
+                            let info = {
                                 name: details.name,
                                 address: details.formatted_address,
                                 website: details.website,
@@ -215,7 +215,7 @@
                             <p>${info.rating}</p>
                             <h3>Reviews</h3>`;
 
-                            var eachReview;
+                            let eachReview;
 
                             for (i = 0; i < reviewArray.length; i++) { //---iterate reviewArray and create HTML---//
 
@@ -260,7 +260,7 @@
 
         goButtonClick.addClass("go-click");
         resultSection.slideDown("fast");
-        resetButton.removeClass("all-results__reset");
+        resetButton.removeClass("all-results__reset-click");
 
     }
 
