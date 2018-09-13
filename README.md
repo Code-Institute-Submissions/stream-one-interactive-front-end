@@ -13,7 +13,7 @@ The main aims of the application are:
 
 ## Demo
 
-A demo of the site is available [here] (https://darchard1984.github.io/stream-one-interactive-front-end/index.html)
+A demo of the site is available at https://darchard1984.github.io/stream-one-interactive-front-end/index.html
 
 ## Getting Started/Deployment
 
@@ -23,7 +23,7 @@ A demo of the site is available [here] (https://darchard1984.github.io/stream-on
 
 ## Built With 
 
-** HTML, CSS, SASS/SCSS, FLEXBOX, JAVASCRIPT, jQUERY, FONT-AWESOME, GOOGLE-FONTS, GOOGLE-MAPS/PLACES API, PHOTOSHOP, BALSAMIQ.
+**HTML, CSS, SASS/SCSS, FLEXBOX, JAVASCRIPT, jQUERY, FONT-AWESOME, GOOGLE-FONTS, GOOGLE-MAPS/PLACES API, PHOTOSHOP, BALSAMIQ.**
 
 ## UX Design
 
@@ -32,27 +32,27 @@ Details of the UX design and research process is available in the repo "document
 ## Build Approach
 
 1. I built the site using a Mobile First Approach much like the first project. However, unlike the first project in Stream-One. I decided not to use Bootstrap this time. I wanted to expand my knowledge of CSS and build everything from scratch, using Flexbox as the grid system for the project. 
-2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a static skeleton for the application around the image, ready for data to be pulled into. 
+2. I wanted the application to have a fun theme and be visually engaging from the outset. Choosing the right background image for the application became really important. Once in place, I could concentrate on building a skeleton for the application around the image, ready for data to be pulled into. 
 3. The Google Places API is called to retreive data according to user input. The user has a choice of 6 Pet Stops to choose from, along with a location of their choosing. Data is populated dynamically below the landing page. Information includes company name, address, website, phone number, overall rating and reviews if available. 
 4. I have tried to code the application defensively as possible. Taking into account user error when making decisions on functionality. 
 5. All button styles, modal styles and colour schemes are my own. The main photo is from the online resource px-here.com and is a free to use asset.
 
-The aim in eliminating Bootstrap usage was to push myself to write entirely my own CSS, using SASS/SCSS to achieve this. When approaching JavaScript, I decided to use vanilla JS to code as much of the "functional" aspects of the application (API calls etc) as possible. Then use jQuery to implement JS events and effects. The aim was to combine the two and get a handle on both approaches to scripting. 
+The aim in eliminating Bootstrap usage was to push myself to write entirely my own CSS, using SASS/SCSS to achieve this. When approaching JavaScript, I decided to use vanilla JS to code as much of the "functional" aspects of the application (API calls etc) as possible. Then use jQuery to implement JS UI events and effects. The aim was to combine the two and get a handle on both approaches to client side scripting. 
 
-I used http://pleeease.io/play/ to generate vendor prefixes once the coding of the appplication was complete. This allowed me to concentrate on writing clean CSS until the end of the project and ready for submission/deployment.
+I used http://pleeease.io/play/ to generate vendor prefixes once the coding of the appplication was complete. This allowed me to concentrate on writing clean SCSS until the end of the project and ready for submission/deployment.
 
 ## Testing
 
 Manual and technical testing of the site was undertaken and passed. 
 
-1. Chrome/Firefox dev tools used throughout to test responsiveness and function.
+1. Chrome/Firefox dev tools was used throughout to test responsiveness and function.
 2. Testing the site across different devices in real world scenarios. Mobiles, Tablets, Laptops, and Desktops.
 3. Giving the applcation to third party users to get feedback, and see if they could "break" the application.
-4. W3C code validator to pass HTML,CSS and JS. 
+4. W3C code validator to pass HTML, CSS and JS. 
 
 ## Authors
 
-** Dafydd Archard ** this site was created as part of Code Institute's Web Development Online Full-Stack Course in February 2018.
+**Dafydd Archard** - this site was created as part of Code Institute's Web Development Online Full-Stack Course in February 2018.
 
 ## Acknowledgments
 
