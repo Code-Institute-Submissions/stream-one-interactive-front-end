@@ -18,9 +18,7 @@
     const searchButtonStyle = $(".search-form__button--style");
     const thoughtBubble = $(".background__bubble-image");
     
-
     // ON PAGE LOAD CLEAR SEARCH FIELD WITH EMPTY STRING //
-
 
     const searchBar = document.getElementById("user-input");
 
@@ -40,9 +38,7 @@
         }
     };
 
-
     autocomplete = new google.maps.places.Autocomplete(input, options);
-
 
     //---------------------------------------------------------------------------//
 
@@ -50,9 +46,7 @@
 
     function sendSearch(){
 
-        
         let geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+userInput.toString()+"&key=AIzaSyD-CXRwTcTgC8tAAbiYZ6T4BWGD9FK9uCs";
-
 
         //--------HTTP REQUEST-------------------//
 
@@ -87,10 +81,8 @@
             });
         }
 
-
         //------- INITIALIZE GOOGLE MAP AND PASS IN LATLONG -------------//
         
-
         position(function(latLong){
 
             let map;
@@ -99,7 +91,6 @@
 
             function initialize() { 
 
-                
                 let mapLocation = new google.maps.LatLng(latLong[0],latLong[1]); // latLong called back from geo request //
 
                 map = new google.maps.Map(document.getElementById("map"), {
@@ -118,13 +109,11 @@
                     query: buttonParam
                 };
 
-            
                 service = new google.maps.places.PlacesService(map);
                 service.textSearch(request, callback);
             
             }
                 
-            
             function callback(results, status) {
                 if(status == google.maps.places.PlacesServiceStatus.OK) {
                     for (let i = 0; i < results.length; i++) {
@@ -140,13 +129,12 @@
 //---- Modified Code from Stack Overflow "https://stackoverflow.com/questions/35728570/how-to-find-place-details-using-nearby-search-in-google-places-api" -----//
 
             function createMarker(place) {
+
                 let placeLoc = place.geometry.location;
                 let marker = new google.maps.Marker({
                 map: map,
                 position: place.geometry.location,
                 });
-
-            
 
                 marker.addListener("click", function() {
 
@@ -154,7 +142,6 @@
                     reference: place.reference
                     };
                 
-                    
                     service.getDetails(request, function(details, status) {
                     
                     // ---- retrieve all reviews and create new array --------- //
@@ -179,11 +166,11 @@
                                             
                                         } else if (details.reviews[i].text.length == 0) {
 
-                                            // let emptyReview = [];
+                                          
                                             reviewArray.push("The author didn't leave a review");
 
                                     }
-                                    console.log(details.reviews);
+
                             }
                         }
 
@@ -200,8 +187,6 @@
 
 
             // ---------- write to document below HTML on Marker click ---------------------//
-
-                        
 
                             document.getElementById("text").innerHTML =
                             `<h2>${info.name}</h2>
@@ -249,10 +234,7 @@
 
     //---------------------- UI SCRIPTS (JQUERY) ---------------------------------//
 
-
     //---------------- GO FUNCTION ------------ //
-
-
 
     function goAll() {
 
@@ -263,7 +245,6 @@
         resetButton.removeClass("all-results__reset-click");
 
     }
-
 
     //----------------- RESET FUNCTIONS -----------//
 
@@ -309,9 +290,7 @@
 
     let imageSelect = "";
     
-
     imageSelect= "assets/images/"+ event.currentTarget.dataset.name + ".gif";
-    
     
     if ($(this).hasClass("search-button-clicked")) {
 
@@ -349,18 +328,14 @@
 
             }, 400);
 
-        
         }
 
         stylesReset();
     
     });
 
-        
-
     //------ GO BUTTON -----//
 
-   
     goButtonClick.on("click", function (){
 
         userInput = $(searchBar).val();
@@ -380,7 +355,6 @@
 
     // MODAL FUNCTION //
 
-
     function myModal() {
 
         modal.fadeIn();
@@ -391,31 +365,23 @@
         })
     }
 
-
     if ((userInput == "") && (buttonParam == "")){
 
         modalText.html(modalTextObj.enterBoth);
 
         myModal();
-
-        // console.log(typeof(modalTextObj.enterBoth));
         
-
     } else if((userInput == "") && (buttonParam !== "")){
 
         modalText.html(modalTextObj.enterLocation);
 
         myModal();
 
-        
-
     } else if ((userInput !== "") && (buttonParam == "")){
 
         modalText.html(modalTextObj.selectStop);
 
         myModal();
-
-        //alert("Please enter a Pet Stop");
     
     } else if ((userInput !== "") && (buttonParam !== "")) {
 
@@ -423,7 +389,6 @@
 
                 goButton.addClass("go-click");   
             
-
             } else if ((goButton.attr("class") !== "go-click") && (resultSection.attr("id") == "scrollTo")) {
 
                     goAll();
@@ -447,7 +412,6 @@
         }
     });
 
-
 //------- INPUT CLICK RESET STYLES --------//
 
     $(searchBar).on("click", function(){
@@ -455,7 +419,6 @@
         stylesReset();
 
     });
-
 
 // RESET SEARCH  //
 
